@@ -1,0 +1,13 @@
+﻿@page "/transitiongroup"
+
+<TransitionGroup Appear="true"
+                 Enter="true"
+                 Exit="true"
+                 Children="@Items"/>
+
+<span>Count: @Count</span>
+
+<button @onclick="OnClick">Change</button>
+
+<TransitionGroup Exit="true"
+                 Children="@Items"/>

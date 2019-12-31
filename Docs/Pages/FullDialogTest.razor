@@ -1,0 +1,79 @@
+﻿@page "/fulldialog"
+
+@inherits MaterialComponentBase
+
+<div>
+    <Button Variant="@ButtonVariant.Outlined" 
+        Color="@Color.Primary" 
+        OnClick="@OnOpen">
+        @Text
+    </Button>
+    <Dialog 
+        FullScreen 
+        Open="@Open"
+        OnClose="@OnClose">
+        <AppBar Style="position: relative;">
+          <Toolbar>
+            <IconButton Edge="@IconButtonEdge.Start" 
+               Color="@Color.Inherit" 
+               OnClick="@OnClose"
+               aria-label="close">
+              <CloseIcon />
+            </IconButton>
+            <Typography Variant="@TypographyVariant.H6" 
+                  Style="flex: 1; margin-left: 16px;">
+              Sound
+            </Typography>
+            <Button autofocus Color="@Color.Inherit" 
+                   OnClick="@OnClose">
+              save
+            </Button>
+          </Toolbar>
+        </AppBar>
+        <List>
+          <ListItem Button>
+            <ListItemText Primary="Phone ringtone" Secondary="Titania" />
+          </ListItem>
+          <Divider />
+          <ListItem Button>
+            <ListItemText Primary="Default notification ringtone" Secondary="Tethys" />
+          </ListItem>
+        </List>
+    </Dialog>
+</div>
+
+@code
+{
+    private bool Open { set; get; }
+
+    private string Text => (Open ? "Close" : "Open") + " FullScreen Dialog";
+
+    private void OnBackdropClick()
+    {
+        Open = false;
+
+        StateHasChanged();
+    }
+
+    private void OnEscapeKeyDown()
+    {
+        Open = false;
+
+        StateHasChanged();
+    }
+
+    private void OnClose()
+    {
+        Open = false;
+
+        StateHasChanged();
+    }
+
+    private void OnOpen()
+    {
+        Open = true;
+
+        StateHasChanged();
+    }
+}
+

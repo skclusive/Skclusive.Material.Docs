@@ -1,0 +1,135 @@
+﻿@page "/list"
+
+<div style="margin: auto; display: flex; outline: 0; padding: 20px;
+            border-radius: 4px; justify-content: center; background-color: #f5f5f5;">
+  <List Component="nav" aria-label="main mailbox folders"
+    Style="width: 100%; max-width: 360px; background-color: #fff;">
+    <SubheaderContent>
+      <ListSubheader Component="div" Id="nested-list-subheader">
+        Nested List Items
+      </ListSubheader>
+    </SubheaderContent>
+    <ChildContent>
+      <ListItem Button Selected="@(SelectedIndex == 1)" OnClick="@((_) => OnSelect(1))">
+        <ListItemIcon>
+          <SendIcon />
+        </ListItemIcon>
+        <ListItemText Primary="Sent mail" Secondary="Jan 9, 2014" />
+      </ListItem>
+      <ListItem Button Selected="@(SelectedIndex == 2)" OnClick="@((_) => OnSelect(2))">
+        <ListItemIcon>
+          <DraftsIcon />
+        </ListItemIcon>
+        <ListItemText Primary="Drafts" Secondary="Jan 29, 2014" />
+      </ListItem>
+      <ListItem Button Selected="@(SelectedIndex == 3)" OnClick="@((_) => OnSelect(3))">
+        <ListItemIcon>
+          <InboxIcon />
+        </ListItemIcon>
+        <ListItemText Primary="Inbox" Secondary="July 20, 2014" />
+        @if (Open)
+        {
+        <ExpandLessIcon />
+        } else
+        {
+        <ExpandMoreIcon />
+        }
+      </ListItem>
+
+      @if (Open)
+      {
+      <List Component="div" DisablePadding>
+        <ListItem Button Style="padding-left: 32px" Selected="@(SelectedIndex == 4)"
+          OnClick="@((_) => OnSelect(4))">
+          <ListItemIcon>
+            <StarBorderIcon />
+          </ListItemIcon>
+          <ListItemText Primary="Starred" Secondary="August 8, 2014" />
+        </ListItem>
+      </List>
+      }
+    </ChildContent>
+  </List>
+</div>
+
+<div style="margin: auto; display: flex; outline: 0; padding: 20px;
+            border-radius: 4px; justify-content: center; background-color: #f5f5f5;">
+  <List Component="nav" aria-label="main mailbox folders"
+    Style="width: 100%; max-width: 360px; background-color: #fff;">
+    <ListItem AlignItems="@AlignItems.FlexStart">
+      <ListItemAvatar>
+        <Avatar Alt="Remy Sharp" Src="/images/avatar-1.jpg" />
+      </ListItemAvatar>
+      <ListItemText Primary="Brunch this weekend?">
+        <SecondaryContent>
+          <Typography Component="span" Variant="@TypographyVariant.Body2" Color="@Color.TextPrimary"
+            Style="display: inline;">
+            Ali Connors
+          </Typography>
+          — I'll be in your neighborhood doing errands this…
+        </SecondaryContent>
+      </ListItemText>
+    </ListItem>
+    <Divider Variant="@DividerVariant.Inset" Component="li" />
+    <ListItem AlignItems="@AlignItems.FlexStart">
+      <ListItemAvatar>
+        <Avatar Alt="Travis Howard" Src="/images/avatar-2.jpg" />
+      </ListItemAvatar>
+      <ListItemText Primary="Summer BBQ">
+        <SecondaryContent>
+          <Typography Component="span" Variant="@TypographyVariant.Body2" Color="@Color.TextPrimary"
+            Style="display: inline;">
+            to Scott, Alex, Jennifer
+          </Typography>
+          — Wish I could come, but I'm out of town this…
+        </SecondaryContent>
+      </ListItemText>
+    </ListItem>
+    <Divider Variant="@DividerVariant.Inset" Component="li" />
+    <ListItem AlignItems="@AlignItems.FlexStart">
+      <ListItemAvatar>
+        <Avatar Alt="Cindy Baker" Src="/images/avatar-3.jpg" />
+      </ListItemAvatar>
+      <ListItemText Primary="Summer BBQ">
+        <SecondaryContent>
+          <Typography Component="span" Variant="@TypographyVariant.Body2" Color="@Color.TextPrimary"
+            Style="display: inline;">
+            Sandra Adams
+          </Typography>
+          — Do you have Paris recommendations? Have you ever…
+        </SecondaryContent>
+      </ListItemText>
+    </ListItem>
+  </List>
+</div>
+
+<div style="margin: auto; display: flex; outline: 0; padding: 20px;
+            border-radius: 4px; justify-content: center; background-color: #f5f5f5;">
+  <List Style="width: 100%; max-width: 360px; background-color: #fff;">
+    <SubheaderContent>
+      <ListSubheader>
+        Settings
+      </ListSubheader>
+    </SubheaderContent>
+    <ChildContent>
+        <ListItem>
+          <ListItemIcon>
+              <WifiIcon />
+          </ListItemIcon>
+          <ListItemText Id="switch-list-label-wifi" Primary="Wi-Fi" />
+          <ListItemSecondaryAction>
+              <Switch Edge="@Edge.End" Checked="@(IsChecked(1))" OnChange="@((_) => ToggleChecked(1))" InputProps="@(new Dictionary<string, object>() { {"aria-labelledby", "switch-list-label-wifi" }})" />
+          </ListItemSecondaryAction>
+        </ListItem>
+        <ListItem>
+            <ListItemIcon>
+                <BluetoothIcon />
+            </ListItemIcon>
+            <ListItemText Id="switch-list-label-bluetooth" Primary="Bluetooth" />
+            <ListItemSecondaryAction>
+                <Switch Edge="@Edge.End" Checked="@(IsChecked(2))" OnChange="@((_) => ToggleChecked(2))" InputProps="@(new Dictionary<string, object>() { {"aria-labelledby", "switch-list-label-bluetooth" }})" />
+            </ListItemSecondaryAction>
+        </ListItem>
+    </ChildContent>
+  </List>
+</div>

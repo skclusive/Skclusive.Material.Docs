@@ -1,0 +1,39 @@
+﻿@page "/text"
+
+<TextField Class="text-field-test"
+           Required="true"
+           Id="required"
+           Label="Required"
+           Value="Hello World"
+           Helper="helper text"
+           Margin="@Margin.Normal" />
+
+<TextField Class="text-field-test"
+           Error="true"
+           Id="Error"
+           Label="Error"
+           Dense="false"
+           Helper="Some error text"
+           />
+
+<TextField Class="text-field-test"
+           Focused="true"
+           Id="Focused"
+           Label="Focused"
+           Dense="false"
+           />
+
+<TextField Id="helperText"
+           Label="Helper text"
+           Value="Default Value"
+           Class="text-field-test"
+           Helper="Some important text"
+           Dense="false" />
+
+<TextField Id="with-placeholder"
+           Label="With placeholder"
+           Focused="false"
+           AutoFocus
+           Class="text-field-test"
+           PlaceHolder="Placeholder"
+           Dense="false" />

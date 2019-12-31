@@ -1,0 +1,38 @@
+﻿@page "/"
+
+<AppBar Position="@AppBarPosition.Static">
+    <Toolbar>
+        <IconButton Style="margin-left: -12px; margin-right: 20px;"
+                    Color="@Color.Inherit">
+            <MenuIcon />
+        </IconButton>
+        <Typography Style="flex: 1;"
+                    Variant=@TypographyVariant.Subtitle1
+                    Color="Color.Inherit">
+            Subtitle1
+        </Typography>
+        <Button Color="Color.Inherit">
+            Login
+        </Button>
+    </Toolbar>
+</AppBar>
+
+<div style="margin: 20px">
+    <div Style="display: flex; justify-content: center;">
+        <Avatar Style="color: #fff; margin: 10px; background-color: #673ab7;">SK</Avatar>
+        <Avatar Style="color: #fff; margin: 10px; background-color: #4caf50;">
+            <AssignmentIcon />
+        </Avatar>
+        <Avatar Alt="Sk"
+                Src="/images/cycle.jpg"
+                Style="margin: 10px;" />
+    </div>
+    <Paper Elevation="4" Style="margin: 16px; padding: 10px;">
+        <Typography Variant="@TypographyVariant.Caption">
+            This is a sheet of paper.
+        </Typography>
+        <Typography Paragraph>
+            Paper can be used to build surface or other elements for your application.
+        </Typography>
+    </Paper>
+</div>

@@ -1,0 +1,35 @@
+﻿@page "/badge"
+
+<Badge Style="margin: 10px;" Nib="4" Color="@Color.Primary">
+    <MailIcon />
+</Badge>
+
+<IconButton Style="margin: 10px;">
+    <Badge Nib="10" Color="@Color.Secondary">
+        <MailIcon />
+    </Badge>
+</IconButton>
+
+<Badge Color="@Color.Primary" Nib="5" Style="margin: 10px;">
+    <Typography Style="padding: 0 16px;">Typography</Typography>
+</Badge>
+
+<Badge Color="@Color.Primary" Nib="0" ShowZero="false" Style="margin: 10px;">
+    <Typography Style="padding: 0 16px;">No Nib as value is Zero</Typography>
+</Badge>
+
+<Badge Color="@Color.Primary" Nib="10" Overlap="@NibOverlap.Circle" Style="margin: 10px;">
+     <Avatar Style="color: #fff; margin: 10px; background-color: #673ab7;">SK</Avatar>
+</Badge>
+
+<Badge Color="@Color.Primary" Nib="10" Variant="@NibVariant.Dot" Style="margin: 10px;">
+     <Typography Style="padding: 0 16px;">Dot</Typography>
+</Badge>
+
+<Badge Color="@Color.Primary" Nib="1000" Max="999" Style="margin: 10px;">
+    <Typography Style="padding: 0 16px;">Max 999</Typography>
+</Badge>
+
+<Badge Color="@Color.Primary" Nib="7" Style="margin: 10px;">
+    <Button Variant="@ButtonVariant.Contained">Button</Button>
+</Badge>

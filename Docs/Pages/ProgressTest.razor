@@ -1,0 +1,119 @@
+﻿@inherits DisposableComponentBase
+@page "/progress"
+
+<div>
+    <CircularProgress />
+    <CircularProgress Size="50" />
+    <CircularProgress Color="@Color.Primary" />
+    <CircularProgress Style="color: rgb(156, 39, 176);" Thickness="7.0M" />
+</div>
+
+<div>
+    <LinearProgress />
+    <br />
+    <LinearProgress Color="@Color.Primary" />
+</div>
+
+<style>
+.root {
+  display: flex;
+  align-items: center;
+}
+
+.wrapper {
+  margin: 8px;
+  position: relative;
+}
+
+button.buttonSuccess {
+  background-color: #4caf50;
+}
+
+button.buttonSuccess:hover {
+  background-color: #388e3c;
+}
+
+.fabProgress {
+  top: -6px;
+  left: -6px;
+  color: #4caf50;
+  z-index: 1;
+  position: absolute;
+}
+
+.buttonProgress {
+  top: 50%;
+  left: 50%;
+  color: #4caf50;
+  position: absolute;
+  margin-top: -12px;
+  margin-left: -12px;
+}
+</style>
+
+<div>
+    <div class="root">
+      <div class="wrapper">
+        <Fab
+          aria-label="save"
+          Color="@Color.Primary"
+          Class="@ButtonClass"
+          OnClick="@HandleButtonClick">
+          @if (Success)
+          {
+              <CheckIcon />
+          }
+          else
+          {
+              <SaveIcon />
+          }
+        </Fab>
+        @if (Loading)
+        {
+            <CircularProgress Size="68" Class="fabProgress" />
+        }
+      </div>
+      <div class="wrapper">
+        <Button
+          Variant="@ButtonVariant.Contained"
+          Color="@Color.Primary"
+          Class="@ButtonClass"
+          Disabled="@Loading"
+          OnClick="@HandleButtonClick">
+          Accept terms
+        </Button>
+        @if (Loading)
+        {
+            <CircularProgress Size="24" Class="buttonProgress" />
+        }
+      </div>
+    </div>
+</div>
+
+@code {
+    bool Loading { set; get; }
+
+    bool Success { set; get; }
+
+    string ButtonClass => Success ? "buttonSuccess" : "";
+
+    void HandleButtonClick(EventArgs args)
+    {
+        if (!Loading)
+        {
+            Loading = true;
+            Success = false;
+            RunTimeout(() => {
+
+                Loading = false;
+                Success = true;
+
+                StateHasChanged();
+
+            }, 2000);
+
+            StateHasChanged();
+        }
+        Console.WriteLine($"HandleButtonClick: {args}");
+    }
+}

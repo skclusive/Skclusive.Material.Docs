@@ -1,0 +1,32 @@
+﻿<div class="root">
+    <FormControlLabel Label="Grow">
+        <ControlContent>
+            <Switch Checked="@GrowInProp" OnChange="@ToggleGrow" />
+        </ControlContent>
+    </FormControlLabel>
+    <div class="container">
+        <Grow In="@GrowInProp" Timeout="@GrowTimeout">
+            <Paper RootRef="@context.RefBack" Style="@(CssUtil.ToStyle(context.Styles, "transform-origin: 0px 0px 0px;"))" Elevation="4" Class="paper">
+                <svg class="svg">
+                    <polygon points="0,100 50,00, 100,100" class="polygon" />
+                </svg>
+            </Paper>
+        </Grow>
+    </div>
+</div>
+
+@code
+{
+    private bool GrowInProp { set; get; } = false;
+
+    private int GrowTimeout => GrowInProp ? 1000 : 225;
+
+    private void ToggleGrow(EventArgs args)
+    {
+        GrowInProp = !GrowInProp;
+
+        Console.WriteLine($"Clicked..GrowInProp: {GrowInProp}");
+
+        StateHasChanged();
+    }
+}
