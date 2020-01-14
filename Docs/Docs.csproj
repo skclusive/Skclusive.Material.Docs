@@ -15,11 +15,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Skclusive.Material.Component" Version="1.0.4-preview1" />
+    <PackageReference Include="Skclusive.Material.Component" Version="1.0.5" />
   </ItemGroup>
 
   <!-- <ItemGroup>
-    <ProjectReference Include="..\..\Skclusive.Material.Component\Material\src\Material.csproj" Version="1.0.5-preview1" />
+    <ProjectReference Include="..\..\Skclusive.Material.Component\Material\src\Material.csproj" Version="1.0.5" />
   </ItemGroup> -->
 
 </Project>

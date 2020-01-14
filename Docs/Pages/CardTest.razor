@@ -8,31 +8,27 @@
             outline: 0;
             padding: 20px;
             border-radius: 4px;
-            justify-content: center;
-            background-color: #f5f5f5;">
-                <Card Style="min-width: 275px;">
-                    <CardContent>
-                        <Typography Style="font-size: 14px;" Color="@Color.TextSecondary" GutterBottom>
-                            Word of the Day
-                        </Typography>
-                        <Typography Variant="@TypographyVariant.H5" Component="h2">
-                            be
-                            @Bull
-                            nev
-                            @(Bull)o@(Bull)
-                            lent
-                        </Typography>
-                        <Typography Style="margin-bottom: 12px;" Color="@Color.TextSecondary">
-                            adjective
-                        </Typography>
-                        <Typography Variant="@TypographyVariant.Body2" Component="p">
-                            well meaning and kindly.
-                            <br />
-                            "a benevolent smile"
-                        </Typography>
-                    </CardContent>
+            justify-content: center;">
+                <Card Style="max-width: 345px;">
+                    <CardActionArea>
+                        <CardMedia Component="img"
+                                   Alt="Contemplative Reptile"
+                                   Height="140"
+                                   Image="./images/contemplative-reptile.jpg"
+                                   Title="Contemplative Reptile" />
+                        <CardContent>
+                            <Typography GutterBottom Variant="@TypographyVariant.H5" Component="h2">
+                                Lizard
+                            </Typography>
+                            <Typography Variant="@TypographyVariant.Body2" Color="@Color.TextSecondary" Component="p">
+                                Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
+                                across all continents except Antarctica
+                            </Typography>
+                        </CardContent>
+                    </CardActionArea>
                     <CardActions>
-                        <Button Size="@Size.Small">Learn More</Button>
+                        <Button Size="@Size.Small" Color="@Color.Primary">Share</Button>
+                        <Button Size="@Size.Small" Color="@Color.Primary">Learn More</Button>
                     </CardActions>
                 </Card>
             </div>
@@ -43,8 +39,7 @@
             outline: 0;
             padding: 20px;
             border-radius: 4px;
-            justify-content: center;
-            background-color: #f5f5f5;">
+            justify-content: center;">
                 <Card Style="max-width: 345px;">
                     <CardHeader Title="Shrimp and Chorizo Paella"
                                 Subheader="September 14, 2016">
@@ -84,40 +79,7 @@
             outline: 0;
             padding: 20px;
             border-radius: 4px;
-            justify-content: center;
-            background-color: #f5f5f5;">
-                <Card Style="max-width: 345px;">
-                    <CardActionArea>
-                        <CardMedia Component="img"
-                                   Alt="Contemplative Reptile"
-                                   Height="140"
-                                   Image="./images/contemplative-reptile.jpg"
-                                   Title="Contemplative Reptile" />
-                        <CardContent>
-                            <Typography GutterBottom Variant="@TypographyVariant.H5" Component="h2">
-                                Lizard
-                            </Typography>
-                            <Typography Variant="@TypographyVariant.Body2" Color="@Color.TextSecondary" Component="p">
-                                Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
-                                across all continents except Antarctica
-                            </Typography>
-                        </CardContent>
-                    </CardActionArea>
-                    <CardActions>
-                        <Button Size="@Size.Small" Color="@Color.Primary">Share</Button>
-                        <Button Size="@Size.Small" Color="@Color.Primary">Learn More</Button>
-                    </CardActions>
-                </Card>
-            </div>
-        </Grid>
-        <Grid Item ExtraSmall="@GridSize.Six">
-            <div style="margin: auto;
-            display: flex;
-            outline: 0;
-            padding: 20px;
-            border-radius: 4px;
-            justify-content: center;
-            background-color: #f5f5f5;">
+            justify-content: center;">
                 <Card Style="display: flex;">
                     <div style="display: flex; flex-direction: column;">
                         <CardContent Style="flex: 1 0 auto;">
@@ -143,6 +105,40 @@
                     <CardMedia Style="width: 151px"
                                Image="./images/live-from-space.jpg"
                                Title="Live from space album cover" />
+                </Card>
+            </div>
+        </Grid>
+        <Grid Item ExtraSmall="@GridSize.Six">
+            <div style="margin: auto;
+            display: flex;
+            outline: 0;
+            padding: 20px;
+            border-radius: 4px;
+            justify-content: center;">
+                <Card Style="min-width: 275px;">
+                    <CardContent>
+                        <Typography Style="font-size: 14px;" Color="@Color.TextSecondary" GutterBottom>
+                            Word of the Day
+                        </Typography>
+                        <Typography Variant="@TypographyVariant.H5" Component="h2">
+                            be
+                            @Bull
+                            nev
+                            @(Bull)o@(Bull)
+                            lent
+                        </Typography>
+                        <Typography Style="margin-bottom: 12px;" Color="@Color.TextSecondary">
+                            adjective
+                        </Typography>
+                        <Typography Variant="@TypographyVariant.Body2" Component="p">
+                            well meaning and kindly.
+                            <br />
+                            "a benevolent smile"
+                        </Typography>
+                    </CardContent>
+                    <CardActions>
+                        <Button Size="@Size.Small">Learn More</Button>
+                    </CardActions>
                 </Card>
             </div>
         </Grid>

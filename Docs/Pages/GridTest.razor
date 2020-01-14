@@ -2,7 +2,6 @@
 
 <style>
     .paper-demo {
-        color: rgba(0, 0, 0, 0.54);
         padding: 16px;
         text-align: center;
     }
@@ -27,29 +26,58 @@
 </style>
 
 <div
-    style="margin: auto; display: flex; outline: 0; padding: 20px; border-radius: 4px; justify-content: center; background-color: #f5f5f5;">
-    <Grid Container Spacing="@Spacing.Two">
-        <Grid Item ExtraSmall="@GridSize.Twelve">
-            <Grid Container Justify="@Justify.Center" Spacing="@Spacing.Two">
+    style="margin: auto; display: flex; outline: 0; padding: 20px; border-radius: 4px; justify-content: center;">
+    <Grid
+        Container
+        Spacing="@Spacing.Two">
+        <Grid
+            Item
+            ExtraSmall="@GridSize.Twelve">
+            <Grid
+                Container
+                Justify="@Justify.Center"
+                Spacing="@Spacing.Two">
                 @foreach(var index in Enumerable.Range(0, 3))
                 {
-                <Grid @key="index" Item>
-                    <Paper Style="height: 140px; width: 100px;" />
-                </Grid>
+                    <Grid
+                        @key="index"
+                        Item>
+                        <Paper
+                            Style="height: 140px; width: 100px;" />
+                    </Grid>
                 }
             </Grid>
         </Grid>
 
-        <Grid Item ExtraSmall="@GridSize.Twelve">
-            <Grid Container Spacing="@Spacing.Three">
-                <Grid Item ExtraSmall="@GridSize.Twelve">
-                    <Paper Class="paper-demo">xs=12</Paper>
+        <Grid
+            Item
+            ExtraSmall="@GridSize.Twelve">
+            <Grid
+                Container
+                Spacing="@Spacing.Three">
+                <Grid
+                    Item
+                    ExtraSmall="@GridSize.Twelve">
+                    <Paper
+                        Class="paper-demo">
+                        xs=12
+                    </Paper>
                 </Grid>
-                <Grid Item ExtraSmall="@GridSize.Six">
-                    <Paper Class="paper-demo">xs=6</Paper>
+                <Grid
+                    Item
+                    ExtraSmall="@GridSize.Six">
+                    <Paper
+                        Class="paper-demo">
+                        xs=6
+                    </Paper>
                 </Grid>
-                <Grid Item ExtraSmall="@GridSize.Six">
-                    <Paper Class="paper-demo">xs=6</Paper>
+                <Grid
+                    Item
+                    ExtraSmall="@GridSize.Six">
+                    <Paper
+                        Class="paper-demo">
+                        xs=6
+                    </Paper>
                 </Grid>
                 <Grid Item ExtraSmall="@GridSize.Three">
                     <Paper Class="paper-demo">xs=3</Paper>

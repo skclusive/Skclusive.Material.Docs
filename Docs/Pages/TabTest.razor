@@ -1,0 +1,109 @@
+﻿@page "/tab"
+
+@inherits MaterialComponentBase
+
+<AppBar
+    Position="@AppBarPosition.Static">
+    <Tabs
+        Value="@Value"
+        OnChange="@HandleChange"
+        aria-label="simple tabs example">
+        <Tab
+            Label="Item One"
+            Value="0" />
+        <Tab
+            Label="Item One"
+            Value="1" />
+        <Tab
+            Label="Item One"
+            Value="2" />
+    </Tabs>
+</AppBar>
+
+@if (object.Equals(Value, 0))
+{
+    <Typography
+        Component="div">
+        Item One
+    </Typography>
+}else if (object.Equals(Value, 1))
+{
+    <Typography
+        Component="div">
+        Item Two
+    </Typography>
+}else if (object.Equals(Value, 2))
+{
+    <Typography
+        Component="div">
+        Item Three
+    </Typography>
+}
+
+<br />
+<br />
+
+<Paper
+    Square>
+    <Tabs
+        Value="@Value"
+        Orientation="@Orientation.Vertical"
+        IndicatorColor="@Color.Primary"
+        TextColor="@Color.Primary"
+        OnChange="@HandleChange"
+        aria-label="disabled tabs example">
+        <Tab
+            Label="Active" />
+        <Tab
+            Label="Disabled"
+            Disabled="true" />
+        <Tab
+            Label="Active" />
+    </Tabs>
+</Paper>
+
+<br />
+<br />
+
+<Paper
+    Square>
+    <Tabs
+        Value="@Value"
+        OnChange="@HandleChange"
+        Variant="@TabsVariant.FullWidth"
+        IndicatorColor="@Color.Secondary"
+        TextColor="@Color.Secondary"
+        aria-label="icon label tabs example">
+        <Tab
+            Label="RECENTS">
+            <IconContent>
+                <PeopleIcon />
+            </IconContent>
+        </Tab>
+        <Tab
+            Label="FAVORITES">
+            <IconContent>
+                <FavoriteIcon />
+            </IconContent>
+        </Tab>
+        <Tab
+            Label="NEARBY">
+            <IconContent>
+                <RefreshIcon />
+            </IconContent>
+        </Tab>
+    </Tabs>
+</Paper>
+
+@code
+{
+    private object Value { set; get; } = 0;
+
+    private void HandleChange(object value)
+    {
+        Value = value;
+
+        StateHasChanged();
+    }
+}
+
