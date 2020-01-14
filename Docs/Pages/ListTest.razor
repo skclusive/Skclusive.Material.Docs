@@ -1,9 +1,14 @@
 ﻿@page "/list"
 
-<div style="margin: auto; display: flex; outline: 0; padding: 20px;
-            border-radius: 4px; justify-content: center;">
+<div style="margin: auto;
+            display: flex;
+            outline: 0;
+            padding: 20px;
+            border-radius: 4px;
+            justify-content: center;
+            background-color: var(--app-layout-backward);">
   <List Component="nav" aria-label="main mailbox folders"
-    Style="width: 100%; max-width: 360px;">
+    Style="width: 100%; max-width: 360px; background-color: var(--app-layout-forward);">
     <SubheaderContent>
       <ListSubheader Component="div" Id="nested-list-subheader">
         Nested List Items
@@ -52,10 +57,15 @@
   </List>
 </div>
 
-<div style="margin: auto; display: flex; outline: 0; padding: 20px;
-            border-radius: 4px; justify-content: center;">
+<div style="margin: auto;
+            display: flex;
+            outline: 0;
+            padding: 20px;
+            border-radius: 4px;
+            justify-content: center;
+            background-color: var(--app-layout-backward);">
   <List Component="nav" aria-label="main mailbox folders"
-    Style="width: 100%; max-width: 360px;">
+    Style="width: 100%; max-width: 360px; background-color: var(--app-layout-forward);">
     <ListItem AlignItems="@AlignItems.FlexStart">
       <ListItemAvatar>
         <Avatar Alt="Remy Sharp" Src="./images/avatar-1.jpg" />
@@ -103,9 +113,14 @@
   </List>
 </div>
 
-<div style="margin: auto; display: flex; outline: 0; padding: 20px;
-            border-radius: 4px; justify-content: center;">
-  <List Style="width: 100%; max-width: 360px;">
+<div style="margin: auto;
+            display: flex;
+            outline: 0;
+            padding: 20px;
+            border-radius: 4px;
+            justify-content: center;
+            background-color: var(--app-layout-backward);">
+  <List Style="width: 100%; max-width: 360px; background-color: var(--app-layout-forward);">
     <SubheaderContent>
       <ListSubheader>
         Settings
