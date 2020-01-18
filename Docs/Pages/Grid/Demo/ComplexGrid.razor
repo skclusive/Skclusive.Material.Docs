@@ -1,0 +1,94 @@
+@namespace Skclusive.Material.Docs
+
+<style>
+
+    .paper-complex {
+        margin: auto;
+        padding: 16px;
+        max-width: 500px;
+    }
+
+    .image-complex {
+        width: 128px;
+        height: 128px;
+    }
+
+    .img-complex {
+        margin: auto;
+        display: block;
+        max-width: 100%;
+        max-height: 100%;
+    }
+</style>
+
+<div
+    style="flex-grow: 1;">
+    <Grid
+        Item
+        ExtraSmall="@GridSize.Twelve">
+        <Paper
+            Class="paper-complex">
+            <Grid
+                Container
+                Spacing="@Spacing.Two">
+                <Grid
+                    Item>
+                    <ButtonBase
+                        Class="image-complex">
+                        <img
+                            class="img-complex"
+                            alt="complex"
+                            src="./images/complex.jpg" />
+                    </ButtonBase>
+                </Grid>
+                <Grid
+                    Item
+                    Container
+                    ExtraSmall="@GridSize.Twelve"
+                    Small="@GridSize.True">
+                    <Grid
+                        Item
+                        Container
+                        ExtraSmall="@GridSize.True"
+                        Direction="@Direction.Column"
+                        Spacing="@Spacing.Two">
+                        <Grid
+                            Item
+                            ExtraSmall="@GridSize.True">
+                            <Typography
+                                GutterBottom
+                                Variant="@TypographyVariant.Subtitle1">
+                                Standard license
+                            </Typography>
+                            <Typography
+                                Variant="@TypographyVariant.Body2"
+                                GutterBottom>
+                                Full resolution 1920x1080 • JPEG
+                            </Typography>
+                            <Typography
+                                Variant="@TypographyVariant.Body2"
+                                Color="@Color.TextSecondary">
+                                ID: 1030114
+                            </Typography>
+                        </Grid>
+                        <Grid
+                            Item>
+                            <Typography
+                                Variant="@TypographyVariant.Body2"
+                                Style="cursor: pointer;">
+                                Remove
+                            </Typography>
+                        </Grid>
+                    </Grid>
+                    <Grid
+                        Item>
+                        <Typography
+                            Variant="@TypographyVariant.Subtitle1">
+                            $19.00
+                        </Typography>
+                    </Grid>
+                </Grid>
+            </Grid>
+        </Paper>
+    </Grid>
+</div>

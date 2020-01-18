@@ -1,0 +1,174 @@
+@namespace Skclusive.Material.Docs
+
+<style>
+    .demo-container {
+        flex-grow: 1;
+    }
+    .demo-grid {
+        height: 240px;
+    }
+    .demo-in-paper {
+        color: rgba(255, 255, 255, 0.7);
+        height: 100%;
+        padding: 16px;
+    }
+    .demo-control {
+        padding: 16px;
+    }
+    .demo-group {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+    }
+</style>
+
+<Grid
+    Class="demo-container"
+    Container>
+    <Grid
+        Item
+        ExtraSmall="@GridSize.Twelve">
+        <Grid
+            Class="demo-grid"
+            Container
+            Justify="@Justify"
+            Direction="@Direction"
+            AlignItems="@AlignItems"
+            Spacing="@Spacing.Two">
+            @foreach(var index in Enumerable.Range(0, 3))
+            {
+                <Grid
+                    @key="index"
+                    Item>
+                    <Paper
+                        Class="demo-in-paper"
+                        Style="@($"padding-top: {(index + 1) * 10}px; padding-bottom: {(index + 1) * 10}px;")">
+                       Cell @(index + 1)
+                    </Paper>
+                </Grid>
+            }
+        </Grid>
+    </Grid>
+    <Grid
+        Item
+        ExtraSmall="@GridSize.Twelve">
+        <Paper
+            Class="demo-control">
+            <Grid
+                Container
+                Spacing="@Spacing.Three">
+                <Grid
+                    Item
+                    ExtraSmall="@GridSize.Twelve">
+                    <FormControl
+                        Component="fieldset">
+                        <FormLabel>Direction</FormLabel>
+                        <div
+                            class="demo-group">
+                            @foreach(var value in Enum.GetValues(typeof(Direction)).Cast<Direction>())
+                            {
+                                <FormControlLabel
+                                    @key="value"
+                                    Label="@value.ToString()">
+                                    <ControlContent>
+                                        <Radio
+                                            Checked="@(Direction == value)"
+                                            Value="@value.ToString()"
+                                            OnChange="@OnDirectionChange" />
+                                    </ControlContent>
+                                </FormControlLabel>
+                            }
+                        </div>
+                    </FormControl>
+                </Grid>
+                <Grid
+                    Item
+                    ExtraSmall="@GridSize.Twelve">
+                    <FormControl
+                        Component="fieldset">
+                        <FormLabel>Justify</FormLabel>
+                        <div
+                            class="demo-group">
+                            @foreach(var value in Enum.GetValues(typeof(Justify)).Cast<Justify>())
+                            {
+                                <FormControlLabel
+                                    @key="value"
+                                    Label="@value.ToString()">
+                                    <ControlContent>
+                                        <Radio
+                                            Checked="@(Justify == value)"
+                                            Value="@value.ToString()"
+                                            OnChange="@OnJustifyChange" />
+                                    </ControlContent>
+                                </FormControlLabel>
+                            }
+                        </div>
+                    </FormControl>
+                </Grid>
+                <Grid
+                    Item
+                    ExtraSmall="@GridSize.Twelve">
+                    <FormControl
+                        Component="fieldset">
+                        <FormLabel>AlignItems</FormLabel>
+                        <div
+                            class="demo-group">
+                            @foreach(var value in Enum.GetValues(typeof(AlignItems)).Cast<AlignItems>())
+                            {
+                                <FormControlLabel
+                                    @key="value"
+                                    Label="@value.ToString()">
+                                    <ControlContent>
+                                        <Radio
+                                            Checked="@(AlignItems == value)"
+                                            Value="@value.ToString()"
+                                            OnChange="@OnAlignItemsChange" />
+                                    </ControlContent>
+                                </FormControlLabel>
+                            }
+                        </div>
+                    </FormControl>
+                </Grid>
+            </Grid>
+        </Paper>
+    </Grid>
+</Grid>
+
+@code
+{
+    private Justify Justify { set; get; } = Justify.Center;
+
+    private void OnJustifyChange(ChangeEventArgs args)
+    {
+        if (Enum.TryParse(args.Value.ToString(), out Justify justify))
+        {
+            Justify = justify;
+
+            StateHasChanged();
+        }
+    }
+
+    private Direction Direction { set; get; } = Direction.Row;
+
+    private void OnDirectionChange(ChangeEventArgs args)
+    {
+        if (Enum.TryParse(args.Value.ToString(), out Direction direction))
+        {
+            Direction = direction;
+
+            StateHasChanged();
+        }
+    }
+
+    private AlignItems AlignItems { set; get; } = AlignItems.Center;
+
+    private void OnAlignItemsChange(ChangeEventArgs args)
+    {
+        if (Enum.TryParse(args.Value.ToString(), out AlignItems alignItems))
+        {
+            AlignItems = alignItems;
+
+            StateHasChanged();
+        }
+    }
+}
