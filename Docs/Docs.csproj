@@ -17,18 +17,11 @@
   <ItemGroup>
     <PackageReference Include="MarkedNet" Version="2.1.2" />
     <PackageReference Include="Skclusive.Material.Component" Version="1.0.5" />
-    <!-- <PackageReference Include="Skclusive.Script.Prisma" Version="1.0.0" /> -->
+    <PackageReference Include="Skclusive.Script.Prisma" Version="1.0.0" />
   </ItemGroup>
 
   <ItemGroup>
     <!-- <ProjectReference Include="..\..\Skclusive.Material.Component\Material\src\Material.csproj" Version="1.0.5" /> -->
-     <ProjectReference Include="..\..\Skclusive.Script.Prisma\src\Prisma.csproj" Version="1.0.0" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Components\MarkDown\" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Remove="Pages\Grid\GridDoc.razor" />
+     <!-- <ProjectReference Include="..\..\Skclusive.Script.Prisma\src\Prisma.csproj" Version="1.0.0" /> -->
   </ItemGroup>
 </Project>
