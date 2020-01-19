@@ -1,6 +1,11 @@
 ﻿@inherits LayoutComponentBase
 
 <style>
+    .root {
+        display: flex;
+        background-color: var(--theme-palette-grey-background-default, #f5f5f5);
+    }
+
     .app-bar {
         transition: margin 195ms cubic-bezier(0.4, 0, 0.6, 1) 0ms,width 195ms cubic-bezier(0.4, 0, 0.6, 1) 0ms;
     }
@@ -39,7 +44,7 @@
     }
 </style>
 
-<div style="display: flex;">
+<div class="root">
     <Baseline />
     <AppBar Position="@AppBarPosition.Fixed" Class="@AppBarClass">
         <Toolbar>
