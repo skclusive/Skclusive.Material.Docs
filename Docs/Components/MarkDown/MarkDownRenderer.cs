@@ -2,7 +2,7 @@
 using System.Text.RegularExpressions;
 using MarkedNet;
 using Microsoft.AspNetCore.Components.Rendering;
-using Skclusive.Script.Prisma;
+using Skclusive.Script.Prism;
 
 namespace Skclusive.Material.Docs
 {
@@ -23,7 +23,7 @@ namespace Skclusive.Material.Docs
 
         public override string Code(string code, string lang, bool escaped)
         {
-            Builder.OpenComponent<PrismaCode>(Index++);
+            Builder.OpenComponent<PrismCode>(Index++);
             Builder.AddAttribute(Index++, "Language", lang);
             Builder.AddAttribute(Index++, "Code", code);
             Builder.CloseComponent();
