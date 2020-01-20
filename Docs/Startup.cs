@@ -2,7 +2,7 @@ using Microsoft.AspNetCore.Components.Builder;
 using Microsoft.Extensions.DependencyInjection;
 using Skclusive.Material.Script;
 using Skclusive.Script.DomHelpers;
-using Skclusive.Script.Prisma;
+using Skclusive.Script.Prism;
 
 namespace Skclusive.Material.Docs
 {
@@ -14,7 +14,7 @@ namespace Skclusive.Material.Docs
 
             services.AddScriptHelpers();
 
-            services.AddPrisma();
+            services.AddPrism();
         }
 
         public void Configure(IComponentsApplicationBuilder app)
