@@ -1,0 +1,160 @@
+@namespace Skclusive.Material.Docs
+
+<style>
+    .demo-flex-column {
+        display: flex;
+        flex-direction: column;
+    }
+    .demo-flex-row {
+        display: flex;
+        justify-content: center;
+    }
+    .demo-margin {
+        margin: 16px;
+    }
+    .demo-form-control {
+        margin-bottom: 24px;
+    }
+    .demo-group {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+    }
+</style>
+
+<div
+    class="demo-flex-column">
+    <div
+        class="demo-flex-row">
+        <FormControl
+            Component="fieldset"
+            Class="demo-form-control">
+            <FormLabel
+                Component="legend">
+                Vertical
+            </FormLabel>
+            <div
+                class="demo-group">
+                <FormControlLabel
+                    Label="@Vertical.Top.ToString()">
+                    <ControlContent>
+                        <Radio
+                            Checked="@(Vertical == Vertical.Top)"
+                            Value="@Vertical.Top.ToString()"
+                            OnChange="@OnVerticalChange" />
+                    </ControlContent>
+                </FormControlLabel>
+                <FormControlLabel
+                    Label="@Vertical.Bottom.ToString()">
+                    <ControlContent>
+                        <Radio
+                            Checked="@(Vertical == Vertical.Bottom)"
+                            Value="@Vertical.Bottom.ToString()"
+                            OnChange="@OnVerticalChange" />
+                    </ControlContent>
+                </FormControlLabel>
+            </div>
+        </FormControl>
+        <FormControl
+            Component="fieldset"
+            Class="demo-form-control">
+            <FormLabel
+                Component="legend">
+                Horizontal
+            </FormLabel>
+            <div
+                class="demo-group">
+                <FormControlLabel
+                    Label="@Horizontal.Right.ToString()">
+                    <ControlContent>
+                        <Radio
+                            Checked="@(Horizontal == Horizontal.Right)"
+                            Value="@Horizontal.Right.ToString()"
+                            OnChange="@OnHorizontalChange" />
+                    </ControlContent>
+                </FormControlLabel>
+                <FormControlLabel
+                    Label="@Horizontal.Left.ToString()">
+                    <ControlContent>
+                        <Radio
+                            Checked="@(Horizontal == Horizontal.Left)"
+                            Value="@Horizontal.Left.ToString()"
+                            OnChange="@OnHorizontalChange" />
+                    </ControlContent>
+                </FormControlLabel>
+            </div>
+        </FormControl>
+    </div>
+    <div
+        class="demo-flex-row">
+         <Badge
+            Class="demo-margin"
+            Color="@Color.Secondary"
+            Nib="1"
+            Variant="@NibVariant.Dot"
+            Horizontal="@Horizontal"
+            Vertical="@Vertical">
+            <MailIcon />
+        </Badge>
+        <Badge
+            Class="demo-margin"
+            Color="@Color.Secondary"
+            Nib="1"
+            Horizontal="@Horizontal"
+            Vertical="@Vertical">
+            <MailIcon />
+        </Badge>
+        <Badge
+            Class="demo-margin"
+            Color="@Color.Secondary"
+            Nib="12"
+            Horizontal="@Horizontal"
+            Vertical="@Vertical">
+            <MailIcon />
+        </Badge>
+        <Badge
+            Class="demo-margin"
+            Color="@Color.Secondary"
+            Nib="123"
+            Horizontal="@Horizontal"
+            Vertical="@Vertical">
+            <MailIcon />
+        </Badge>
+        <Badge
+            Class="demo-margin"
+            Color="@Color.Secondary"
+            Max="999"
+            Nib="1337"
+            Horizontal="@Horizontal"
+            Vertical="@Vertical">
+            <MailIcon />
+        </Badge>
+    </div>
+</div>
+
+@code
+{
+    private Horizontal Horizontal { set; get; } = Horizontal.Right;
+
+    private Vertical Vertical { set; get; } = Vertical.Top;
+
+    private void OnHorizontalChange(ChangeEventArgs args)
+    {
+        if (Enum.TryParse(args.Value.ToString(), out Horizontal horizontal))
+        {
+            Horizontal = horizontal;
+
+            StateHasChanged();
+        }
+    }
+
+    private void OnVerticalChange(ChangeEventArgs args)
+    {
+        if (Enum.TryParse(args.Value.ToString(), out Vertical vertical))
+        {
+            Vertical = vertical;
+
+            StateHasChanged();
+        }
+    }
+}

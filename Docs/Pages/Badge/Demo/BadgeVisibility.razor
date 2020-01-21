@@ -1,0 +1,82 @@
+@namespace Skclusive.Material.Docs
+
+<style>
+    .demo-root {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+    .demo-margin {
+        margin: 8px;
+    }
+    .demo-divider {
+        width: 100%;
+        margin: 16px 0px;
+    }
+    .demo-row {
+        margin-top: 16px;
+    }
+</style>
+
+<div
+    class="demo-root">
+    <div
+        class="demo-row">
+        <Badge
+            Color="@Color.Secondary"
+            Nib="4"
+            Invisible="@Invisible"
+            Class="demo-margin">
+            <MailIcon />
+        </Badge>
+        <Badge
+            Color="@Color.Secondary"
+            Variant="@NibVariant.Dot"
+            Invisible="@Invisible"
+            Class="demo-margin">
+            <MailIcon />
+        </Badge>
+    </div>
+    <FormGroup Row>
+        <FormControlLabel
+            Label="Show Badge">
+            <ControlContent>
+                <Switch
+                    Color="@Color.Primary"
+                    Checked="@(!Invisible)"
+                    OnChange="@OnVisibleChange" />
+            </ControlContent>
+        </FormControlLabel>
+    </FormGroup>
+    <Divider
+        Class="demo-divider" />
+    <div
+        class="demo-row">
+        <Badge
+            Color="@Color.Secondary"
+            Nib="0"
+            Class="demo-margin">
+            <MailIcon />
+        </Badge>
+        <Badge
+            Color="@Color.Secondary"
+            Nib="0"
+            ShowZero
+            Class="demo-margin">
+            <MailIcon />
+        </Badge>
+    </div>
+</div>
+
+@code
+{
+    private bool Invisible { set; get; } = false;
+
+    void OnVisibleChange(EventArgs args)
+    {
+        Invisible = !Invisible;
+
+        StateHasChanged();
+    }
+}

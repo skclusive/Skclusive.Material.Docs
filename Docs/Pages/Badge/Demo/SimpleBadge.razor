@@ -1,0 +1,78 @@
+@namespace Skclusive.Material.Docs
+
+<style>
+    .badge-margin {
+        margin: 16px;
+    }
+    .badge-padding {
+        padding: 0px 16px;
+    }
+</style>
+
+<div>
+    <div>
+        <Badge
+            Class="badge-margin"
+            Nib="4"
+            Color="@Color.Primary">
+            <MailIcon />
+        </Badge>
+        <Badge
+            Class="badge-margin"
+            Nib="4"
+            Color="@Color.Secondary">
+          <MailIcon />
+        </Badge>
+        <IconButton
+            Class="badge-margin"
+            aria-label="4 pending messages">
+            <Badge
+                Nib="4"
+                Color="@Color.Primary">
+                <MailIcon />
+            </Badge>
+        </IconButton>
+    </div>
+
+    <AppBar
+        Class="badge-margin"
+        Position="@AppBarPosition.Static">
+        <Tabs
+            Value="0">
+            <Tab>
+                <LabelContent>
+                    <Badge
+                        Class="badge-padding"
+                        Color="@Color.Secondary"
+                        Nib="4">
+                        Item One
+                    </Badge>
+                </LabelContent>
+            </Tab>
+            <Tab
+                Label="Item Two" />
+            <Tab
+                Label="Item Three" />
+        </Tabs>
+    </AppBar>
+
+    <Badge
+        Color="@Color.Primary"
+        Nib="4"
+        Class="badge-margin">
+        <Typography
+            Class="badge-padding">
+            Typography
+        </Typography>
+    </Badge>
+
+    <Badge
+        Color="@Color.Primary"
+        Nib="4"
+        Class="badge-margin">
+        <Button
+            Variant="@ButtonVariant.Contained">
+            Button
+        </Button>
+    </Badge>
+</div>
