@@ -1,0 +1,68 @@
+﻿@namespace Skclusive.Material.Docs
+@page "/checkboxes"
+
+<div>
+    <Markdown
+         Text="@(@"
+---
+title: Checkbox Blazor component
+components: Checkbox, FormControl, FormGroup, FormLabel, FormControlLabel
+---
+
+# Checkboxes
+
+<p class=""description"">Checkboxes allow the user to select one or more items from a set.</p>
+
+[Checkboxes](https://material.io/design/components/selection-controls.html#checkboxes) can be used to turn an option on or off.
+
+If you have multiple options appearing in a list,
+you can preserve space by using checkboxes instead of on/off switches.
+If you have a single option, avoid using a checkbox and use an on/off switch instead.
+
+{{""demo"": ""Skclusive.Material.Docs.Checkboxes, Skclusive.Material.Docs""}}
+
+`Checkbox` can also be used with a label description thanks to the `FormControlLabel` component.
+
+{{""demo"": ""Skclusive.Material.Docs.CheckboxLabels, Skclusive.Material.Docs""}}
+
+## Checkboxes with FormGroup
+
+`FormGroup` is a helpful wrapper used to group selection controls components that provides an easier API.
+
+{{""demo"": ""Skclusive.Material.Docs.CheckboxesGroup, Skclusive.Material.Docs""}}
+
+## Label placement
+
+You can change the placement of the label:
+
+{{""demo"": ""Skclusive.Material.Docs.FormControlLabelPlacement, Skclusive.Material.Docs""}}
+
+## Customized checkbox
+
+Here is an example of customizing the component. You can learn more about this in the
+[overrides documentation page](/customization/components/).
+
+{{""demo"": ""Skclusive.Material.Docs.CustomizedCheckbox, Skclusive.Material.Docs""}}
+
+## When to use
+
+- [Checkboxes vs. Radio Buttons](https://www.nngroup.com/articles/checkboxes-vs-radio-buttons/)
+- [Checkboxes vs. Switches](https://uxplanet.org/checkbox-vs-toggle-switch-7fc6e83f10b8)
+
+## Accessibility
+
+(WAI-ARIA: https://www.w3.org/TR/wai-aria-practices/#checkbox)
+
+- All form controls should have labels, and this includes radio buttons, checkboxes, and switches. In most cases, this is done by using the `<label>` element ([FormControlLabel](/api/form-control-label/)).
+- When a label can't be used, it's necessary to add an attribute directly to the input component.
+In this case, you can apply the additional attribute (e.g. `aria-label`, `aria-labelledby`, `title`) via the `inputProps` property.
+
+```jsx
+<Checkbox
+    Value=""checkedA""
+    InputProps=""@(new Dictionary<string, object>{{ ""aria-label"", ""Checkbox A"" }})""
+/>
+```
+
+")" />
+</div>

@@ -1,0 +1,155 @@
+@namespace Skclusive.Material.Docs
+
+<style>
+    .demo-green-checkbox {
+        color: #66bb6a;
+    }
+    .demo-green-checkbox-checked {
+        color: #43a047;
+    }
+</style>
+
+<FormGroup
+    Row>
+    <FormControlLabel
+        Label="Secondary">
+        <ControlContent
+            Context="Control">
+            <Checkbox
+                Checked="@CheckedA"
+                Value="CheckedA"
+                OnChange="@OnCheckedAChanged" />
+        </ControlContent>
+    </FormControlLabel>
+    <FormControlLabel
+        Label="Primary">
+        <ControlContent
+            Context="Control">
+            <Checkbox
+                Checked="@CheckedB"
+                OnChange="@OnCheckedBChanged"
+                Value="CheckedB"
+                Color="@Color.Primary" />
+        </ControlContent>
+    </FormControlLabel>
+    <FormControlLabel
+        Label="Uncontrolled">
+        <ControlContent
+            Context="Control">
+            <Checkbox
+                Value="CheckedC" />
+        </ControlContent>
+    </FormControlLabel>
+    <FormControlLabel
+        Label="Disabled">
+        <ControlContent
+            Context="Control">
+            <Checkbox
+                Disabled="true"
+                Value="CheckedD" />
+        </ControlContent>
+    </FormControlLabel>
+    <FormControlLabel
+        Label="Disabled">
+        <ControlContent
+            Context="Control">
+            <Checkbox
+                Checked="true"
+                Disabled="true"
+                Value="CheckedE" />
+        </ControlContent>
+    </FormControlLabel>
+    <FormControlLabel
+        Label="Indeterminate">
+        <ControlContent
+            Context="Control">
+            <Checkbox
+                Checked="@CheckedF"
+                OnChange="@OnCheckedFChanged"
+                Value="CheckedF"
+                Indeterminate />
+        </ControlContent>
+    </FormControlLabel>
+    <FormControlLabel
+        Label="Custom color">
+        <ControlContent
+            Context="Control">
+            <Checkbox
+                Color="@Color.Default"
+                Class="demo-green-checkbox"
+                CheckedClass="demo-green-checkbox-checked"
+                Checked="@CheckedG"
+                OnChange="@OnCheckedGChanged"
+                Value="CheckedG" />
+        </ControlContent>
+    </FormControlLabel>
+    <FormControlLabel
+        Label="Custom icon">
+        <ControlContent
+            Context="Control">
+            <Checkbox
+                Value="CheckedH">
+                <Icon>
+                    <FavoriteIcon />
+                </Icon>
+                <CheckedIcon>
+                    <FavoriteBorderIcon />
+                </CheckedIcon>
+            </Checkbox>
+        </ControlContent>
+    </FormControlLabel>
+    <FormControlLabel
+        Label="Custom size">
+        <ControlContent
+            Context="Control">
+            <Checkbox
+                Value="CheckedI">
+                <Icon>
+                    <CheckBoxOutlineBlankIcon Style="font-size: 1.25rem;" />
+                </Icon>
+                <CheckedIcon>
+                    <CheckBoxIcon Style="font-size: 1.25rem;" />
+                </CheckedIcon>
+            </Checkbox>
+        </ControlContent>
+    </FormControlLabel>
+</FormGroup>
+
+@code
+{
+    private bool CheckedA { set; get; } = true;
+
+    private bool CheckedB { set; get; } = true;
+
+    private bool CheckedF { set; get; } = true;
+
+    private bool CheckedG { set; get; } = true;
+
+    private void OnCheckedAChanged(EventArgs args)
+    {
+        CheckedA = !CheckedA;
+
+        StateHasChanged();
+    }
+
+    private void OnCheckedBChanged(EventArgs args)
+    {
+        CheckedB = !CheckedB;
+
+        StateHasChanged();
+    }
+
+    private void OnCheckedFChanged(EventArgs args)
+    {
+        CheckedF = !CheckedF;
+
+        StateHasChanged();
+    }
+
+    private void OnCheckedGChanged(EventArgs args)
+    {
+        CheckedG = !CheckedG;
+
+        StateHasChanged();
+    }
+}
