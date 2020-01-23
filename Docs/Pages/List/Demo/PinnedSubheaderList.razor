@@ -1,0 +1,49 @@
+@namespace Skclusive.Material.Docs
+
+<style>
+    .demo-subheader-list-root {
+        width: 100%;
+        overflow: auto;
+        position: relative;
+        max-width: 360px;
+        max-height: 300px;
+        background-color: var(--theme-palette-background-paper, #fff);
+    }
+    .demo-list-section {
+        background-color: inherit;
+    }
+    .demo-sublist {
+        padding: 0;
+        background-color: inherit;
+    }
+</style>
+
+<List
+    Class="demo-subheader-list-root">
+    <SubheaderContent>
+        <li />
+    </SubheaderContent>
+    <ChildContent>
+        @foreach(var sectionId in Enumerable.Range(0, 4))
+        {
+            <li
+                @key="@($"section-{sectionId}")"
+                class="demo-list-section">
+                <ul
+                    class="demo-sublist">
+                    <ListSubheader>
+                        @($"I'm sticky {sectionId}")
+                    </ListSubheader>
+                    @foreach(var itemId in Enumerable.Range(0, 2))
+                    {
+                        <ListItem
+                            @key="@($"item-{sectionId}-{itemId}")">
+                            <ListItemText
+                                Primary="@($"Item {itemId}")" />
+                        </ListItem>
+                    }
+                </ul>
+            </li>
+        }
+    </ChildContent>
+</List>

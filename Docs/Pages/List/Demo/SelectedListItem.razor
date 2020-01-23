@@ -1,0 +1,60 @@
+@namespace Skclusive.Material.Docs
+
+<div
+    class="demo-list-root">
+    <List
+        Component="nav"
+        aria-label="main mailbox folders">
+        <ListItem
+            Button
+            Selected="@(SelectedIndex == 0)"
+            OnClick="@((_) => OnSelect(0))">
+            <ListItemIcon>
+                <InboxIcon />
+            </ListItemIcon>
+            <ListItemText
+                Primary="Inbox" />
+        </ListItem>
+        <ListItem
+            Button
+            Selected="@(SelectedIndex == 1)"
+            OnClick="@((_) => OnSelect(1))">
+            <ListItemIcon>
+                <DraftsIcon />
+            </ListItemIcon>
+            <ListItemText
+                Primary="Drafts" />
+        </ListItem>
+    </List>
+    <Divider />
+    <List
+        Component="nav"
+        aria-label="secondary mailbox folders">
+        <ListItem
+            Button
+            Selected="@(SelectedIndex == 2)"
+            OnClick="@((_) => OnSelect(2))">
+          <ListItemText
+            Primary="Trash" />
+        </ListItem>
+        <ListItem
+            Button
+            Selected="@(SelectedIndex == 3)"
+            OnClick="@((_) => OnSelect(3))">
+            <ListItemText
+                Primary="Spam" />
+        </ListItem>
+    </List>
+</div>
+
+@code
+{
+    private int SelectedIndex { set; get; } = 1;
+
+    private void OnSelect(int selectedIndex)
+    {
+        SelectedIndex = selectedIndex;
+
+        StateHasChanged();
+    }
+}
