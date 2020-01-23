@@ -16,6 +16,9 @@ namespace Skclusive.Material.Docs
         public int? Margin { set; get; }
 
         [Parameter]
+        public int? Padding { set; get; }
+
+        [Parameter]
         public string Display { set; get; }
 
         protected override void BuildRenderTree(RenderTreeBuilder builder)
@@ -37,6 +40,11 @@ namespace Skclusive.Material.Docs
                 if (Margin.HasValue)
                 {
                     yield return Tuple.Create<string, object>(nameof(Margin).ToLower(), $"calc(var(--theme-spacing, 8) * {Margin.Value}px)");
+                }
+
+                if (Padding.HasValue)
+                {
+                    yield return Tuple.Create<string, object>(nameof(Padding).ToLower(), $"calc(var(--theme-spacing, 8) * {Padding.Value}px)");
                 }
 
                 if (!string.IsNullOrWhiteSpace(Display))

@@ -1,0 +1,128 @@
+@namespace Skclusive.Material.Docs
+
+<style>
+    .demo-custom-tabs-root {
+        flex-grow: 1;
+    }
+    .demo-custom-tabs-padding {
+        padding: calc(var(--theme-spacing, 8) * 3px);
+    }
+    .demo-custom-tabs-demo1 {
+        background-color: var(--theme-palette-background-paper, #fff);
+    }
+    .demo-custom-tabs-ant {
+        border-bottom: 1px solid #e8e8e8;
+    }
+    .demo-custom-tabs-ant-indicator {
+        background-color: #1890ff;
+    }
+    .demo-custom-tabs-ant-tab {
+        min-width: 72px;
+        font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+        font-weight: var(--theme-typography-font-weight-regular, 400);
+        margin-right: calc(var(--theme-spacing, 8) * 4px);
+        text-transform: none;
+    }
+    .demo-custom-tabs-ant-tab:hover {
+        color: #40a9ff;
+        opacity: 1;
+    }
+    .demo-custom-tabs-ant-tab.Tab-Selected {
+        color: #1890ff;
+        font-weight: var(--theme-typography-font-weight-medium, 500);
+    }
+    .demo-custom-tabs-ant-tab:focus {
+        color: #40a9ff;
+    }
+    .demo-custom-tabs-demo2 {
+        background-color: #2e1534;
+    }
+    .demo-custom-tabs-styled-indicator {
+        display: flex;
+        justify-content: center;
+        background-color: transparent;
+    }
+    .demo-custom-tabs-styled-indicator > div {
+        width: 100%;
+        max-width: 40px;
+        background-color: #635ee7;
+    }
+    .demo-custom-tabs-styled-tab {
+        color: #fff;
+        font-size: calc(var(--theme-font-size-rem-factor, 0.0625) * 15rem);
+        font-weight: var(--theme-typography-font-weight-regular, 400);
+        margin-right: calc(var(--theme-spacing, 8) * 1px);
+        text-transform: none;
+    }
+    .demo-custom-tabs-styled-tab:focus {
+        opacity: 1;
+    }
+</style>
+
+<div
+    class="demo-custom-tabs-root">
+    <div
+        class="demo-custom-tabs-demo1">
+        <Tabs
+            Class="demo-custom-tabs-ant"
+            IndicatorClass="demo-custom-tabs-ant-indicator"
+            Value="@Value"
+            OnChange="@HandleChange"
+            aria-label="ant tabs example">
+            <Tab
+                DisableRipple
+                Class="demo-custom-tabs-ant-tab"
+                Label="Tab 1" />
+            <Tab
+                DisableRipple
+                Class="demo-custom-tabs-ant-tab"
+                Label="Tab 2" />
+            <Tab
+                DisableRipple
+                Class="demo-custom-tabs-ant-tab"
+                Label="Tab 3" />
+        </Tabs>
+        <Typography
+            Class="demo-custom-tabs-padding" />
+    </div>
+    <div
+        class="demo-custom-tabs-demo2">
+        <Tabs
+            IndicatorClass="demo-custom-tabs-styled-indicator"
+            Value="@Value"
+            OnChange="@HandleChange"
+            aria-label="styled tabs example">
+            <IndicatorContent>
+                <div />
+            </IndicatorContent>
+            <ChildContent>
+                <Tab
+                    DisableRipple
+                    Class="demo-custom-tabs-styled-tab"
+                    Label="Workflows" />
+                <Tab
+                    DisableRipple
+                    Class="demo-custom-tabs-styled-tab"
+                    Label="Datasets" />
+                <Tab
+                    DisableRipple
+                    Class="demo-custom-tabs-styled-tab"
+                    Label="Connections" />
+            </ChildContent>
+        </Tabs>
+        <Typography
+            Class="demo-custom-tabs-padding" />
+    </div>
+</div>
+
+@code
+{
+    private object Value { set; get; } = 0;
+
+    private void HandleChange(object value)
+    {
+        Value = value;
+
+        StateHasChanged();
+    }
+}
