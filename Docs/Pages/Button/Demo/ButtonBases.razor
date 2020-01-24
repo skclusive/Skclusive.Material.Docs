@@ -1,0 +1,129 @@
+@namespace Skclusive.Material.Docs
+@inherits StyleComponentBase
+
+<style>
+    .demo-buttonbases {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        min-width: 300px;
+    }
+    .demo-button-image {
+        height: 200px;
+        position: relative;
+    }
+    @media (max-width:599.95px) {
+        .demo-button-image {
+            width: 100% !important;
+            height: 100px;
+        }
+    }
+    .demo-button-image:hover, .demo-button-image.demo-focus-visible {
+        z-index: 1;
+    }
+    .demo-button-image:hover .demo-image-backdrop, .demo-button-image.demo-focus-visible .demo-image-backdrop {
+        opacity: 0.15;
+    }
+    .demo-button-image:hover .demo-image-marked, .demo-button-image.demo-focus-visible .demo-image-marked {
+        opacity: 0;
+    }
+    .demo-button-image:hover .demo-image-title, .demo-button-image.demo-focus-visible .demo-image-title {
+        border: 4px solid currentColor;
+    }
+    .demo-image-button {
+        top: 0;
+        left: 0;
+        color: #fff;
+        right: 0;
+        bottom: 0;
+        display: flex;
+        position: absolute;
+        align-items: center;
+        justify-content: center;
+    }
+    .demo-image-src {
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        position: absolute;
+        background-size: cover;
+        background-position: center 40%;
+    }
+    .demo-image-backdrop {
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        opacity: 0.4;
+        position: absolute;
+        transition: opacity 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+        background-color: #000;
+    }
+    .demo-image-title {
+        padding: 16px 32px 14px;
+        position: relative;
+    }
+    .demo-image-marked {
+        left: calc(50% - 9px);
+        width: 18px;
+        bottom: -2px;
+        height: 3px;
+        position: absolute;
+        transition: opacity 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+        background-color: #fff;
+    }
+</style>
+
+<div
+    class="demo-buttonbases">
+    @foreach(var image in Images)
+    {
+        <ButtonBase
+            FocusRipple
+            @key="@image.title"
+            Class="demo-button-image"
+            FocusVisibleClassName="demo-focus-visible"
+            Style="@($"width: {image.width};")">
+            <span
+                class="demo-image-src"
+                Style="@($"background-image: url({image.url});")" />
+            <span
+                class="demo-image-backdrop" />
+            <span
+                class="demo-image-button">
+                <Typography
+                    Component="span"
+                    Variant="@TypographyVariant.Subtitle1"
+                    Color="@Color.Inherit"
+                    Class="demo-image-title">
+                    @image.title
+                    <span
+                        class="demo-image-marked" />
+                </Typography>
+            </span>
+        </ButtonBase>
+    }
+</div>
+
+@code
+{
+    private (string url, string title, string width)[] Images =
+    {
+        (
+            url: "./images/grid-list/breakfast.jpg",
+            title: "Breakfast",
+            width: "40%"
+        ),
+        (
+            url: "./images/grid-list/burgers.jpg",
+            title: "Burgers",
+            width: "30%"
+        ),
+        (
+            url: "./images/grid-list/camera.jpg",
+            title: "Camera",
+            width: "30%"
+        )
+    };
+}

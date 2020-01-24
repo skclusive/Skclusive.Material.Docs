@@ -1,0 +1,48 @@
+@namespace Skclusive.Material.Docs
+
+<div>
+    <Button
+        Variant="@ButtonVariant.Outlined"
+        Style="margin: 8px;">
+        Default
+    </Button>
+    <Button
+        Variant="@ButtonVariant.Outlined"
+        Color="@Color.Primary"
+        Style="margin: 8px;">
+        Primary
+    </Button>
+    <Button
+        Variant="@ButtonVariant.Outlined"
+        Color="@Color.Secondary"
+        Style="margin: 8px;">
+        Secondary
+    </Button>
+    <Button
+        Variant="@ButtonVariant.Outlined"
+        Color="@Color.Secondary"
+        Disabled="true"
+        Style="margin: 8px;">
+        Disabled
+    </Button>
+    <Button
+        Variant="@ButtonVariant.Outlined"
+        Href="#outlined-buttons"
+        Style="margin: 8px;">
+        Link
+    </Button>
+    <input
+        accept="image/*"
+        style="display: none;"
+        id="outlined-button-file"
+        multiple
+        type="file" />
+    <label for="outlined-button-file">
+        <Button
+            Variant="@ButtonVariant.Outlined"
+            Component="span"
+            Style="margin: 8px;">
+            Upload
+        </Button>
+    </label>
+</div>
