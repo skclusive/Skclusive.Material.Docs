@@ -15,11 +15,6 @@
     .demo-control {
         padding: 16px;
     }
-    .demo-group {
-        display: flex;
-        flex-wrap: wrap;
-        flex-direction: row;
-    }
 </style>
 
 <Grid
@@ -63,22 +58,22 @@
                     <FormControl
                         Component="fieldset">
                         <FormLabel>Direction</FormLabel>
-                        <div
-                            class="demo-group">
+                        <RadioGroup
+                            Row
+                            Name="Direction"
+                            aria-label="Direction"
+                            Value="@Direction.ToString()"
+                            OnChange="@OnDirectionChange">
                             @foreach(var value in Enum.GetValues(typeof(Direction)).Cast<Direction>())
                             {
                                 <FormControlLabel
                                     @key="value"
                                     Label="@value.ToString()">
-                                    <ControlContent>
-                                        <Radio
-                                            Checked="@(Direction == value)"
-                                            Value="@value.ToString()"
-                                            OnChange="@OnDirectionChange" />
-                                    </ControlContent>
+                                    <Radio
+                                        Value="@value.ToString()" />
                                 </FormControlLabel>
                             }
-                        </div>
+                        </RadioGroup>
                     </FormControl>
                 </Grid>
                 <Grid
@@ -87,22 +82,22 @@
                     <FormControl
                         Component="fieldset">
                         <FormLabel>Justify</FormLabel>
-                        <div
-                            class="demo-group">
+                        <RadioGroup
+                            Row
+                            Name="Justify"
+                            aria-label="Justify"
+                            Value="@Justify.ToString()"
+                            OnChange="@OnJustifyChange">
                             @foreach(var value in Enum.GetValues(typeof(Justify)).Cast<Justify>())
                             {
                                 <FormControlLabel
                                     @key="value"
                                     Label="@value.ToString()">
-                                    <ControlContent>
-                                        <Radio
-                                            Checked="@(Justify == value)"
-                                            Value="@value.ToString()"
-                                            OnChange="@OnJustifyChange" />
-                                    </ControlContent>
+                                    <Radio
+                                        Value="@value.ToString()"/>
                                 </FormControlLabel>
                             }
-                        </div>
+                        </RadioGroup>
                     </FormControl>
                 </Grid>
                 <Grid
@@ -111,22 +106,22 @@
                     <FormControl
                         Component="fieldset">
                         <FormLabel>AlignItems</FormLabel>
-                        <div
-                            class="demo-group">
+                        <RadioGroup
+                            Row
+                            Name="AlignItems"
+                            aria-label="AlignItems"
+                            Value="@AlignItems.ToString()"
+                            OnChange="@OnAlignItemsChange">
                             @foreach(var value in Enum.GetValues(typeof(AlignItems)).Cast<AlignItems>())
                             {
                                 <FormControlLabel
                                     @key="value"
                                     Label="@value.ToString()">
-                                    <ControlContent>
-                                        <Radio
-                                            Checked="@(AlignItems == value)"
-                                            Value="@value.ToString()"
-                                            OnChange="@OnAlignItemsChange" />
-                                    </ControlContent>
+                                    <Radio
+                                        Value="@value.ToString()" />
                                 </FormControlLabel>
                             }
-                        </div>
+                        </RadioGroup>
                     </FormControl>
                 </Grid>
             </Grid>

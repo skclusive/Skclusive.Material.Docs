@@ -19,11 +19,6 @@
     .demo-shape-circle {
         border-radius: 50%;
     }
-    .demo-group {
-        display: flex;
-        flex-wrap: wrap;
-        flex-direction: column;
-    }
 </style>
 
 <div>
@@ -36,27 +31,22 @@
                 Component="legend">
                 Overlap
             </FormLabel>
-            <div
-                class="demo-group">
+            <RadioGroup
+                Name="Overlap"
+                aria-label="Overlap"
+                Value="@Overlap.ToString()"
+                OnChange="@OnOverlapChange">
                 <FormControlLabel
                     Label="@NibOverlap.Rectangle.ToString()">
-                    <ControlContent>
-                        <Radio
-                            Checked="@(Overlap == NibOverlap.Rectangle)"
-                            Value="@NibOverlap.Rectangle.ToString()"
-                            OnChange="@OnOverlapChange" />
-                    </ControlContent>
+                    <Radio
+                        Value="@NibOverlap.Rectangle.ToString()" />
                 </FormControlLabel>
                 <FormControlLabel
                     Label="@NibOverlap.Circle.ToString()">
-                    <ControlContent>
-                        <Radio
-                            Checked="@(Overlap == NibOverlap.Circle)"
-                            Value="@NibOverlap.Circle.ToString()"
-                            OnChange="@OnOverlapChange" />
-                    </ControlContent>
+                    <Radio
+                        Value="@NibOverlap.Circle.ToString()" />
                 </FormControlLabel>
-            </div>
+            </RadioGroup>
         </FormControl>
     </div>
     <div

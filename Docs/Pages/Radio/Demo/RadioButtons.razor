@@ -1,0 +1,63 @@
+@namespace Skclusive.Material.Docs
+
+<style>
+    .demo-radio-green {
+        color: #66bb6a;
+    }
+    .demo-radio-green.Radio-Checked {
+        color: #43a047;
+    }
+</style>
+
+<div>
+    <Radio
+        Checked="@(Value == "a")"
+        OnChange="@OnValueChanged"
+        Value="a"
+        Name="radio-button-demo" />
+    <Radio
+        Checked="@(Value == "b")"
+        OnChange="@OnValueChanged"
+        Value="b"
+        Name="radio-button-demo" />
+    <Radio
+        Checked="@(Value == "c")"
+        Color="@Color.Default"
+        Class="demo-radio-green"
+        OnChange="@OnValueChanged"
+        Value="c"
+        Name="radio-button-demo" />
+    <Radio
+        Checked="@(Value == "d")"
+        OnChange="@OnValueChanged"
+        Value="d"
+        Color="@Color.Default"
+        Name="radio-button-demo" />
+    <Radio
+        Checked="@(Value == "e")"
+        OnChange="@OnValueChanged"
+        Value="e"
+        Color="@Color.Default"
+        Name="radio-button-demo">
+        <Icon>
+            <RadioButtonUncheckedIcon
+                FontSize="@FontSize.Small" />
+        </Icon>
+        <CheckedIcon>
+            <RadioButtonCheckedIcon
+                FontSize="@FontSize.Small" />
+        </CheckedIcon>
+    </Radio>
+</div>
+
+@code
+{
+    private string Value { set; get; } = "a";
+
+    private void OnValueChanged(ChangeEventArgs args)
+    {
+        Value = args.Value.ToString();
+
+        StateHasChanged();
+    }
+}

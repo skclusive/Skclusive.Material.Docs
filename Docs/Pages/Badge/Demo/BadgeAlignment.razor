@@ -15,11 +15,6 @@
     .demo-form-control {
         margin-bottom: 24px;
     }
-    .demo-group {
-        display: flex;
-        flex-wrap: wrap;
-        flex-direction: column;
-    }
 </style>
 
 <div
@@ -33,27 +28,22 @@
                 Component="legend">
                 Vertical
             </FormLabel>
-            <div
-                class="demo-group">
+            <RadioGroup
+                Name="Vertical"
+                aria-label="Vertical"
+                Value="@Vertical.ToString()"
+                OnChange="@OnVerticalChange">
                 <FormControlLabel
                     Label="@Vertical.Top.ToString()">
-                    <ControlContent>
-                        <Radio
-                            Checked="@(Vertical == Vertical.Top)"
-                            Value="@Vertical.Top.ToString()"
-                            OnChange="@OnVerticalChange" />
-                    </ControlContent>
+                    <Radio
+                        Value="@Vertical.Top.ToString()" />
                 </FormControlLabel>
                 <FormControlLabel
                     Label="@Vertical.Bottom.ToString()">
-                    <ControlContent>
-                        <Radio
-                            Checked="@(Vertical == Vertical.Bottom)"
-                            Value="@Vertical.Bottom.ToString()"
-                            OnChange="@OnVerticalChange" />
-                    </ControlContent>
+                    <Radio
+                        Value="@Vertical.Bottom.ToString()" />
                 </FormControlLabel>
-            </div>
+            </RadioGroup>
         </FormControl>
         <FormControl
             Component="fieldset"
@@ -62,27 +52,22 @@
                 Component="legend">
                 Horizontal
             </FormLabel>
-            <div
-                class="demo-group">
+            <RadioGroup
+                Name="Horizontal"
+                aria-label="Horizontal"
+                Value="@Horizontal.ToString()"
+                OnChange="@OnHorizontalChange">
                 <FormControlLabel
                     Label="@Horizontal.Right.ToString()">
-                    <ControlContent>
-                        <Radio
-                            Checked="@(Horizontal == Horizontal.Right)"
-                            Value="@Horizontal.Right.ToString()"
-                            OnChange="@OnHorizontalChange" />
-                    </ControlContent>
+                    <Radio
+                        Value="@Horizontal.Right.ToString()" />
                 </FormControlLabel>
                 <FormControlLabel
                     Label="@Horizontal.Left.ToString()">
-                    <ControlContent>
-                        <Radio
-                            Checked="@(Horizontal == Horizontal.Left)"
-                            Value="@Horizontal.Left.ToString()"
-                            OnChange="@OnHorizontalChange" />
-                    </ControlContent>
+                    <Radio
+                        Value="@Horizontal.Left.ToString()" />
                 </FormControlLabel>
-            </div>
+            </RadioGroup>
         </FormControl>
     </div>
     <div

@@ -1,8 +1,6 @@
 ﻿<div class="root">
     <FormControlLabel Label="Slide">
-        <ControlContent>
-            <Switch Checked="@SlideInProp" OnChange="@ToggleSlide" />
-        </ControlContent>
+        <Switch Checked="@SlideInProp" OnChange="@ToggleSlide" />
     </FormControlLabel>
     <div class="container">
         <Slide Placement="@Placement.Top" In="@SlideInProp" MountOnEnter UnmountOnExit>

@@ -32,19 +32,22 @@
                 <Grid
                     Item>
                     <FormLabel>spacing</FormLabel>
-                    @foreach(var value in Enum.GetValues(typeof(Spacing)).Cast<Spacing>())
-                    {
-                        <FormControlLabel
-                            @key="value"
-                            Label="@value.ToString()">
-                            <ControlContent>
+                    <RadioGroup
+                        Row
+                        Name="Spacing"
+                        aria-label="Spacing"
+                        Value="@Spacing.ToString()"
+                        OnChange="@OnSpacingChange">
+                        @foreach(var value in Enum.GetValues(typeof(Spacing)).Cast<Spacing>())
+                        {
+                            <FormControlLabel
+                                @key="value"
+                                Label="@value.ToString()">
                                 <Radio
-                                    Checked="@(Spacing == value)"
-                                    Value="@value.ToString()"
-                                    OnChange="@OnChange" />
-                            </ControlContent>
-                        </FormControlLabel>
-                    }
+                                    Value="@value.ToString()" />
+                            </FormControlLabel>
+                        }
+                    </RadioGroup>
                 </Grid>
             </Grid>
         </Paper>
@@ -55,7 +58,7 @@
 {
     private Spacing Spacing { set; get; } = Spacing.Two;
 
-    private void OnChange(ChangeEventArgs args)
+    private void OnSpacingChange(ChangeEventArgs args)
     {
         if (Enum.TryParse(args.Value.ToString(), out Spacing spacing))
         {

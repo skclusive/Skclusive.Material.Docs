@@ -13,105 +13,80 @@
     Row>
     <FormControlLabel
         Label="Secondary">
-        <ControlContent
-            Context="Control">
-            <Checkbox
-                Checked="@CheckedA"
-                Value="CheckedA"
-                OnChange="@OnCheckedAChanged" />
-        </ControlContent>
+        <Checkbox
+            Checked="@CheckedA"
+            Value="CheckedA"
+            OnChange="@OnCheckedAChanged" />
     </FormControlLabel>
     <FormControlLabel
         Label="Primary">
-        <ControlContent
-            Context="Control">
-            <Checkbox
-                Checked="@CheckedB"
-                OnChange="@OnCheckedBChanged"
-                Value="CheckedB"
-                Color="@Color.Primary" />
-        </ControlContent>
+        <Checkbox
+            Checked="@CheckedB"
+            OnChange="@OnCheckedBChanged"
+            Value="CheckedB"
+            Color="@Color.Primary" />
     </FormControlLabel>
     <FormControlLabel
         Label="Uncontrolled">
-        <ControlContent
-            Context="Control">
-            <Checkbox
-                Value="CheckedC" />
-        </ControlContent>
+        <Checkbox
+            Value="CheckedC" />
     </FormControlLabel>
     <FormControlLabel
+        Disabled="true"
         Label="Disabled">
-        <ControlContent
-            Context="Control">
-            <Checkbox
-                Disabled="true"
-                Value="CheckedD" />
-        </ControlContent>
+        <Checkbox
+            Disabled="true"
+            Value="CheckedD" />
     </FormControlLabel>
     <FormControlLabel
+        Disabled="true"
         Label="Disabled">
-        <ControlContent
-            Context="Control">
-            <Checkbox
-                Checked="true"
-                Disabled="true"
-                Value="CheckedE" />
-        </ControlContent>
+        <Checkbox
+            Checked="true"
+            Disabled="true"
+            Value="CheckedE" />
     </FormControlLabel>
     <FormControlLabel
         Label="Indeterminate">
-        <ControlContent
-            Context="Control">
-            <Checkbox
-                Checked="@CheckedF"
-                OnChange="@OnCheckedFChanged"
-                Value="CheckedF"
-                Indeterminate />
-        </ControlContent>
+        <Checkbox
+            Checked="@CheckedF"
+            OnChange="@OnCheckedFChanged"
+            Value="CheckedF"
+            Indeterminate />
     </FormControlLabel>
     <FormControlLabel
         Label="Custom color">
-        <ControlContent
-            Context="Control">
-            <Checkbox
-                Color="@Color.Default"
-                Class="demo-green-checkbox"
-                CheckedClass="demo-green-checkbox-checked"
-                Checked="@CheckedG"
-                OnChange="@OnCheckedGChanged"
-                Value="CheckedG" />
-        </ControlContent>
+        <Checkbox
+            Color="@Color.Default"
+            Class="demo-green-checkbox"
+            CheckedClass="demo-green-checkbox-checked"
+            Checked="@CheckedG"
+            OnChange="@OnCheckedGChanged"
+            Value="CheckedG" />
     </FormControlLabel>
     <FormControlLabel
         Label="Custom icon">
-        <ControlContent
-            Context="Control">
-            <Checkbox
-                Value="CheckedH">
-                <Icon>
-                    <FavoriteIcon />
-                </Icon>
-                <CheckedIcon>
-                    <FavoriteBorderIcon />
-                </CheckedIcon>
-            </Checkbox>
-        </ControlContent>
+        <Checkbox
+            Value="CheckedH">
+            <Icon>
+                <FavoriteIcon />
+            </Icon>
+            <CheckedIcon>
+                <FavoriteBorderIcon />
+            </CheckedIcon>
+        </Checkbox>
     </FormControlLabel>
     <FormControlLabel
         Label="Custom size">
-        <ControlContent
-            Context="Control">
-            <Checkbox
-                Value="CheckedI">
-                <Icon>
-                    <CheckBoxOutlineBlankIcon Style="font-size: 1.25rem;" />
-                </Icon>
-                <CheckedIcon>
-                    <CheckBoxIcon Style="font-size: 1.25rem;" />
-                </CheckedIcon>
-            </Checkbox>
-        </ControlContent>
+        <Checkbox
+            Value="CheckedI">
+            <Icon>
+                <CheckBoxOutlineBlankIcon Style="font-size: 1.25rem;" />
+            </Icon>
+            <CheckedIcon>
+                <CheckBoxIcon Style="font-size: 1.25rem;" />
+            </CheckedIcon>
+        </Checkbox>
     </FormControlLabel>
 </FormGroup>
 

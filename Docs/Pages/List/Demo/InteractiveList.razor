@@ -19,21 +19,17 @@
         Row>
         <FormControlLabel
             Label="Enable dense">
-            <ControlContent>
-                <Checkbox
-                    Checked="@Dense"
-                    OnChange="@OnDenseChange"
-                    Value="Dense" />
-            </ControlContent>
+            <Checkbox
+                Checked="@Dense"
+                OnChange="@OnDenseChange"
+                Value="Dense" />
         </FormControlLabel>
         <FormControlLabel
             Label="Enable secondary text">
-            <ControlContent>
-                <Checkbox
-                    Checked="@Secondary"
-                    OnChange="@OnSecondaryChange"
-                    Value="Secondary" />
-            </ControlContent>
+            <Checkbox
+                Checked="@Secondary"
+                OnChange="@OnSecondaryChange"
+                Value="Secondary" />
         </FormControlLabel>
     </FormGroup>
     <Grid
