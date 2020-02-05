@@ -1,0 +1,137 @@
+@namespace Skclusive.Material.Docs
+
+<div
+    style="display: flex; flex-wrap: wrap;">
+    <TextField
+        Label="With filled TextField"
+        Id="filled-simple-start-adornment"
+        Variant="@ControlVariant.Filled"
+        Style="margin: 8px; flex-basis: 200px;">
+        <StartAdornment>
+             <InputAdornment
+                Adornment="Kg"
+                Position="@InputPosition.Start" />
+        </StartAdornment>
+    </TextField>
+    <TextField
+        Label="Amount"
+        Id="filled-adornment-amount"
+        Variant="@ControlVariant.Filled"
+        Value="@Amount"
+        OnChange="@OnAmountChanged"
+        Style="margin: 8px; flex-basis: 200px;">
+        <StartAdornment>
+             <InputAdornment
+                Adornment="$"
+                Position="@InputPosition.Start" />
+        </StartAdornment>
+    </TextField>
+    <TextField
+        Label="Weight"
+        Id="filled-adornment-weight"
+        Variant="@ControlVariant.Filled"
+        Value="@Weight"
+        OnChange="@OnWeightChanged"
+        Style="margin: 8px; flex-basis: 200px;">
+        <EndAdornment>
+             <InputAdornment
+                Adornment="Kg"
+                Position="@InputPosition.End" />
+        </EndAdornment>
+    </TextField>
+    <TextField
+        Label="Password"
+        Id="filled-adornment-password"
+        Variant="@ControlVariant.Filled"
+        Type="@(ShowPassword ? "text" : "password")"
+        Value="@Password"
+        OnChange="@OnPasswordChanged"
+        Style="margin: 8px; flex-basis: 200px;">
+        <EndAdornment>
+            <InputAdornment
+                Position="@InputPosition.End"
+                Context="AdornmentContext">
+                <IconButton
+                    aria-label="toggle password visibility"
+                    OnClick="@HandleClickShowPassword"
+                    OnMouseDown="@HandleMouseDownPassword">
+                    @if (ShowPassword)
+                    {
+                        <VisibilityIcon />
+                    }
+                    else
+                    {
+                        <VisibilityOffIcon />
+                    }
+                </IconButton>
+            </InputAdornment>
+        </EndAdornment>
+    </TextField>
+    <TextField
+        Id="filled-adornment-dense"
+        Style="margin: 8px; flex-basis: 200px;"
+        Variant="@ControlVariant.Filled"
+        Margin="@Margin.Dense"
+        Label="Amount in Euro">
+        <StartAdornment>
+            <InputAdornment
+                Adornment="€"
+                Position="@InputPosition.Start" />
+        </StartAdornment>
+    </TextField>
+    <TextField
+        Id="filled-adornment-extra-dense"
+        Style="margin: 8px; flex-basis: 200px;"
+        Variant="@ControlVariant.Filled"
+        Margin="@Margin.Dense"
+        HiddenLabel="true">
+        <StartAdornment>
+            <InputAdornment
+                Adornment="€"
+                Position="@InputPosition.Start" />
+        </StartAdornment>
+    </TextField>
+</div>
+
+@code
+{
+    private string Amount { set; get; }
+
+    private string Weight { set; get; }
+
+    private string Password { set; get; }
+
+    private bool ShowPassword { set; get; }
+
+    private void OnAmountChanged(ChangeEventArgs args)
+    {
+        Amount = args.Value?.ToString();
+
+        StateHasChanged();
+    }
+
+    private void OnWeightChanged(ChangeEventArgs args)
+    {
+        Weight = args.Value?.ToString();
+
+        StateHasChanged();
+    }
+
+    private void OnPasswordChanged(ChangeEventArgs args)
+    {
+        Password = args.Value?.ToString();
+
+        StateHasChanged();
+    }
+
+    private void HandleClickShowPassword(EventArgs args)
+    {
+        ShowPassword = !ShowPassword;
+
+        StateHasChanged();
+    }
+
+    private void HandleMouseDownPassword(EventArgs args)
+    {
+    }
+}

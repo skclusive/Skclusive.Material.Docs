@@ -1,0 +1,117 @@
+@namespace Skclusive.Material.Docs
+@inherits MaterialComponentBase
+@inject DomHelpers DomHelpers
+
+<div
+    style="display: flex; flex-wrap: wrap;">
+    <FormControl
+        Style="margin: 8px;">
+        <InputLabel
+            For="component-simple">
+            Name
+        </InputLabel>
+        <StandardInput
+            Id="component-simple"
+            Value="@Name"
+            OnChange="@HandleNameChange" />
+    </FormControl>
+    <FormControl
+        Style="margin: 8px;">
+        <InputLabel
+            For="component-helper">
+            Name
+        </InputLabel>
+        <StandardInput
+            Id="component-helper"
+            Value="@Name"
+            OnChange="@HandleNameChange"
+            aria-describedby="component-helper-text" />
+        <FormHelperText
+            Id="component-helper-text">
+            Some important helper text
+        </FormHelperText>
+    </FormControl>
+    <FormControl
+        Disabled="true"
+        Style="margin: 8px;">
+        <InputLabel
+            For="component-disabled">
+            Name
+        </InputLabel>
+        <StandardInput
+            Id="component-disabled"
+            Value="@Name"
+            OnChange="@HandleNameChange" />
+        <FormHelperText>
+            Disabled
+        </FormHelperText>
+    </FormControl>
+    <FormControl
+        Error="true"
+        Style="margin: 8px;">
+        <InputLabel
+            For="component-error">
+            Name
+        </InputLabel>
+        <StandardInput
+            id="component-error"
+            Value="@Name"
+            OnChange="@HandleNameChange"
+            aria-describedby="component-error-text" />
+        <FormHelperText
+            Id="component-error-text">
+            Error
+        </FormHelperText>
+    </FormControl>
+    <FormControl
+        Style="margin: 8px;"
+        Variant="@ControlVariant.Outlined">
+        <InputLabel
+            RootRef="@LabelRef"
+            For="component-outlined">
+            Name
+        </InputLabel>
+        <OutlinedInput
+            Id="component-outlined"
+            Value="@Name"
+            OnChange="@HandleNameChange"
+            LabelWidth="@LabelWidth" />
+    </FormControl>
+    <FormControl
+        Style="margin: 8px;"
+        Variant="@ControlVariant.Filled">
+        <InputLabel
+            For="component-filled">
+            Name
+        </InputLabel>
+        <FilledInput
+            Id="component-filled"
+            Value="@Name"
+            OnChange="@HandleNameChange" />
+    </FormControl>
+</div>
+
+@code
+{
+    private string Name { set; get; }
+
+    private double LabelWidth { set; get; }
+
+    private IReference LabelRef { get; set; } = new Reference();
+
+    private void HandleNameChange(ChangeEventArgs args)
+    {
+        Name = args.Value?.ToString();
+
+        StateHasChanged();
+    }
+
+    protected override async Task OnAfterMountAsync()
+    {
+        var offset = await DomHelpers.GetElementOffsetAsync(LabelRef.Current);
+
+        LabelWidth = offset.Width;
+
+        StateHasChanged();
+    }
+}
