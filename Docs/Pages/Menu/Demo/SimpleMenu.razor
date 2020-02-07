@@ -1,6 +1,4 @@
-﻿@page "/menu"
-
-@inherits MaterialComponentBase
+@namespace Skclusive.Material.Docs
 
 <div>
     <Button
@@ -9,13 +7,22 @@
         Open Menu
     </Button>
     <Menu
-        id="simple-menu"
+        Id="simple-menu"
         Open="@Open"
         AnchorRef="@ButtonRef"
         OnClose="@HandleClose">
-        <MenuItem OnClick="@HandleClose">Profile</MenuItem>
-        <MenuItem OnClick="@HandleClose">My account</MenuItem>
-        <MenuItem OnClick="@HandleClose">Logout</MenuItem>
+        <MenuItem
+            OnClick="@HandleClose">
+            Profile
+        </MenuItem>
+        <MenuItem
+            OnClick="@HandleClose">
+            My account
+        </MenuItem>
+        <MenuItem
+            OnClick="@HandleClose">
+            Logout
+        </MenuItem>
     </Menu>
 </div>
 
@@ -46,4 +53,3 @@
         StateHasChanged();
     }
 }
-
