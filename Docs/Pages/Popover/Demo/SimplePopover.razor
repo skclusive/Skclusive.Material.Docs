@@ -1,23 +1,22 @@
-﻿@page "/popover"
-
-@inherits MaterialComponentBase
+@namespace Skclusive.Material.Docs
 
 <div>
     <Button
         Variant="@ButtonVariant.Contained"
         OnClick="@HandleOpen"
-        RootRef="@ButtonRef">
+        RootRef="@AnchorRef">
         Open Popover
     </Button>
     <Popover
         Open="@Open"
-        AnchorRef="@ButtonRef"
+        AnchorRef="@AnchorRef"
         OnClose="@HandleClose"
         AnchorVerticalOrigin="@VerticalOrigin.Bottom"
         AnchorHorizontalOrigin="@HorizontalOrigin.Center"
         TransformVerticalOrigin="@VerticalOrigin.Top"
         TransformHorizontalOrigin="@HorizontalOrigin.Center">
-        <Typography Style="padding: 16px;">
+        <Typography
+            Style="padding: 16px;">
             The content of the Popover.
         </Typography>
     </Popover>
@@ -27,7 +26,7 @@
 {
     private bool Open { set; get; }
 
-    private IReference ButtonRef { set; get; } = new Reference();
+    private IReference AnchorRef { set; get; } = new Reference();
 
     private void HandleClose()
     {
@@ -43,4 +42,3 @@
         StateHasChanged();
     }
 }
-
