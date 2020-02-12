@@ -1,29 +1,37 @@
-﻿<Drawer Open="@Open" 
-        OnClose="@OnClose" 
-        Anchor="@Placement.Start"
-        Variant="@DrawerVariant.Persistent"
-        Style="flex-shrink: 0;"
-        PaperStyle="width: 240px;">
-    <div class="Toolbar-Regular drawer-header">
-        <IconButton OnClick="@OnClose">
-             <ChevronLeftIcon />
+﻿<Drawer
+    Open="@Open"
+    OnClose="@OnClose"
+    Anchor="@Anchor.Left"
+    Variant="@DrawerVariant.Persistent"
+    Style="flex-shrink: 0;"
+    PaperStyle="width: 240px;">
+    <div
+        class="Toolbar-Regular drawer-header">
+        <IconButton
+            OnClick="@OnClose">
+            <ChevronLeftIcon />
         </IconButton>
     </div>
     <Divider />
     <List>
-        <ChildContent>
-            @foreach(var link in Links)
-            {
-                <ListItem @key="link.Item2" NoWrap>
-                    <NavLink class="@context.Class" style="@(context.Style + ";color: inherit;")" href="@link.Item2" Match="@(link.Item4 ? NavLinkMatch.All : NavLinkMatch.Prefix)">
-                        <ListItemIcon>
-                            @link.Item3
-                        </ListItemIcon>
-                        <ListItemText Primary="@link.Item1" />
-                    </NavLink>
-                </ListItem>
-            }
-        </ChildContent>
+        @foreach (var link in Links)
+        {
+            <ListItem
+                @key="link.Item2"
+                NoWrap>
+                <NavLink
+                    class="@context.Class"
+                    style="@(context.Style + ";color: inherit;")"
+                    href="@link.Item2"
+                    Match="@(link.Item4 ? NavLinkMatch.All : NavLinkMatch.Prefix)">
+                    <ListItemIcon>
+                        @link.Item3
+                    </ListItemIcon>
+                    <ListItemText
+                        Primary="@link.Item1" />
+                </NavLink>
+            </ListItem>
+        }
     </List>
 </Drawer>
 

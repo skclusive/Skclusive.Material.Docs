@@ -1,0 +1,88 @@
+@namespace Skclusive.Material.Docs
+
+@inherits MaterialComponent
+
+<Component
+    Tag="div"
+    Class="@_Class"
+    Style="@_Style"
+    Role="presentation"
+    OnClick="@HandleClickAsync"
+    OnKeyDown="@HandleKeyDownAsync"
+    Context="ComponentContext">
+    @ChildContent
+    <List>
+        @foreach (var (inbox, index) in Inboxes)
+        {
+            <ListItem
+                Button
+                @key="@inbox">
+                <ListItemIcon>
+                    @if (index % 2 == 0)
+                    {
+                        <InboxIcon />
+                    } else
+                    {
+                        <MailIcon />
+                    }
+                </ListItemIcon>
+                <ListItemText
+                    Primary="@inbox" />
+            </ListItem>
+        }
+    </List>
+    <Divider />
+    <List>
+        @foreach (var (folder, index) in Folders)
+        {
+            <ListItem
+                Button
+                @key="@folder">
+                <ListItemIcon>
+                    @if (index % 2 == 0)
+                    {
+                        <InboxIcon />
+                    } else
+                    {
+                        <MailIcon />
+                    }
+                </ListItemIcon>
+                <ListItemText
+                    Primary="@folder" />
+            </ListItem>
+        }
+    </List>
+</Component>
+
+@code
+{
+    [Parameter]
+    public bool Side { set; get; }
+
+    protected override IEnumerable<Tuple<string, object>> Styles
+    {
+        get
+        {
+            foreach (var item in base.Styles)
+                yield return item;
+
+            yield return Tuple.Create<string, object>("width", $"{(Side ? "240" : "auto")}px");
+        }
+    }
+
+    protected IEnumerable<(string inbox, int index)> Inboxes
+    {
+        get
+        {
+            return (new string [] { "Inbox", "Starred", "Send email", "Drafts" }).Select((inbox, index) => (inbox, index));
+        }
+    }
+
+    protected IEnumerable<(string folder, int index)> Folders
+    {
+        get
+        {
+            return (new string [] { "All mail", "Trash", "Spam" }).Select((folder, index) => (folder, index));
+        }
+    }
+}
