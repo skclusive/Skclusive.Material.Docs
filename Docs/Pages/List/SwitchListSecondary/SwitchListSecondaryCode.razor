@@ -1,0 +1,81 @@
+@namespace Skclusive.Material.Docs
+@inherits MaterialComponentBase
+
+<Markdown
+    Class="@_Class"
+    Style="@_Style"
+    Text="@(@"
+```html
+<List
+    Class=""demo-list-root"">
+    <SubheaderContent>
+        <ListSubheader>
+            Settings
+        </ListSubheader>
+    </SubheaderContent>
+    <ChildContent>
+        <ListItem>
+            <ChildContent>
+                <ListItemIcon>
+                    <WifiIcon />
+                </ListItemIcon>
+                <ListItemText
+                    Id=""switch-list-label-wifi""
+                    Primary=""Wi-Fi"" />
+            </ChildContent>
+            <SecondaryAction>
+                <ListItemSecondaryAction>
+                    <Switch
+                        Edge=""@Edge.End""
+                        Checked=""@(IsChecked(1))""
+                        OnChange=""@((_) => ToggleChecked(1))""
+                        InputProps=""@(new Dictionary<string, object>() { {""aria-labelledby"", ""switch-list-label-wifi"" }})"" />
+                </ListItemSecondaryAction>
+            </SecondaryAction>
+        </ListItem>
+        <ListItem>
+            <ChildContent>
+                <ListItemIcon>
+                    <BluetoothIcon />
+                </ListItemIcon>
+                <ListItemText
+                    Id=""switch-list-label-bluetooth""
+                    Primary=""Bluetooth"" />
+            </ChildContent>
+            <SecondaryAction>
+                <ListItemSecondaryAction>
+                    <Switch
+                        Edge=""@Edge.End""
+                        Checked=""@(IsChecked(2))""
+                        OnChange=""@((_) => ToggleChecked(2))""
+                        InputProps=""@(new Dictionary<string, object>() { {""aria-labelledby"", ""switch-list-label-bluetooth"" }})"" />
+                </ListItemSecondaryAction>
+            </SecondaryAction>
+        </ListItem>
+    </ChildContent>
+</List>
+```
+
+```csharp
+@code
+{
+    private Dictionary<int, bool> checkedMapping = new Dictionary<int, bool>()
+    {
+        { 1, true },
+        { 2, false }
+    };
+
+    private bool IsChecked(int id)
+    {
+        bool xchecked = checkedMapping[id];
+
+        return xchecked;
+    }
+
+    private void ToggleChecked(int id)
+    {
+        checkedMapping[id] = !checkedMapping[id];
+    }
+}
+```
+")" />
