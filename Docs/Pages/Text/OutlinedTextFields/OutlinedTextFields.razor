@@ -128,49 +128,6 @@
         Class="demo-text-field"
         Margin="@Margin.Normal"
         Variant="@ControlVariant.Outlined" />
-    @* <TextField
-    Id="outlined-select-currency"
-    select
-    Label="Select"
-    Class="demo-text-field"
-    value={values.currency}
-    onChange={handleChange('currency')}
-    SelectProps={{
-        MenuProps: {
-        className: classes.menu,
-        },
-    }}
-    helperText="Please select your currency"
-    Margin="@Margin.Normal"
-    >
-    {currencies.map(option => (
-        <MenuItem key={option.value} value={option.value}>
-        {option.label}
-        </MenuItem>
-    ))}
-    </TextField>
-    <TextField
-    Id="outlined-select-currency-native"
-    select
-    Label="Native select"
-    Class="demo-text-field"
-    value={values.currency}
-    onChange={handleChange('currency')}
-    SelectProps={{
-        native: true,
-        MenuProps: {
-        className: classes.menu,
-        },
-    }}
-    helperText="Please select your currency"
-    Margin="@Margin.Normal"
-    >
-    {currencies.map(option => (
-        <option key={option.value} value={option.value}>
-        {option.label}
-        </option>
-    ))}
-    </TextField> *@
     <TextField
         Id="outlined-full-width"
         Label="Label"

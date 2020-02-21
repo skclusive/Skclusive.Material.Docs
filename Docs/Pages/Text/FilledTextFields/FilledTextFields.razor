@@ -6,98 +6,111 @@
     noValidate
     autocomplete="off">
     <TextField
-        Id="standard-name"
+        Id="fillted-name"
         Label="Name"
         Class="demo-text-field"
         Value="@Name"
         OnChange="@HandleNameChange"
-        Margin="@Margin.Normal" />
+        Margin="@Margin.Normal"
+        Variant="@ControlVariant.Filled" />
     <TextField
-        Id="standard-uncontrolled"
+        Id="fillted-uncontrolled"
         Label="Uncontrolled"
         DefaultValue="foo"
         Class="demo-text-field"
-        Margin="@Margin.Normal" />
+        Margin="@Margin.Normal"
+        Variant="@ControlVariant.Filled" />
     <TextField
         Required="true"
-        Id="standard-required"
+        Id="fillted-required"
         Label="Required"
         DefaultValue="Hello World"
         Class="demo-text-field"
-        Margin="@Margin.Normal" />
+        Margin="@Margin.Normal"
+        Variant="@ControlVariant.Filled" />
     <TextField
         Error="true"
-        Id="standard-error"
+        Id="fillted-error"
         Label="Error"
         DefaultValue="Hello World"
         Class="demo-text-field"
-        Margin="@Margin.Normal" />
+        Margin="@Margin.Normal"
+        Variant="@ControlVariant.Filled" />
     <TextField
         Disabled="true"
-        Id="standard-disabled"
+        Id="fillted-disabled"
         Label="Disabled"
         DefaultValue="Hello World"
         Class="demo-text-field"
-        Margin="@Margin.Normal" />
+        Margin="@Margin.Normal"
+        Variant="@ControlVariant.Filled" />
     <TextField
-        Id="standard-password-input"
+        Id="fillted-password-input"
         Label="Password"
         Class="demo-text-field"
         Type="password"
         AutoComplete="current-password"
-        Margin="@Margin.Normal" />
+        Margin="@Margin.Normal"
+        Variant="@ControlVariant.Filled" />
     <TextField
-        Id="standard-read-only-input"
+        Id="fillted-read-only-input"
         Label="Read Only"
         DefaultValue="Hello World"
         Class="demo-text-field"
         Margin="@Margin.Normal"
-        ReadOnly="true" />
+        ReadOnly="true"
+        Variant="@ControlVariant.Filled" />
     <TextField
-        Id="standard-dense"
+        Id="fillted-dense"
         Label="Dense"
         Class="demo-text-field"
         Style="margin-top: 19px;";
-        Margin="@Margin.Dense" />
+        Margin="@Margin.Dense"
+        Variant="@ControlVariant.Filled" />
     <TextField
-        Id="standard-multiline-flexible"
+        Id="fillted-multiline-flexible"
         Label="Multiline"
         Multiline
         RowsMax="4"
         Value="@Multiline"
         OnChange="@HandleMultilineChange"
         Class="demo-text-field"
-        Margin="@Margin.Normal" />
+        Margin="@Margin.Normal"
+        Variant="@ControlVariant.Filled" />
     <TextField
-        Id="standard-multiline-static"
+        Id="fillted-multiline-static"
         Label="Multiline"
         Multiline
         Rows="4"
         DefaultValue="Default Value"
         Class="demo-text-field"
-        Margin="@Margin.Normal" />
+        Margin="@Margin.Normal"
+        Variant="@ControlVariant.Filled" />
     <TextField
-        Id="standard-helperText"
+        Id="fillted-helperText"
         Label="Helper text"
         DefaultValue="Default Value"
         Class="demo-text-field"
         Helper="Some important text"
-        Margin="@Margin.Normal" />
+        Margin="@Margin.Normal"
+        Variant="@ControlVariant.Filled" />
     <TextField
-        Id="standard-with-placeholder"
+        Id="fillted-with-placeholder"
         Label="With placeholder"
         Placeholder="Placeholder"
         Class="demo-text-field"
-        Margin="@Margin.Normal" />
+        Margin="@Margin.Normal"
+        Variant="@ControlVariant.Filled" />
     <TextField
-        Id="standard-textarea"
+        Id="fillted-textarea"
         Label="With placeholder multiline"
         Placeholder="Placeholder"
         Multiline
         Class="demo-text-field"
-        Margin="@Margin.Normal" />
+        Margin="@Margin.Normal"
+        Variant="@ControlVariant.Filled" />
     <TextField
-        Id="standard-number"
+        Id="fillted-number"
         Label="Number"
         Value="@Age?.ToString()"
         OnChange="@HandleAgeChange"
@@ -106,70 +119,31 @@
         @* InputLabelProps={{
             shrink: true,
         }} *@
-        Margin="@Margin.Normal" />
+        Margin="@Margin.Normal"
+        Variant="@ControlVariant.Filled" />
     <TextField
-        Id="standard-search"
+        Id="fillted-search"
         Label="Search field"
         Type="search"
         Class="demo-text-field"
-        Margin="@Margin.Normal" />
-    @* <TextField
-    Id="standard-select-currency"
-    select
-    Label="Select"
-    Class="demo-text-field"
-    value={values.currency}
-    onChange={handleChange('currency')}
-    SelectProps={{
-        MenuProps: {
-        className: classes.menu,
-        },
-    }}
-    helperText="Please select your currency"
-    Margin="@Margin.Normal"
-    >
-    {currencies.map(option => (
-        <MenuItem key={option.value} value={option.value}>
-        {option.label}
-        </MenuItem>
-    ))}
-    </TextField>
+        Margin="@Margin.Normal"
+        Variant="@ControlVariant.Filled" />
     <TextField
-    Id="standard-select-currency-native"
-    select
-    Label="Native select"
-    Class="demo-text-field"
-    value={values.currency}
-    onChange={handleChange('currency')}
-    SelectProps={{
-        native: true,
-        MenuProps: {
-        className: classes.menu,
-        },
-    }}
-    helperText="Please select your currency"
-    Margin="@Margin.Normal"
-    >
-    {currencies.map(option => (
-        <option key={option.value} value={option.value}>
-        {option.label}
-        </option>
-    ))}
-    </TextField> *@
-    <TextField
-        Id="standard-full-width"
+        Id="fillted-full-width"
         Label="Label"
         Style="margin: 8px;"
         Placeholder="Placeholder"
         Helper="Full width!"
         FullWidth
         Shrink
-        Margin="@Margin.Normal" />
+        Margin="@Margin.Normal"
+        Variant="@ControlVariant.Filled" />
     <TextField
-        Id="standard-bare"
+        Id="fillted-bare"
         Class="demo-text-field"
         DefaultValue="Bare"
-        Margin="@Margin.Normal" />
+        Margin="@Margin.Normal"
+        Variant="@ControlVariant.Filled" />
         @* inputProps={{ 'aria-label': 'bare' }} *@
 </form>
 
