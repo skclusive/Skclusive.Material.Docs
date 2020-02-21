@@ -1,0 +1,76 @@
+@namespace Skclusive.Material.Docs
+@inherits MaterialComponentBase
+
+<Markdown
+    Class="@_Class"
+    Style="@_Style"
+    Text="@(@"
+```html
+<div>
+    <Button
+        Variant=""@ButtonVariant.Outlined""
+        Color=""@Color.Primary""
+        OnClick=""@OnOpen"">
+        @Text
+    </Button>
+    <Dialog
+        Open=""@Open""
+        OnClose=""@OnClose""
+        aria-labelledby=""form-dialog-title"">
+        <DialogTitle
+            Id=""form-dialog-title"">
+            Subscribe
+        </DialogTitle>
+        <DialogContent>
+            <DialogContentText>
+                To subscribe to this website, please enter your email address here. We will send updates
+                occasionally.
+            </DialogContentText>
+            <TextField
+                AutoFocus
+                Margin=""@Margin.Dense""
+                Id=""name""
+                Label=""Email Address""
+                Type=""email""
+                FullWidth />
+        </DialogContent>
+        <DialogActions>
+            <Button
+                OnClick=""@OnClose""
+                Color=""@Color.Primary"">
+                Cancel
+            </Button>
+            <Button
+                OnClick=""@OnClose""
+                Color=""@Color.Primary""
+                autofocus>
+                Subscribe
+            </Button>
+        </DialogActions>
+    </Dialog>
+</div>
+```
+
+```csharp
+@code
+{
+    private bool Open { set; get; }
+
+    private string Text => (Open ? ""Close"" : ""Open"") + "" form dialog"";
+
+    private void OnClose()
+    {
+        Open = false;
+
+        StateHasChanged();
+    }
+
+    private void OnOpen()
+    {
+        Open = true;
+
+        StateHasChanged();
+    }
+}
+```
+")" />

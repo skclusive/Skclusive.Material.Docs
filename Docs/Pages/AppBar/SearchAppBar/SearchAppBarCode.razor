@@ -1,0 +1,90 @@
+@namespace Skclusive.Material.Docs
+@inherits MaterialComponentBase
+
+<Markdown
+    Class="@_Class"
+    Style="@_Style"
+    Text="@(@"
+```css
+<style>
+    .searchbar-search {
+        width: 100%;
+        position: relative;
+        margin-left: 0;
+        margin-right: 16px;
+        border-radius: 4px;
+        background-color: rgba(255, 255, 255, 0.15);
+    }
+    .searchbar-search:hover {
+        background-color: rgba(255, 255, 255, 0.25);
+    }
+    @media (min-width:600px) {
+        .searchbar-search {
+            width: auto;
+            margin-left: 24px;
+        }
+    }
+    .searchbar-search-icon {
+        width: 56px;
+        height: 100%;
+        display: flex;
+        position: absolute;
+        align-items: center;
+        pointer-events: none;
+        justify-content: center;
+    }
+    .searchbar-search-input {
+        width: 100%;
+        padding: 8px 8px 8px 56px;
+        transition: width 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    }
+    @media (min-width:960px) {
+        .searchbar-search-input {
+            width: 120px;
+        }
+        .searchbar-search-input:focus {
+            width: 200px;
+        }
+    }
+</style>
+```
+
+```html
+<div
+    style=""flex-grow: 1;"">
+    <AppBar
+        Position=""@AppBarPosition.Static"">
+        <Toolbar>
+            <IconButton
+                Edge=""@IconButtonEdge.Start""
+                Style=""margin-right: 16px;""
+                Color=""@Color.Inherit""
+                aria-label=""open drawer"">
+                <MenuIcon />
+            </IconButton>
+            <Hidden
+                ExtraSmallDown>
+                <Typography
+                    Class=""@context.Class""
+                    Style=""flex-grow: 1;""
+                    Variant=""@TypographyVariant.H6""
+                    NoWrap>
+                    Material-UI
+                </Typography>
+            </Hidden>
+            <div
+                class=""searchbar-search"">
+                <div
+                    class=""searchbar-search-icon"">
+                    <SearchIcon />
+                </div>
+                <InputBase
+                    Placeholder=""Search…""
+                    Style=""color: inherit;""
+                    InputClass=""searchbar-search-input"" />
+            </div>
+        </Toolbar>
+    </AppBar>
+</div>
+```
+")" />

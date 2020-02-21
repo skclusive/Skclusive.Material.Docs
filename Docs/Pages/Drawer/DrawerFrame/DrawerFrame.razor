@@ -1,0 +1,11 @@
+@namespace Skclusive.Material.Docs
+@inherits MaterialComponent
+
+<Frame
+    AbsoluteRef="@RootRef"
+    style="height: 400px; background-color: var(--theme-palette-background-default, #fff);">
+    <div
+        style="display: flex; height: 100%; overflow: auto; flex-direction: column;">
+        @ChildContent
+    </div>
+</Frame>

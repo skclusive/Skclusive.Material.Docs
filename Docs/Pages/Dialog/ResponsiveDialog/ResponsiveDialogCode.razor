@@ -1,0 +1,113 @@
+@namespace Skclusive.Material.Docs
+@inherits MaterialComponentBase
+
+<Markdown
+    Class="@_Class"
+    Style="@_Style"
+    Text="@(@"
+```html
+@inject MediaQueryMatcher MediaQueryMatcher
+
+<div
+    <Button
+        Variant=""@ButtonVariant.Outlined""
+        Color=""@Color.Primary""
+        OnClick=""@OnOpen"">
+        @Text
+    </Button>
+    <Dialog
+        DisableBackdropClick
+        DisableEscapeKeyDown
+        FullScreen=""@FullScreen""
+        aria-labelledby=""responsive-dialog-title""
+        Open=""@Open"">
+        <DialogTitle
+            Id=""responsive-dialog-title"">
+            Use Google's location service?
+        </DialogTitle>
+        <DialogContent>
+            <DialogContentText>
+                Let Google help apps determine location. This means sending anonymous location data to
+                Google, even when no apps are running.
+          </DialogContentText>
+        </DialogContent>
+        <DialogActions>
+            <Button
+                OnClick=""@OnClose""
+                Color=""@Color.Primary"">
+                Disagree
+            </Button>
+            <Button
+                OnClick=""@OnClose""
+                Color=""@Color.Primary""
+                AutoFocus>
+                Agree
+            </Button>
+        </DialogActions>
+    </Dialog>
+</div>
+```
+
+```csharp
+@code
+{
+    private IDisposable TimeoutDisposal { set; get; }
+
+    private bool Open { set; get; }
+
+    private bool FullScreen { set; get; }
+
+    private RadioGroup RadioGroupRef { set; get; }
+
+    private string Text => (Open ? ""Close"" : ""Open"") + "" responsive dialog"";
+
+    private void OnClose()
+    {
+        Open = false;
+
+        StateHasChanged();
+    }
+
+    private void OnOpen()
+    {
+        Open = true;
+
+        StateHasChanged();
+    }
+
+    private void HandleClickListItem()
+    {
+        Open = true;
+
+        StateHasChanged();
+    }
+
+    protected override  Task OnInitializedAsync()
+    {
+        MediaQueryMatcher.OnChange += OnMediaQueryChanged;
+
+        TimeoutDisposal = ExecutionPlan.Delay(500, () => {
+            _ = MediaQueryMatcher.RegisterAsync(""(max-width:959.95px)"");
+        });
+
+        return Task.CompletedTask;
+    }
+
+    protected void OnMediaQueryChanged(object sender, bool match)
+    {
+        FullScreen = match;
+
+        StateHasChanged();
+    }
+
+    protected override void Dispose()
+    {
+        TimeoutDisposal?.Dispose();
+
+        MediaQueryMatcher.OnChange -= OnMediaQueryChanged;
+
+        _ = MediaQueryMatcher.UnRegisterAsync();
+    }
+}
+```
+")" />

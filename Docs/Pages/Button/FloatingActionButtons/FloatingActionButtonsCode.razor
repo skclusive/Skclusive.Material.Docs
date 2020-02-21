@@ -1,0 +1,38 @@
+@namespace Skclusive.Material.Docs
+@inherits MaterialComponentBase
+
+<Markdown
+    Class="@_Class"
+    Style="@_Style"
+    Text="@(@"
+```html
+<div>
+    <Fab
+        Color=""@Color.Primary""
+        aria-label=""add""
+        Style=""margin: 8px;"">
+        <AddIcon />
+    </Fab>
+    <Fab
+        Color=""@Color.Secondary""
+        aria-label=""edit""
+        Style=""margin: 8px;"">
+        <EditIcon />
+    </Fab>
+    <Fab
+        Variant=""@FabVariant.Extended""
+        aria-label=""delete""
+        Style=""margin: 8px;"">
+        <NavigationIcon
+            Style=""margin-right: 8px;"" />
+        Extended
+    </Fab>
+    <Fab
+        Disabled=""true""
+        aria-label=""delete""
+        Style=""margin: 8px;"">
+        <DeleteIcon />
+    </Fab>
+</div>
+```
+")" />

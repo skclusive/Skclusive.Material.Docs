@@ -1,0 +1,81 @@
+@namespace Skclusive.Material.Docs
+@inherits MaterialComponentBase
+
+<Markdown
+    Class="@_Class"
+    Style="@_Style"
+    Text="@(@"
+```html
+<div>
+    <Button
+        Variant=""@ButtonVariant.Contained""
+        Color=""@Color.Secondary""
+        Style=""margin: 8px;"">
+        <StartIcon>
+            <DeleteIcon />
+        </StartIcon>
+        <ChildContent>
+            Delete
+        </ChildContent>
+    </Button>
+    <Button
+        Variant=""@ButtonVariant.Contained""
+        Color=""@Color.Primary""
+        Style=""margin: 8px;"">
+        <EndIcon>
+            <SendIcon />
+        </EndIcon>
+        <ChildContent>
+            Send
+        </ChildContent>
+    </Button>
+    <Button
+        Variant=""@ButtonVariant.Contained""
+        Color=""@Color.Default""
+        Style=""margin: 8px;"">
+        <StartIcon>
+            <CloudUploadIcon />
+        </StartIcon>
+        <ChildContent>
+            Upload
+        </ChildContent>
+    </Button>
+    <Button
+        Variant=""@ButtonVariant.Contained""
+        Disabled=""true""
+        Color=""@Color.Secondary""
+        Style=""margin: 8px;"">
+        <StartIcon>
+            <KeyboardVoiceIcon />
+        </StartIcon>
+        <ChildContent>
+            Talk
+        </ChildContent>
+    </Button>
+    <Button
+        Variant=""@ButtonVariant.Contained""
+        Color=""@Color.Primary""
+        Size=""@Size.Small""
+        Style=""margin: 8px;"">
+        <StartIcon>
+            <SaveIcon />
+        </StartIcon>
+        <ChildContent>
+            Save
+        </ChildContent>
+    </Button>
+    <Button
+        Variant=""@ButtonVariant.Contained""
+        Color=""@Color.Primary""
+        Size=""@Size.Large""
+        Style=""margin: 8px;"">
+        <StartIcon>
+            <SaveIcon />
+        </StartIcon>
+        <ChildContent>
+            Save
+        </ChildContent>
+    </Button>
+</div>
+```
+")" />

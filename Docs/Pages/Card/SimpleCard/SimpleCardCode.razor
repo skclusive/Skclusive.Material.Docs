@@ -1,0 +1,55 @@
+@namespace Skclusive.Material.Docs
+@inherits MaterialComponentBase
+
+<Markdown
+    Class="@_Class"
+    Style="@_Style"
+    Text="@(@"
+```html
+<Card
+    Style=""min-width: 275px;"">
+    <CardContent>
+        <Typography
+            Style=""font-size: 14px;""
+            Color=""@Color.TextSecondary""
+            GutterBottom>
+            Word of the Day
+        </Typography>
+        <Typography
+            Variant=""@TypographyVariant.H5""
+            Component=""h2"">
+            be
+            @Bull
+            nev
+            @(Bull)o@(Bull)
+            lent
+        </Typography>
+        <Typography
+            Style=""margin-bottom: 12px;""
+            Color=""@Color.TextSecondary"">
+            adjective
+        </Typography>
+        <Typography
+            Variant=""@TypographyVariant.Body2""
+            Component=""p"">
+            well meaning and kindly.
+            <br />
+            ""a benevolent smile""
+        </Typography>
+    </CardContent>
+    <CardActions>
+        <Button
+            Size=""@Size.Small"">
+            Learn More
+        </Button>
+    </CardActions>
+</Card>
+```
+
+```csharp
+@code
+{
+    private RenderFragment Bull =@<span style=""display: inline-block; margin: 0 2px; transform: scale(0.8)"">•</span>;
+}
+```
+")" />

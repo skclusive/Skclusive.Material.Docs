@@ -1,0 +1,45 @@
+@namespace Skclusive.Material.Docs
+@inherits MaterialComponentBase
+
+<Markdown
+    Class="@_Class"
+    Style="@_Style"
+    Text="@(@"
+```css
+<style>
+    .badge-margin {
+        margin: calc(var(--theme-spacing, 8) * 2px);
+    }
+</style>
+```
+
+```html
+<div
+    style=""display: flex;"">
+    <div
+        class=""badge-margin"">
+        <Badge
+            Color=""@Color.Primary""
+            Variant=""@NibVariant.Dot"">
+            <MailIcon />
+        </Badge>
+    </div>
+    <div
+        class=""badge-margin"">
+        <Badge
+            Variant=""@NibVariant.Dot""
+            Color=""@Color.Secondary"">
+            <MailIcon />
+        </Badge>
+    </div>
+    <div
+        class=""badge-margin"">
+        <Badge
+            Variant=""@NibVariant.Dot""
+            Color=""@Color.Error"">
+            <Typography>Typography</Typography>
+        </Badge>
+    </div>
+</div>
+```
+")" />

@@ -117,11 +117,11 @@ In some circumstances, we can't determine the ""shrink"" state (number input, da
 ![shrink](/static/images/text-fields/shrink.png)
 
 To workaround the issue, you can force the ""shrink"" state of the label.
-```jsx
+```html
 <TextField InputLabelProps={{ shrink: true }} />
 ```
 or
-```jsx
+```html
 <StandardInputLabel shrink>Count</InputLabel>
 ```
 
@@ -134,7 +134,7 @@ You need to make sure that the input is larger than the label to display correct
 
 In order for the text field to be accessible, **the input should be linked to the label and the helper text**. The underlying DOM nodes should have this structure.
 
-```jsx
+```html
 <div class=""form-control"">
   <label for=""my-input"">Email address</label>
   <input id=""my-input"" aria-describedby=""my-helper-text"" />
@@ -145,7 +145,7 @@ In order for the text field to be accessible, **the input should be linked to th
 - If you are using the `TextField` component, you just have to provide a unique `id`.
 - If you are composing the component:
 
-```jsx
+```html
 <FormControl>
   <StandardInputLabel For=""my-input"">Email address</InputLabel>
   <StandardInput Id=""my-input"" aria-describedby=""my-helper-text"" />

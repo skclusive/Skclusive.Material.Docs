@@ -1,0 +1,105 @@
+@namespace Skclusive.Material.Docs
+@inherits MaterialComponentBase
+
+<Markdown
+    Class="@_Class"
+    Style="@_Style"
+    Text="@(@"
+```css
+<style>
+    .demo-form-control {
+        margin-bottom: 24px;
+    }
+    .demo-row {
+        display: flex;
+        justify-content: center;
+    }
+    .demo-shape-container {
+        margin: calc(var(--theme-spacing, 8) * 2px);
+    }
+    .demo-shape {
+        width: 40px;
+        height: 40px;
+        background-color: #90caf9;
+    }
+    .demo-shape-circle {
+        border-radius: 50%;
+    }
+</style>
+```
+
+```html
+<div>
+    <div
+        class=""demo-row"">
+        <FormControl
+            Component=""fieldset""
+            Class=""demo-form-control"">
+            <FormLabel
+                Component=""legend"">
+                Overlap
+            </FormLabel>
+            <RadioGroup
+                Name=""Overlap""
+                aria-label=""Overlap""
+                Value=""@Overlap.ToString()""
+                OnChange=""@OnOverlapChange"">
+                <FormControlLabel
+                    Label=""@NibOverlap.Rectangle.ToString()"">
+                    <Radio
+                        Value=""@NibOverlap.Rectangle.ToString()"" />
+                </FormControlLabel>
+                <FormControlLabel
+                    Label=""@NibOverlap.Circle.ToString()"">
+                    <Radio
+                        Value=""@NibOverlap.Circle.ToString()"" />
+                </FormControlLabel>
+            </RadioGroup>
+        </FormControl>
+    </div>
+    <div
+        class=""demo-row"">
+        <div
+            class=""demo-shape-container"">
+            <Badge
+                Color=""@Color.Secondary""
+                Overlap=""@Overlap""
+                Nib="" ""
+                Variant=""@NibVariant.Dot"">
+                <div
+                    class=""@OverlapClass"" />
+            </Badge>
+        </div>
+        <div
+            class=""demo-shape-container"">
+            <Badge
+                Color=""@Color.Secondary""
+                Overlap=""@Overlap""
+                Nib="" "">
+                <div
+                    class=""@OverlapClass"" />
+            </Badge>
+        </div>
+    </div>
+</div>
+```
+
+```csharp
+@code
+{
+    private string OverlapClass => ""demo-shape "" + (Overlap == NibOverlap.Circle ? ""demo-shape-circle"" : """");
+
+    private NibOverlap Overlap { set; get; } = NibOverlap.Rectangle;
+
+    private void OnOverlapChange(ChangeEventArgs args)
+    {
+        if (Enum.TryParse(args.Value.ToString(), out NibOverlap overlap))
+        {
+            Overlap = overlap;
+
+            StateHasChanged();
+        }
+    }
+}
+```
+")" />
