@@ -1,0 +1,71 @@
+@namespace Skclusive.Material.Docs
+@inherits MaterialComponentBase
+
+<Markdown
+    Class="@_Class"
+    Style="@_Style"
+    Text="@(@"
+```html
+<div
+    class=""demo-tabs-root"">
+    <AppBar
+        Position=""@AppBarPosition.Static"">
+        <Tabs
+            Value=""@Value""
+            OnChange=""@HandleChange""
+            aria-label=""simple tabs example"">
+            <Tab
+                Id=""simple-tab""
+                Control=""simple-tabpanel""
+                Label=""Item One""
+                Value=""0"" />
+            <Tab
+                Id=""simple-tab""
+                Control=""simple-tabpanel""
+                Label=""Item Two""
+                Value=""1"" />
+            <Tab
+                Id=""simple-tab""
+                Control=""simple-tabpanel""
+                Label=""Item Three""
+                Value=""2"" />
+        </Tabs>
+    </AppBar>
+    <TabPanel
+        Id=""simple-tabpanel""
+        Label=""simple-tab""
+        Value=""@Value""
+        Index=""0"">
+        Item One
+    </TabPanel>
+    <TabPanel
+        Id=""simple-tabpanel""
+        Label=""simple-tab""
+        Value=""@Value""
+        Index=""1"">
+        Item Two
+    </TabPanel>
+    <TabPanel
+        Id=""simple-tabpanel""
+        Label=""simple-tab""
+        Value=""@Value""
+        Index=""2"">
+        Item Three
+    </TabPanel>
+</div>
+```
+
+```csharp
+@code
+{
+    private object Value { set; get; } = 0;
+
+    private void HandleChange(object value)
+    {
+        Value = value;
+
+        StateHasChanged();
+    }
+}
+```
+")" />
