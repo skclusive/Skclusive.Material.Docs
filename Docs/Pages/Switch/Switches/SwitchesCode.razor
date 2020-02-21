@@ -1,0 +1,63 @@
+@namespace Skclusive.Material.Docs
+@inherits MaterialComponentBase
+
+<Markdown
+    Class="@_Class"
+    Style="@_Style"
+    Text="@(@"
+```html
+<div>
+    <Switch
+        Checked=""@CheckedA""
+        Value=""CheckedA""
+        OnChange=""@OnCheckedAChanged""
+        InputProps=""@(new Dictionary<string, object>{{ ""aria-label"", ""primary switch"" }})"" />
+    <Switch
+        Checked=""@CheckedB""
+        OnChange=""@OnCheckedBChanged""
+        Value=""CheckedB""
+        Color=""@Color.Primary""
+        InputProps=""@(new Dictionary<string, object>{{ ""aria-label"", ""secondary switch"" }})"" />
+    <Switch
+        Value=""CheckedC""
+        InputProps=""@(new Dictionary<string, object>{{ ""aria-label"", ""uncontrolled-switch"" }})"" />
+    <Switch
+        Disabled=""true""
+        Value=""CheckedD""
+        InputProps=""@(new Dictionary<string, object>{{ ""aria-label"", ""disabled switch"" }})"" />
+    <Switch
+        Checked=""true""
+        Disabled=""true""
+        Value=""CheckedE""
+        InputProps=""@(new Dictionary<string, object>{{ ""aria-label"", ""disabled checked switch"" }})"" />
+    <Switch
+        DefaultChecked=""true""
+        Value=""CheckedG""
+        Color=""@Color.Default""
+        InputProps=""@(new Dictionary<string, object>{{ ""aria-label"", ""switch with default color"" }})"" />
+</div>
+```
+
+```csharp
+@code
+{
+    private bool CheckedA { set; get; } = true;
+
+    private bool CheckedB { set; get; } = true;
+
+    private void OnCheckedAChanged(EventArgs args)
+    {
+        CheckedA = !CheckedA;
+
+        StateHasChanged();
+    }
+
+    private void OnCheckedBChanged(EventArgs args)
+    {
+        CheckedB = !CheckedB;
+
+        StateHasChanged();
+    }
+}
+```
+")" />
