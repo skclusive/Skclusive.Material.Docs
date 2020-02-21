@@ -1,20 +1,29 @@
 @namespace Skclusive.Material.Docs
+@inherits MaterialComponentBase
+
+<Markdown
+    Class="@_Class"
+    Style="@_Style"
+    Text="@(@"
+```html
 @inherits DisposableComponentBase
 
- <div
-    style="flex-grow: 1;">
+<div
+    style=""flex-grow: 1;"">
     <LinearProgress
-        Variant="@LinearVariant.Buffer"
-        Value="@Completed"
-        ValueBuffer="@Buffer" />
+        Variant=""@LinearVariant.Buffer""
+        Value=""@Completed""
+        ValueBuffer=""@Buffer"" />
     <br />
     <LinearProgress
-        Color="@Color.Secondary"
-        Variant="@LinearVariant.Buffer"
-        Value="@Completed"
-        ValueBuffer="@Buffer" />
+        Color=""@Color.Secondary""
+        Variant=""@LinearVariant.Buffer""
+        Value=""@Completed""
+        ValueBuffer=""@Buffer"" />
 </div>
+```
 
+```csharp
 @code
 {
     public decimal Completed { set; get; } = 0;
@@ -48,3 +57,5 @@
         }, 500);
     }
 }
+```
+")" />
