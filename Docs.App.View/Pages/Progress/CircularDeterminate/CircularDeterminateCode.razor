@@ -1,0 +1,40 @@
+@namespace Skclusive.Material.Docs.App.View
+@inherits MaterialComponentBase
+
+<Markdown
+    Class="@_Class"
+    Style="@_Style"
+    Text="@(@"
+```html
+@inherits DisposableComponentBase
+
+<div>
+    <CircularProgress
+        Style=""margin: 16px;""
+        Variant=""@CircularVariant.Determinate""
+        Value=""@Progress"" />
+    <CircularProgress
+        Style=""margin: 16px;""
+        Variant=""@CircularVariant.Determinate""
+        Value=""@Progress""
+        Color=""@Color.Secondary"" />
+</div>
+```
+
+```csharp
+@code
+{
+    public decimal Progress { set; get; } = 0;
+
+    protected override void OnInitialized()
+    {
+        RunInterval(() =>
+        {
+            Progress = Progress >= 100 ? 0 : Progress + 1;
+
+            StateHasChanged();
+        }, 20);
+    }
+}
+```
+")" />

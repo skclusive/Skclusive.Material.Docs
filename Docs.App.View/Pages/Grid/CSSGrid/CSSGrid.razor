@@ -1,0 +1,126 @@
+@namespace Skclusive.Material.Docs.App.View
+
+<style>
+    .paper-demo {
+        padding: 16px;
+        text-align: center;
+    }
+
+    .grid-container {
+        display: grid;
+        grid-gap: 24px;
+        grid-template-columns: repeat(12, 1fr);
+    }
+</style>
+
+<div>
+    <Typography
+        Variant="@TypographyVariant.Subtitle1"
+        GutterBottom>
+        Material-UI Grid:
+    </Typography>
+    <Grid
+        Container
+        Spacing="@Spacing.Three">
+        <Grid
+            Item
+            ExtraSmall="@GridSize.Three">
+            <Paper
+                Class="paper-demo">
+                xs=3
+            </Paper>
+        </Grid>
+        <Grid
+            Item
+            ExtraSmall="@GridSize.Three">
+            <Paper
+                Class="paper-demo">
+                xs=3
+            </Paper>
+        </Grid>
+        <Grid
+            Item
+            ExtraSmall="@GridSize.Three">
+            <Paper
+                Class="paper-demo">
+                xs=3
+            </Paper>
+        </Grid>
+        <Grid
+            Item
+            ExtraSmall="@GridSize.Three">
+            <Paper
+                Class="paper-demo">
+                xs=3
+            </Paper>
+        </Grid>
+        <Grid
+            Item
+            ExtraSmall="@GridSize.Eight">
+            <Paper
+                Class="paper-demo">
+                xs=8
+            </Paper>
+        </Grid>
+        <Grid
+            Item
+            ExtraSmall="@GridSize.Four">
+            <Paper
+                Class="paper-demo">
+                xs=4
+            </Paper>
+        </Grid>
+    </Grid>
+    <Divider
+        Style="margin: 16px 0px" />
+    <Typography
+        Variant="@TypographyVariant.Subtitle1"
+        GutterBottom>
+        CSS Grid Layout:
+    </Typography>
+    <div
+        class="grid-container">
+        <div
+            style="grid-column-end: span 3;">
+            <Paper
+                Class="paper-demo">
+                xs=3
+            </Paper>
+        </div>
+        <div
+            style="grid-column-end: span 3;">
+            <Paper
+                Class="paper-demo">
+                xs=3
+            </Paper>
+        </div>
+        <div
+            style="grid-column-end: span 3;">
+            <Paper
+                Class="paper-demo">
+                xs=3
+            </Paper>
+        </div>
+        <div
+            style="grid-column-end: span 3;">
+            <Paper
+                Class="paper-demo">
+                xs=3
+            </Paper>
+        </div>
+        <div
+            style="grid-column-end: span 8;">
+            <Paper
+                Class="paper-demo">
+                xs=8
+            </Paper>
+        </div>
+        <div
+            style="grid-column-end: span 4;">
+            <Paper
+                Class="paper-demo">
+                xs=4
+            </Paper>
+        </div>
+    </div>
+</div>

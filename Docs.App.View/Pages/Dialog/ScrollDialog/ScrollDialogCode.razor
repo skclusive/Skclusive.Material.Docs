@@ -1,0 +1,89 @@
+@namespace Skclusive.Material.Docs.App.View
+@inherits MaterialComponentBase
+
+<Markdown
+    Class="@_Class"
+    Style="@_Style"
+    Text="@(@"
+```html
+<div>
+    <Button
+        OnClick=""@((args) => UpdateScroll(DialogScroll.Paper))"">
+        scroll=paper
+    </Button>
+    <Button
+        OnClick=""@((args) => UpdateScroll(DialogScroll.Body))"">
+        scroll=body
+    </Button>
+    <Dialog
+        Open=""@Open""
+        OnClose=""@OnClose""
+        Scroll=""@Scroll""
+        aria-labelledby=""scroll-dialog-title"">
+        <DialogTitle
+            Id=""scroll-dialog-title"">
+            Subscribe
+        </DialogTitle>
+        <DialogContent
+            Dividers=""@Dividers"">
+            <DialogContentText>
+                @(Enumerable.Range(0, 50).Select(x => Message).Aggregate((a, b) => a + Environment.NewLine + b))
+            </DialogContentText>
+        </DialogContent>
+        <DialogActions>
+            <Button
+                OnClick=""@OnClose""
+                Color=""@Color.Primary"">
+                Cancel
+            </Button>
+            <Button
+                OnClick=""@OnClose""
+                Color=""@Color.Primary""
+                autofocus>
+                Subscribe
+            </Button>
+        </DialogActions>
+    </Dialog>
+</div>
+```
+
+```csharp
+@code
+{
+
+    private static readonly string Message = @""Cras mattis consectetur purus sit amet fermentum.
+    Cras justo odio, dapibus ac facilisis in, egestas eget quam.
+    Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
+    Praesent commodo cursus magna, vel scelerisque nisl consectetur et."";
+
+    private bool Open { set; get; }
+
+    private DialogScroll Scroll { set; get; }
+
+    private bool Dividers => Scroll == DialogScroll.Paper;
+
+    private void UpdateScroll(DialogScroll scroll)
+    {
+        Scroll = scroll;
+
+        Open = true;
+
+        StateHasChanged();
+    }
+
+    private void OnClose()
+    {
+        Open = false;
+
+        StateHasChanged();
+    }
+
+    private void OnOpen()
+    {
+        Open = true;
+
+        StateHasChanged();
+    }
+}
+```
+")" />

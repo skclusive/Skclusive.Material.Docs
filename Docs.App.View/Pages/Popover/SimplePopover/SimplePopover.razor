@@ -1,0 +1,44 @@
+@namespace Skclusive.Material.Docs.App.View
+
+<div>
+    <Button
+        Variant="@ButtonVariant.Contained"
+        OnClick="@HandleOpen"
+        RootRef="@AnchorRef">
+        Open Popover
+    </Button>
+    <Popover
+        Open="@Open"
+        AnchorRef="@AnchorRef"
+        OnClose="@HandleClose"
+        AnchorVerticalOrigin="@VerticalOrigin.Bottom"
+        AnchorHorizontalOrigin="@HorizontalOrigin.Center"
+        TransformVerticalOrigin="@VerticalOrigin.Top"
+        TransformHorizontalOrigin="@HorizontalOrigin.Center">
+        <Typography
+            Style="padding: 16px;">
+            The content of the Popover.
+        </Typography>
+    </Popover>
+</div>
+
+@code
+{
+    private bool Open { set; get; }
+
+    private IReference AnchorRef { set; get; } = new Reference();
+
+    private void HandleClose()
+    {
+        Open = false;
+
+        StateHasChanged();
+    }
+
+    private void HandleOpen()
+    {
+        Open = true;
+
+        StateHasChanged();
+    }
+}

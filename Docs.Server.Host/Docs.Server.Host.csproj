@@ -1,0 +1,13 @@
+
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <AssemblyName>Skclusive.Material.Docs.Server.Host</AssemblyName>
+    <RootNamespace>Skclusive.Material.Docs.Server.Host</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Docs.App.View\Docs.App.View.csproj" />
+  </ItemGroup>
+</Project>

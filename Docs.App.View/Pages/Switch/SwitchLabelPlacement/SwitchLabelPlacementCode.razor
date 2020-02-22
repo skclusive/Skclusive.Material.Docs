@@ -1,0 +1,41 @@
+@namespace Skclusive.Material.Docs.App.View
+@inherits MaterialComponentBase
+
+<Markdown
+    Class="@_Class"
+    Style="@_Style"
+    Text="@(@"
+```html
+<FormControl
+    Component=""fieldset"">
+    <FormGroup
+        aria-label=""position""
+        Row>
+        <FormControlLabel
+            Label=""Top""
+            Placement=""@Placement.Top"">
+            <Switch
+                Color=""@Color.Primary""/>
+        </FormControlLabel>
+        <FormControlLabel
+            Label=""Start""
+            Placement=""@Placement.Start"">
+            <Switch
+                Color=""@Color.Primary""/>
+        </FormControlLabel>
+        <FormControlLabel
+            Label=""Bottom""
+            Placement=""@Placement.Bottom"">
+            <Switch
+                Color=""@Color.Primary""/>
+        </FormControlLabel>
+        <FormControlLabel
+            Label=""End""
+            Placement=""@Placement.End"">
+            <Switch
+                Color=""@Color.Primary""/>
+        </FormControlLabel>
+    </FormGroup>
+</FormControl>
+```
+")" />

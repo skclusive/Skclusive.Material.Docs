@@ -1,0 +1,54 @@
+﻿@namespace Skclusive.Material.Docs.App.View
+@page "/popover"
+
+<div>
+    <Markdown
+         Text="@(@"
+---
+title: Popover Blazor component
+components: Grow, Popover
+---
+
+# Popover
+
+<p class=""description"">A Popover can be used to display some content on top of another.</p>
+
+Things to know when using the `Popover` component:
+
+- The component is built on top of the [`Modal`](/components/modal/) component.
+- The scroll and click away are blocked unlike with the [`Popper`](/components/popper/) component.
+
+## Installing with Nuget
+
+You can [install Popover package](https://www.nuget.org/packages/Skclusive.Material.Popover/) by typing the below command in your terminal:
+
+`dotnet add package Skclusive.Material.Popover`
+
+Then, you can import it in your _Imports.razor.
+
+```csharp
+@using Skclusive.Material.Popover;
+```
+
+## Simple Popover
+
+{{""demo"": ""Skclusive.Material.Docs.App.View.SimplePopover, Skclusive.Material.Docs.App.View""}}
+
+## Anchor playground
+
+Use the radio buttons to adjust the `anchorOrigin` and `transformOrigin` positions.
+You can also set the `anchorReference` to `anchorPosition` or `anchorEl`.
+When it is `anchorPosition`, the component will, instead of `anchorEl`,
+refer to the `anchorPosition` prop which you can adjust to set
+the position of the popover.
+
+{{""demo"": ""Skclusive.Material.Docs.App.View.AnchorPlayground, Skclusive.Material.Docs.App.View""}}
+
+## Mouse over interaction
+
+This demonstrates how to use the `Popover` component to implement a popover behavior based on the mouse over event.
+
+{{""demo"": ""Skclusive.Material.Docs.App.View.MouseOverPopover, Skclusive.Material.Docs.App.View""}}
+
+")" />
+</div>

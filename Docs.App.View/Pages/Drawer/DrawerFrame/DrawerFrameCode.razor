@@ -1,0 +1,18 @@
+@namespace Skclusive.Material.Docs.App.View
+@inherits MaterialComponentBase
+
+<Markdown
+    Class="@_Class"
+    Style="@_Style"
+    Text="@(@"
+```html
+<Frame
+    AbsoluteRef=""@RootRef""
+    style=""height: 400px; background-color: var(--theme-palette-background-default, #fff);"">
+    <div
+        style=""display: flex; height: 100%; overflow: auto; flex-direction: column;"">
+        @ChildContent
+    </div>
+</Frame>
+```
+")" />

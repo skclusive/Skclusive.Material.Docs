@@ -1,0 +1,61 @@
+@namespace Skclusive.Material.Docs.App.View
+@inherits MaterialComponentBase
+
+<Markdown
+    Class="@_Class"
+    Style="@_Style"
+    Text="@(@"
+```html
+<List
+    Class=""demo-list-root"">
+    @foreach(var item in Items)
+    {
+        <ListItem
+            @key=""item.Index""
+            Button>
+            <ChildContent>
+                <ListItemAvatar>
+                    <Avatar
+                        Alt=""@($""Avatar n°{item.Index + 1}"")""
+                        Src=""@($""./images/avatar-{item.Index + 1}.jpg"")"" />
+                </ListItemAvatar>
+                <ListItemText
+                    Id=""@($""checkbox-list-secondary-label-{item.Index}"")""
+                    Primary=""@($""Line item {item.Index + 1}"")"" />
+            </ChildContent>
+            <SecondaryAction>
+                <ListItemSecondaryAction>
+                    <Checkbox
+                        Edge=""@Edge.End""
+                        Checked=""@item.Checked""
+                        OnChange=""@((_) => {
+                            item.Checked = !item.Checked;
+                        })""
+                        InputProps=""@(new Dictionary<string, object>{{ ""aria-label"", $""checkbox-list-secondary-label-{item.Index}"" }})"" />
+                </ListItemSecondaryAction>
+            </SecondaryAction>
+        </ListItem>
+    }
+</List>
+```
+
+```csharp
+@code
+{
+    private List<CheckedIndex> Items = new List<CheckedIndex>
+    {
+        new CheckedIndex { Index = 0, Checked = false },
+        new CheckedIndex { Index = 1, Checked = false },
+        new CheckedIndex { Index = 2, Checked = false },
+        new CheckedIndex { Index = 3, Checked = false }
+    };
+
+    public class CheckedIndex
+    {
+        public int Index { get; set; }
+
+        public bool Checked { get; set; }
+    }
+}
+```
+")" />

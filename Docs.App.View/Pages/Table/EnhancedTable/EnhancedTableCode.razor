@@ -1,0 +1,341 @@
+@namespace Skclusive.Material.Docs.App.View
+@inherits MaterialComponentBase
+
+<Markdown
+    Class="@_Class"
+    Style="@_Style"
+    Text="@(@"
+```css
+<style>
+    .demo-table-toolbar {
+        padding-left: calc(var(--theme-spacing, 8) * 2px);
+        padding-right: calc(var(--theme-spacing, 8) * 1px);
+    }
+
+    @media (prefers-color-scheme: light) {
+        .demo-table-toolbar-hilight {
+            color: var(--theme-palette-secondary-main);
+            background-color: rgb(250, 224, 233);
+            @* background-color: var(--theme-palette-secondary-light); *@
+        }
+    }
+
+    @media (prefers-color-scheme: dark) {
+        .demo-table-toolbar-hilight {
+            color: var(--theme-palette-text-primary);
+            background-color: var(--theme-palette-secondary-dark);
+        }
+    }
+
+    .demo-table-toolbar-title {
+        flex: 1 1 100%;
+    }
+
+    .demo-sort-visually-hidden {
+        top: 20px;
+        clip: rect(0 0 0 0);
+        width: 1px;
+        border: 0;
+        height: 1px;
+        margin: -1px;
+        padding: 0;
+        overflow: hidden;
+        position: absolute;
+    }
+</style>
+```
+
+```html
+<div
+    style=""width: 100%; margin-top: 24px;"">
+    <Paper
+        Style=""width: 100%; margin-bottom: 16px;"">
+        <Toolbar
+            Class=""@ToolbarClass"">
+            @if (HasSelection)
+            {
+                <Typography
+                    Class=""demo-table-toolbar-title""
+                    Color=""@Color.Inherit""
+                    Variant=""@TypographyVariant.Subtitle1"">
+                    @SelectedCount selected
+                </Typography>
+                <IconButton
+                    aria-label=""delete"">
+                    <DeleteIcon />
+                </IconButton>
+            } else
+            {
+                <Typography
+                    Class=""demo-table-toolbar-title""
+                    Variant=""@TypographyVariant.H6""
+                    Id=""tableTitle"">
+                    Nutrition
+                </Typography>
+                <IconButton
+                    aria-label=""filter list"">
+                    <FilterListIcon />
+                </IconButton>
+            }
+        </Toolbar>
+        <div
+            style=""overflow-x: auto;"">
+            <Table
+                Style=""min-width: 750px""
+                Size=""@Size""
+                aria-labelledby=""tableTitle""
+                aria-label=""enhanced table"">
+                <TableHead>
+                    <TableRow>
+                        <TableCell
+                            Padding=""@Padding.Checkbox"">
+                            <Checkbox
+                                Indeterminate=""@AnySelected""
+                                Checked=""@AllSelected""
+                                OnChange=""@OnSelectAllClick""
+                                InputProps=""@(new Dictionary<string, object>{{ ""aria-label"", $""select all desserts"" }})"" />
+                        </TableCell>
+                        <TableCell
+                            Padding=""@Padding.None"">
+                            @CreateSortableColumn(""Name"", ""Dessert (100g serving)"")
+                        </TableCell>
+                        <TableCell
+                            Align=""@Align.Right"">
+                            @CreateSortableColumn(""Calories"", ""Calories"")
+                            Calories
+                        </TableCell>
+                        <TableCell
+                            Align=""@Align.Right"">
+                            @CreateSortableColumn(""Fat"", ""Fat (g)"")
+                        </TableCell>
+                        <TableCell
+                            Align=""@Align.Right"">
+                            @CreateSortableColumn(""Carbs"", ""Carbs (g)"")
+                        </TableCell>
+                        <TableCell
+                            Align=""@Align.Right"">
+                            @CreateSortableColumn(""Protein"", ""Protein (g)"")
+                        </TableCell>
+                    </TableRow>
+                </TableHead>
+                <TableBody>
+                    @foreach(var row in GetSortedRows())
+                    {
+                        <TableRow
+                            Hover
+                            @key=""@row""
+                            OnClick=""@((_) => row.Selected = !row.Selected)""
+                            TabIndex=""-1""
+                            Selected=""@row.Selected""
+                            aria-checked=""@row.Selected""
+                            Role=""checkbox"">
+                            <TableCell
+                                Padding=""@Padding.Checkbox"">
+                                <Checkbox
+                                    Checked=""@row.Selected""
+                                    InputProps=""@(new Dictionary<string, object>{{ ""aria-labelledby"", $""enhanced-table-checkbox-{row.Name}"" }})"" />
+                            </TableCell>
+                            <TableCell
+                                Component=""th""
+                                Padding=""@Padding.None""
+                                Scope=""row"">
+                                @row.Name
+                            </TableCell>
+                            <TableCell
+                                Align=""@Align.Right"">
+                                @row.Calories
+                            </TableCell>
+                            <TableCell
+                                Align=""@Align.Right"">
+                                @row.Fat
+                            </TableCell>
+                            <TableCell
+                                Align=""@Align.Right"">
+                                @row.Carbs
+                            </TableCell>
+                            <TableCell
+                                Align=""@Align.Right"">
+                                @row.Protein
+                            </TableCell>
+                        </TableRow>
+                    }
+                    @if (EmptyRows > 0)
+                    {
+                        <TableRow
+                            Style=""@($""height: {EmptyHeight}px;"")"">
+                            <TableCell
+                                colspan=""6"" />
+                        </TableRow>
+                    }
+                </TableBody>
+            </Table>
+        </div>
+    </Paper>
+    <FormControlLabel
+        Label=""Dense padding"">
+        <Switch
+            Checked=""@Dense""
+            OnChange=""@OnDenseChanged"" />
+    </FormControlLabel>
+</div>
+```
+
+```csharp
+@code
+{
+    private string OrderBy { set; get; } = ""Calories"";
+
+    private Sort Direction { set; get; } = Sort.Ascending;
+
+    private string SortMessage => ""sort "" + (Direction == Sort.Descending ? ""descending"" : ""ascending"");
+
+    private RenderFragment CreateSortableColumn(string name, string label)
+    {
+        return @<TableSortLabel
+                    Active=""@(OrderBy == name)""
+                    Direction=""@Direction""
+                    OnClick=""@CreateOnSortClick(name)"">
+                    @label
+                    @if (OrderBy == name)
+                    {
+                        <span class=""demo-sort-visually-hidden"">
+                            @SortMessage
+                        </span>
+                    }
+                </TableSortLabel>;
+    }
+
+    private EventCallback<EventArgs> CreateOnSortClick(string name)
+    {
+        return EventCallback.Factory.Create<System.EventArgs>(this, (_) =>
+        {
+            HandleSortClick(name);
+        });
+    }
+
+    private IEnumerable<Dessert> GetSortedRows()
+    {
+        if (Direction == Sort.Ascending)
+        {
+            if (OrderBy == ""Name"")
+                return Rows.OrderBy(row => row.Name);
+            else if (OrderBy == ""Calories"")
+                return Rows.OrderBy(row => row.Calories);
+            else if (OrderBy == ""Fat"")
+                return Rows.OrderBy(row => row.Fat);
+            else if (OrderBy == ""Carbs"")
+                return Rows.OrderBy(row => row.Carbs);
+            else if (OrderBy == ""Protein"")
+                return Rows.OrderBy(row => row.Protein);
+        } else
+        {
+            if (OrderBy == ""Name"")
+                return Rows.OrderByDescending(row => row.Name);
+            else if (OrderBy == ""Calories"")
+                return Rows.OrderByDescending(row => row.Calories);
+            else if (OrderBy == ""Fat"")
+                return Rows.OrderByDescending(row => row.Fat);
+            else if (OrderBy == ""Carbs"")
+                return Rows.OrderByDescending(row => row.Carbs);
+            else if (OrderBy == ""Protein"")
+                return Rows.OrderByDescending(row => row.Protein);
+        }
+        return Rows;
+    }
+
+    private void HandleSortClick(string name)
+    {
+        if (OrderBy == name)
+        {
+            Direction = Direction == Sort.Ascending ? Sort.Descending : Sort.Ascending;
+        } else
+        {
+            Direction = Sort.Ascending;
+        }
+
+        OrderBy = name;
+
+        StateHasChanged();
+    }
+
+    private string media = ""@media"";
+
+    private string ToolbarClass => $""demo-table-toolbar{(HasSelection ? "" demo-table-toolbar-hilight"" : """")}"";
+
+    private bool Dense { set; get; } = false;
+
+    private Size Size => Dense ? Size.Small : Size.Medium;
+
+    private bool AnySelected => HasSelection && SelectedCount < Rows.Count;
+
+    private bool AllSelected => Rows.All(row => row.Selected);
+
+    private int SelectedCount => Rows.Count(row => row.Selected);
+
+    private bool HasSelection => SelectedCount > 0;
+
+    private int RowsPerPage => 6;
+
+    private int EmptyRows => RowsPerPage - Rows.Count;
+
+    private int EmptyHeight => (Dense ? 33 : 53) * EmptyRows;
+
+    private void OnDenseChanged(EventArgs args)
+    {
+        Dense = !Dense;
+
+        StateHasChanged();
+    }
+
+    private void OnSelectAllClick(EventArgs args)
+    {
+        var allSelected = AllSelected;
+
+        Rows.ForEach(row => row.Selected = !allSelected);
+
+        StateHasChanged();
+    }
+
+    private List<Dessert> Rows = new List<Dessert>
+    {
+        new Dessert(""Frozen yoghurt"", 159, 6.0, 24, 4.0),
+
+        new Dessert(""Ice cream sandwich"", 237, 9.0, 37, 4.3),
+
+        new Dessert(""Eclair"", 262, 16.0, 24, 6.0),
+
+        new Dessert(""Cupcake"", 305, 3.7, 67, 4.3),
+
+        new Dessert(""Gingerbread"", 356, 16.0, 49, 3.9)
+    };
+
+    public class Dessert
+    {
+        public Dessert(string name, int calories, double fat, double carbs, double protein)
+        {
+            Name = name;
+
+            Calories = calories;
+
+            Fat = fat;
+
+            Carbs = carbs;
+
+            Protein = protein;
+        }
+
+        public string Name { set; get; }
+
+        public int Calories { set; get; }
+
+        public double Fat { set; get; }
+
+        public double Carbs { set; get; }
+
+        public double Protein { set; get; }
+
+        public bool Selected { set; get; }
+    }
+}
+```
+")" />

@@ -1,0 +1,52 @@
+@namespace Skclusive.Material.Docs.App.View
+
+<List
+    Component="nav"
+    Style="width: 100%;
+    max-width: 360px;
+    background-color: var(--theme-palette-background-paper, #fff);"
+    aria-label="mailbox folders">
+    <ListItem>
+        <ListItemText
+            Primary="Photos"
+            Secondary="Jan 9, 2014" />
+    </ListItem>
+    <Divider
+        Component="li" />
+    <li>
+        <Typography
+            Style="margin: 5px 0 0 calc(var(--theme-spacing, 8) * 2px);"
+            Color="@Color.TextSecondary"
+            Display="@Display.Block"
+            Variant="@TypographyVariant.Caption">
+            Divider
+        </Typography>
+    </li>
+    <ListItem>
+        <ListItemText
+            Primary="Work"
+            Secondary="Jan 7, 2014" />
+    </ListItem>
+    <Divider
+        Component="li"
+        Variant="@DividerVariant.Inset" />
+    <li>
+        <Typography
+            Style="margin: 5px 0 0 calc(var(--theme-spacing, 8) * 9px);"
+            Color="@Color.TextSecondary"
+            Display="@Display.Block"
+            Variant="@TypographyVariant.Caption">
+            Leisure
+        </Typography>
+    </li>
+    <ListItem>
+        <ListItemAvatar>
+            <Avatar>
+                <BeachAccessIcon />
+          </Avatar>
+        </ListItemAvatar>
+        <ListItemText
+            Primary="Vacation"
+            Secondary="July 20, 2014" />
+    </ListItem>
+</List>

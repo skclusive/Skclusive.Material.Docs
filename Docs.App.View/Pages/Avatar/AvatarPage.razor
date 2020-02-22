@@ -1,0 +1,47 @@
+﻿@namespace Skclusive.Material.Docs.App.View
+@page "/avatar"
+
+<div>
+    <Markdown
+         Text="@(@"
+---
+title: Avatar Blazor component
+components: Avatar
+---
+
+# Avatars
+
+<p class=""description"">Avatars are found throughout material design with uses in everything from tables to dialog menus.</p>
+
+## Installing with Nuget
+
+You can [install Avatar package](https://www.nuget.org/packages/Skclusive.Material.Avatar/) by typing the below command in your terminal:
+
+`dotnet add package Skclusive.Material.Avatar`
+
+Then, you can import it in your _Imports.razor.
+
+```csharp
+@using Skclusive.Material.Avatar;
+```
+
+## Image avatars
+
+Image avatars can be created by passing standard `img` props `src` or `srcSet` into the component.
+
+{{""demo"": ""Skclusive.Material.Docs.App.View.ImageAvatars, Skclusive.Material.Docs.App.View""}}
+
+## Letter avatars
+
+Avatars containing simple characters can be created by passing your string as `children`.
+
+{{""demo"": ""Skclusive.Material.Docs.App.View.LetterAvatars, Skclusive.Material.Docs.App.View""}}
+
+## Icon avatars
+
+Icon avatars are created by passing an icon as `children`.
+
+{{""demo"": ""Skclusive.Material.Docs.App.View.IconAvatars, Skclusive.Material.Docs.App.View""}}
+
+")" />
+</div>

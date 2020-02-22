@@ -1,0 +1,32 @@
+@namespace Skclusive.Material.Docs.App.View
+@inherits MaterialComponent
+
+<Typography
+    Component="div"
+    Role="tabpanel"
+    id="@_Id"
+    hidden="@Hidden"
+    aria-labelledby="@_Label">
+    <Box
+        Padding="3">
+        @ChildContent
+    </Box>
+</Typography>
+
+@code
+{
+    [Parameter]
+    public object Value { set; get; }
+
+    [Parameter]
+    public object Index { set; get; }
+
+    [Parameter]
+    public string Label { set; get; }
+
+    protected bool Hidden => !object.Equals(Value, Index);
+
+    protected string _Id => $"{Id}-{Index}";
+
+    protected string _Label => $"{Label}-{Index}";
+}

@@ -1,0 +1,140 @@
+@namespace Skclusive.Material.Docs.App.View
+@inherits MaterialComponentBase
+
+<Markdown
+    Class="@_Class"
+    Style="@_Style"
+    Text="@(@"
+```css
+<style>
+    .persistent-right-app-bar {
+        transition: margin 195ms cubic-bezier(0.4, 0, 0.6, 1) 0ms,width 195ms cubic-bezier(0.4, 0, 0.6, 1) 0ms;
+    }
+    .persistent-right-app-bar-shifted {
+        width: calc(100% - 240px);
+        transition: margin 225ms cubic-bezier(0.0, 0, 0.2, 1) 0ms,width 225ms cubic-bezier(0.0, 0, 0.2, 1) 0ms;
+        margin-right: 240px;
+    }
+    .persistent-right-drawer-header {
+        display: flex;
+        padding: 0px 8px;
+        min-height: 56px;
+        align-items: center;
+        justify-content: flex-start;
+    }
+    @media (min-width:0px) and (orientation: landscape) {
+        .persistent-right-drawer-header {
+            min-height: 48px;
+        }
+    }
+    @media (min-width:600px) {
+        .persistent-right-drawer-header {
+            min-height: 64px;
+        }
+    }
+    .persistent-right-content {
+        padding: 24px;
+        flex-grow: 1;
+        transition: margin 195ms cubic-bezier(0.4, 0, 0.6, 1) 0ms;
+        margin-right: 0px;
+    }
+    .persistent-right-content-shifted {
+        transition: margin 225ms cubic-bezier(0.0, 0, 0.2, 1) 0ms;
+        margin-right: 240px;
+    }
+</style>
+```
+
+```html
+<DrawerFrame>
+    <AppBar
+        Position=""@AppBarPosition.Sticky""
+        Class=""@(""persistent-right-app-bar"" + (Open ? "" persistent-right-app-bar-shifted"" : """"))"">
+        <Toolbar>
+            <Typography
+                Style=""flex-grow: 1;""
+                Variant=""@TypographyVariant.H6""
+                NoWrap>
+                Persistent drawer
+            </Typography>
+            <IconButton
+                Color=""@Color.Inherit""
+                aria-label=""open drawer""
+                Edge=""@IconButtonEdge.Start""
+                OnClick=""@HandleDrawerOpen""
+                Style=""@(Open ? "" display: none;"" : """")"">
+                <MenuIcon />
+            </IconButton>
+        </Toolbar>
+    </AppBar>
+    <main
+        class=""@(""persistent-right-content"" + (Open ? "" persistent-right-content-shifted"" : """"))"">
+        <Typography
+            Paragraph>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+            ut labore et dolore magna aliqua. Rhoncus dolor purus non enim praesent elementum
+            facilisis leo vel. Risus at ultrices mi tempus imperdiet. Semper risus in hendrerit
+            gravida rutrum quisque non tellus. Convallis convallis tellus id interdum velit laoreet id
+            donec ultrices. Odio morbi quis commodo odio aenean sed adipiscing. Amet nisl suscipit
+            adipiscing bibendum est ultricies integer quis. Cursus euismod quis viverra nibh cras.
+            Metus vulputate eu scelerisque felis imperdiet proin fermentum leo. Mauris commodo quis
+            imperdiet massa tincidunt. Cras tincidunt lobortis feugiat vivamus at augue. At augue eget
+            arcu dictum varius duis at consectetur lorem. Velit sed ullamcorper morbi tincidunt. Lorem
+            donec massa sapien faucibus et molestie ac.
+        </Typography>
+        <Typography
+            Paragraph>
+            Consequat mauris nunc congue nisi vitae suscipit. Fringilla est ullamcorper eget nulla
+            facilisi etiam dignissim diam. Pulvinar elementum integer enim neque volutpat ac
+            tincidunt. Ornare suspendisse sed nisi lacus sed viverra tellus. Purus sit amet volutpat
+            consequat mauris. Elementum eu facilisis sed odio morbi. Euismod lacinia at quis risus sed
+            vulputate odio. Morbi tincidunt ornare massa eget egestas purus viverra accumsan in. In
+            hendrerit gravida rutrum quisque non tellus orci ac. Pellentesque nec nam aliquam sem et
+            tortor. Habitant morbi tristique senectus et. Adipiscing elit duis tristique sollicitudin
+            nibh sit. Ornare aenean euismod elementum nisi quis eleifend. Commodo viverra maecenas
+            accumsan lacus vel facilisis. Nulla posuere sollicitudin aliquam ultrices sagittis orci a.
+        </Typography>
+    </main>
+    <Drawer
+        Absolute
+        Anchor=""@Anchor.Right""
+        Style=""width: 240px; flex-shrink: 0; height: 100%;""
+        PaperStyle=""width: 240px;""
+        Variant=""@DrawerVariant.Persistent""
+        Open=""@Open"">
+        <DrawerList
+            Side>
+            <div
+                class=""persistent-right-drawer-header"">
+                <IconButton
+                    OnClick=""@HandleDrawerClose"">
+                    <ChevronRightIcon />
+                </IconButton>
+            </div>
+            <Divider />
+        </DrawerList>
+    </Drawer>
+</DrawerFrame>
+```
+
+```csharp
+@code
+{
+    private bool Open { set; get; }
+
+    private void HandleDrawerOpen()
+    {
+        Open =  true;
+
+        StateHasChanged();
+    }
+
+    private void HandleDrawerClose()
+    {
+        Open = false;
+
+        StateHasChanged();
+    }
+}
+```
+")" />

@@ -1,0 +1,71 @@
+@namespace Skclusive.Material.Docs.App.View
+@inherits MaterialComponentBase
+
+<Markdown
+    Class="@_Class"
+    Style="@_Style"
+    Text="@(@"
+```html
+<div>
+    <Button
+        Variant=""@ButtonVariant.Outlined""
+        Color=""@Color.Primary""
+        OnClick=""@OnOpen"">
+        @Text
+    </Button>
+    <Dialog
+        Open=""@Open""
+        OnClose=""@OnClose""
+        aria-labelledby=""alert-dialog-title""
+        aria-describedby=""alert-dialog-description"">
+        <DialogTitle
+            Id=""alert-dialog-title"">
+            Use Google's location service?
+        </DialogTitle>
+        <DialogContent>
+            <DialogContentText
+                Id=""alert-dialog-description"">
+                Let Google help apps determine location. This means sending anonymous location data to
+                Google, even when no apps are running.
+            </DialogContentText>
+        </DialogContent>
+        <DialogActions>
+            <Button
+                OnClick=""@OnClose""
+                Color=""@Color.Primary"">
+                Disagree
+            </Button>
+            <Button
+                OnClick=""@OnClose""
+                Color=""@Color.Primary""
+                autofocus>
+                Agree
+            </Button>
+        </DialogActions>
+    </Dialog>
+</div>
+```
+
+```csharp
+@code
+{
+    private bool Open { set; get; }
+
+    private string Text => (Open ? ""Close"" : ""Open"") + "" alert dialog"";
+
+    private void OnClose()
+    {
+        Open = false;
+
+        StateHasChanged();
+    }
+
+    private void OnOpen()
+    {
+        Open = true;
+
+        StateHasChanged();
+    }
+}
+```
+")" />

@@ -1,0 +1,59 @@
+@namespace Skclusive.Material.Docs.App.View
+@inherits MaterialComponentBase
+
+<Markdown
+    Class="@_Class"
+    Style="@_Style"
+    Text="@(@"
+```html
+<div
+    style=""height: 300px;
+    flex-grow: 1;
+    transform: translateZ(0);""
+    @ref=""@ContainerRef.Current"">
+    <Modal
+        DisablePortal
+        DisableEnforceFocus
+        DisableAutoFocus
+        Open
+        aria-labelledby=""server-modal-title""
+        aria-describedby=""server-modal-description""
+        Style=""display: flex;
+        padding: 8px;
+        align-items: center;
+        justify-content: center;""
+        ContainerRef=""@ContainerRef"">
+        <div
+            style=""width: 400px;
+            border: 2px solid #000;
+            padding: 16px 32px 24px;
+            box-shadow: 0px 3px 5px -1px rgba(0,0,0,0.2),0px 5px 8px 0px rgba(0,0,0,0.14),0px 1px 14px 0px rgba(0,0,0,0.12);
+            background-color: var(--theme-palette-background-paper, #fff);"">
+            <h2
+                style=""margin-block-start: 0.83em;
+                margin-block-end: 0.83em;
+                margin-inline-start: 0px;
+                margin-inline-end: 0px;""
+                id=""server-modal-title"">
+                Server-side modal
+            </h2>
+            <p
+                style=""margin-block-start: 1em;
+                margin-block-end: 1em;
+                margin-inline-start: 0px;
+                margin-inline-end: 0px;""
+                id=""server-modal-description"">
+                You can disable the JavaScript, you will still see me.
+            </p>
+        </div>
+    </Modal>
+</div>
+```
+
+```csharp
+@code
+{
+    private IReference ContainerRef { set; get; } = new Reference();
+}
+```
+")" />

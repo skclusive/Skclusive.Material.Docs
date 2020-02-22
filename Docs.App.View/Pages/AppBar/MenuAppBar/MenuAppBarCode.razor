@@ -1,0 +1,109 @@
+@namespace Skclusive.Material.Docs.App.View
+@inherits MaterialComponentBase
+
+<Markdown
+    Class="@_Class"
+    Style="@_Style"
+    Text="@(@"
+```html
+<div
+    style=""flex-grow: 1;"">
+    <FormGroup>
+        <FormControlLabel
+            Label=""@(Authenticated ? ""Logout"" : ""Login"")"">
+            <Switch
+                Checked=""@Authenticated""
+                OnChange=""@OnAuthenticated""
+                aria-label=""login switch"" />
+        </FormControlLabel>
+    </FormGroup>
+    <AppBar
+        Position=""@AppBarPosition.Static"">
+        <Toolbar>
+            <IconButton
+                Edge=""@IconButtonEdge.Start""
+                Style=""margin-right: 16px;""
+                Color=""@Color.Inherit""
+                aria-label=""menu"">
+                <MenuIcon />
+            </IconButton>
+            <Typography
+                Variant=""@TypographyVariant.H6""
+                Style=""flex-grow: 1;"">
+                Photos
+            </Typography>
+            @if (Authenticated)
+            {
+                <div>
+                    <IconButton
+                        aria-label=""account of current user""
+                        aria-controls=""menu-appbar""
+                        aria-haspopup=""true""
+                        RootRef=""@MenuRef""
+                        OnClick=""@HandleMenuOpen""
+                        Color=""@Color.Inherit"">
+                        <AccountCircleIcon />
+                    </IconButton>
+                    <Menu
+                        AnchorVerticalOrigin=""@VerticalOrigin.Top""
+                        AnchorHorizontalOrigin=""@HorizontalOrigin.Right""
+                        TransformVerticalOrigin=""@VerticalOrigin.Top""
+                        TransformHorizontalOrigin=""@HorizontalOrigin.Right""
+                        Open=""@IsMenuOpen""
+                        KeepMounted
+                        AnchorRef=""@MenuRef""
+                        Id=""menu-appbar""
+                        OnClose=""@HandleMenuClose"">
+                        <MenuItem
+                            OnClick=""@HandleMenuClose"">
+                            Profile
+                        </MenuItem>
+                        <MenuItem
+                            OnClick=""@HandleMenuClose"">
+                            My account
+                        </MenuItem>
+                    </Menu>
+                </div>
+            }
+        </Toolbar>
+    </AppBar>
+</div>
+```
+```csharp
+@code
+{
+    private IReference MenuRef { set; get; } = new Reference();
+
+    private bool IsMenuOpen { set; get; }
+
+    private bool Authenticated { set; get; }
+
+    private void OnAuthenticated()
+    {
+        Authenticated = !Authenticated;
+
+        StateHasChanged();
+    }
+
+    private void HandleMenuOpen()
+    {
+        IsMenuOpen = true;
+
+        StateHasChanged();
+    }
+    private void HandleMenuClose()
+    {
+        IsMenuOpen = false;
+
+        StateHasChanged();
+    }
+
+    private void HandleMenuClose(MenuCloseReason reason)
+    {
+        IsMenuOpen = false;
+
+        StateHasChanged();
+    }
+}
+```
+")" />

@@ -1,0 +1,15 @@
+@namespace Skclusive.Material.Docs.App.View
+
+@inherits FrameComponent
+
+<div
+    class="@_Class"
+    style="@_Style"
+    @ref="@RootRef.Current">
+    <div
+        class="@_AbsoluteClass"
+        style="@_AbsoluteStyle"
+        @ref="@AbsoluteRef.Current">
+        @ChildContent
+    </div>
+</div>

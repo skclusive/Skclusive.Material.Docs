@@ -1,0 +1,96 @@
+@namespace Skclusive.Material.Docs.App.View
+@inherits MaterialComponentBase
+
+<Markdown
+    Class="@_Class"
+    Style="@_Style"
+    Text="@(@"
+```html
+<Paper
+    Style=""width: 100%;"">
+    <div
+        style=""max-height: 440px; overflow: auto;"">
+        <Table
+            StickyHeader
+            aria-label=""sticky table"">
+            <TableHead>
+                <TableRow>
+                    <TableCell>
+                        Dessert (100g serving)
+                    </TableCell>
+                    <TableCell
+                        Align=""@Align.Right"">
+                        Calories
+                    </TableCell>
+                    <TableCell
+                        Align=""@Align.Right"">
+                        Fat&nbsp;(g)
+                    </TableCell>
+                    <TableCell
+                        Align=""@Align.Right"">
+                        Carbs&nbsp;(g)
+                    </TableCell>
+                    <TableCell
+                        Align=""@Align.Right"">
+                        Protein&nbsp;(g)
+                    </TableCell>
+                </TableRow>
+            </TableHead>
+            <TableBody>
+                @foreach(var row in Rows)
+                {
+                    <TableRow
+                        @key=""@row.Name"">
+                        <TableCell
+                            Component=""th""
+                            Scope=""row"">
+                            @row.Name
+                        </TableCell>
+                        <TableCell
+                            Align=""@Align.Right"">
+                            @row.Calories
+                        </TableCell>
+                        <TableCell
+                            Align=""@Align.Right"">
+                            @row.Fat
+                        </TableCell>
+                        <TableCell
+                            Align=""@Align.Right"">
+                            @row.Carbs
+                        </TableCell>
+                        <TableCell
+                            Align=""@Align.Right"">
+                            @row.Protein
+                        </TableCell>
+                    </TableRow>
+                }
+            </TableBody>
+        </Table>
+    </div>
+</Paper>
+```
+
+```csharp
+@code
+{
+    private (string Name, int Calories, double Fat, double Carbs, double Protein)[] Rows = 
+    {
+        (""Frozen yoghurt"", 159, 6.0, 24, 4.0),
+        (""Ice cream sandwich"", 237, 9.0, 37, 4.3),
+        (""Eclair"", 262, 16.0, 24, 6.0),
+        (""Cupcake"", 305, 3.7, 67, 4.3),
+        (""Gingerbread"", 356, 16.0, 49, 3.9),
+        (""Frozen yoghurt"", 159, 6.0, 24, 4.0),
+        (""Ice cream sandwich"", 237, 9.0, 37, 4.3),
+        (""Eclair"", 262, 16.0, 24, 6.0),
+        (""Cupcake"", 305, 3.7, 67, 4.3),
+        (""Gingerbread"", 356, 16.0, 49, 3.9),
+        (""Frozen yoghurt"", 159, 6.0, 24, 4.0),
+        (""Ice cream sandwich"", 237, 9.0, 37, 4.3),
+        (""Eclair"", 262, 16.0, 24, 6.0),
+        (""Cupcake"", 305, 3.7, 67, 4.3),
+        (""Gingerbread"", 356, 16.0, 49, 3.9)
+    };
+}
+```
+")" />

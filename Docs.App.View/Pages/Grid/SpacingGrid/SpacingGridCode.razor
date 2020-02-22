@@ -1,0 +1,80 @@
+@namespace Skclusive.Material.Docs.App.View
+@inherits MaterialComponentBase
+
+<Markdown
+    Class="@_Class"
+    Style="@_Style"
+    Text="@(@"
+```html
+<Grid
+    Style=""flex-grow: 1;""
+    Container
+    Spacing=""@Spacing.Two"">
+    <Grid
+        Item
+        ExtraSmall=""@GridSize.Twelve"">
+        <Grid
+            Container
+            Justify=""@Justify.Center""
+            Spacing=""@Spacing"">
+            @foreach(var index in Enumerable.Range(0, 3))
+            {
+                <Grid
+                    @key=""index""
+                    Item>
+                    <Paper
+                        Style=""height: 140px; width: 100px;"" />
+                </Grid>
+            }
+        </Grid>
+    </Grid>
+    <Grid
+        Item
+        ExtraSmall=""@GridSize.Twelve"">
+        <Paper
+            Style=""padding: 16px;"">
+            <Grid
+                Container>
+                <Grid
+                    Item>
+                    <FormLabel>spacing</FormLabel>
+                    <RadioGroup
+                        Row
+                        Name=""Spacing""
+                        aria-label=""Spacing""
+                        Value=""@Spacing.ToString()""
+                        OnChange=""@OnSpacingChange"">
+                        @foreach(var value in Enum.GetValues(typeof(Spacing)).Cast<Spacing>())
+                        {
+                            <FormControlLabel
+                                @key=""value""
+                                Label=""@value.ToString()"">
+                                <Radio
+                                    Value=""@value.ToString()"" />
+                            </FormControlLabel>
+                        }
+                    </RadioGroup>
+                </Grid>
+            </Grid>
+        </Paper>
+    </Grid>
+</Grid>
+```
+
+```csharp
+@code
+{
+    private Spacing Spacing { set; get; } = Spacing.Two;
+
+    private void OnSpacingChange(ChangeEventArgs args)
+    {
+        if (Enum.TryParse(args.Value.ToString(), out Spacing spacing))
+        {
+            Spacing = spacing;
+
+            StateHasChanged();
+        }
+    }
+}
+```
+")" />

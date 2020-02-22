@@ -1,0 +1,44 @@
+@namespace Skclusive.Material.Docs.App.View
+@inherits DisposableComponentBase
+
+<div>
+    <CircularProgress
+        Style="margin: 16px;"
+        Variant="@CircularVariant.Static"
+        Value="5" />
+    <CircularProgress
+        Style="margin: 16px;"
+        Variant="@CircularVariant.Static"
+        Value="25" />
+    <CircularProgress
+        Style="margin: 16px;"
+        Variant="@CircularVariant.Static"
+        Value="50" />
+    <CircularProgress
+        Style="margin: 16px;"
+        Variant="@CircularVariant.Static"
+        Value="75" />
+    <CircularProgress
+        Style="margin: 16px;"
+        Variant="@CircularVariant.Static"
+        Value="100" />
+    <CircularProgress
+        Style="margin: 16px;"
+        Variant="@CircularVariant.Static"
+        Value="@Completed" />
+</div>
+
+@code
+{
+    public decimal Completed { set; get; } = 0;
+
+    protected override void OnInitialized()
+    {
+        RunInterval(() =>
+        {
+            Completed = Completed >= 100 ? 0 : Completed + 10;
+
+            StateHasChanged();
+        }, 1000);
+    }
+}

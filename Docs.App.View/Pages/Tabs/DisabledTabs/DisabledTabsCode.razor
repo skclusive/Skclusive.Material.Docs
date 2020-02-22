@@ -1,0 +1,41 @@
+@namespace Skclusive.Material.Docs.App.View
+@inherits MaterialComponentBase
+
+<Markdown
+    Class="@_Class"
+    Style="@_Style"
+    Text="@(@"
+```html
+<Paper
+    Square>
+    <Tabs
+        Value=""@Value""
+        IndicatorColor=""@Color.Primary""
+        TextColor=""@Color.Primary""
+        OnChange=""@HandleChange""
+        aria-label=""disabled tabs example"">
+        <Tab
+            Label=""Active"" />
+        <Tab
+            Label=""Disabled""
+            Disabled=""true"" />
+        <Tab
+            Label=""Active"" />
+    </Tabs>
+</Paper>
+```
+
+```csharp
+@code
+{
+    private object Value { set; get; } = 0;
+
+    private void HandleChange(object value)
+    {
+        Value = value;
+
+        StateHasChanged();
+    }
+}
+```
+")" />

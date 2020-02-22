@@ -1,0 +1,50 @@
+@namespace Skclusive.Material.Docs.App.View
+@inherits MaterialComponentBase
+
+<Markdown
+    Class="@_Class"
+    Style="@_Style"
+    Text="@(@"
+```html
+<Paper
+    class=""demo-tabs-root"">
+    <Tabs
+        Value=""@Value""
+        OnChange=""@HandleChange""
+        IndicatorColor=""@Color.Primary""
+        TextColor=""@Color.Primary""
+        Centered
+        aria-label=""centered tabs example"">
+        <Tab
+            Id=""centered-tab""
+            Control=""centered-tabpanel""
+            Label=""Item One""
+            Value=""0"" />
+        <Tab
+            Id=""centered-tab""
+            Control=""centered-tabpanel""
+            Label=""Item Two""
+            Value=""1"" />
+        <Tab
+            Id=""centered-tab""
+            Control=""centered-tabpanel""
+            Label=""Item Three""
+            Value=""2"" />
+    </Tabs>
+</Paper>
+```
+
+```csharp
+@code
+{
+    private object Value { set; get; } = 0;
+
+    private void HandleChange(object value)
+    {
+        Value = value;
+
+        StateHasChanged();
+    }
+}
+```
+")" />

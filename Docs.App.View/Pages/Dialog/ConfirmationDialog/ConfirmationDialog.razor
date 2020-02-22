@@ -1,0 +1,138 @@
+@namespace Skclusive.Material.Docs.App.View
+
+<div
+    style="width: 100%; max-width: 360px; background-color: var(--theme-palette-background-paper);">
+    <List
+        Component="div"
+        Role="list">
+        <ListItem
+            Button
+            Divider
+            Disabled="true"
+            Role="listitem">
+            <ListItemText
+                Primary="Interruptions" />
+        </ListItem>
+        <ListItem
+            Button
+            Divider
+            aria-haspopup="true"
+            aria-controls="ringtone-menu"
+            aria-label="phone ringtone"
+            OnClick="@HandleClickListItem"
+            Role="listitem">
+            <ListItemText
+                Primary="Phone ringtone"
+                Secondary="@Value" />
+        </ListItem>
+        <ListItem
+            Button
+            Divider
+            Disabled="true"
+            Role="listitem">
+            <ListItemText
+                Primary="Default notification ringtone"
+                Secondary="Tethys" />
+        </ListItem>
+    </List>
+    <Dialog
+        DisableBackdropClick
+        DisableEscapeKeyDown
+        MaxWidth="@DialogWidth.ExtraSmall"
+        aria-labelledby="confirmation-dialog-title"
+        PaperStyle="width: 80%; max-height: 435px;"
+        Open="@Open">
+        <DialogTitle
+            Id="confirmation-dialog-title">
+            Phone Ringtone
+        </DialogTitle>
+        <DialogContent
+            Dividers>
+            <RadioGroup
+                @ref="RadioGroupRef"
+                aria-label="ringtone"
+                Name="ringtone"
+                Value="@Value"
+                OnChange="@HandleChange">
+                @foreach(var value in Values)
+                {
+                    <FormControlLabel
+                        @key="@value"
+                        Label="@value">
+                        <Radio
+                            Value="@value"/>
+                    </FormControlLabel>
+                }
+            </RadioGroup>
+      </DialogContent>
+      <DialogActions>
+            <Button
+                OnClick="@OnClose"
+                Color="@Color.Primary">
+                Disagree
+            </Button>
+            <Button
+                OnClick="@OnClose"
+                Color="@Color.Primary"
+                AutoFocus>
+                Agree
+            </Button>
+      </DialogActions>
+    </Dialog>
+</div>
+
+@code
+{
+    private static readonly string[] Values = {
+        "None",
+        "Atria",
+        "Callisto",
+        "Dione",
+        "Ganymede",
+        "Hangouts Call",
+        "Luna",
+        "Oberon",
+        "Phobos",
+        "Pyxis",
+        "Sedna",
+        "Titania",
+        "Triton",
+        "Umbriel"
+    };
+
+    private bool Open { set; get; }
+
+    private RadioGroup RadioGroupRef { set; get; }
+
+    private string Text => (Open ? "Close" : "Open") + " alert dialog";
+
+    private string Value { set; get; } = "Dione";
+
+    private void OnClose()
+    {
+        Open = false;
+
+        StateHasChanged();
+    }
+
+    private void OnOpen()
+    {
+        Open = true;
+
+        StateHasChanged();
+    }
+
+    private void HandleClickListItem()
+    {
+        Open = true;
+
+        StateHasChanged();
+    }
+
+    private void HandleChange(ChangeEventArgs args)
+    {
+        Value = args.Value?.ToString();
+
+        StateHasChanged();
+    }
+}

@@ -1,0 +1,48 @@
+@namespace Skclusive.Material.Docs.App.View
+@inherits MaterialComponentBase
+
+<Markdown
+    Class="@_Class"
+    Style="@_Style"
+    Text="@(@"
+```css
+<style>
+    .paper-demo {
+        padding: 16px;
+        text-align: center;
+    }
+</style>
+```
+
+```html
+<div
+    style=""flex-grow: 1;"">
+    <Grid
+        Container
+        Spacing=""@Spacing.One"">
+        @foreach(var index in Enumerable.Range(0, 3))
+        {
+            <Grid
+                @key=""index""
+                Container
+                Item
+                Spacing=""@Spacing.Three""
+                ExtraSmall=""@GridSize.Twelve"">
+                @foreach(var cindex in Enumerable.Range(0, 3))
+                {
+                    <Grid
+                        @key=""cindex""
+                        Item
+                        ExtraSmall=""@GridSize.Four"">
+                        <Paper
+                            Class=""paper-demo"">
+                            item
+                        </Paper>
+                    </Grid>
+                }
+            </Grid>
+        }
+    </Grid>
+</div>
+```
+")" />

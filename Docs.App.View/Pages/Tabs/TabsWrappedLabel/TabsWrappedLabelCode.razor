@@ -1,0 +1,72 @@
+@namespace Skclusive.Material.Docs.App.View
+@inherits MaterialComponentBase
+
+<Markdown
+    Class="@_Class"
+    Style="@_Style"
+    Text="@(@"
+```html
+<div
+    class=""demo-tabs-root"">
+    <AppBar
+        Position=""@AppBarPosition.Static"">
+        <Tabs
+            Value=""@Value""
+            OnChange=""@HandleChange""
+            aria-label=""wrapped label tabs example"">
+            <Tab
+                Id=""wrapped-tab""
+                Control=""wrapped-tabpanel""
+                Wrapped
+                Label=""New Arrivals in the Longest Text of Nonfiction""
+                Value=""0"" />
+            <Tab
+                Id=""wrapped-tab""
+                Control=""wrapped-tabpanel""
+                Label=""Item Two""
+                Value=""1"" />
+            <Tab
+                Id=""wrapped-tab""
+                Control=""wrapped-tabpanel""
+                Label=""Item Three""
+                Value=""2"" />
+        </Tabs>
+    </AppBar>
+    <TabPanel
+        Id=""wrapped-tabpanel""
+        Label=""wrapped-tab""
+        Value=""@Value""
+        Index=""0"">
+        Item One
+    </TabPanel>
+    <TabPanel
+        Id=""wrapped-tabpanel""
+        Label=""wrapped-tab""
+        Value=""@Value""
+        Index=""1"">
+        Item Two
+    </TabPanel>
+    <TabPanel
+        Id=""wrapped-tabpanel""
+        Label=""wrapped-tab""
+        Value=""@Value""
+        Index=""2"">
+        Item Three
+    </TabPanel>
+</div>
+```
+
+```csharp
+@code
+{
+    private object Value { set; get; } = 0;
+
+    private void HandleChange(object value)
+    {
+        Value = value;
+
+        StateHasChanged();
+    }
+}
+```
+")" />

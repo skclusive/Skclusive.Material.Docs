@@ -1,0 +1,28 @@
+@namespace Skclusive.Material.Docs.App.View
+@inherits MaterialComponentBase
+
+<Markdown
+    Class="@_Class"
+    Style="@_Style"
+    Text="@(@"
+```html
+<List
+    Component=""nav""
+    aria-label=""contacts""
+    Class=""demo-list-root"">
+    <ListItem
+        Button>
+        <ListItemIcon>
+            <StarIcon />
+        </ListItemIcon>
+        <ListItemText
+            Primary=""Chelsea Otakan"" />
+    </ListItem>
+    <ListItem Button>
+        <ListItemText
+            Inset
+            Primary=""Eric Hoffman"" />
+    </ListItem>
+</List>
+```
+")" />

@@ -1,0 +1,35 @@
+@namespace Skclusive.Material.Docs.App.View
+
+<style>
+    .badge-margin {
+        margin: calc(var(--theme-spacing, 8) * 2px);
+    }
+</style>
+
+<div
+    style="display: flex;">
+    <div
+        class="badge-margin">
+        <Badge
+            Color="@Color.Primary"
+            Variant="@NibVariant.Dot">
+            <MailIcon />
+        </Badge>
+    </div>
+    <div
+        class="badge-margin">
+        <Badge
+            Variant="@NibVariant.Dot"
+            Color="@Color.Secondary">
+            <MailIcon />
+        </Badge>
+    </div>
+    <div
+        class="badge-margin">
+        <Badge
+            Variant="@NibVariant.Dot"
+            Color="@Color.Error">
+            <Typography>Typography</Typography>
+        </Badge>
+    </div>
+</div>

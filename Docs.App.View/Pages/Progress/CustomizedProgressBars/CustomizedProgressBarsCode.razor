@@ -1,0 +1,66 @@
+@namespace Skclusive.Material.Docs.App.View
+@inherits MaterialComponentBase
+
+<Markdown
+    Class="@_Class"
+    Style="@_Style"
+    Text="@(@"
+```css
+<style>
+    .demo-linear-custom.LinearProgress-Color-Primary {
+        background-color: #b2dfdb;
+    }
+    .demo-linear-custom .LinearProgress-Bar-Color-Primary {
+        background-color: #00695c;
+    }
+</style>
+
+<style>
+    .demo-linear-fat {
+        height: 10px;
+        background-color: rgb(255, 181, 173);
+    }
+    .demo-linear-fat .LinearProgress-Bar {
+        border-radius: 20px;
+        background-color: #ff6c5c;
+    }
+</style>
+```
+
+```html
+ <div
+    style=""flex-grow: 1;"">
+    <CircularProgress
+        Style=""color: #00695c;""
+        Size=""30""
+        Thickness=""5"" />
+    <LinearProgress
+        Class=""demo-linear-custom""
+        Style=""margin: 8px;"" />
+    <LinearProgress
+        Class=""demo-linear-fat""
+        Style=""margin: 8px;""
+        Variant=""@LinearVariant.Determinate""
+        Color=""@Color.Secondary""
+        Value=""50"" />
+    <div
+        style=""position: relative;"">
+        <CircularProgress
+            Variant=""@CircularVariant.Determinate""
+            Value=""100""
+            Size=""24""
+            Thickness=""4""
+            Style=""color: #eef3fd;"" />
+        <CircularProgress
+            Variant=""@CircularVariant.Indeterminate""
+            DisableShrink
+            Size=""24""
+            Thickness=""4""
+            Style=""color: #6798e5;
+            animation-duration: 550ms;
+            position: absolute;
+            left: 0;"" />
+    </div>
+</div>
+```
+")" />
