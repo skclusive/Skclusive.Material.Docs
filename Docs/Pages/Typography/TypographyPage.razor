@@ -15,6 +15,18 @@ components: Typography
 Too many type sizes and styles at once can spoil any layout.
 A [typographic scale](https://material.io/design/typography/#type-scale) has a limited set of type sizes that work well together along with the layout grid.
 
+## Installing with Nuget
+
+You can [install Typography package](https://www.nuget.org/packages/Skclusive.Material.Typography/) by typing the below command in your terminal:
+
+`dotnet add package Skclusive.Material.Typography`
+
+Then, you can import it in your _Imports.razor.
+
+```csharp
+@using Skclusive.Material.Typography;
+```
+
 ## General
 
 The *Roboto* font will **not** be automatically loaded by Material-UI.
@@ -28,18 +40,6 @@ Shown below is a sample link markup used to load the Roboto font from a CDN:
 
 ```html
 <link rel=""stylesheet"" href=""https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"" />
-```
-
-## Install with npm
-
-You can [install it](https://www.npmjs.com/package/typeface-roboto) by typing the below command in your terminal:
-
-`npm install typeface-roboto --save`
-
-Then, you can import it in your entry-point.
-
-```js
-import 'typeface-roboto';
 ```
 
 For more info check out the [typeface](https://github.com/KyleAMathews/typefaces/tree/master/packages/roboto) project.

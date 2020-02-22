@@ -4,9 +4,8 @@ using System.Threading.Tasks;
 using System.Text;
 using Microsoft.AspNetCore.Blazor.Hosting;
 using Microsoft.Extensions.DependencyInjection;
-using Skclusive.Script.DomHelpers;
-using Skclusive.Material.Script;
-using Skclusive.Script.Prism;
+using Skclusive.Material.Component;
+using Skclusive.Markdown.Component;
 
 namespace Skclusive.Material.Docs
 {
@@ -18,11 +17,9 @@ namespace Skclusive.Material.Docs
 
             builder.RootComponents.Add<App>("app");
 
-            builder.Services.AddDomHelpers();
+            builder.Services.TryAddMaterialServices();
 
-            builder.Services.AddScriptHelpers();
-
-            builder.Services.AddPrism();
+            builder.Services.TryAddMarkdownServices();
 
             await builder.Build().RunAsync();
         }

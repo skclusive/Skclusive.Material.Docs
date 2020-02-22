@@ -18,6 +18,18 @@ To ease integration with Material-UI's [responsive breakpoints](/customization/b
 this component can be used to hide any content,
 or you can use it in conjunction with the [`Grid`](/components/grid/) component.
 
+## Installing with Nuget
+
+You can [install Hidden package](https://www.nuget.org/packages/Skclusive.Material.Hidden/) by typing the below command in your terminal:
+
+`dotnet add package Skclusive.Material.Hidden`
+
+Then, you can import it in your _Imports.razor.
+
+```csharp
+@using Skclusive.Material.Hidden;
+```
+
 ## How it works
 
 Hidden works with a range of breakpoints e.g. `xsUp` or `mdDown`, or one or more breakpoints e.g. `only='sm'` or `only={['md', 'xl']}`.
