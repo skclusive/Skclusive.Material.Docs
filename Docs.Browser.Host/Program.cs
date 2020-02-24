@@ -5,8 +5,6 @@ using System.Text;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.AspNetCore.Blazor.Hosting;
 using Skclusive.Material.Docs.App.View;
-using Skclusive.Material.Component;
-using Skclusive.Markdown.Component;
 
 namespace Skclusive.Material.Docs.Browser.Host
 {
@@ -18,9 +16,7 @@ namespace Skclusive.Material.Docs.Browser.Host
 
             builder.RootComponents.Add<AppView>("app");
 
-            builder.Services.TryAddMaterialServices();
-
-            builder.Services.TryAddMarkdownServices();
+            builder.Services.TryAddDocsViewServices(new DocsViewConfigBuilder().Build());
 
             await builder.Build().RunAsync();
         }

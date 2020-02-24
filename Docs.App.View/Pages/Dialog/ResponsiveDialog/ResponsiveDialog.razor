@@ -2,6 +2,8 @@
 
 @inherits MaterialComponentBase
 
+@inject IDocsViewConfig DocsViewConfig
+
 @inject MediaQueryMatcher MediaQueryMatcher
 
 <div
@@ -78,11 +80,14 @@
 
     protected override  Task OnInitializedAsync()
     {
-        MediaQueryMatcher.OnChange += OnMediaQueryChanged;
+        if (DocsViewConfig.Responsive)
+        {
+            MediaQueryMatcher.OnChange += OnMediaQueryChanged;
 
-        TimeoutDisposal = ExecutionPlan.Delay(500, () => {
-            _ = MediaQueryMatcher.RegisterAsync("(max-width:959.95px)");
-        });
+            TimeoutDisposal = ExecutionPlan.Delay(500, () => {
+                _ = MediaQueryMatcher.RegisterAsync("(max-width:959.95px)");
+            });
+        }
 
         return Task.CompletedTask;
     }

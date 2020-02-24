@@ -11,8 +11,6 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
 using Skclusive.Material.Docs.App.View;
-using Skclusive.Material.Component;
-using Skclusive.Markdown.Component;
 
 namespace Skclusive.Material.Docs.Server.Host
 {
@@ -32,8 +30,7 @@ namespace Skclusive.Material.Docs.Server.Host
             services.AddRazorPages();
             services.AddServerSideBlazor();
 
-            services.TryAddMaterialServices();
-            services.TryAddMarkdownServices();
+            services.TryAddDocsViewServices(new DocsViewConfigBuilder().Build());
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

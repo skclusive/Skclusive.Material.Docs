@@ -12,8 +12,6 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.AspNetCore.Components.Server;
 using Skclusive.Material.Docs.App.View;
-using Skclusive.Material.Component;
-using Skclusive.Markdown.Component;
 
 namespace Skclusive.Material.Docs.BrowserPrerendered.Host
 {
@@ -46,9 +44,7 @@ namespace Skclusive.Material.Docs.BrowserPrerendered.Host
                 };
             });
 
-            services.TryAddMaterialServices();
-
-            services.TryAddMarkdownServices();
+            services.TryAddDocsViewServices(new DocsViewConfigBuilder().Build());
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
