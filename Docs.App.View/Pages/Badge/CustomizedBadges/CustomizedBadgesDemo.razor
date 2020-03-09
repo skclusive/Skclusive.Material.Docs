@@ -1,11 +1,6 @@
 @namespace Skclusive.Material.Docs.App.View
-@inherits MaterialComponentBase
+@inherits StyleComponentBase
 
-<Markdown
-    Class="@_Class"
-    Style="@_Style"
-    Text="@(@"
-```css
 <style>
     .badge-style-one {
         right: -3px;
@@ -23,7 +18,7 @@
         width: 100%;
         border: 1px solid #44b700;
         height: 100%;
-        content: """";
+        content: "";
         position: absolute;
         animation: badge-style-two-keyframes 1.2s infinite ease-in-out;
         border-radius: 50%;
@@ -44,55 +39,51 @@
         height: 22px;
     }
 </style>
-```
 
-```html
 <Box
-    Display=""flex"">
+    Display="flex">
     <Box
-        Margin=""1"">
+        Margin="1">
         <IconButton
-            aria-label=""cart"">
+            aria-label="cart">
             <Badge
-                Nib=""4""
-                Color=""@Color.Primary""
-                NibClass=""badge-style-one"">
+                Nib="4"
+                Color="@Color.Primary"
+                NibClass="badge-style-one">
                 <ShoppingCartIcon />
             </Badge>
         </IconButton>
     </Box>
     <Box
-        Margin=""1"">
+        Margin="1">
         <Badge
-            Overlap=""@BadgeOverlap.Circle""
-            Vertical=""@Vertical.Bottom""
-            Horizontal=""@Horizontal.Right""
-            Variant=""@BadgeVariant.Dot""
-            NibClass=""badge-style-two"">
+            Overlap="@BadgeOverlap.Circle"
+            Vertical="@Vertical.Bottom"
+            Horizontal="@Horizontal.Right"
+            Variant="@BadgeVariant.Dot"
+            NibClass="badge-style-two">
             <Avatar
-                Alt=""Stock avatar""
-                Src=""./images/avatar-1.jpg"" />
+                Alt="Stock avatar"
+                Src="./images/avatar-1.jpg" />
         </Badge>
     </Box>
     <Box
-        Margin=""1"">
+        Margin="1">
         <Badge
-            Overlap=""@BadgeOverlap.Circle""
-            Vertical=""@Vertical.Bottom""
-            Horizontal=""@Horizontal.Right"">
+            Overlap="@BadgeOverlap.Circle"
+            Vertical="@Vertical.Bottom"
+            Horizontal="@Horizontal.Right">
             <NibContent>
                 <Avatar
-                    Class=""small-avatar""
-                    Alt=""Stock avatar""
-                    Src=""./images/avatar-1.jpg"" />
+                    Class="small-avatar"
+                    Alt="Stock avatar"
+                    Src="./images/avatar-1.jpg" />
             </NibContent>
             <ChildContent>
                 <Avatar
-                    Alt=""Stock avatar""
-                    Src=""./images/avatar-2.jpg"" />
+                    Alt="Stock avatar"
+                    Src="./images/avatar-2.jpg" />
             </ChildContent>
         </Badge>
     </Box>
 </Box>
-```
-")" />

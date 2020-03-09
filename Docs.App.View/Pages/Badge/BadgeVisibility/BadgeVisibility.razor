@@ -1,80 +1,20 @@
 @namespace Skclusive.Material.Docs.App.View
 
-<style>
-    .demo-root {
-        width: 100%;
-        display: flex;
-        align-items: center;
-        flex-direction: column;
-    }
-    .demo-margin {
-        margin: calc(var(--theme-spacing, 8) * 1px);
-    }
-    .demo-divider {
-        width: 100%;
-        margin: 16px 0px;
-    }
-    .demo-row {
-        margin-top: 16px;
-    }
-</style>
+<MarkdownSegment
+    Text="@(@"
+## Badge visibility
 
-<div
-    class="demo-root">
-    <div
-        class="demo-row">
-        <Badge
-            Color="@Color.Secondary"
-            Nib="4"
-            Invisible="@Invisible"
-            Class="demo-margin">
-            <MailIcon />
-        </Badge>
-        <Badge
-            Color="@Color.Secondary"
-            Variant="@NibVariant.Dot"
-            Invisible="@Invisible"
-            Class="demo-margin">
-            <MailIcon />
-        </Badge>
-    </div>
-    <FormGroup Row>
-        <FormControlLabel
-            Label="Show Badge">
-            <Switch
-                Color="@Color.Primary"
-                Checked="@(!Invisible)"
-                OnChange="@OnVisibleChange" />
-        </FormControlLabel>
-    </FormGroup>
-    <Divider
-        Class="demo-divider" />
-    <div
-        class="demo-row">
-        <Badge
-            Color="@Color.Secondary"
-            Nib="0"
-            Class="demo-margin">
-            <MailIcon />
-        </Badge>
-        <Badge
-            Color="@Color.Secondary"
-            Nib="0"
-            ShowZero
-            Class="demo-margin">
-            <MailIcon />
-        </Badge>
-    </div>
-</div>
+The visibility of badges can be controlled using the `invisible` property.
 
-@code
-{
-    private bool Invisible { set; get; } = false;
+The badge auto hides with badgeContent is zero. You can override this with the `showZero` property.
 
-    void OnVisibleChange(EventArgs args)
-    {
-        Invisible = !Invisible;
+")" />
 
-        StateHasChanged();
-    }
-}
+<MarkdownDemo>
+    <ViewContent>
+        <BadgeVisibilityDemo />
+    </ViewContent>
+    <CodeContent>
+        <BadgeVisibilityCode />
+    </CodeContent>
+</MarkdownDemo>

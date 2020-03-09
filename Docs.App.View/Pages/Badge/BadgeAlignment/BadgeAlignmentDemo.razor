@@ -1,0 +1,145 @@
+@namespace Skclusive.Material.Docs.App.View
+
+<style>
+    .demo-flex-column {
+        display: flex;
+        flex-direction: column;
+    }
+    .demo-flex-row {
+        display: flex;
+        justify-content: center;
+    }
+    .demo-margin {
+        margin: calc(var(--theme-spacing, 8) * 2px);
+    }
+    .demo-form-control {
+        margin-bottom: 24px;
+    }
+</style>
+
+<div
+    class="demo-flex-column">
+    <div
+        class="demo-flex-row">
+        <FormControl
+            Component="fieldset"
+            Class="demo-form-control">
+            <FormLabel
+                Component="legend">
+                Vertical
+            </FormLabel>
+            <RadioGroup
+                Name="Vertical"
+                aria-label="Vertical"
+                Value="@Vertical.ToString()"
+                OnChange="@OnVerticalChange">
+                <FormControlLabel
+                    Label="@Vertical.Top.ToString()">
+                    <Radio
+                        Value="@Vertical.Top.ToString()" />
+                </FormControlLabel>
+                <FormControlLabel
+                    Label="@Vertical.Bottom.ToString()">
+                    <Radio
+                        Value="@Vertical.Bottom.ToString()" />
+                </FormControlLabel>
+            </RadioGroup>
+        </FormControl>
+        <FormControl
+            Component="fieldset"
+            Class="demo-form-control">
+            <FormLabel
+                Component="legend">
+                Horizontal
+            </FormLabel>
+            <RadioGroup
+                Name="Horizontal"
+                aria-label="Horizontal"
+                Value="@Horizontal.ToString()"
+                OnChange="@OnHorizontalChange">
+                <FormControlLabel
+                    Label="@Horizontal.Right.ToString()">
+                    <Radio
+                        Value="@Horizontal.Right.ToString()" />
+                </FormControlLabel>
+                <FormControlLabel
+                    Label="@Horizontal.Left.ToString()">
+                    <Radio
+                        Value="@Horizontal.Left.ToString()" />
+                </FormControlLabel>
+            </RadioGroup>
+        </FormControl>
+    </div>
+    <div
+        class="demo-flex-row">
+         <Badge
+            Class="demo-margin"
+            Color="@Color.Secondary"
+            Nib="1"
+            Variant="@BadgeVariant.Dot"
+            Horizontal="@Horizontal"
+            Vertical="@Vertical">
+            <MailIcon />
+        </Badge>
+        <Badge
+            Class="demo-margin"
+            Color="@Color.Secondary"
+            Nib="1"
+            Horizontal="@Horizontal"
+            Vertical="@Vertical">
+            <MailIcon />
+        </Badge>
+        <Badge
+            Class="demo-margin"
+            Color="@Color.Secondary"
+            Nib="12"
+            Horizontal="@Horizontal"
+            Vertical="@Vertical">
+            <MailIcon />
+        </Badge>
+        <Badge
+            Class="demo-margin"
+            Color="@Color.Secondary"
+            Nib="123"
+            Horizontal="@Horizontal"
+            Vertical="@Vertical">
+            <MailIcon />
+        </Badge>
+        <Badge
+            Class="demo-margin"
+            Color="@Color.Secondary"
+            Max="999"
+            Nib="1337"
+            Horizontal="@Horizontal"
+            Vertical="@Vertical">
+            <MailIcon />
+        </Badge>
+    </div>
+</div>
+
+@code
+{
+    private Horizontal Horizontal { set; get; } = Horizontal.Right;
+
+    private Vertical Vertical { set; get; } = Vertical.Top;
+
+    private void OnHorizontalChange(ChangeEventArgs args)
+    {
+        if (Enum.TryParse(args.Value.ToString(), out Horizontal horizontal))
+        {
+            Horizontal = horizontal;
+
+            StateHasChanged();
+        }
+    }
+
+    private void OnVerticalChange(ChangeEventArgs args)
+    {
+        if (Enum.TryParse(args.Value.ToString(), out Vertical vertical))
+        {
+            Vertical = vertical;
+
+            StateHasChanged();
+        }
+    }
+}

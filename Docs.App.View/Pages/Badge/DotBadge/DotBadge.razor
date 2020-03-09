@@ -1,35 +1,18 @@
 @namespace Skclusive.Material.Docs.App.View
 
-<style>
-    .badge-margin {
-        margin: calc(var(--theme-spacing, 8) * 2px);
-    }
-</style>
+<MarkdownSegment
+    Text="@(@"
+## Dot Badge
 
-<div
-    style="display: flex;">
-    <div
-        class="badge-margin">
-        <Badge
-            Color="@Color.Primary"
-            Variant="@NibVariant.Dot">
-            <MailIcon />
-        </Badge>
-    </div>
-    <div
-        class="badge-margin">
-        <Badge
-            Variant="@NibVariant.Dot"
-            Color="@Color.Secondary">
-            <MailIcon />
-        </Badge>
-    </div>
-    <div
-        class="badge-margin">
-        <Badge
-            Variant="@NibVariant.Dot"
-            Color="@Color.Error">
-            <Typography>Typography</Typography>
-        </Badge>
-    </div>
-</div>
+The `dot` property changes a badge into a small dot. This can be used as a notification that something has changed without giving a count.
+
+")" />
+
+<MarkdownDemo>
+    <ViewContent>
+        <DotBadgeDemo />
+    </ViewContent>
+    <CodeContent>
+        <DotBadgeCode />
+    </CodeContent>
+</MarkdownDemo>

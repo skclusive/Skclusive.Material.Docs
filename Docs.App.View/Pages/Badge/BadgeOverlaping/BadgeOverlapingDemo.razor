@@ -37,14 +37,14 @@
                 Value="@Overlap.ToString()"
                 OnChange="@OnOverlapChange">
                 <FormControlLabel
-                    Label="@NibOverlap.Rectangle.ToString()">
+                    Label="@BadgeOverlap.Rectangle.ToString()">
                     <Radio
-                        Value="@NibOverlap.Rectangle.ToString()" />
+                        Value="@BadgeOverlap.Rectangle.ToString()" />
                 </FormControlLabel>
                 <FormControlLabel
-                    Label="@NibOverlap.Circle.ToString()">
+                    Label="@BadgeOverlap.Circle.ToString()">
                     <Radio
-                        Value="@NibOverlap.Circle.ToString()" />
+                        Value="@BadgeOverlap.Circle.ToString()" />
                 </FormControlLabel>
             </RadioGroup>
         </FormControl>
@@ -57,7 +57,7 @@
                 Color="@Color.Secondary"
                 Overlap="@Overlap"
                 Nib=" "
-                Variant="@NibVariant.Dot">
+                Variant="@BadgeVariant.Dot">
                 <div
                     class="@OverlapClass" />
             </Badge>
@@ -77,13 +77,13 @@
 
 @code
 {
-    private string OverlapClass => "demo-shape " + (Overlap == NibOverlap.Circle ? "demo-shape-circle" : "");
+    private string OverlapClass => "demo-shape " + (Overlap == BadgeOverlap.Circle ? "demo-shape-circle" : "");
 
-    private NibOverlap Overlap { set; get; } = NibOverlap.Rectangle;
+    private BadgeOverlap Overlap { set; get; } = BadgeOverlap.Rectangle;
 
     private void OnOverlapChange(ChangeEventArgs args)
     {
-        if (Enum.TryParse(args.Value.ToString(), out NibOverlap overlap))
+        if (Enum.TryParse(args.Value.ToString(), out BadgeOverlap overlap))
         {
             Overlap = overlap;
 

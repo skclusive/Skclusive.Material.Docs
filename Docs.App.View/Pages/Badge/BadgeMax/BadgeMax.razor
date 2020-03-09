@@ -1,36 +1,18 @@
 @namespace Skclusive.Material.Docs.App.View
 
-<style>
-    .badge-margin {
-        margin: calc(var(--theme-spacing, 8) * 2px);
-    }
-</style>
+<MarkdownSegment
+    Text="@(@"
+## Maximum Value
 
-<div
-    style="display: flex;">
-    <div
-        class="badge-margin">
-        <Badge
-            Nib="99"
-            Color="@Color.Primary">
-            <MailIcon />
-        </Badge>
-    </div>
-    <div
-        class="badge-margin">
-        <Badge
-            Nib="100"
-            Color="@Color.Primary">
-            <MailIcon />
-        </Badge>
-    </div>
-    <div
-        class="badge-margin">
-        <Badge
-            Nib="1000"
-            Max="999"
-            Color="@Color.Primary">
-            <MailIcon />
-        </Badge>
-    </div>
-</div>
+You can use the `max` property to cap the value of the badge content.
+
+")" />
+
+<MarkdownDemo>
+    <ViewContent>
+        <BadgeMaxDemo />
+    </ViewContent>
+    <CodeContent>
+        <BadgeMaxCode />
+    </CodeContent>
+</MarkdownDemo>
