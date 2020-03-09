@@ -1,11 +1,7 @@
 @namespace Skclusive.Material.Docs.App.View
+
 @inherits MaterialComponentBase
 
-<MarkdownCode
-    Class="@_Class"
-    Style="@_Style"
-    Text="@(@"
-```css
 <style>
     .primary-searchbar-search {
         width: 100%;
@@ -44,74 +40,73 @@
         }
     }
 </style>
-```
-```html
+
 <div
-    style=""flex-grow: 1;"">
+    style="flex-grow: 1;">
     <AppBar
-        Position=""@AppBarPosition.Static"">
+        Position="@AppBarPosition.Static">
         <Toolbar>
             <IconButton
-                Edge=""@IconButtonEdge.Start""
-                Style=""margin-right: 16px;""
-                Color=""@Color.Inherit""
-                aria-label=""open drawer"">
+                Edge="@IconButtonEdge.Start"
+                Style="margin-right: 16px;"
+                Color="@Color.Inherit"
+                aria-label="open drawer">
                 <MenuIcon />
             </IconButton>
             <Hidden
                 ExtraSmallDown>
                 <Typography
-                    Class=""@context.Class""
-                    Variant=""@TypographyVariant.H6""
+                    Class="@context.Class"
+                    Variant="@TypographyVariant.H6"
                     NoWrap>
                     Material-UI
                 </Typography>
             </Hidden>
             <div
-                class=""primary-searchbar-search"">
+                class="primary-searchbar-search">
                 <div
-                    class=""primary-searchbar-search-icon"">
+                    class="primary-searchbar-search-icon">
                     <SearchIcon />
                 </div>
                 <InputBase
-                    Placeholder=""Search…""
-                    Style=""color: inherit;""
-                    InputClass=""primary-searchbar-search-input"" />
+                    Placeholder="Search…"
+                    Style="color: inherit;"
+                    InputClass="primary-searchbar-search-input" />
             </div>
             <div
-                Style=""flex-grow: 1;"" />
+                Style="flex-grow: 1;" />
             <Hidden
                 SmallDown
-                Context=""HiddenContext"">
-                <div class=""@HiddenContext.Class"">
+                Context="HiddenContext">
+                <div class="@HiddenContext.Class">
                     <div
-                        style=""display: flex;"">
+                        style="display: flex;">
                         <IconButton
-                            aria-label=""show 4 new mails""
-                            Color=""@Color.Inherit"">
+                            aria-label="show 4 new mails"
+                            Color="@Color.Inherit">
                             <Badge
-                                Nib=""4""
-                                Color=""@Color.Secondary"">
+                                Nib="4"
+                                Color="@Color.Secondary">
                                 <MailIcon />
                             </Badge>
                         </IconButton>
                         <IconButton
-                            aria-label=""show 17 new notifications""
-                            Color=""@Color.Inherit"">
+                            aria-label="show 17 new notifications"
+                            Color="@Color.Inherit">
                             <Badge
-                                Nib=""17""
-                                Color=""@Color.Secondary"">
+                                Nib="17"
+                                Color="@Color.Secondary">
                                 <NotificationsIcon />
                             </Badge>
                         </IconButton>
                         <IconButton
-                            Edge=""@IconButtonEdge.End""
-                            aria-label=""account of current user""
-                            aria-controls=""primary-search-account-menu""
-                            aria-haspopup=""true""
-                            RootRef=""@ProfileMenuRef""
-                            OnClick=""@HandleMenuOpen""
-                            Color=""@Color.Inherit"">
+                            Edge="@IconButtonEdge.End"
+                            aria-label="account of current user"
+                            aria-controls="primary-search-account-menu"
+                            aria-haspopup="true"
+                            RootRef="@ProfileMenuRef"
+                            OnClick="@HandleMenuOpen"
+                            Color="@Color.Inherit">
                             <AccountCircleIcon />
                         </IconButton>
                     </div>
@@ -119,17 +114,17 @@
             </Hidden>
             <Hidden
                 MediumUp
-                Context=""HiddenContext"">
-                <div class=""@HiddenContext.Class"">
+                Context="HiddenContext">
+                <div class="@HiddenContext.Class">
                     <div
-                        style=""display: flex;"">
+                        style="display: flex;">
                         <IconButton
-                            aria-label=""show more""
-                            aria-controls=""primary-search-account-menu-mobile""
-                            aria-haspopup=""true""
-                            RootRef=""@MobileMenuRef""
-                            OnClick=""@HandleMobileMenuOpen""
-                            Color=""@Color.Inherit"">
+                            aria-label="show more"
+                            aria-controls="primary-search-account-menu-mobile"
+                            aria-haspopup="true"
+                            RootRef="@MobileMenuRef"
+                            OnClick="@HandleMobileMenuOpen"
+                            Color="@Color.Inherit">
                             <MoreVertIcon />
                         </IconButton>
                     </div>
@@ -138,22 +133,22 @@
         </Toolbar>
     </AppBar>
     <Menu
-        AnchorVerticalOrigin=""@VerticalOrigin.Top""
-        AnchorHorizontalOrigin=""@HorizontalOrigin.Right""
-        TransformVerticalOrigin=""@VerticalOrigin.Top""
-        TransformHorizontalOrigin=""@HorizontalOrigin.Right""
-        Open=""@IsMobileMenuOpen""
+        AnchorVerticalOrigin="@VerticalOrigin.Top"
+        AnchorHorizontalOrigin="@HorizontalOrigin.Right"
+        TransformVerticalOrigin="@VerticalOrigin.Top"
+        TransformHorizontalOrigin="@HorizontalOrigin.Right"
+        Open="@IsMobileMenuOpen"
         KeepMounted
-        AnchorRef=""@MobileMenuRef""
-        Id=""primary-search-account-menu-mobile""
-        OnClose=""@HandleMobileMenuClose"">
+        AnchorRef="@MobileMenuRef"
+        Id="primary-search-account-menu-mobile"
+        OnClose="@HandleMobileMenuClose">
         <MenuItem>
             <IconButton
-                aria-label=""show 4 new mails""
-                Color=""@Color.Inherit"">
+                aria-label="show 4 new mails"
+                Color="@Color.Inherit">
                 <Badge
-                    Nib=""4""
-                    Color=""@Color.Secondary"">
+                    Nib="4"
+                    Color="@Color.Secondary">
                     <MailIcon />
                 </Badge>
             </IconButton>
@@ -161,52 +156,51 @@
         </MenuItem>
         <MenuItem>
             <IconButton
-                aria-label=""show 17 new notifications""
-                Color=""@Color.Inherit"">
+                aria-label="show 17 new notifications"
+                Color="@Color.Inherit">
                 <Badge
-                    Nib=""17""
-                    Color=""@Color.Secondary"">
+                    Nib="17"
+                    Color="@Color.Secondary">
                     <NotificationsIcon />
                 </Badge>
             </IconButton>
             <p>Notifications</p>
         </MenuItem>
         <MenuItem
-            OnClick=""@HandleMenuOpen"">
+            OnClick="@HandleMenuOpen">
             <IconButton
-                Edge=""@IconButtonEdge.End""
-                aria-label=""account of current user""
-                aria-controls=""primary-search-account-menu""
-                aria-haspopup=""true""
-                RootRef=""@MobileProfileMenuRef""
-                Color=""@Color.Inherit"">
+                Edge="@IconButtonEdge.End"
+                aria-label="account of current user"
+                aria-controls="primary-search-account-menu"
+                aria-haspopup="true"
+                RootRef="@MobileProfileMenuRef"
+                Color="@Color.Inherit">
                 <AccountCircleIcon />
             </IconButton>
             <p>Profile</p>
         </MenuItem>
     </Menu>
     <Menu
-        AnchorVerticalOrigin=""@VerticalOrigin.Top""
-        AnchorHorizontalOrigin=""@HorizontalOrigin.Right""
-        TransformVerticalOrigin=""@VerticalOrigin.Top""
-        TransformHorizontalOrigin=""@HorizontalOrigin.Right""
-        Open=""@IsMenuOpen""
+        AnchorVerticalOrigin="@VerticalOrigin.Top"
+        AnchorHorizontalOrigin="@HorizontalOrigin.Right"
+        TransformVerticalOrigin="@VerticalOrigin.Top"
+        TransformHorizontalOrigin="@HorizontalOrigin.Right"
+        Open="@IsMenuOpen"
         KeepMounted
-        AnchorRef=""@MenuRef""
-        Id=""primary-search-account-menu""
-        OnClose=""@HandleMenuClose"">
+        AnchorRef="@MenuRef"
+        Id="primary-search-account-menu"
+        OnClose="@HandleMenuClose">
         <MenuItem
-            OnClick=""@HandleMenuClose"">
+            OnClick="@HandleMenuClose">
             Profile
         </MenuItem>
         <MenuItem
-            OnClick=""@HandleMenuClose"">
+            OnClick="@HandleMenuClose">
             My account
         </MenuItem>
     </Menu>
 </div>
-```
-```csharp
+
 @code
 {
     private IReference ProfileMenuRef { set; get; } = new Reference();
@@ -270,5 +264,3 @@
         StateHasChanged();
     }
 }
-```
-")" />

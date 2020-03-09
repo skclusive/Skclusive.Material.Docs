@@ -2,66 +2,13 @@
 @page "/appbar"
 
 <div>
-    <Markdown
-         Text="@(@"
----
-title: App Bar Blazor component
-components: AppBar, Toolbar, Menu
----
-
-# App Bar
-
-<p class=""description"">The App Bar displays information and actions relating to the current screen.</p>
-
-The [top App Bar](https://material.io/design/components/app-bars-top.html) provides content and actions related to the current screen. It’s used for branding, screen titles, navigation, and actions.
-
-It can transform into a contextual action bar or used as a navbar.
-
-## Installing with Nuget
-
-You can [install AppBar package](https://www.nuget.org/packages/Skclusive.Material.AppBar/) by typing the below command in your terminal:
-
-`dotnet add package Skclusive.Material.AppBar`
-
-Then, you can import it in your _Imports.razor.
-
-```csharp
-@using Skclusive.Material.AppBar;
-```
-
-## Simple App Bar
-
-{{""demo"": ""Skclusive.Material.Docs.App.View.ButtonAppBar, Skclusive.Material.Docs.App.View""}}
-
-## App Bar with a primary search field
-
-A primary searchbar.
-
-{{""demo"": ""Skclusive.Material.Docs.App.View.PrimarySearchAppBar, Skclusive.Material.Docs.App.View""}}
-
-## App Bar with menu
-
-{{""demo"": ""Skclusive.Material.Docs.App.View.MenuAppBar, Skclusive.Material.Docs.App.View""}}
-
-## App Bar with search field
-
-A side searchbar.
-
-{{""demo"": ""Skclusive.Material.Docs.App.View.SearchAppBar, Skclusive.Material.Docs.App.View""}}
-
-## Dense (desktop only)
-
-{{""demo"": ""Skclusive.Material.Docs.App.View.DenseAppBar, Skclusive.Material.Docs.App.View""}}
-
-## Prominent
-
-A prominent app bar.
-
-{{""demo"": ""Skclusive.Material.Docs.App.View.ProminentAppBar, Skclusive.Material.Docs.App.View""}}
-
-## Bottom App Bar
-
-{{""demo"": ""Skclusive.Material.Docs.App.View.BottomAppBar, Skclusive.Material.Docs.App.View""}}
-
-")" />
+    <AppBarInfo />
+    <ButtonAppBar />
+    <PrimarySearchAppBar />
+    <MenuAppBar />
+    <SearchAppBar />
+    <DenseAppBar />
+    <ProminentAppBar />
+    <BottomAppBar />
+    <AppBarAPI />
 </div>

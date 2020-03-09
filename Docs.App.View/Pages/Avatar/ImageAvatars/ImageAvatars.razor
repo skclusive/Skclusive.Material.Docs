@@ -1,15 +1,18 @@
 @namespace Skclusive.Material.Docs.App.View
 
-<Grid
-    Container
-    Justify="@Justify.Center"
-    AlignItems="@AlignItems.Center">
-    <Avatar
-        Alt="Remy Sharp"
-        Src="./images/avatar-1.jpg"
-        Style="margin: 10px;" />
-    <Avatar
-        Alt="Remy Sharp"
-        Src="./images/avatar-1.jpg"
-        Style="margin: 10px; width: 60px; height: 60px;" />
-</Grid>
+<MarkdownSegment
+    Text="@(@"
+## Image avatars
+
+Image avatars can be created by passing standard `img` props `src` or `srcSet` into the component.
+
+")" />
+
+<MarkdownDemo>
+    <ViewContent>
+        <ImageAvatarsDemo />
+    </ViewContent>
+    <CodeContent>
+        <ImageAvatarsCode />
+    </CodeContent>
+</MarkdownDemo>

@@ -1,11 +1,7 @@
 @namespace Skclusive.Material.Docs.App.View
+
 @inherits MaterialComponentBase
 
-<MarkdownCode
-    Class="@_Class"
-    Style="@_Style"
-    Text="@(@"
-```css
 <style>
     .searchbar-search {
         width: 100%;
@@ -47,44 +43,40 @@
         }
     }
 </style>
-```
 
-```html
 <div
-    style=""flex-grow: 1;"">
+    style="flex-grow: 1;">
     <AppBar
-        Position=""@AppBarPosition.Static"">
+        Position="@AppBarPosition.Static">
         <Toolbar>
             <IconButton
-                Edge=""@IconButtonEdge.Start""
-                Style=""margin-right: 16px;""
-                Color=""@Color.Inherit""
-                aria-label=""open drawer"">
+                Edge="@IconButtonEdge.Start"
+                Style="margin-right: 16px;"
+                Color="@Color.Inherit"
+                aria-label="open drawer">
                 <MenuIcon />
             </IconButton>
             <Hidden
                 ExtraSmallDown>
                 <Typography
-                    Class=""@context.Class""
-                    Style=""flex-grow: 1;""
-                    Variant=""@TypographyVariant.H6""
+                    Class="@context.Class"
+                    Style="flex-grow: 1;"
+                    Variant="@TypographyVariant.H6"
                     NoWrap>
                     Material-UI
                 </Typography>
             </Hidden>
             <div
-                class=""searchbar-search"">
+                class="searchbar-search">
                 <div
-                    class=""searchbar-search-icon"">
+                    class="searchbar-search-icon">
                     <SearchIcon />
                 </div>
                 <InputBase
-                    Placeholder=""Search…""
-                    Style=""color: inherit;""
-                    InputClass=""searchbar-search-input"" />
+                    Placeholder="Search…"
+                    Style="color: inherit;"
+                    InputClass="searchbar-search-input" />
             </div>
         </Toolbar>
     </AppBar>
 </div>
-```
-")" />

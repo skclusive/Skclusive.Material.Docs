@@ -35,7 +35,7 @@ Choosing an option should immediately ideally commit the option and close the me
 
 **Disambiguation**: In contrast to simple menus, simple dialogs can present additional detail related to the options available for a list item or provide navigational or orthogonal actions related to the primary task. Although they can display the same content, simple menus are preferred over simple dialogs because simple menus are less disruptive to the user’s current context.
 
-{{""demo"": ""Skclusive.Material.Docs.App.View.SimpleMenu, Skclusive.Material.Docs.App.View""}}
+{{""blazor"": ""Skclusive.Material.Docs.App.View.SimpleMenu, Skclusive.Material.Docs.App.View""}}
 
 ## Selected menus
 
@@ -44,14 +44,14 @@ and the initial focus will be placed on the selected menu item.
 The currently selected menu item is set using the `selected` property (from [ListItem](/api/list-item/)).
 To use a selected menu item without impacting the initial focus or the vertical positioning of the menu, set the `variant` property to `menu`.
 
-{{""demo"": ""Skclusive.Material.Docs.App.View.SimpleListMenu, Skclusive.Material.Docs.App.View""}}
+{{""blazor"": ""Skclusive.Material.Docs.App.View.SimpleListMenu, Skclusive.Material.Docs.App.View""}}
 
 ## Customized menus
 
 Here is an example of customizing the component. You can learn more about this in the
 [overrides documentation page](/customization/components/).
 
-{{""demo"": ""Skclusive.Material.Docs.App.View.CustomizedMenus, Skclusive.Material.Docs.App.View""}}
+{{""blazor"": ""Skclusive.Material.Docs.App.View.CustomizedMenus, Skclusive.Material.Docs.App.View""}}
 
 The `MenuItem` is a wrapper around `ListItem` with some additional styles.
 You can use the same list composition features with the `MenuItem` component:
@@ -60,14 +60,14 @@ You can use the same list composition features with the `MenuItem` component:
 
 If the height of a menu prevents all menu items from being displayed, the menu can scroll internally.
 
-{{""demo"": ""Skclusive.Material.Docs.App.View.LongMenu, Skclusive.Material.Docs.App.View""}}
+{{""blazor"": ""Skclusive.Material.Docs.App.View.LongMenu, Skclusive.Material.Docs.App.View""}}
 
 ## Limitations
 
 There is [a flexbox bug](https://bugs.chromium.org/p/chromium/issues/detail?id=327437) that prevents `text-overflow: ellipsis` from working in a flexbox layout.
 You can use the `Typography` component with `noWrap` to workaround this issue:
 
-{{""demo"": ""Skclusive.Material.Docs.App.View.TypographyMenu, Skclusive.Material.Docs.App.View""}}
+{{""blazor"": ""Skclusive.Material.Docs.App.View.TypographyMenu, Skclusive.Material.Docs.App.View""}}
 
 ")" />
 </div>
