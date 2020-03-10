@@ -1,45 +1,16 @@
 @namespace Skclusive.Material.Docs.App.View
 
-<List
-    Component="nav"
-    Style="width: 100%;
-    max-width: 360px;
-    background-color: var(--theme-palette-background-paper, #fff);"
-    aria-label="mailbox folders">
-    <ListItem>
-        <ListItemAvatar>
-            <Avatar>
-                <ImageIcon />
-            </Avatar>
-        </ListItemAvatar>
-        <ListItemText
-            Primary="Photos"
-            Secondary="Jan 9, 2014" />
-    </ListItem>
-    <Divider
-        Variant="@DividerVariant.Inset"
-        Component="li" />
-    <ListItem>
-        <ListItemAvatar>
-            <Avatar>
-                <WorkIcon />
-            </Avatar>
-        </ListItemAvatar>
-        <ListItemText
-            Primary="Work"
-            Secondary="Jan 7, 2014" />
-    </ListItem>
-    <Divider
-        Variant="@DividerVariant.Inset"
-        Component="li" />
-    <ListItem>
-        <ListItemAvatar>
-            <Avatar>
-                <BeachAccessIcon />
-            </Avatar>
-        </ListItemAvatar>
-        <ListItemText
-            Primary="Vacation"
-            Secondary="July 20, 2014" />
-    </ListItem>
-</List>
+<MarkdownSegment
+    Text="@(@"
+## Inset Dividers
+
+")" />
+
+<MarkdownDemo>
+    <ViewContent>
+        <InsetDividersDemo />
+    </ViewContent>
+    <CodeContent>
+        <InsetDividersCode />
+    </CodeContent>
+</MarkdownDemo>

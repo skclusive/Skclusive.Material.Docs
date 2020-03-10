@@ -1,61 +1,10 @@
 ﻿@namespace Skclusive.Material.Docs.App.View
 @page "/divider"
 
-<div>
-    <Markdown
-         Text="@(@"
----
-title: Divider Blazor component
-components: Divider
----
-
-# Dividers
-
-<p class=""description"">A divider is a thin line that groups content in lists and layouts.</p>
-
-[Dividers](https://material.io/design/components/dividers.html) separate content into clear groups.
-
-## Installing with Nuget
-
-You can [install Divider package](https://www.nuget.org/packages/Skclusive.Material.Divider/) by typing the below command in your terminal:
-
-`dotnet add package Skclusive.Material.Divider`
-
-Then, you can import it in your _Imports.razor.
-
-```csharp
-@using Skclusive.Material.Divider;
-```
-
-## List Dividers
-
-The divider renders as an `<hr>` by default.
-You can save rendering this DOM element by using the `divider` property on the `ListItem` component.
-
-{{""blazor"": ""Skclusive.Material.Docs.App.View.ListDividers, Skclusive.Material.Docs.App.View""}}
-
-## HTML5 Specification
-
-In a list, you should ensure the `Divider` is rendered as an `<li>` to match the HTML5 specification.
-The examples below show two ways of achieving this.
-
-## Inset Dividers
-
-{{""blazor"": ""Skclusive.Material.Docs.App.View.InsetDividers, Skclusive.Material.Docs.App.View""}}
-
-## Subheader Dividers
-
-{{""blazor"": ""Skclusive.Material.Docs.App.View.SubheaderDividers, Skclusive.Material.Docs.App.View""}}
-
-## Middle Dividers
-
-{{""blazor"": ""Skclusive.Material.Docs.App.View.MiddleDividers, Skclusive.Material.Docs.App.View""}}
-
-## Vertical Dividers
-
-You can also render a divider vertically using the `orientation` prop.
-
-{{""blazor"": ""Skclusive.Material.Docs.App.View.VerticalDividers, Skclusive.Material.Docs.App.View""}}
-
-")" />
-</div>
+<DividerInfo />
+<ListDividers />
+<InsetDividers />
+<SubheaderDividers />
+<MiddleDividers />
+<VerticalDividers />
+<DividerAPI />

@@ -1,33 +1,28 @@
 @namespace Skclusive.Material.Docs.App.View
 
-<List
-    Component="nav"
-    Style="width: 100%;
-    max-width: 360px;
-    background-color: var(--theme-palette-background-paper, #fff);"
-    aria-label="mailbox folders">
-    <ListItem
-        Button>
-        <ListItemText
-            Primary="Inbox" />
-    </ListItem>
-    <Divider />
-    <ListItem
-        Button
-        Divider>
-        <ListItemText
-            Primary="Drafts" />
-    </ListItem>
-    <ListItem
-        Button>
-        <ListItemText
-            Primary="Trash" />
-    </ListItem>
-    <Divider
-        Light />
-    <ListItem
-        Button>
-        <ListItemText
-            Primary="Spam" />
-    </ListItem>
-</List>
+<MarkdownSegment
+    Text="@(@"
+## List Dividers
+
+The divider renders as an `<hr>` by default.
+You can save rendering this DOM element by using the `divider` property on the `ListItem` component.
+
+")" />
+
+<MarkdownDemo>
+    <ViewContent>
+        <ListDividersDemo />
+    </ViewContent>
+    <CodeContent>
+        <ListDividersCode />
+    </CodeContent>
+</MarkdownDemo>
+
+<MarkdownSegment
+    Text="@(@"
+## HTML5 Specification
+
+In a list, you should ensure the `Divider` is rendered as an `<li>` to match the HTML5 specification.
+The examples below show two ways of achieving this.
+
+")" />
