@@ -1,11 +1,5 @@
 @namespace Skclusive.Material.Docs.App.View
-@inherits MaterialComponentBase
 
-<MarkdownCode
-    Class="@_Class"
-    Style="@_Style"
-    Text="@(@"
-```css
 <style>
     .demo-hidden-root {
         flex-grow: 1;
@@ -23,49 +17,45 @@
         text-align: center;
     }
 </style>
-```
 
-```html
 <div
-    class=""demo-hidden-root"">
+    class="demo-hidden-root">
     <div
-        class=""demo-hidden-container"">
+        class="demo-hidden-container">
         <Hidden
             ExtraSmallUp>
             <Paper
-                Class=""@(context.Class + "" demo-hidden-paper"")"">
+                Class="@(context.Class + " demo-hidden-paper")">
                 ExtraSmallUp
             </Paper>
         </Hidden>
         <Hidden
             SmallUp>
             <Paper
-                Class=""@(context.Class + "" demo-hidden-paper"")"">
+                Class="@(context.Class + " demo-hidden-paper")">
                 SmallUp
             </Paper>
         </Hidden>
         <Hidden
             MediumUp>
             <Paper
-                Class=""@(context.Class + "" demo-hidden-paper"")"">
+                Class="@(context.Class + " demo-hidden-paper")">
                 MediumUp
             </Paper>
         </Hidden>
         <Hidden
             LargeUp>
             <Paper
-                Class=""@(context.Class + "" demo-hidden-paper"")"">
+                Class="@(context.Class + " demo-hidden-paper")">
                 LargeUp
             </Paper>
         </Hidden>
         <Hidden
             ExtraLargeUp>
             <Paper
-                Class=""@(context.Class + "" demo-hidden-paper"")"">
+                Class="@(context.Class + " demo-hidden-paper")">
                 ExtraLargeUp
             </Paper>
         </Hidden>
     </div>
 </div>
-```
-")" />

@@ -1,0 +1,63 @@
+@namespace Skclusive.Material.Docs.App.View
+
+<MarkdownSegment
+    Text="@(@"
+# Hidden API
+
+<p class=""description"">The API documentation of the Hidden component. Learn more about instation, the parameters and the CSS customization points.</p>
+
+## Installing with Nuget
+
+You can [install Hidden package](https://www.nuget.org/packages/Skclusive.Material.Hidden/) by typing the below command in your terminal:
+
+```csharp
+dotnet add package Skclusive.Material.Hidden
+```
+
+Then, you can import it in your `_Imports.razor`.
+
+```csharp
+@using Skclusive.Material.Hidden;
+```
+
+Then, you can render the style for this component it in your `Router.razor`.
+
+```html
+<HiddenStyle />
+```
+
+## Parameters
+
+| Name | Type | Default | Description |
+|:-----|:-----|:--------|:------------|
+| <span class=""prop-name"">RootRef</span> | <span class=""prop-type"">IReference</span> | <span class=""prop-default"">new Reference()</span> | The reference used to ref the root node. |
+| <span class=""prop-name"">Class</span> | <span class=""prop-type"">string</span> | | The class applied to the root node. |
+| <span class=""prop-name"">Style</span> | <span class=""prop-type"">string</span> | | The style applied to the root node. |
+| <span class=""prop-name"">Component</span> | <span class=""prop-type"">string</span> | <span class=""prop-default"">'div'</span> | The component used for the root node. |
+| <span class=""prop-name"">ChildContent</span> | <span class=""prop-type"">RenderFragment</span> |  | Used to render icon or text elements inside the Hidden. `src` and `alt` props will not be used and no `img` will be rendered by default.<br>This can be an element, or just a string. |
+| <span class=""prop-name"">Alt</span> | <span class=""prop-type"">string</span> |  | Used in combination with `src` or `srcSet` to provide an alt attribute for the rendered `img` element. |
+| <span class=""prop-name"">ImageProps</span> | <span class=""prop-type"">Dictionary&lt;string, object&gt;</span> |  | Attributes applied to the `img` element if the component is used to display an image. |
+| <span class=""prop-name"">Sizes</span> | <span class=""prop-type"">string</span> |  | The `sizes` attribute for the `img` element. |
+| <span class=""prop-name"">Src</span> | <span class=""prop-type"">string</span> |  | The `src` attribute for the `img` element. |
+| <span class=""prop-name"">SrcSet</span> | <span class=""prop-type"">string</span> |  | The `srcSet` attribute for the `img` element. |
+| <span class=""prop-name"">ImageClass</span> | <span class=""prop-type"">string</span> | | The class applied to the `img` element. |
+| <span class=""prop-name"">ImageStyle</span> | <span class=""prop-type"">string</span> | | The style applied to the `img` element. |
+
+## CSS
+
+- Style name: `Hidden`.
+- Style details:
+
+| Global class | Description |
+|:-------------|:------------|
+| <span class=""prop-name"">Hidden-Root</span> | Styles applied to the root element.
+| <span class=""prop-name"">Hidden-Color-Default</span> | Styles applied to the root element if there are children and not `src` or `srcSet`.
+| <span class=""prop-name"">Hidden-Image</span> | Styles applied to the img element if either `src` or `srcSet` is defined.
+
+You can override the style of the component as below:
+
+- With a [global class name](/customization/components/#overriding-styles-with-global-class-names).
+
+If that's not sufficient, you can check the [implementation of the component](https://github.com/skclusive/Skclusive.Material.Component/blob/master/Hidden/src/Hidden/Hidden.cs) for more detail.
+
+")" />

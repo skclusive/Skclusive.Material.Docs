@@ -1,78 +1,9 @@
 ﻿@namespace Skclusive.Material.Docs.App.View
 @page "/hidden"
 
-<div>
-    <Markdown
-         Text="@(@"
----
-title: Hidden Blazor component
-components: Hidden
----
-
-# Hidden
-
-<p class=""description"">Quickly and responsively toggle the visibility value of components and more with the hidden utilities.</p>
-
-All elements are visible unless **they are explicitly hidden**.
-To ease integration with Material-UI's [responsive breakpoints](/customization/breakpoints/),
-this component can be used to hide any content,
-or you can use it in conjunction with the [`Grid`](/components/grid/) component.
-
-## Installing with Nuget
-
-You can [install Hidden package](https://www.nuget.org/packages/Skclusive.Material.Hidden/) by typing the below command in your terminal:
-
-`dotnet add package Skclusive.Material.Hidden`
-
-Then, you can import it in your _Imports.razor.
-
-```csharp
-@using Skclusive.Material.Hidden;
-```
-
-## How it works
-
-Hidden works with a range of breakpoints e.g. `xsUp` or `mdDown`, or one or more breakpoints e.g. `only='sm'` or `only={['md', 'xl']}`.
-Ranges and individual breakpoints can be used simultaneously to achieve very customized behavior.
-The ranges are inclusive of the specified breakpoints.
-
-```js
-innerWidth  |xs      sm       md       lg       xl
-            |--------|--------|--------|--------|-------->
-width       |   xs   |   sm   |   md   |   lg   |   xl
-
-smUp        |   show | hide
-mdDown      |                     hide | show
-
-```
-## Breakpoint up
-
-Using any breakpoint `up` property, the given *children* will be hidden *at or above* the breakpoint.
-
-{{""blazor"": ""Skclusive.Material.Docs.App.View.BreakpointUp, Skclusive.Material.Docs.App.View""}}
-
-## Breakpoint down
-
-Using any breakpoint `down` property, the given *children* will be hidden *at or below* the breakpoint.
-
-{{""blazor"": ""Skclusive.Material.Docs.App.View.BreakpointDown, Skclusive.Material.Docs.App.View""}}
-
-## Breakpoint only
-
-Using the breakpoint `only` property, the given *children* will be hidden *at* the specified breakpoint(s).
-
-The `only` property can be used in two ways:
-
-- list a single breakpoint
-- list an array of breakpoints
-
-{{""blazor"": ""Skclusive.Material.Docs.App.View.BreakpointOnly, Skclusive.Material.Docs.App.View""}}
-
-## Integration with Grid
-
-It is quite common to alter `Grid` at different responsive breakpoints, and in many cases, you want to hide some of those elements.
-
-{{""blazor"": ""Skclusive.Material.Docs.App.View.GridIntegration, Skclusive.Material.Docs.App.View""}}
-
-")" />
-</div>
+<HiddenInfo />
+<BreakpointUp />
+<BreakpointDown />
+<BreakpointOnly />
+<GridIntegration />
+<HiddenAPI />

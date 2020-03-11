@@ -1,11 +1,5 @@
 @namespace Skclusive.Material.Docs.App.View
-@inherits MaterialComponentBase
 
-<MarkdownCode
-    Class="@_Class"
-    Style="@_Style"
-    Text="@(@"
-```css
 <style>
     .demo-hidden-root {
         flex-grow: 1;
@@ -17,22 +11,20 @@
         padding: 16px;
     }
 </style>
-```
 
-```html
 <div
-    class=""demo-hidden-root"">
+    class="demo-hidden-root">
     <Grid
         Container
-        Spacing=""@Spacing.Three"">
+        Spacing="@Spacing.Three">
         <Hidden
             ExtraSmallUp>
             <Grid
-                Class=""@context.Class""
+                Class="@context.Class"
                 Item
-                ExtraSmall=""@GridSize.True"">
+                ExtraSmall="@GridSize.True">
                 <Paper
-                    Class=""demo-hidden-grid-paper"">
+                    Class="demo-hidden-grid-paper">
                     ExtraSmallUp
                 </Paper>
             </Grid>
@@ -40,11 +32,11 @@
         <Hidden
             SmallUp>
             <Grid
-                Class=""@context.Class""
+                Class="@context.Class"
                 Item
-                ExtraSmall=""@GridSize.True"">
+                ExtraSmall="@GridSize.True">
                 <Paper
-                    Class=""demo-hidden-grid-paper"">
+                    Class="demo-hidden-grid-paper">
                     SmallUp
                 </Paper>
             </Grid>
@@ -52,11 +44,11 @@
         <Hidden
             MediumUp>
             <Grid
-                Class=""@context.Class""
+                Class="@context.Class"
                 Item
-                ExtraSmall=""@GridSize.True"">
+                ExtraSmall="@GridSize.True">
                 <Paper
-                    Class=""demo-hidden-grid-paper"">
+                    Class="demo-hidden-grid-paper">
                     MediumUp
                 </Paper>
             </Grid>
@@ -64,11 +56,11 @@
         <Hidden
             LargeUp>
             <Grid
-                Class=""@context.Class""
+                Class="@context.Class"
                 Item
-                ExtraSmall=""@GridSize.True"">
+                ExtraSmall="@GridSize.True">
                 <Paper
-                    Class=""demo-hidden-grid-paper"">
+                    Class="demo-hidden-grid-paper">
                     LargeUp
                 </Paper>
             </Grid>
@@ -76,16 +68,14 @@
         <Hidden
             ExtraLargeUp>
             <Grid
-                Class=""@context.Class""
+                Class="@context.Class"
                 Item
-                ExtraSmall=""@GridSize.True"">
+                ExtraSmall="@GridSize.True">
                 <Paper
-                    Class=""demo-hidden-grid-paper"">
+                    Class="demo-hidden-grid-paper">
                     ExtraLargeUp
                 </Paper>
             </Grid>
         </Hidden>
     </Grid>
 </div>
-```
-")" />

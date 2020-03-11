@@ -1,11 +1,5 @@
 @namespace Skclusive.Material.Docs.App.View
-@inherits MaterialComponentBase
 
-<MarkdownCode
-    Class="@_Class"
-    Style="@_Style"
-    Text="@(@"
-```css
 <style>
     .demo-hidden-root {
         flex-grow: 1;
@@ -23,35 +17,31 @@
         text-align: center;
     }
 </style>
-```
 
-```html
 <div
-    class=""demo-hidden-root"">
+    class="demo-hidden-root">
     <div
-        class=""demo-hidden-container"">
+        class="demo-hidden-container">
         <Hidden
-            Only=""@(new [] { Breakpoint.Large })"">
+            Only="@(new [] { Breakpoint.Large })">
             <Paper
-                Class=""@(context.Class + "" demo-hidden-paper"")"">
+                Class="@(context.Class + " demo-hidden-paper")">
                 Hidden on Large
             </Paper>
         </Hidden>
         <Hidden
-            Only=""@(new [] { Breakpoint.Small })"">
+            Only="@(new [] { Breakpoint.Small })">
             <Paper
-                Class=""@(context.Class + "" demo-hidden-paper"")"">
+                Class="@(context.Class + " demo-hidden-paper")">
                 Hidden on Small
             </Paper>
         </Hidden>
         <Hidden
-            Only=""@(new [] { Breakpoint.Small, Breakpoint.Large })"">
+            Only="@(new [] { Breakpoint.Small, Breakpoint.Large })">
             <Paper
-                Class=""@(context.Class + "" demo-hidden-paper"")"">
+                Class="@(context.Class + " demo-hidden-paper")">
                 Hidden on Small and Large
             </Paper>
         </Hidden>
     </div>
 </div>
-```
-")" />
