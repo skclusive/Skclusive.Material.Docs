@@ -1,11 +1,5 @@
 @namespace Skclusive.Material.Docs.App.View
-@inherits MaterialComponentBase
 
-<MarkdownCode
-    Class="@_Class"
-    Style="@_Style"
-    Text="@(@"
-```css
 <style>
 
     .paper-complex {
@@ -26,64 +20,62 @@
         max-height: 100%;
     }
 </style>
-```
 
-```html
 <div
-    style=""flex-grow: 1;"">
+    style="flex-grow: 1;">
     <Grid
         Item
-        ExtraSmall=""@GridSize.Twelve"">
+        ExtraSmall="@GridSize.Twelve">
         <Paper
-            Class=""paper-complex"">
+            Class="paper-complex">
             <Grid
                 Container
-                Spacing=""@Spacing.Two"">
+                Spacing="@Spacing.Two">
                 <Grid
                     Item>
                     <ButtonBase
-                        Class=""image-complex"">
+                        Class="image-complex">
                         <img
-                            class=""img-complex""
-                            alt=""complex""
-                            src=""./images/complex.jpg"" />
+                            class="img-complex"
+                            alt="complex"
+                            src="./images/complex.jpg" />
                     </ButtonBase>
                 </Grid>
                 <Grid
                     Item
                     Container
-                    ExtraSmall=""@GridSize.Twelve""
-                    Small=""@GridSize.True"">
+                    ExtraSmall="@GridSize.Twelve"
+                    Small="@GridSize.True">
                     <Grid
                         Item
                         Container
-                        ExtraSmall=""@GridSize.True""
-                        Direction=""@Direction.Column""
-                        Spacing=""@Spacing.Two"">
+                        ExtraSmall="@GridSize.True"
+                        Direction="@Direction.Column"
+                        Spacing="@Spacing.Two">
                         <Grid
                             Item
-                            ExtraSmall=""@GridSize.True"">
+                            ExtraSmall="@GridSize.True">
                             <Typography
                                 GutterBottom
-                                Variant=""@TypographyVariant.Subtitle1"">
+                                Variant="@TypographyVariant.Subtitle1">
                                 Standard license
                             </Typography>
                             <Typography
-                                Variant=""@TypographyVariant.Body2""
+                                Variant="@TypographyVariant.Body2"
                                 GutterBottom>
                                 Full resolution 1920x1080 • JPEG
                             </Typography>
                             <Typography
-                                Variant=""@TypographyVariant.Body2""
-                                Color=""@Color.TextSecondary"">
+                                Variant="@TypographyVariant.Body2"
+                                Color="@Color.TextSecondary">
                                 ID: 1030114
                             </Typography>
                         </Grid>
                         <Grid
                             Item>
                             <Typography
-                                Variant=""@TypographyVariant.Body2""
-                                Style=""cursor: pointer;"">
+                                Variant="@TypographyVariant.Body2"
+                                Style="cursor: pointer;">
                                 Remove
                             </Typography>
                         </Grid>
@@ -91,7 +83,7 @@
                     <Grid
                         Item>
                         <Typography
-                            Variant=""@TypographyVariant.Subtitle1"">
+                            Variant="@TypographyVariant.Subtitle1">
                             $19.00
                         </Typography>
                     </Grid>
@@ -100,5 +92,3 @@
         </Paper>
     </Grid>
 </div>
-```
-")" />

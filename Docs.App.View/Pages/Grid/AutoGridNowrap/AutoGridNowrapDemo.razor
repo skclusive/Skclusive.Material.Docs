@@ -1,11 +1,5 @@
 @namespace Skclusive.Material.Docs.App.View
-@inherits MaterialComponentBase
 
-<MarkdownCode
-    Class="@_Class"
-    Style="@_Style"
-    Text="@(@"
-```css
 <style>
     .demo-container {
         padding: 0px 24px;
@@ -19,24 +13,22 @@
         max-width: 400px;
     }
 </style>
-```
 
-```html
 <div
-    class=""demo-container"">
+    class="demo-container">
     <Paper
-        Class=""demo-paper"">
+        Class="demo-paper">
         <Grid
             Container
-            Wrap=""@Wrap.Nowrap""
-            Spacing=""@Spacing.Two"">
+            Wrap="@Wrap.Nowrap"
+            Spacing="@Spacing.Two">
             <Grid
                 Item>
                 <Avatar>W</Avatar>
             </Grid>
             <Grid
                 Item
-                ExtraSmall=""@GridSize.True""
+                ExtraSmall="@GridSize.True"
                 ZeroMinWidth>
                 <Typography
                     NoWrap>
@@ -46,18 +38,18 @@
         </Grid>
     </Paper>
     <Paper
-        Class=""demo-paper"">
+        Class="demo-paper">
         <Grid
             Container
-            Wrap=""@Wrap.Nowrap""
-            Spacing=""@Spacing.Two"">
+            Wrap="@Wrap.Nowrap"
+            Spacing="@Spacing.Two">
             <Grid
                 Item>
                 <Avatar>W</Avatar>
             </Grid>
             <Grid
                 Item
-                ExtraSmall=""@GridSize.True"">
+                ExtraSmall="@GridSize.True">
                 <Typography
                     NoWrap>
                     @Message
@@ -66,18 +58,18 @@
         </Grid>
     </Paper>
     <Paper
-        Class=""demo-paper"">
+        Class="demo-paper">
         <Grid
             Container
-            Wrap=""@Wrap.Nowrap""
-            Spacing=""@Spacing.Two"">
+            Wrap="@Wrap.Nowrap"
+            Spacing="@Spacing.Two">
             <Grid
                 Item>
                 <Avatar>W</Avatar>
             </Grid>
             <Grid
                 Item
-                ExtraSmall=""@GridSize.True"">
+                ExtraSmall="@GridSize.True">
                 <Typography>
                     @Message
                 </Typography>
@@ -85,13 +77,9 @@
         </Grid>
     </Paper>
 </div>
-```
 
-```csharp
 @code
 {
-    private readonly string Message = @""Truncation should be conditionally applicable on this long line of text
- as this is a much longer line than what the container can support. "";
+    private readonly string Message = @"Truncation should be conditionally applicable on this long line of text
+ as this is a much longer line than what the container can support. ";
 }
-```
-")" />

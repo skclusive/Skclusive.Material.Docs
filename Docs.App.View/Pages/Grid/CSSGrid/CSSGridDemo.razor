@@ -1,11 +1,5 @@
 @namespace Skclusive.Material.Docs.App.View
-@inherits MaterialComponentBase
 
-<MarkdownCode
-    Class="@_Class"
-    Style="@_Style"
-    Text="@(@"
-```css
 <style>
     .paper-demo {
         padding: 16px;
@@ -18,119 +12,115 @@
         grid-template-columns: repeat(12, 1fr);
     }
 </style>
-```
 
-```html
 <div>
     <Typography
-        Variant=""@TypographyVariant.Subtitle1""
+        Variant="@TypographyVariant.Subtitle1"
         GutterBottom>
         Material-UI Grid:
     </Typography>
     <Grid
         Container
-        Spacing=""@Spacing.Three"">
+        Spacing="@Spacing.Three">
         <Grid
             Item
-            ExtraSmall=""@GridSize.Three"">
+            ExtraSmall="@GridSize.Three">
             <Paper
-                Class=""paper-demo"">
+                Class="paper-demo">
                 xs=3
             </Paper>
         </Grid>
         <Grid
             Item
-            ExtraSmall=""@GridSize.Three"">
+            ExtraSmall="@GridSize.Three">
             <Paper
-                Class=""paper-demo"">
+                Class="paper-demo">
                 xs=3
             </Paper>
         </Grid>
         <Grid
             Item
-            ExtraSmall=""@GridSize.Three"">
+            ExtraSmall="@GridSize.Three">
             <Paper
-                Class=""paper-demo"">
+                Class="paper-demo">
                 xs=3
             </Paper>
         </Grid>
         <Grid
             Item
-            ExtraSmall=""@GridSize.Three"">
+            ExtraSmall="@GridSize.Three">
             <Paper
-                Class=""paper-demo"">
+                Class="paper-demo">
                 xs=3
             </Paper>
         </Grid>
         <Grid
             Item
-            ExtraSmall=""@GridSize.Eight"">
+            ExtraSmall="@GridSize.Eight">
             <Paper
-                Class=""paper-demo"">
+                Class="paper-demo">
                 xs=8
             </Paper>
         </Grid>
         <Grid
             Item
-            ExtraSmall=""@GridSize.Four"">
+            ExtraSmall="@GridSize.Four">
             <Paper
-                Class=""paper-demo"">
+                Class="paper-demo">
                 xs=4
             </Paper>
         </Grid>
     </Grid>
     <Divider
-        Style=""margin: 16px 0px"" />
+        Style="margin: 16px 0px" />
     <Typography
-        Variant=""@TypographyVariant.Subtitle1""
+        Variant="@TypographyVariant.Subtitle1"
         GutterBottom>
         CSS Grid Layout:
     </Typography>
     <div
-        class=""grid-container"">
+        class="grid-container">
         <div
-            style=""grid-column-end: span 3;"">
+            style="grid-column-end: span 3;">
             <Paper
-                Class=""paper-demo"">
+                Class="paper-demo">
                 xs=3
             </Paper>
         </div>
         <div
-            style=""grid-column-end: span 3;"">
+            style="grid-column-end: span 3;">
             <Paper
-                Class=""paper-demo"">
+                Class="paper-demo">
                 xs=3
             </Paper>
         </div>
         <div
-            style=""grid-column-end: span 3;"">
+            style="grid-column-end: span 3;">
             <Paper
-                Class=""paper-demo"">
+                Class="paper-demo">
                 xs=3
             </Paper>
         </div>
         <div
-            style=""grid-column-end: span 3;"">
+            style="grid-column-end: span 3;">
             <Paper
-                Class=""paper-demo"">
+                Class="paper-demo">
                 xs=3
             </Paper>
         </div>
         <div
-            style=""grid-column-end: span 8;"">
+            style="grid-column-end: span 8;">
             <Paper
-                Class=""paper-demo"">
+                Class="paper-demo">
                 xs=8
             </Paper>
         </div>
         <div
-            style=""grid-column-end: span 4;"">
+            style="grid-column-end: span 4;">
             <Paper
-                Class=""paper-demo"">
+                Class="paper-demo">
                 xs=4
             </Paper>
         </div>
     </div>
 </div>
-```
-")" />

@@ -1,70 +1,23 @@
 @namespace Skclusive.Material.Docs.App.View
 
-<Grid
-    Style="flex-grow: 1;"
-    Container
-    Spacing="@Spacing.Two">
-    <Grid
-        Item
-        ExtraSmall="@GridSize.Twelve">
-        <Grid
-            Container
-            Justify="@Justify.Center"
-            Spacing="@Spacing">
-            @foreach(var index in Enumerable.Range(0, 3))
-            {
-                <Grid
-                    @key="index"
-                    Item>
-                    <Paper
-                        Style="height: 140px; width: 100px;" />
-                </Grid>
-            }
-        </Grid>
-    </Grid>
-    <Grid
-        Item
-        ExtraSmall="@GridSize.Twelve">
-        <Paper
-            Style="padding: 16px;">
-            <Grid
-                Container>
-                <Grid
-                    Item>
-                    <FormLabel>spacing</FormLabel>
-                    <RadioGroup
-                        Row
-                        Name="Spacing"
-                        aria-label="Spacing"
-                        Value="@Spacing.ToString()"
-                        OnChange="@OnSpacingChange">
-                        @foreach(var value in Enum.GetValues(typeof(Spacing)).Cast<Spacing>())
-                        {
-                            <FormControlLabel
-                                @key="value"
-                                Label="@value.ToString()">
-                                <Radio
-                                    Value="@value.ToString()" />
-                            </FormControlLabel>
-                        }
-                    </RadioGroup>
-                </Grid>
-            </Grid>
-        </Paper>
-    </Grid>
-</Grid>
+<MarkdownSegment
+    Text="@(@"
+## Spacing
 
-@code
-{
-    private Spacing Spacing { set; get; } = Spacing.Two;
+The responsive grid focuses on consistent spacing widths, rather than column width.
+Material Design margins and columns follow an **8px** square baseline grid.
+The spacing property is an integer between 0 and 10 inclusive.
+By default, the spacing between two grid items follows a linear function: `output(spacing) = spacing * 8px`, e.g. `spacing={2}` creates a 16px wide gap.
 
-    private void OnSpacingChange(ChangeEventArgs args)
-    {
-        if (Enum.TryParse(args.Value.ToString(), out Spacing spacing))
-        {
-            Spacing = spacing;
+This output transformation function can be customized [using the theme](/customization/spacing/).
 
-            StateHasChanged();
-        }
-    }
-}
+")" />
+
+<MarkdownDemo>
+    <ViewContent>
+        <SpacingGridDemo />
+    </ViewContent>
+    <CodeContent>
+        <SpacingGridCode />
+    </CodeContent>
+</MarkdownDemo>
