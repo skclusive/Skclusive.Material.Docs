@@ -1,7 +1,19 @@
 @namespace Skclusive.Material.Docs.App.View
 
-<div
-    class="Typography-Button"
-    style="background-color: var(--theme-palette-background-paper, #fff); padding: calc(var(--theme-spacing, 8) * 1px);">
-    This div's text looks like that of a button.
-</div>
+<MarkdownSegment
+    Text="@(@"
+## Theme
+
+In some situations you might not be able to use the `Typography` component.
+Hopefully, you might be able to take advantage of the [`typography`](/customization/default-theme/?expend-path=$.typography) keys of the theme.
+
+")" />
+
+<MarkdownDemo>
+    <ViewContent>
+        <TypographyThemeDemo />
+    </ViewContent>
+    <CodeContent>
+        <TypographyThemeCode />
+    </CodeContent>
+</MarkdownDemo>
