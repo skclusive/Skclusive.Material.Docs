@@ -1,16 +1,16 @@
 @namespace Skclusive.Material.Docs.App.View
 
-<div>
-    <Paper
-        Style="padding: 24px 16px;">
-        <Typography
-            Variant="@TypographyVariant.H5"
-            Component="h3">
-            This is a sheet of paper.
-        </Typography>
-        <Typography
-            Component="p">
-            Paper can be used to build surface or other elements for your application.
-        </Typography>
-    </Paper>
-</div>
+<MarkdownSegment
+    Text="@(@"
+The background of an application resembles the flat, opaque texture of a sheet of paper, and an application’s behavior mimics paper’s ability to be re-sized, shuffled, and bound together in multiple sheets.
+
+")" />
+
+<MarkdownDemo>
+    <ViewContent>
+        <PaperSheetDemo />
+    </ViewContent>
+    <CodeContent>
+        <PaperSheetCode />
+    </CodeContent>
+</MarkdownDemo>

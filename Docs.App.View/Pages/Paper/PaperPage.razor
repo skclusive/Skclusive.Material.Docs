@@ -1,33 +1,6 @@
 ﻿@namespace Skclusive.Material.Docs.App.View
 @page "/paper"
 
-<div>
-    <Markdown
-         Text="@(@"
----
-title: Paper Blazor component
-components: Paper
----
-
-# Paper
-
-<p class=""description"">In Material Design, the physical properties of paper are translated to the screen. </p>
-
-## Installing with Nuget
-
-You can [install Paper package](https://www.nuget.org/packages/Skclusive.Material.Paper/) by typing the below command in your terminal:
-
-`dotnet add package Skclusive.Material.Paper`
-
-Then, you can import it in your _Imports.razor.
-
-```csharp
-@using Skclusive.Material.Paper;
-```
-
-The background of an application resembles the flat, opaque texture of a sheet of paper, and an application’s behavior mimics paper’s ability to be re-sized, shuffled, and bound together in multiple sheets.
-
-{{""blazor"": ""Skclusive.Material.Docs.App.View.PaperSheet, Skclusive.Material.Docs.App.View""}}
-
-")" />
-</div>
+<PaperInfo />
+<PaperSheet />
+<PaperAPI />
