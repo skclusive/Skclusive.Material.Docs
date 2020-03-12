@@ -1,0 +1,50 @@
+@namespace Skclusive.Material.Docs.App.View
+
+<MarkdownSegment
+    Text="@(@"
+# CardHeader API
+
+<p class=""description"">The API documentation of the CardHeader component. Learn more about the parameters and the CSS customization points.</p>
+
+## Parameters
+
+| Name | Type | Default | Description |
+|:-----|:-----|:--------|:------------|
+| <span class=""prop-name"">RootRef</span> | <span class=""prop-type"">IReference</span> | <span class=""prop-default"">new Reference()</span> | The reference used to ref the root node. |
+| <span class=""prop-name"">Class</span> | <span class=""prop-type"">string</span> | | The class applied to the root node. |
+| <span class=""prop-name"">Style</span> | <span class=""prop-type"">string</span> | | The style applied to the root node. |
+| <span class=""prop-name"">ChildContent</span> | <span class=""prop-type"">RenderFragment</span> |  | The content of the component. |
+| <span class=""prop-name"">ActionContent</span> | <span class=""prop-type"">RenderFragment</span> |  | The action to display in the card header. |
+| <span class=""prop-name"">AvatarContent</span> | <span class=""prop-type"">RenderFragment</span> |  | The Avatar for the Card Header. |
+| <span class=""prop-name"">Component</span> | <span class=""prop-type"">string</span> | <span class=""prop-default"">'div'</span> | The component used for the root node. |
+| <span class=""prop-name"">DisableTypography</span> | <span class=""prop-type"">bool</span> | <span class=""prop-default"">false</span> | If `true`, `subheader` and `title` won't be wrapped by a Typography component. This can be useful to render an alternative Typography variant by wrapping the `title` text, and optional `subheader` text with the Typography component. |
+| <span class=""prop-name"">Subheader</span> | <span class=""prop-type"">string</span> |  | The content of the component. |
+| <span class=""prop-name"">SubheaderContent</span> | <span class=""prop-type"">RenderFragment</span> |  | The complex content of the component. |
+| <span class=""prop-name"">Title</span> | <span class=""prop-type"">string</span> |  | The content of the Card Title. |
+| <span class=""prop-name"">TitleContent</span> | <span class=""prop-type"">RenderFragment</span> |  | The complex content of the Card Title. |
+| <span class=""prop-name"">TitleClass</span> | <span class=""prop-type"">string</span> | | The class applied to the title element. |
+| <span class=""prop-name"">TitleStyle</span> | <span class=""prop-type"">string</span> | | The style applied to the title element. |
+| <span class=""prop-name"">ContentClass</span> | <span class=""prop-type"">string</span> | | The class applied to the content element. |
+| <span class=""prop-name"">ContentStyle</span> | <span class=""prop-type"">string</span> | | The style applied to the content element. |
+| <span class=""prop-name"">AvatarClass</span> | <span class=""prop-type"">string</span> | | The class applied to the avatar element. |
+| <span class=""prop-name"">AvatarStyle</span> | <span class=""prop-type"">string</span> | | The style applied to the avatar element. |
+| <span class=""prop-name"">ActionClass</span> | <span class=""prop-type"">string</span> | | The class applied to the action element. |
+| <span class=""prop-name"">ActionStyle</span> | <span class=""prop-type"">string</span> | | The style applied to the action element. |
+| <span class=""prop-name"">SubHeaderClass</span> | <span class=""prop-type"">string</span> | | The class applied to the subheader element. |
+| <span class=""prop-name"">SubHeaderStyle</span> | <span class=""prop-type"">string</span> | | The style applied to the subheader element. |
+
+## CSS
+
+- Style name: `CardHeader`.
+- Style details:
+
+| Global class | Description |
+|:-------------|:------------|
+| <span class=""prop-name"">CardHeader-Root</span> | Styles applied to the root element.
+| <span class=""prop-name"">CardHeader-Avatar</span> | Styles applied to the avatar element.
+| <span class=""prop-name"">CardHeader-Action</span> | Styles applied to the action element.
+| <span class=""prop-name"">CardHeader-Content</span> | Styles applied to the content wrapper element.
+| <span class=""prop-name"">CardHeader-Title</span> | Styles applied to the title Typography element.
+| <span class=""prop-name"">CardHeader-SubHeader</span> | Styles applied to the subheader Typography element.
+
+")" />

@@ -4,27 +4,7 @@
     Text="@(@"
 # Grid API
 
-<p class=""description"">The API documentation of the Grid component. Learn more about instation, the parameters and the CSS customization points.</p>
-
-## Installing with Nuget
-
-You can [install Grid package](https://www.nuget.org/packages/Skclusive.Material.Grid/) by typing the below command in your terminal:
-
-```csharp
-dotnet add package Skclusive.Material.Grid
-```
-
-Then, you can import it in your `_Imports.razor`.
-
-```csharp
-@using Skclusive.Material.Grid;
-```
-
-Then, you can render the style for this component it in your `Router.razor`.
-
-```html
-<GridStyle />
-```
+<p class=""description"">The API documentation of the Grid component. Learn more about the parameters and the CSS customization points.</p>
 
 ## Parameters
 
@@ -34,7 +14,7 @@ Then, you can render the style for this component it in your `Router.razor`.
 | <span class=""prop-name"">Class</span> | <span class=""prop-type"">string</span> | | The class applied to the root node. |
 | <span class=""prop-name"">Style</span> | <span class=""prop-type"">string</span> | | The style applied to the root node. |
 | <span class=""prop-name"">Component</span> | <span class=""prop-type"">string</span> | <span class=""prop-default"">'div'</span> | The component used for the root node. |
-| <span class=""prop-name"">ChildContent</span> | <span class=""prop-type"">RenderFragment</span> |  | Used to render icon or text elements inside the Grid. `src` and `alt` props will not be used and no `img` will be rendered by default.<br>This can be an element, or just a string. |
+| <span class=""prop-name"">ChildContent</span> | <span class=""prop-type"">RenderFragment</span> |  | The content of the component. |
 | <span class=""prop-name"">AlignContent</span> | <span class=""prop-type"">AlignContent.Stretch<br>&#124;&nbsp;AlignContent.Center<br>&#124;&nbsp;AlignContent.FlexStart<br>&#124;&nbsp;AlignContent.FlexEnd<br>&#124;&nbsp;AlignContent.SpaceBetween<br>&#124;&nbsp;AlignContent.SpaceAround</span> | <span class=""prop-default"">AlignContent.Stretch</span> | Defines the `align-content` style property. It's applied for all screen sizes. |
 | <span class=""prop-name"">AlignItems</span> | <span class=""prop-type"">AlignItems.FlexStart<br>&#124;&nbsp;AlignItems.Center<br>&#124;&nbsp;AlignItems.FlexEnd<br>&#124;&nbsp;AlignItems.Stretch<br>&#124;&nbsp;AlignItems.Baseline</span> | <span class=""prop-default"">AlignItems.Stretch</span> | Defines the `align-items` style property. It's applied for all screen sizes. |
 | <span class=""prop-name"">Container</span> | <span class=""prop-type"">bool</span> | <span class=""prop-default"">false</span> | If `true`, the component will have the flex *container* behavior. You should be wrapping *items* with a *container*. |
@@ -104,11 +84,5 @@ Then, you can render the style for this component it in your `Router.razor`.
 | <span class=""prop-name"">Grid-XS-10</span> | |
 | <span class=""prop-name"">Grid-XS-11</span> | |
 | <span class=""prop-name"">Grid-XS-12</span> | |
-
-You can override the style of the component as below:
-
-- With a [global class name](/customization/components/#overriding-styles-with-global-class-names).
-
-If that's not sufficient, you can check the [implementation of the component](https://github.com/skclusive/Skclusive.Material.Component/blob/master/Grid/src/Grid/Grid.cs) for more detail.
 
 ")" />

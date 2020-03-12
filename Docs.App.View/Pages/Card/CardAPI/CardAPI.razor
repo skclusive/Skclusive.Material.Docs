@@ -1,0 +1,31 @@
+@namespace Skclusive.Material.Docs.App.View
+
+<MarkdownSegment
+    Text="@(@"
+# Card API
+
+<p class=""description"">The API documentation of the Card component. Learn more about the parameters and the CSS customization points.</p>
+
+## Parameters
+
+| Name | Type | Default | Description |
+|:-----|:-----|:--------|:------------|
+| <span class=""prop-name"">RootRef</span> | <span class=""prop-type"">IReference</span> | <span class=""prop-default"">new Reference()</span> | The reference used to ref the root node. |
+| <span class=""prop-name"">Class</span> | <span class=""prop-type"">string</span> | | The class applied to the root node. |
+| <span class=""prop-name"">Style</span> | <span class=""prop-type"">string</span> | | The style applied to the root node. |
+| <span class=""prop-name"">Component</span> | <span class=""prop-type"">string</span> | <span class=""prop-default"">'div'</span> | The component used for the root node. |
+| <span class=""prop-name"">ChildContent</span> | <span class=""prop-type"">RenderFragment</span> |  | The content of the component. |
+| <span class=""prop-name"">Elevation</span> | <span class=""prop-type"">int</span> | <span class=""prop-default"">1</span> | Shadow depth, corresponds to `dp` in the spec. It accepts values between 0 and 24 inclusive. |
+| <span class=""prop-name"">Square</span> | <span class=""prop-type"">bool</span> | <span class=""prop-default"">false</span> | If `true`, rounded corners are disabled. |
+| <span class=""prop-name"">Raised</span> | <span class=""prop-type"">bool</span> | <span class=""prop-default"">false</span> | If `true`, the card will use raised styling. |
+
+## CSS
+
+- Style name: `Card`.
+- Style details:
+
+| Global class | Description |
+|:-------------|:------------|
+| <span class=""prop-name"">Card-Root</span> | Styles applied to the root element.
+
+")" />

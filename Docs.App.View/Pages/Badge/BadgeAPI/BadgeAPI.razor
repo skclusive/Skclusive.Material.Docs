@@ -4,29 +4,9 @@
     Text="@(@"
 # Badge API
 
-<p class=""description"">The API documentation of the Badge component. Learn more about installation, the parameters and the CSS customization points.</p>
+<p class=""description"">The API documentation of the Badge component. Learn more about the parameters and the CSS customization points.</p>
 
-## Installing with Nuget
-
-You can [install Badge package](https://www.nuget.org/packages/Skclusive.Material.Badge/) by typing the below command in your terminal:
-
-```csharp
-dotnet add package Skclusive.Material.Badge
-```
-
-Then, you can import it in your `_Imports.razor`.
-
-```csharp
-@using Skclusive.Material.Badge;
-```
-
-Then, you can render the style for this component it in your `Router.razor`.
-
-```html
-<BadgeStyle />
-```
-
-## Props
+## Parameters
 
 | Name | Type | Default | Description |
 |:-----|:-----|:--------|:------------|
@@ -68,11 +48,5 @@ Then, you can render the style for this component it in your `Router.razor`.
 | <span class=""prop-name"">Badge-Top-Left-Circle</span> | Styles applied to the root element if `Vertical=""@Vertical.Top"" Horizontal=""@Horizontal.Left"" Overlap=""@BadgeOverlap.Circle""`.
 | <span class=""prop-name"">Badge-Bottom-Left-Circle</span> | Styles applied to the root element if `Vertical=""@Vertical.Bottom"" Horizontal=""@Horizontal.Left"" Overlap=""@BadgeOverlap.Circle""`.
 | <span class=""prop-name"">Badge-Invisible</span> | Pseudo-class to the badge `span` element if `Invisible=""true""`.
-
-You can override the style of the component as below:
-
-- With a [global class name](/customization/components/#overriding-styles-with-global-class-names).
-
-If that's not sufficient, you can check the [implementation of the component](https://github.com/skclusive/Skclusive.Material.Component/blob/master/Badge/src/Badge/Badge.cs) for more detail.
 
 ")" />
