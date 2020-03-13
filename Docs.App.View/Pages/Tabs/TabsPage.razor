@@ -8,89 +8,15 @@
     }
 </style>
 
-<div>
-    <Markdown
-         Text="@(@"
----
-title: Tabs Blazor component
-components: Tabs, Tab
----
-
-# Tabs
-
-<p class=""description"">Tabs make it easy to explore and switch between different views.</p>
-
-[Tabs](https://material.io/design/components/tabs.html) organize and allow navigation between groups of content that are related and at the same level of hierarchy.
-
-## Installing with Nuget
-
-You can [install Tab package](https://www.nuget.org/packages/Skclusive.Material.Tab/) by typing the below command in your terminal:
-
-`dotnet add package Skclusive.Material.Tab`
-
-Then, you can import it in your _Imports.razor.
-
-```csharp
-@using Skclusive.Material.Tab;
-```
-
-## Simple Tabs
-
-A simple example with no frills.
-
-{{""blazor"": ""Skclusive.Material.Docs.App.View.SimpleTabs, Skclusive.Material.Docs.App.View""}}
-
-### Wrapped Labels
-
-Long labels will automatically wrap on tabs. If the label is too long for the tab, it will overflow and the text will not be visible.
-
-{{""blazor"": ""Skclusive.Material.Docs.App.View.TabsWrappedLabel, Skclusive.Material.Docs.App.View""}}
-
-### Disabled Tab
-
-A Tab can be disabled by setting `disabled` property.
-
-{{""blazor"": ""Skclusive.Material.Docs.App.View.DisabledTabs, Skclusive.Material.Docs.App.View""}}
-
-## Fixed Tabs
-
-Fixed tabs should be used with a limited number of tabs and when consistent placement will aid muscle memory.
-
-### Full width
-
-The `variant=""fullWidth""` property should be used for smaller views.
-This demo also uses [react-swipeable-views](https://github.com/oliviertassinari/react-swipeable-views) to animate the Tab transition, and allowing tabs to be swiped on touch devices.
-
-{{""blazor"": ""Skclusive.Material.Docs.App.View.FullWidthTabs, Skclusive.Material.Docs.App.View""}}
-
-### Centered
-
-The `centered` property should be used for larger views.
-
-{{""blazor"": ""Skclusive.Material.Docs.App.View.CenteredTabs, Skclusive.Material.Docs.App.View""}}
-
-## Customized tabs
-
-Here is an example of customizing the component. You can learn more about this in the
-[overrides documentation page](/customization/components/).
-
-{{""blazor"": ""Skclusive.Material.Docs.App.View.CustomizedTabs, Skclusive.Material.Docs.App.View""}}
-
-👑 If you are looking for inspiration, you can check [MUI Treasury's customization examples](https://mui-treasury.com/components/tabs).
-
-## Vertical tabs
-
-{{""blazor"": ""Skclusive.Material.Docs.App.View.VerticalTabs, Skclusive.Material.Docs.App.View""}}
-
-## Icon Tabs
-
-Tab labels may be either all icons or all text.
-
-{{""blazor"": ""Skclusive.Material.Docs.App.View.IconTabs, Skclusive.Material.Docs.App.View""}}
-
-Tab with icon and labels.
-
-{{""blazor"": ""Skclusive.Material.Docs.App.View.IconLabelTabs, Skclusive.Material.Docs.App.View""}}
-
-")" />
-</div>
+<TabsInfo />
+<SimpleTabs />
+<TabsWrappedLabel />
+<DisabledTabs />
+<FixedTabs />
+<CustomizedTabs />
+<VerticalTabs />
+<IconTabs />
+<TabsInstallation />
+<TabsAPI />
+<TabAPI />
+<TabIndicatorAPI />

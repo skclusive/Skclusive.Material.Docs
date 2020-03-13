@@ -1,44 +1,18 @@
 @namespace Skclusive.Material.Docs.App.View
 
-<Paper
-    Square
-    Style="flex-grow: 1; max-width: 500px;">
-    <Tabs
-        Value="@Value"
-        OnChange="@HandleChange"
-        Variant="@TabsVariant.FullWidth"
-        IndicatorColor="@Color.Primary"
-        TextColor="@Color.Primary"
-        aria-label="icon tabs example">
-        <Tab
-            aria-label="phone">
-            <IconContent>
-                <PhoneIcon />
-            </IconContent>
-        </Tab>
-        <Tab
-            aria-label="favorite">
-            <IconContent>
-                <FavoriteIcon />
-            </IconContent>
-        </Tab>
-        <Tab
-            aria-label="person">
-            <IconContent>
-                <PersonPinIcon />
-            </IconContent>
-        </Tab>
-    </Tabs>
-</Paper>
+<MarkdownSegment
+    Text="@(@"
+## Icon Tabs
 
-@code
-{
-    private object Value { set; get; } = 0;
+Tab labels may be either all icons or all text.
 
-    private void HandleChange(object value)
-    {
-        Value = value;
+")" />
 
-        StateHasChanged();
-    }
-}
+<MarkdownDemo>
+    <ViewContent>
+        <IconTabsDemo />
+    </ViewContent>
+    <CodeContent>
+        <IconTabsCode />
+    </CodeContent>
+</MarkdownDemo>

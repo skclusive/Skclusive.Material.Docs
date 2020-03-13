@@ -1,0 +1,48 @@
+@namespace Skclusive.Material.Docs.App.View
+
+<MarkdownSegment
+    Text="@(@"
+# Tab API
+
+<p class=""description"">The API documentation of the Tab component. Learn more about the parameters and the CSS customization points.</p>
+
+## Parameters
+
+| Name | Type | Default | Description |
+|:-----|:-----|:--------|:------------|
+| <span class=""prop-name"">RootRef</span> | <span class=""prop-type"">IReference</span> | <span class=""prop-default"">new Reference()</span> | The reference used to ref the root node. |
+| <span class=""prop-name"">Class</span> | <span class=""prop-type"">string</span> | | The class applied to the root node. |
+| <span class=""prop-name"">Style</span> | <span class=""prop-type"">string</span> | | The style applied to the root node. |
+| <span class=""prop-name"">Component</span> | <span class=""prop-type"">string</span> | <span class=""prop-default"">'div'</span> | The component used for the root node. |
+| <span class=""prop-name"">ChildContent</span> | <span class=""prop-type"">RenderFragment</span> |  | The badge will be added relative to this node. |
+| <span class=""prop-name"">Disabled</span> | <span class=""prop-type"">bool</span> | <span class=""prop-default"">false</span> | If `true`, the tab will be disabled. |
+| <span class=""prop-name"">DisableFocusRipple</span> | <span class=""prop-type"">bool</span> | <span class=""prop-default"">false</span> | If `true`, the  keyboard focus ripple will be disabled. `disableRipple` must also be true. |
+| <span class=""prop-name"">DisableRipple</span> | <span class=""prop-type"">bool</span> |  | If `true`, the ripple effect will be disabled. |
+| <span class=""prop-name"">IconContent</span> | <span class=""prop-type"">RenderFragment</span> |  | The icon element. |
+| <span class=""prop-name"">Label</span> | <span class=""prop-type"">string</span> |  | The label is text. |
+| <span class=""prop-name"">LabelContent</span> | <span class=""prop-type"">RenderFragment</span> |  | The label element. |
+| <span class=""prop-name"">Value</span> | <span class=""prop-type"">object</span> |  | You can provide your own value. Otherwise, we fallback to the child position index. |
+| <span class=""prop-name"">Wrapped</span> | <span class=""prop-type"">bool</span> | <span class=""prop-default"">false</span> | Tab labels appear in a single row. They can use a second line if needed. |
+| <span class=""prop-name"">Control</span> | <span class=""prop-type"">string</span> |  | aria-controls value. |
+| <span class=""prop-name"">WrappedClass</span> | <span class=""prop-type"">string</span> | | The class applied to the wrapped element. |
+| <span class=""prop-name"">WrappedStyle</span> | <span class=""prop-type"">string</span> | | The style applied to the wrapped element. |
+
+## CSS
+
+- Style name: `Tab`.
+- Style details:
+
+| Global class | Description |
+|:-------------|:------------|
+| <span class=""prop-name"">Tab-Root</span> | Styles applied to the root element.
+| <span class=""prop-name"">Tab-LabelIcon</span> | Styles applied to the root element if both `Icon` and `Label` are provided.
+| <span class=""prop-name"">Tab-TextColor-Inherit</span> | Styles applied to the root element if the parent [`Tabs`](/api/tabs/) has `TextColor=""@Color.Inherit""`.
+| <span class=""prop-name"">Tab-TextColor-Primary</span> | Styles applied to the root element if the parent [`Tabs`](/api/tabs/) has `TextColor=""@Color.Primary""`.
+| <span class=""prop-name"">Tab-TextColor-Secondary</span> | Styles applied to the root element if the parent [`Tabs`](/api/tabs/) has `TextColor=""@Color.Secondary""`.
+| <span class=""prop-name"">Tab-Selected</span> | Pseudo-class applied to the root element if `Selected=""true""` (controlled by the Tabs component).
+| <span class=""prop-name"">Tab-Disabled</span> | Pseudo-class applied to the root element if `Disabled=""true""` (controlled by the Tabs component).
+| <span class=""prop-name"">Tab-FullWidth</span> | Styles applied to the root element if `FullWidth=""true""` (controlled by the Tabs component).
+| <span class=""prop-name"">Tab-Wrapped</span> | Styles applied to the root element if `Wrapped=""true""`.
+| <span class=""prop-name"">Tab-Wrapper</span> | Styles applied to the `Icon` and `Label`'s wrapper element.
+
+")" />
