@@ -1,66 +1,19 @@
 @namespace Skclusive.Material.Docs.App.View
 
-<div>
-    <Button
-        Variant="@ButtonVariant.Outlined"
-        Color="@Color.Primary"
-        OnClick="@OnOpen">
-        @Text
-    </Button>
-    <Dialog
-        Open="@Open"
-        OnClose="@OnClose"
-        aria-labelledby="form-dialog-title">
-        <DialogTitle
-            Id="form-dialog-title">
-            Subscribe
-        </DialogTitle>
-        <DialogContent>
-            <DialogContentText>
-                To subscribe to this website, please enter your email address here. We will send updates
-                occasionally.
-            </DialogContentText>
-            <TextField
-                AutoFocus
-                Margin="@Margin.Dense"
-                Id="name"
-                Label="Email Address"
-                Type="email"
-                FullWidth />
-        </DialogContent>
-        <DialogActions>
-            <Button
-                OnClick="@OnClose"
-                Color="@Color.Primary">
-                Cancel
-            </Button>
-            <Button
-                OnClick="@OnClose"
-                Color="@Color.Primary"
-                autofocus>
-                Subscribe
-            </Button>
-        </DialogActions>
-    </Dialog>
-</div>
+<MarkdownSegment
+    Text="@(@"
+## Form dialogs
 
-@code
-{
-    private bool Open { set; get; }
+Form dialogs allow users to fill out form fields within a dialog.
+For example, if your site prompts for potential subscribers to fill in their email address, they can fill out the email field and touch 'Submit'.
 
-    private string Text => (Open ? "Close" : "Open") + " form dialog";
+")" />
 
-    private void OnClose()
-    {
-        Open = false;
-
-        StateHasChanged();
-    }
-
-    private void OnOpen()
-    {
-        Open = true;
-
-        StateHasChanged();
-    }
-}
+<MarkdownDemo>
+    <ViewContent>
+        <FormDialogDemo />
+    </ViewContent>
+    <CodeContent>
+        <FormDialogCode />
+    </CodeContent>
+</MarkdownDemo>

@@ -1,33 +1,18 @@
 @namespace Skclusive.Material.Docs.App.View
 
-<FormControl
-    Component="fieldset">
-    <FormGroup
-        aria-label="position"
-        Row>
-        <FormControlLabel
-            Label="Top"
-            Placement="@Placement.Top">
-            <Switch
-                Color="@Color.Primary"/>
-        </FormControlLabel>
-        <FormControlLabel
-            Label="Start"
-            Placement="@Placement.Start">
-            <Switch
-                Color="@Color.Primary"/>
-        </FormControlLabel>
-        <FormControlLabel
-            Label="Bottom"
-            Placement="@Placement.Bottom">
-            <Switch
-                Color="@Color.Primary"/>
-        </FormControlLabel>
-        <FormControlLabel
-            Label="End"
-            Placement="@Placement.End">
-            <Switch
-                Color="@Color.Primary"/>
-        </FormControlLabel>
-    </FormGroup>
-</FormControl>
+<MarkdownSegment
+    Text="@(@"
+## Label placement
+
+You can change the placement of the label:
+
+")" />
+
+<MarkdownDemo>
+    <ViewContent>
+        <SwitchLabelPlacementDemo />
+    </ViewContent>
+    <CodeContent>
+        <SwitchLabelPlacementCode />
+    </CodeContent>
+</MarkdownDemo>

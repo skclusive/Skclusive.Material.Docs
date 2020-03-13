@@ -1,88 +1,13 @@
 ﻿@namespace Skclusive.Material.Docs.App.View
 @page "/switch"
 
-<div>
-    <Markdown
-         Text="@(@"
----
-title: Switch Blazor component
-components: Switch, FormControl, FormGroup, FormLabel, FormControlLabel
----
-
-# Switches
-
-<p class=""description"">Switches toggle the state of a single setting on or off.</p>
-
-## Installing with Nuget
-
-You can [install Selection package](https://www.nuget.org/packages/Skclusive.Material.Selection/) by typing the below command in your terminal:
-
-`dotnet add package Skclusive.Material.Selection`
-
-Then, you can import it in your _Imports.razor.
-
-```csharp
-@using Skclusive.Material.Selection;
-```
-
-[Switches](https://material.io/design/components/selection-controls.html#switches) are the preferred way to adjust settings on mobile.
-The option that the switch controls, as well as the state it’s in,
-should be made clear from the corresponding inline label.
-
-{{""blazor"": ""Skclusive.Material.Docs.App.View.Switches, Skclusive.Material.Docs.App.View""}}
-
-## Switches with FormControlLabel
-
-`Switch` can also be used with a label description thanks to the `FormControlLabel` component.
-
-{{""blazor"": ""Skclusive.Material.Docs.App.View.SwitchLabels, Skclusive.Material.Docs.App.View""}}
-
-## Switches with FormGroup
-
-`FormGroup` is a helpful wrapper used to group selection controls components that provides an easier API.
-However, we encourage you to use a [Checkbox](#checkboxes) instead.
-
-{{""blazor"": ""Skclusive.Material.Docs.App.View.SwitchesGroup, Skclusive.Material.Docs.App.View""}}
-
-## Customized switches
-
-Here are some examples of customizing the component. You can learn more about this in the
-[overrides documentation page](/customization/components/).
-
-{{""blazor"": ""Skclusive.Material.Docs.App.View.CustomizedSwitches, Skclusive.Material.Docs.App.View""}}
-
-## Sizes
-
-Fancy smaller switches? Use the `size` property.
-
-{{""blazor"": ""Skclusive.Material.Docs.App.View.SwitchesSize, Skclusive.Material.Docs.App.View""}}
-
-## Label placement
-
-You can change the placement of the label:
-
-{{""blazor"": ""Skclusive.Material.Docs.App.View.SwitchLabelPlacement, Skclusive.Material.Docs.App.View""}}
-
-## When to use
-
-- [Checkboxes vs. Switches](https://uxplanet.org/checkbox-vs-toggle-switch-7fc6e83f10b8)
-
-## Accessibility
-
-- It will render an element with the `checkbox` role not `switch` role since this
-  role isn't widely supported yet. Please test first if assistive technology of your
-  target audience supports this role properly. Then you can change the role with
-  `<Switch inputProps={{ role: 'switch' }}>`
-- All form controls should have labels, and this includes radio buttons, checkboxes, and switches. In most cases, this is done by using the `<label>` element ([FormControlLabel](/api/form-control-label/)).
-- When a label can't be used, it's necessary to add an attribute directly to the input component.
-  In this case, you can apply the additional attribute (e.g. `aria-label`, `aria-labelledby`, `title`) via the `inputProps` property.
-
-```html
-<Switch
-    Value=""checkedA""
-    InputProps=""@(new Dictionary<string, object>{{ ""aria-label"", ""Switch A"" }})""
-/>
-```
-
-")" />
-</div>
+<SwitchInfo />
+<Switches />
+<SwitchLabels />
+<SwitchesGroup />
+<CustomizedSwitches />
+<SwitchesSize />
+<SwitchLabelPlacement />
+<SwitchAdditionalInfo />
+<SwitchInstallation />
+<SwitchAPI />

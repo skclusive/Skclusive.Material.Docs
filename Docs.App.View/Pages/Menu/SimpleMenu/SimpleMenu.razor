@@ -1,55 +1,22 @@
 @namespace Skclusive.Material.Docs.App.View
 
-<div>
-    <Button
-        OnClick="@OnOpen"
-        RootRef="@ButtonRef">
-        Open Menu
-    </Button>
-    <Menu
-        Id="simple-menu"
-        Open="@Open"
-        AnchorRef="@ButtonRef"
-        OnClose="@HandleClose">
-        <MenuItem
-            OnClick="@HandleClose">
-            Profile
-        </MenuItem>
-        <MenuItem
-            OnClick="@HandleClose">
-            My account
-        </MenuItem>
-        <MenuItem
-            OnClick="@HandleClose">
-            Logout
-        </MenuItem>
-    </Menu>
-</div>
+<MarkdownSegment
+    Text="@(@"
+## Simple Menu
 
-@code
-{
-    private bool Open { set; get; }
+Simple menus open over the anchor element by default (this option can be changed via props). When close to a screen edge, simple menus vertically realign to make sure that all menu items are completely visible.
 
-    private IReference ButtonRef { set; get; } = new Reference();
+Choosing an option should immediately ideally commit the option and close the menu.
 
-    private void HandleClose(EventArgs args)
-    {
-        Open = false;
+**Disambiguation**: In contrast to simple menus, simple dialogs can present additional detail related to the options available for a list item or provide navigational or orthogonal actions related to the primary task. Although they can display the same content, simple menus are preferred over simple dialogs because simple menus are less disruptive to the user’s current context.
 
-        StateHasChanged();
-    }
+")" />
 
-    private void HandleClose(MenuCloseReason reason)
-    {
-        Open = false;
-
-        StateHasChanged();
-    }
-
-    private void OnOpen()
-    {
-        Open = true;
-
-        StateHasChanged();
-    }
-}
+<MarkdownDemo>
+    <ViewContent>
+        <SimpleMenuDemo />
+    </ViewContent>
+    <CodeContent>
+        <SimpleMenuCode />
+    </CodeContent>
+</MarkdownDemo>

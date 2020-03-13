@@ -1,42 +1,42 @@
 @namespace Skclusive.Material.Docs.App.View
 
-<div
-    class="demo-list-root">
-    <List
-        Component="nav"
-        aria-label="main mailbox folders">
-        <ListItem
-            Button>
-            <ListItemIcon>
-                <InboxIcon />
-            </ListItemIcon>
-            <ListItemText
-                Primary="Inbox" />
-        </ListItem>
-        <ListItem
-            Button>
-            <ListItemIcon>
-                <DraftsIcon />
-            </ListItemIcon>
-            <ListItemText
-                Primary="Drafts" />
-        </ListItem>
-    </List>
-    <Divider />
-    <List
-        Component="nav"
-        aria-label="secondary mailbox folders">
-        <ListItem
-            Button>
-          <ListItemText
-            Primary="Trash" />
-        </ListItem>
-        <ListItem
-            Button
-            Component="a"
-            href="hidden">
-            <ListItemText
-                Primary="Spam" />
-        </ListItem>
-    </List>
-</div>
+<MarkdownSegment
+    Text="@(@"
+## Simple List
+
+")" />
+
+<MarkdownDemo>
+    <ViewContent>
+        <SimpleListDemo />
+    </ViewContent>
+    <CodeContent>
+        <SimpleListCode />
+    </CodeContent>
+</MarkdownDemo>
+
+<MarkdownSegment
+    Text="@(@"
+
+The last item of the previous demo shows how you can render a link:
+
+```html
+ListItemLink.razor
+
+   <ListItem
+        Button
+        Component=""a""
+        @attributes=""Attributes"" />
+
+//...
+
+<ListItemLink
+    Href=""#simple-list"">
+    <ListItemText
+        Primary=""Spam"" />
+</ListItemLink>
+```
+
+You can find a [demo with React Router following this section](/guides/composition/#react-router) of the documentation.
+
+")" />

@@ -1,85 +1,24 @@
 @namespace Skclusive.Material.Docs.App.View
 
-<div>
-    <Typography
-        Variant="@TypographyVariant.Subtitle1">
-        Selected: @SelectedValue
-    </Typography>
-    <br />
-    <Button
-        Variant="@ButtonVariant.Outlined"
-        Color="@Color.Primary"
-        OnClick="@HandleOpen">
-        Open simple dialog
-    </Button>
-    <Dialog
-        OnClose="@HandleClose"
-        aria-labelledby="simple-dialog-title"
-        Open="@Open">
-        <DialogTitle
-            Id="simple-dialog-title">
-            Set backup account
-        </DialogTitle>
-        <List>
-        @foreach(var email in Emails)
-        {
-            <ListItem
-                @key="@email"
-                Button
-                OnClick="@((arg) => UpdateSelectedValue(email))">
-                <ListItemAvatar>
-                    <Avatar
-                        Style="color: #1e88e5; background-color: #bbdefb;">
-                        <PersonIcon />
-                    </Avatar>
-                </ListItemAvatar>
-                <ListItemText
-                    Primary="@email" />
-            </ListItem>
-        }
-        <ListItem
-            Button
-            OnClick="@((arg) => UpdateSelectedValue("addAccount"))">
-            <ListItemAvatar>
-                <Avatar>
-                    <AddIcon />
-                </Avatar>
-            </ListItemAvatar>
-            <ListItemText
-                Primary="add account" />
-        </ListItem>
-      </List>
-    </Dialog>
-</div>
+<MarkdownSegment
+    Text="@(@"
+## Simple Dialogs
 
-@code
-{
-    private static readonly string[] Emails = { "username@gmail.com", "user02@gmail.com" };
+Simple dialogs can provide additional details or actions about a list item.
+For example, they can display avatars, icons, clarifying subtext, or orthogonal actions (such as adding an account).
 
-    private string SelectedValue { set; get; } = Emails[1];
+Touch mechanics:
 
-    private bool Open { set; get; }
+- Choosing an option immediately commits the option and closes the menu
+- Touching outside of the dialog, or pressing Back, cancels the action and closes the dialog
 
-    private void HandleOpen()
-    {
-        Open = true;
+")" />
 
-        StateHasChanged();
-    }
-
-    private void HandleClose()
-    {
-        Open = false;
-
-        StateHasChanged();
-    }
-
-    private void UpdateSelectedValue(string value)
-    {
-        SelectedValue = value;
-
-        Open = false;
-
-        StateHasChanged();
-    }
-}
+<MarkdownDemo>
+    <ViewContent>
+        <SimpleDialogDemo />
+    </ViewContent>
+    <CodeContent>
+        <SimpleDialogCode />
+    </CodeContent>
+</MarkdownDemo>

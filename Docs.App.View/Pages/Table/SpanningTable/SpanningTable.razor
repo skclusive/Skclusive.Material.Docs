@@ -1,105 +1,18 @@
 @namespace Skclusive.Material.Docs.App.View
 
-<Paper
-    Style="width: 100%; margin-top: 24px; overflow-x: auto;">
-    <Table
-        Style="min-width: 700px"
-        aria-label="spanning table">
-        <TableHead>
-            <TableRow>
-                <TableCell>
-                    Desc
-                </TableCell>
-                <TableCell
-                    Align="@Align.Right">
-                    Quantity
-                </TableCell>
-                <TableCell
-                    Align="@Align.Right">
-                    @("@")
-                </TableCell>
-                <TableCell
-                    Align="@Align.Right">
-                    Price
-                </TableCell>
-            </TableRow>
-        </TableHead>
-        <TableBody>
-            @foreach(var row in Items)
-            {
-                <TableRow
-                    @key="@row.Desc">
-                    <TableCell
-                        Component="th"
-                        Scope="row">
-                        @row.Desc
-                    </TableCell>
-                    <TableCell
-                        Align="@Align.Right">
-                        @row.Quantity
-                    </TableCell>
-                    <TableCell
-                        Align="@Align.Right">
-                        @row.Unit
-                    </TableCell>
-                    <TableCell
-                        Align="@Align.Right">
-                        @((row.Unit * row.Quantity).ToString("00.00"))
-                    </TableCell>
-                </TableRow>
-            }
-            <TableRow>
-                <TableCell
-                    rowspan="3" />
-                <TableCell
-                    colspan="2">
-                    Subtotal
-                </TableCell>
-                <TableCell
-                    Align="@Align.Right">
-                    @Subtotal.ToString("00.00")
-                </TableCell>
-            </TableRow>
-            <TableRow>
-                <TableCell>
-                    Tax
-                </TableCell>
-                <TableCell
-                    Align="@Align.Right">
-                    @((TAX_RATE * 100).ToString("0")) %
-                </TableCell>
-                <TableCell
-                    Align="@Align.Right">
-                    @Taxes.ToString("00.00")
-                </TableCell>
-            </TableRow>
-            <TableRow>
-                <TableCell colspan="2">
-                    Total
-                </TableCell>
-                <TableCell
-                    Align="@Align.Right">
-                    @InvoiceTotal.ToString("00.00")
-                </TableCell>
-            </TableRow>
-        </TableBody>
-    </Table>
-</Paper>
+<MarkdownSegment
+    Text="@(@"
+## Spanning Table
 
-@code
-{
-    private double TAX_RATE = 0.07;
+A simple example with spanning rows & columns.
 
-    private (string Desc, int Quantity, double Unit)[] Items =
-    {
-        ("Paperclips (Box)", 100, 1.15),
-        ("Paper (Case)", 10, 45.99),
-        ("Waste Basket", 2, 17.99),
-    };
+")" />
 
-    private double Subtotal => Items.Sum(item => item.Quantity * item.Unit);
-
-    private double Taxes => TAX_RATE * Subtotal;
-
-    private double InvoiceTotal => Subtotal + Taxes;
-}
+<MarkdownDemo>
+    <ViewContent>
+        <SpanningTableDemo />
+    </ViewContent>
+    <CodeContent>
+        <SpanningTableCode />
+    </CodeContent>
+</MarkdownDemo>

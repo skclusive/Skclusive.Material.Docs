@@ -1,0 +1,98 @@
+@namespace Skclusive.Material.Docs.App.View
+
+<style>
+    .demo-custom-table-row:nth-of-type(odd) {
+        background-color: var(--theme-palette-background-default);
+    }
+    .demo-custom-table-cell.TableCell-Head {
+        background-color: var(--theme-palette-common-black);
+        color: var(--theme-palette-common-white);
+    }
+    .demo-custom-table-cell.TableCell-Body {
+        font-size: 14px;
+    }
+</style>
+
+<Paper
+    Style="width: 100%; overflow-x: auto; margin-top: 24px;">
+    <Table
+        Style="min-width: 700px"
+        aria-label="customized table">
+        <TableHead>
+            <TableRow
+                Class="demo-custom-table-row">
+                <TableCell
+                    Class="demo-custom-table-cell">
+                    Dessert (100g serving)
+                </TableCell>
+                <TableCell
+                    Class="demo-custom-table-cell"
+                    Align="@Align.Right">
+                    Calories
+                </TableCell>
+                <TableCell
+                    Class="demo-custom-table-cell"
+                    Align="@Align.Right">
+                    Fat&nbsp;(g)
+                </TableCell>
+                <TableCell
+                    Class="demo-custom-table-cell"
+                    Align="@Align.Right">
+                    Carbs&nbsp;(g)
+                </TableCell>
+                <TableCell
+                    Class="demo-custom-table-cell"
+                    Align="@Align.Right">
+                    Protein&nbsp;(g)
+                </TableCell>
+            </TableRow>
+        </TableHead>
+        <TableBody>
+            @foreach(var row in Rows)
+            {
+                <TableRow
+                    @key="@row.Name"
+                    Class="demo-custom-table-row">
+                    <TableCell
+                        Class="demo-custom-table-cell"
+                        Component="th"
+                        Scope="row">
+                        @row.Name
+                    </TableCell>
+                    <TableCell
+                        Class="demo-custom-table-cell"
+                        Align="@Align.Right">
+                        @row.Calories
+                    </TableCell>
+                    <TableCell
+                        Class="demo-custom-table-cell"
+                        Align="@Align.Right">
+                        @row.Fat
+                    </TableCell>
+                    <TableCell
+                        Class="demo-custom-table-cell"
+                        Align="@Align.Right">
+                        @row.Carbs
+                    </TableCell>
+                    <TableCell
+                        Class="demo-custom-table-cell"
+                        Align="@Align.Right">
+                        @row.Protein
+                    </TableCell>
+                </TableRow>
+            }
+        </TableBody>
+    </Table>
+</Paper>
+
+@code
+{
+    private (string Name, int Calories, double Fat, double Carbs, double Protein)[] Rows = 
+    {
+        ("Frozen yoghurt", 159, 6.0, 24, 4.0),
+        ("Ice cream sandwich", 237, 9.0, 37, 4.3),
+        ("Eclair", 262, 16.0, 24, 6.0),
+        ("Cupcake", 305, 3.7, 67, 4.3),
+        ("Gingerbread", 356, 16.0, 49, 3.9)
+    };
+}

@@ -1,49 +1,21 @@
 @namespace Skclusive.Material.Docs.App.View
 
-<style>
-    .demo-subheader-list-root {
-        width: 100%;
-        overflow: auto;
-        position: relative;
-        max-width: 360px;
-        max-height: 300px;
-        background-color: var(--theme-palette-background-paper, #fff);
-    }
-    .demo-list-section {
-        background-color: inherit;
-    }
-    .demo-sublist {
-        padding: 0;
-        background-color: inherit;
-    }
-</style>
+<MarkdownSegment
+    Text="@(@"
+## Pinned Subheader List
 
-<List
-    Class="demo-subheader-list-root">
-    <SubheaderContent>
-        <li />
-    </SubheaderContent>
-    <ChildContent>
-        @foreach(var sectionId in Enumerable.Range(0, 4))
-        {
-            <li
-                @key="@($"section-{sectionId}")"
-                class="demo-list-section">
-                <ul
-                    class="demo-sublist">
-                    <ListSubheader>
-                        @($"I'm sticky {sectionId}")
-                    </ListSubheader>
-                    @foreach(var itemId in Enumerable.Range(0, 2))
-                    {
-                        <ListItem
-                            @key="@($"item-{sectionId}-{itemId}")">
-                            <ListItemText
-                                Primary="@($"Item {itemId}")" />
-                        </ListItem>
-                    }
-                </ul>
-            </li>
-        }
-    </ChildContent>
-</List>
+Upon scrolling, subheaders remain pinned to the top of the screen until pushed off screen by the next subheader.
+
+This feature relies on CSS sticky positioning.
+Unfortunately it's [not implemented](https://caniuse.com/#search=sticky) by all the supported browsers. It defaults to `disableSticky` when not supported.
+
+")" />
+
+<MarkdownDemo>
+    <ViewContent>
+        <PinnedSubheaderListDemo />
+    </ViewContent>
+    <CodeContent>
+        <PinnedSubheaderListCode />
+    </CodeContent>
+</MarkdownDemo>

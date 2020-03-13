@@ -1,68 +1,18 @@
 @namespace Skclusive.Material.Docs.App.View
 
-<div>
-    <Checkbox
-        Checked="@CheckedA"
-        Value="CheckedA"
-        OnChange="@OnCheckedAChanged"
-        InputProps="@(new Dictionary<string, object>{{ "aria-label", "primary checkbox" }})" />
-    <Checkbox
-        Checked="@CheckedB"
-        OnChange="@OnCheckedBChanged"
-        Value="CheckedB"
-        Color="@Color.Primary"
-        InputProps="@(new Dictionary<string, object>{{ "aria-label", "secondary checkbox" }})" />
-    <Checkbox
-        Value="CheckedC"
-        InputProps="@(new Dictionary<string, object>{{ "aria-label", "uncontrolled-checkbox" }})" />
-    <Checkbox
-        Disabled="true"
-        Value="CheckedD"
-        InputProps="@(new Dictionary<string, object>{{ "aria-label", "disabled checkbox" }})" />
-    <Checkbox
-        Checked="true"
-        Disabled="true"
-        Value="CheckedE"
-        InputProps="@(new Dictionary<string, object>{{ "aria-label", "disabled checked checkbox" }})" />
-    <Checkbox
-        Checked="@CheckedF"
-        OnChange="@OnCheckedFChanged"
-        Value="CheckedF"
-        Indeterminate
-        InputProps="@(new Dictionary<string, object>{{ "aria-label", "indeterminate checkbox" }})" />
-    <Checkbox
-        DefaultChecked="true"
-        Value="CheckedG"
-        Color="@Color.Default"
-        InputProps="@(new Dictionary<string, object>{{ "aria-label", "checkbox with default color" }})" />
-</div>
+<MarkdownSegment
+    Text="@(@"
+If you have multiple options appearing in a list,
+you can preserve space by using checkboxes instead of on/off switches.
+If you have a single option, avoid using a checkbox and use an on/off switch instead.
 
-@code
-{
-    private bool CheckedA { set; get; } = true;
+")" />
 
-    private bool CheckedB { set; get; } = true;
-
-    private bool CheckedF { set; get; } = true;
-
-    private void OnCheckedAChanged(EventArgs args)
-    {
-        CheckedA = !CheckedA;
-
-        StateHasChanged();
-    }
-
-    private void OnCheckedBChanged(EventArgs args)
-    {
-        CheckedB = !CheckedB;
-
-        StateHasChanged();
-    }
-
-    private void OnCheckedFChanged(EventArgs args)
-    {
-        CheckedF = !CheckedF;
-
-        StateHasChanged();
-    }
-}
+<MarkdownDemo>
+    <ViewContent>
+        <CheckboxesDemo />
+    </ViewContent>
+    <CodeContent>
+        <CheckboxesCode />
+    </CodeContent>
+</MarkdownDemo>

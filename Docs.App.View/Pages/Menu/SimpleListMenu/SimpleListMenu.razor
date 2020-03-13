@@ -1,85 +1,21 @@
 @namespace Skclusive.Material.Docs.App.View
 
-<div
-    style="width: 100%; max-width: 360px; background-color: var(--theme-palette-background-paper);">
-    <List
-        Component="nav"
-        aria-label="Device settings">
-        <ListItem
-            Button
-            RootRef="@AnchorRef"
-            aria-haspopup="true"
-            aria-controls="lock-menu"
-            aria-label="when device is locked"
-            OnClick="@HandleClickListItem">
-            <ListItemText
-                Primary="When device is locked"
-                Secondary="@SelectedValue" />
-        </ListItem>
-    </List>
-    <Menu
-        Id="lock-menu"
-        KeepMounted
-        Open="@Open"
-        AnchorRef="@AnchorRef"
-        OnClose="@HandleClose">
-        @foreach(var option in Options)
-        {
-            <MenuItem
-                @key="@option.Index"
-                Disabled="@(option.Index == 0)"
-                Selected="@(option.Index == SelectedIndex)"
-                OnClick="@((args) => UpdateSelectedIndex(option.Index))">
-                @option.Value
-            </MenuItem>
-        }
-    </Menu>
-</div>
+<MarkdownSegment
+    Text="@(@"
+## Selected menus
 
-@code
-{
-    private static readonly (string Value, int Index)[] Options = new (string Value, int Index)[] {
-        (Value: "Show some love to Material-UI", Index: 0),
-        (Value: "Show all notification content", Index: 1),
-        (Value: "Hide sensitive notification content", Index: 2),
-        (Value: "Hide all notification content", Index: 3)
-    };
+If used for item selection, when opened, simple menus attempt to vertically align the currently selected menu item with the anchor element,
+and the initial focus will be placed on the selected menu item.
+The currently selected menu item is set using the `selected` property (from [ListItem](/api/list-item/)).
+To use a selected menu item without impacting the initial focus or the vertical positioning of the menu, set the `variant` property to `menu`.
 
-    private string SelectedValue => Options[SelectedIndex].Value;
+")" />
 
-    private bool Open { set; get; }
-
-    private IReference AnchorRef { set; get; } = new Reference();
-
-    private int SelectedIndex { set; get; } = 1;
-
-    private void UpdateSelectedIndex(int selectedIndex)
-    {
-        SelectedIndex = selectedIndex;
-
-        Open = false;
-
-        StateHasChanged();
-    }
-
-    private void HandleClose(EventArgs args)
-    {
-        Open = false;
-
-        StateHasChanged();
-    }
-
-    private void HandleClose(MenuCloseReason reason)
-    {
-        Open = false;
-
-        StateHasChanged();
-    }
-
-    private void HandleClickListItem()
-    {
-        Open = true;
-
-        StateHasChanged();
-    }
-}
+<MarkdownDemo>
+    <ViewContent>
+        <SimpleListMenuDemo />
+    </ViewContent>
+    <CodeContent>
+        <SimpleListMenuCode />
+    </CodeContent>
+</MarkdownDemo>

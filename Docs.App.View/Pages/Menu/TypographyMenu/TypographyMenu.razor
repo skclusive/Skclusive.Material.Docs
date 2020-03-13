@@ -1,38 +1,19 @@
 @namespace Skclusive.Material.Docs.App.View
 
-<Paper
-    Style="width: 230px;">
-    <MenuList>
-        <MenuItem>
-            <ListItemIcon>
-                <SendIcon
-                    FontSize="@FontSize.Small" />
-            </ListItemIcon>
-            <Typography
-                Variant="@TypographyVariant.Inherit">
-                A short message
-            </Typography>
-        </MenuItem>
-        <MenuItem>
-            <ListItemIcon>
-                <PriorityHighIcon
-                    FontSize="@FontSize.Small" />
-            </ListItemIcon>
-            <Typography
-                Variant="@TypographyVariant.Inherit">
-                A very long text that overflows
-            </Typography>
-        </MenuItem>
-        <MenuItem>
-            <ListItemIcon>
-                <DraftsIcon
-                    FontSize="@FontSize.Small" />
-            </ListItemIcon>
-            <Typography
-                Variant="@TypographyVariant.Inherit"
-                NoWrap>
-                A very long text that overflows
-            </Typography>
-        </MenuItem>
-    </MenuList>
-</Paper>
+<MarkdownSegment
+    Text="@(@"
+## Limitations
+
+There is [a flexbox bug](https://bugs.chromium.org/p/chromium/issues/detail?id=327437) that prevents `text-overflow: ellipsis` from working in a flexbox layout.
+You can use the `Typography` component with `noWrap` to workaround this issue:
+
+")" />
+
+<MarkdownDemo>
+    <ViewContent>
+        <TypographyMenuDemo />
+    </ViewContent>
+    <CodeContent>
+        <TypographyMenuCode />
+    </CodeContent>
+</MarkdownDemo>

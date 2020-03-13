@@ -1,98 +1,21 @@
 @namespace Skclusive.Material.Docs.App.View
 
-<div>
-    <FormControl
-        Component="fieldset"
-        Style="margin: 24px;">
-        <FormLabel
-            Component="legend">
-            Gender
-        </FormLabel>
-        <RadioGroup
-            aria-label="gender"
-            Name="gender1"
-            Value="@Value"
-            OnChange="@OnValueChanged">
-            <FormControlLabel
-                Label="Female">
-                <Radio
-                    Value="female" />
-            </FormControlLabel>
-            <FormControlLabel
-                Label="Male">
-                <Radio
-                    Value="male" />
-            </FormControlLabel>
-            <FormControlLabel
-                Label="Other">
-                <Radio
-                    Value="other" />
-            </FormControlLabel>
-            <FormControlLabel
-                Disabled="true"
-                Label="(Disabled option)">
-                <Radio
-                    Disabled="true"
-                    Value="disabled" />
-            </FormControlLabel>
-        </RadioGroup>
-    </FormControl>
-    <FormControl
-        Component="fieldset"
-        Style="margin: 24px;">
-        <FormLabel
-            Component="legend">
-            Gender
-        </FormLabel>
-        <RadioGroup
-            aria-label="gender"
-            Name="gender2"
-            Value="@Value"
-            OnChange="@OnValueChanged">
-            <FormControlLabel
-                Label="Female"
-                Placement="@Placement.Start">
-                <Radio
-                    Value="female"
-                    Color="@Color.Primary" />
-            </FormControlLabel>
-            <FormControlLabel
-                Label="Male"
-                Placement="@Placement.Start">
-                <Radio
-                    Value="male"
-                    Color="@Color.Primary" />
-            </FormControlLabel>
-            <FormControlLabel
-                Label="Other"
-                Placement="@Placement.Start">
-                <Radio
-                    Value="other"
-                    Color="@Color.Primary" />
-            </FormControlLabel>
-            <FormControlLabel
-                Disabled="true"
-                Label="(Disabled option)"
-                Placement="@Placement.Start">
-                <Radio
-                    Disabled="true"
-                    Value="disabled" />
-            </FormControlLabel>
-        </RadioGroup>
-        <FormHelperText>
-            labelPlacement start
-        </FormHelperText>
-    </FormControl>
-</div>
+<MarkdownSegment
+    Text="@(@"
+Use [radio buttons](https://material.io/design/components/selection-controls.html#radio-buttons) when the user needs to see all available options.
+If available options can be collapsed, consider using a dropdown menu because it uses less space.
 
-@code
-{
-    private string Value { set; get; } = "female";
+Radio buttons should have the most commonly used option selected by default.
 
-    private void OnValueChanged(ChangeEventArgs args)
-    {
-        Value = args.Value.ToString();
+`RadioGroup` is a helpful wrapper used to group `Radio` components that provides an easier API, and proper keyboard accessibility to the group.
 
-        StateHasChanged();
-    }
-}
+")" />
+
+<MarkdownDemo>
+    <ViewContent>
+        <RadioButtonsGroupDemo />
+    </ViewContent>
+    <CodeContent>
+        <RadioButtonsGroupCode />
+    </CodeContent>
+</MarkdownDemo>
