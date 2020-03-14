@@ -1,30 +1,25 @@
 @namespace Skclusive.Material.Docs.App.View
 
-<div>
-    <Fab
-        Color="@Color.Primary"
-        aria-label="add"
-        Style="margin: 8px;">
-        <AddIcon />
-    </Fab>
-    <Fab
-        Color="@Color.Secondary"
-        aria-label="edit"
-        Style="margin: 8px;">
-        <EditIcon />
-    </Fab>
-    <Fab
-        Variant="@FabVariant.Extended"
-        aria-label="delete"
-        Style="margin: 8px;">
-        <NavigationIcon
-            Style="margin-right: 8px;" />
-        Extended
-    </Fab>
-    <Fab
-        Disabled="true"
-        aria-label="delete"
-        Style="margin: 8px;">
-        <DeleteIcon />
-    </Fab>
-</div>
+<MarkdownSegment
+    Text="@(@"
+## Floating Action Buttons
+
+A [floating action button](https://material.io/design/components/buttons-floating-action-button.html)
+(FAB) performs the primary, or most common, action on a screen.
+It appears in front of all screen content, typically as a circular shape with an icon in its center.
+FABs come in two types: regular, and extended.
+
+Only use a FAB if it is the most suitable way to present a screen’s primary action.
+
+Only one floating action button is recommended per screen to represent the most common action.
+
+")" />
+
+<MarkdownDemo>
+    <ViewContent>
+        <FloatingActionButtonsDemo />
+    </ViewContent>
+    <CodeContent>
+        <FloatingActionButtonsCode />
+    </CodeContent>
+</MarkdownDemo>

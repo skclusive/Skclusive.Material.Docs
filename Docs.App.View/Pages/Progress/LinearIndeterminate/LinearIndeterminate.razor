@@ -1,9 +1,16 @@
 @namespace Skclusive.Material.Docs.App.View
 
- <div
-    style="flex-grow: 1;">
-    <LinearProgress />
-    <br />
-    <LinearProgress
-        Color="@Color.Secondary" />
-</div>
+<MarkdownSegment
+    Text="@(@"
+### Linear Indeterminate
+
+")" />
+
+<MarkdownDemo>
+    <ViewContent>
+        <LinearIndeterminateDemo />
+    </ViewContent>
+    <CodeContent>
+        <LinearIndeterminateCode />
+    </CodeContent>
+</MarkdownDemo>

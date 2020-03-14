@@ -1,27 +1,17 @@
 @namespace Skclusive.Material.Docs.App.View
 
-<Paper
-    Style="width: 400px; display: flex; padding: 2px 4px; align-items: center;">
-    <IconButton
-        Style="padding: 10px;"
-        aria-label="menu">
-        <MenuIcon />
-    </IconButton>
-    <InputBase
-        Style="flex: 1; margin-left: 8px;"
-        Placeholder="Search Google Maps" />
-    <IconButton
-        Style="padding: 10px;"
-        aria-label="search">
-        <SearchIcon />
-    </IconButton>
-    <Divider
-        Style="height: 28px; margin: 4px;"
-        Orientation="@Orientation.Vertical" />
-    <IconButton
-        Color="@Color.Primary"
-        Style="padding: 10px;"
-        aria-label="directions">
-        <DirectionsIcon />
-    </IconButton>
-</Paper>
+<MarkdownSegment
+    Text="@(@"
+Customization does not stop at CSS, you can use composition to build custom components and give your app a unique feel.
+Below is an example using the [`InputBase`](/api/input-base/) component, inspired by Google Maps.
+
+")" />
+
+<MarkdownDemo>
+    <ViewContent>
+        <CustomizedInputBaseDemo />
+    </ViewContent>
+    <CodeContent>
+        <CustomizedInputBaseCode />
+    </CodeContent>
+</MarkdownDemo>

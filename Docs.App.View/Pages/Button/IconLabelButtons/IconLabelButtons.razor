@@ -1,73 +1,18 @@
 @namespace Skclusive.Material.Docs.App.View
 
-<div>
-    <Button
-        Variant="@ButtonVariant.Contained"
-        Color="@Color.Secondary"
-        Style="margin: 8px;">
-        <StartIcon>
-            <DeleteIcon />
-        </StartIcon>
-        <ChildContent>
-            Delete
-        </ChildContent>
-    </Button>
-    <Button
-        Variant="@ButtonVariant.Contained"
-        Color="@Color.Primary"
-        Style="margin: 8px;">
-        <EndIcon>
-            <SendIcon />
-        </EndIcon>
-        <ChildContent>
-            Send
-        </ChildContent>
-    </Button>
-    <Button
-        Variant="@ButtonVariant.Contained"
-        Color="@Color.Default"
-        Style="margin: 8px;">
-        <StartIcon>
-            <CloudUploadIcon />
-        </StartIcon>
-        <ChildContent>
-            Upload
-        </ChildContent>
-    </Button>
-    <Button
-        Variant="@ButtonVariant.Contained"
-        Disabled="true"
-        Color="@Color.Secondary"
-        Style="margin: 8px;">
-        <StartIcon>
-            <KeyboardVoiceIcon />
-        </StartIcon>
-        <ChildContent>
-            Talk
-        </ChildContent>
-    </Button>
-    <Button
-        Variant="@ButtonVariant.Contained"
-        Color="@Color.Primary"
-        Size="@Size.Small"
-        Style="margin: 8px;">
-        <StartIcon>
-            <SaveIcon />
-        </StartIcon>
-        <ChildContent>
-            Save
-        </ChildContent>
-    </Button>
-    <Button
-        Variant="@ButtonVariant.Contained"
-        Color="@Color.Primary"
-        Size="@Size.Large"
-        Style="margin: 8px;">
-        <StartIcon>
-            <SaveIcon />
-        </StartIcon>
-        <ChildContent>
-            Save
-        </ChildContent>
-    </Button>
-</div>
+<MarkdownSegment
+    Text="@(@"
+## Buttons with icons and label
+
+Sometimes you might want to have icons for certain button to enhance the UX of the application as we recognize logos more easily than plain text. For example, if you have a delete button you can label it with a dustbin icon.
+
+")" />
+
+<MarkdownDemo>
+    <ViewContent>
+        <IconLabelButtonsDemo />
+    </ViewContent>
+    <CodeContent>
+        <IconLabelButtonsCode />
+    </CodeContent>
+</MarkdownDemo>

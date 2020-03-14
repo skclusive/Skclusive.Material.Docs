@@ -1,98 +1,21 @@
 @namespace Skclusive.Material.Docs.App.View
-@inherits DisposableComponentBase
 
-<div
-   style="display: flex;
-   align-items: center;
-   flex-direction: column;">
-   <div
-      style="height: 40px;">
-      <Fade
-         In="@IsLoading"
-         UnmountOnExit>
-         <CircularProgress
-            Style="@($"transition-delay: {LoadingTransitionDelay}")" />
-      </Fade>
-   </div>
-   <Button
-      OnClick="@HandleClickLoading"
-      style="margin: 16px;">
-      @LoadingText
-   </Button>
-   <div
-      style="height: 40px;">
-      @if (IsQuerySuccess)
-      {
-         <Typography>Success!</Typography>
-      } else
-      {
-         <Fade
-            In="@IsQueryProgress"
-            UnmountOnExit>
-            <CircularProgress
-               Style="@($"transition-delay: {QueryTransitionDelay}")" />
-         </Fade>
-      }
-   </div>
-   <Button
-      OnClick="@HandleClickQuery"
-      style="margin: 16px;">
-      @QueryText
-   </Button>
-</div>
+<MarkdownSegment
+    Text="@(@"
+## Delaying appearance
 
-@code
-{
-   private string QueryTransitionDelay => IsQueryProgress ? "800ms" : "0ms";
+There are [3 important limits](https://www.nngroup.com/articles/response-times-3-important-limits/) to know around response time.
+The ripple effect of the `ButtonBase` component ensures that the user feels that the system is reacting instantaneously.
+Normally, no special feedback is necessary during delays of more than 0.1 but less than 1.0 second.
+After 1.0 second, you can display a loader to keep user's flow of thought uninterrupted.
 
-   private bool IsQuerySuccess => Query == "success";
+")" />
 
-   private bool IsQueryProgress => Query == "progress";
-
-   private string QueryText => Query != "idle" ? "Reset" : "Simulate a load";
-
-   private string Query { set; get; } = "idle";
-
-   private IDisposable QueryDisposable { set; get; }
-
-   private void HandleClickQuery(EventArgs args)
-   {
-      QueryDisposable?.Dispose();
-
-      QueryDisposable = null;
-
-      if (Query != "idle")
-      {
-         Query = "idle";
-
-         StateHasChanged();
-
-         return;
-      }
-
-      Query = "progress";
-
-      StateHasChanged();
-
-      QueryDisposable = RunTimeout(() =>
-      {
-         Query = "success";
-
-         StateHasChanged();
-
-      }, 2000);
-   }
-
-   private string LoadingTransitionDelay => IsLoading ? "800ms" : "0ms";
-
-   private string LoadingText => IsLoading ? "Stop loading" : "Loading";
-
-   private bool IsLoading { set; get; }
-
-   private void HandleClickLoading(EventArgs args)
-   {
-      IsLoading = !IsLoading;
-
-      StateHasChanged();
-   }
-}
+<MarkdownDemo>
+    <ViewContent>
+        <DelayingAppearanceDemo />
+    </ViewContent>
+    <CodeContent>
+        <DelayingAppearanceCode />
+    </CodeContent>
+</MarkdownDemo>

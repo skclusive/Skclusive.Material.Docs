@@ -1,0 +1,52 @@
+@namespace Skclusive.Material.Docs.App.View
+
+<MarkdownSegment
+    Text="@(@"
+# Badge API
+
+<p class=""description"">The API documentation of the Badge component. Learn more about the parameters and the CSS customization points.</p>
+
+## Parameters
+
+| Name | Type | Default | Description |
+|:-----|:-----|:--------|:------------|
+| <span class=""prop-name"">RootRef</span> | <span class=""prop-type"">IReference</span> | <span class=""prop-default"">new Reference()</span> | The reference used to ref the root node. |
+| <span class=""prop-name"">Class</span> | <span class=""prop-type"">string</span> | | The class applied to the root node. |
+| <span class=""prop-name"">Style</span> | <span class=""prop-type"">string</span> | | The style applied to the root node. |
+| <span class=""prop-name"">Component</span> | <span class=""prop-type"">string</span> | <span class=""prop-default"">'span'</span> | The component used for the root node. |
+| <span class=""prop-name"">ChildContent</span> | <span class=""prop-type"">RenderFragment</span> |  | The badge will be added relative to this node. |
+| <span class=""prop-name"">Horizontal</span> | <span class=""prop-type"">Horizontal.Left<br>&#124;&nbsp;Horizontal.Right</span> | <span class=""prop-default"">Horizontal.Right</span> | The horizontal anchor of the badge. |
+| <span class=""prop-name"">Vertical</span> | <span class=""prop-type"">Vertical.Bottom<br>&#124;&nbsp;Vertical.Top</span> | <span class=""prop-default"">Vertical.Top</span> | The vertical anchor of the badge. |
+| <span class=""prop-name"">Badge</span> | <span class=""prop-type"">string</span> |  | badge value to be displayed. |
+| <span class=""prop-name"">BadgeContent</span> | <span class=""prop-type"">RenderFragment</span> |  | If the badge value is complex component content. |
+| <span class=""prop-name"">Color</span> | <span class=""prop-type"">Color.Default<br>&#124;&nbsp;Color.Error<br>&#124;&nbsp;Color.Primary<br>&#124;&nbsp;Color.Secondary</span> | <span class=""prop-default"">Color.Default</span> | The color of the component. It supports those theme colors that make sense for this component. |
+| <span class=""prop-name"">Invisible</span> | <span class=""prop-type"">bool</span> |  | If `true`, the badge will be invisible. |
+| <span class=""prop-name"">Max</span> | <span class=""prop-type"">int</span> | <span class=""prop-default"">99</span> | Max count to show. |
+| <span class=""prop-name"">Overlap</span> | <span class=""prop-type"">BadgeOverlap.Circle<br>&#124;&nbsp;BadgeOverlap.Rectangle</span> | <span class=""prop-default"">BadgeOverlap.Rectangle</span> | Wrapped shape the badge should overlap. |
+| <span class=""prop-name"">ShowZero</span> | <span class=""prop-type"">bool</span> | <span class=""prop-default"">false</span> | Controls whether the badge is hidden when `Badge` is zero. |
+| <span class=""prop-name"">Variant</span> | <span class=""prop-type"">BadgeVariant.Dot<br>&#124;&nbsp;BadgeVariant.Standard</span> | <span class=""prop-default"">BadgeVariant.Standard</span> | The variant to use. |
+
+## CSS
+
+- Style name: `Badge`.
+- Style details:
+
+| Global class | Description |
+|:-------------|:------------|
+| <span class=""prop-name"">Badge-Root</span> | Styles applied to the root element.
+| <span class=""prop-name"">Badge-Badge</span> | Styles applied to the badge `span` element.
+| <span class=""prop-name"">Badge-Color-Primary</span> | Styles applied to the root element if `Color=""@Color.Primary""`.
+| <span class=""prop-name"">Badge-Color-Secondary</span> | Styles applied to the root element if `Color=""@Color.Secondary""`.
+| <span class=""prop-name"">Badge-Color-Error</span> | Styles applied to the root element if `Color=""@Color.Error""`.
+| <span class=""prop-name"">Badge-Dot</span> | Styles applied to the root element if `Variant=""@BadgeVariant.Dot""`.
+| <span class=""prop-name"">Badge-Top-Right-Rectangle</span> | Styles applied to the root element if `Vertical=""@Vertical.Top"" Horizontal=""@Horizontal.Right"" Overlap=""@BadgeOverlap.Rectangle""`.
+| <span class=""prop-name"">Badge-Bottom-Right-Rectangle</span> | Styles applied to the root element if `Vertical=""@Vertical.Bottom"" Horizontal=""@Horizontal.Right"" Overlap=""@BadgeOverlap.Rectangle""`.
+| <span class=""prop-name"">Badge-Top-Left-Rectangle</span> | Styles applied to the root element if `Vertical=""@Vertical.Top"" Horizontal=""@Horizontal.Left"" Overlap=""@BadgeOverlap.Rectangle""`.
+| <span class=""prop-name"">Badge-Bottom-Left-Rectangle</span> | Styles applied to the root element if `Vertical=""@Vertical.Bottom"" Horizontal=""@Horizontal.Left"" Overlap=""@BadgeOverlap.Rectangle""`.
+| <span class=""prop-name"">Badge-Top-Right-Circle</span> | Styles applied to the root element if `Vertical=""@Vertical.Top"" Horizontal=""@Horizontal.Right"" Overlap=""@BadgeOverlap.Circle""`.
+| <span class=""prop-name"">Badge-Bottom-Right-Circle</span> | Styles applied to the root element if `Vertical=""@Vertical.Bottom"" Horizontal=""@Horizontal.Right"" Overlap=""@BadgeOverlap.Circle""`.
+| <span class=""prop-name"">Badge-Top-Left-Circle</span> | Styles applied to the root element if `Vertical=""@Vertical.Top"" Horizontal=""@Horizontal.Left"" Overlap=""@BadgeOverlap.Circle""`.
+| <span class=""prop-name"">Badge-Bottom-Left-Circle</span> | Styles applied to the root element if `Vertical=""@Vertical.Bottom"" Horizontal=""@Horizontal.Left"" Overlap=""@BadgeOverlap.Circle""`.
+| <span class=""prop-name"">Badge-Invisible</span> | Pseudo-class to the badge `span` element if `Invisible=""true""`.
+
+")" />

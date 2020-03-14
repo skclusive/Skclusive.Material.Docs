@@ -1,42 +1,24 @@
 @namespace Skclusive.Material.Docs.App.View
 
-<div>
-    <Button
-        Style="margin: 8px;">
-        Default
-    </Button>
-    <Button
-        Color="@Color.Primary"
-        Style="margin: 8px;">
-        Primary
-    </Button>
-    <Button
-        Color="@Color.Secondary"
-        Style="margin: 8px;">
-        Secondary
-    </Button>
-    <Button
-        Color="@Color.Secondary"
-        Disabled="true"
-        Style="margin: 8px;">
-        Disabled
-    </Button>
-    <Button
-        Href="#text-buttons"
-        Style="margin: 8px;">
-        Link
-    </Button>
-    <input
-        accept="image/*"
-        style="display: none;"
-        id="text-button-file"
-        multiple
-        type="file" />
-    <label for="text-button-file">
-        <Button
-            Component="span"
-            Style="margin: 8px;">
-            Upload
-        </Button>
-    </label>
-</div>
+<MarkdownSegment
+    Text="@(@"
+## Text Buttons
+
+[Text buttons](https://material.io/design/components/buttons.html#text-button)
+are typically used for less-pronounced actions, including those located:
+
+- In dialogs
+- In cards
+
+In cards, text buttons help maintain an emphasis on card content.
+
+")" />
+
+<MarkdownDemo>
+    <ViewContent>
+        <TextButtonsDemo />
+    </ViewContent>
+    <CodeContent>
+        <TextButtonsCode />
+    </CodeContent>
+</MarkdownDemo>

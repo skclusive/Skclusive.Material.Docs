@@ -1,114 +1,16 @@
 @namespace Skclusive.Material.Docs.App.View
-@inherits DisposableComponentBase
 
-<style>
-    .demo-circular-progress-root {
-        display: flex;
-        align-items: center;
-    }
+<MarkdownSegment
+    Text="@(@"
+### Interactive Integration
 
-    .demo-circular-progress-wrapper {
-        margin: 8px;
-        position: relative;
-    }
+")" />
 
-    button.demo-circular-progress-button-success {
-        background-color: #4caf50;
-    }
-
-    button.demo-circular-progress-button-success:hover {
-        background-color: #388e3c;
-    }
-
-    .demo-circular-progress-fab-progress {
-        top: -6px;
-        left: -6px;
-        color: #4caf50;
-        z-index: 1;
-        position: absolute;
-    }
-
-    .demo-circular-progress-button-progress {
-        top: 50%;
-        left: 50%;
-        color: #4caf50;
-        position: absolute;
-        margin-top: -12px;
-        margin-left: -12px;
-    }
-</style>
-
-<div>
-    <div
-        class="demo-circular-progress-root">
-        <div
-            class="demo-circular-progress-wrapper">
-            <Fab
-                aria-label="save"
-                Color="@Color.Primary"
-                Class="@ButtonClass"
-                OnClick="@HandleButtonClick">
-                @if (Success)
-                {
-                    <CheckIcon />
-                }
-                else
-                {
-                    <SaveIcon />
-                }
-            </Fab>
-            @if (Loading)
-            {
-                <CircularProgress
-                    Size="68"
-                    Class="demo-circular-progress-fab-progress" />
-            }
-        </div>
-        <div
-            class="demo-circular-progress-wrapper">
-            <Button
-                Variant="@ButtonVariant.Contained"
-                Color="@Color.Primary"
-                Class="@ButtonClass"
-                Disabled="@Loading"
-                OnClick="@HandleButtonClick">
-                Accept terms
-            </Button>
-            @if (Loading)
-            {
-                <CircularProgress
-                    Size="24"
-                    Class="demo-circular-progress-button-progress" />
-            }
-        </div>
-    </div>
-</div>
-
-@code
-{
-    private bool Loading { set; get; }
-
-    private bool Success { set; get; }
-
-    private string ButtonClass => Success ? "demo-circular-progress-button-success" : "";
-
-    private void HandleButtonClick(EventArgs args)
-    {
-        if (!Loading)
-        {
-            Loading = true;
-            Success = false;
-            RunTimeout(() => {
-
-                Loading = false;
-                Success = true;
-
-                StateHasChanged();
-
-            }, 2000);
-
-            StateHasChanged();
-        }
-        Console.WriteLine($"HandleButtonClick: {args}");
-    }
-}
+<MarkdownDemo>
+    <ViewContent>
+        <CircularIntegrationDemo />
+    </ViewContent>
+    <CodeContent>
+        <CircularIntegrationCode />
+    </CodeContent>
+</MarkdownDemo>

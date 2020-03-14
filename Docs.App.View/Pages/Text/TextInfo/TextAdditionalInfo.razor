@@ -1,0 +1,69 @@
+@namespace Skclusive.Material.Docs.App.View
+
+<MarkdownSegment
+    Text="@(@"
+## Limitations
+
+### Shrink
+
+The input label ""shrink"" state isn't always correct.
+The input label is supposed to shrink as soon as the input is displaying something.
+In some circumstances, we can't determine the ""shrink"" state (number input, datetime input, Stripe input). You might notice an overlap.
+
+![shrink](/static/images/text-fields/shrink.png)
+
+To workaround the issue, you can force the ""shrink"" state of the label.
+```html
+<TextField InputLabelProps={{ shrink: true }} />
+```
+or
+```html
+<StandardInputLabel Shrink>Count</InputLabel>
+```
+
+### Floating label
+
+The floating label is absolutely positioned, it won't impact the layout of the page.
+You need to make sure that the input is larger than the label to display correctly.
+
+## Accessibility
+
+In order for the text field to be accessible, **the input should be linked to the label and the helper text**. The underlying DOM nodes should have this structure.
+
+```html
+<div
+    class=""form-control"">
+    <label
+        for=""my-input"">
+        Email address
+    </label>
+    <input
+        id=""my-input""
+        aria-describedby=""my-helper-text"" />
+    <span
+        id=""my-helper-text"">
+        We'll never share your email.
+    </span>
+</div>
+```
+
+- If you are using the `TextField` component, you just have to provide a unique `id`.
+- If you are composing the component:
+
+```html
+<FormControl>
+    <StandardInputLabel
+        For=""my-input"">
+        Email address
+    </InputLabel>
+    <StandardInput
+        Id=""my-input""
+        aria-describedby=""my-helper-text"" />
+    <FormHelperText
+        Id=""my-helper-text"">
+        We'll never share your email.
+    </FormHelperText>
+</FormControl>
+```
+
+")" />

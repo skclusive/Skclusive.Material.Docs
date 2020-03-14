@@ -1,11 +1,16 @@
 @namespace Skclusive.Material.Docs.App.View
 
- <div
-    style="flex-grow: 1;">
-    <LinearProgress
-        Variant="@LinearVariant.Query" />
-    <br />
-    <LinearProgress
-        Color="@Color.Secondary"
-        Variant="@LinearVariant.Query" />
-</div>
+<MarkdownSegment
+    Text="@(@"
+### Linear Query
+
+")" />
+
+<MarkdownDemo>
+    <ViewContent>
+        <LinearQueryDemo />
+    </ViewContent>
+    <CodeContent>
+        <LinearQueryCode />
+    </CodeContent>
+</MarkdownDemo>

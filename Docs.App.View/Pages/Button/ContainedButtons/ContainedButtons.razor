@@ -1,48 +1,22 @@
 @namespace Skclusive.Material.Docs.App.View
 
-<div>
-    <Button
-        Variant="@ButtonVariant.Contained"
-        Style="margin: 8px;">
-        Default
-    </Button>
-    <Button
-        Variant="@ButtonVariant.Contained"
-        Color="@Color.Primary"
-        Style="margin: 8px;">
-        Primary
-    </Button>
-    <Button
-        Variant="@ButtonVariant.Contained"
-        Color="@Color.Secondary"
-        Style="margin: 8px;">
-        Secondary
-    </Button>
-    <Button
-        Variant="@ButtonVariant.Contained"
-        Color="@Color.Secondary"
-        Disabled="true"
-        Style="margin: 8px;">
-        Disabled
-    </Button>
-    <Button
-        Variant="@ButtonVariant.Contained"
-        Href="#contained-buttons"
-        Style="margin: 8px;">
-        Link
-    </Button>
-    <input
-        accept="image/*"
-        style="display: none;"
-        id="contained-button-file"
-        multiple
-        type="file" />
-    <label for="contained-button-file">
-        <Button
-            Variant="@ButtonVariant.Contained"
-            Component="span"
-            Style="margin: 8px;">
-            Upload
-        </Button>
-    </label>
-</div>
+<MarkdownSegment
+    Text="@(@"
+## Contained Buttons
+
+[Contained buttons](https://material.io/design/components/buttons.html#contained-button)
+are high-emphasis, distinguished by their use of elevation and fill.
+They contain actions that are primary to your app.
+
+The last example of this demo show how to use an upload button.
+
+")" />
+
+<MarkdownDemo>
+    <ViewContent>
+        <ContainedButtonsDemo />
+    </ViewContent>
+    <CodeContent>
+        <ContainedButtonsCode />
+    </CodeContent>
+</MarkdownDemo>
