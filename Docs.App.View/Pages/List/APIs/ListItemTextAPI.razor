@@ -1,0 +1,44 @@
+@namespace Skclusive.Material.Docs.App.View
+
+<MarkdownSegment
+    Text="@(@"
+# ListItemText API
+
+<p class=""description"">The API documentation of the ListItemText component. Learn more about the parameters and the CSS customization points.</p>
+
+## Parameters
+
+| Name | Type | Default | Description |
+|:-----|:-----|:--------|:------------|
+| <span class=""prop-name"">RootRef</span> | <span class=""prop-type"">IReference</span> | <span class=""prop-default"">new Reference()</span> | The reference used to ref the root node. |
+| <span class=""prop-name"">Class</span> | <span class=""prop-type"">string</span> | | The class applied to the root node. |
+| <span class=""prop-name"">Style</span> | <span class=""prop-type"">string</span> | | The style applied to the root node. |
+| <span class=""prop-name"">Component</span> | <span class=""prop-type"">string</span> | <span class=""prop-default"">'div'</span> | The component used for the root node. |
+| <span class=""prop-name"">ChildContent</span> | <span class=""prop-type"">RenderFragment</span> |  | The content of the component. |
+| <span class=""prop-name"">Inset</span> | <span class=""prop-type"">bool</span> | <span class=""prop-default"">false</span> | If `true`, the children will be indented. This should be used if there is no left avatar or left icon. |
+| <span class=""prop-name"">Primary</span> | <span class=""prop-type"">string</span> |  | The main content element. |
+| <span class=""prop-name"">PrimaryContent</span> | <span class=""prop-type"">RenderFragment</span> |  | The main content element. |
+| <span class=""prop-name"">PrimaryTypographyProps</span> | <span class=""prop-type"">object</span> |  | These props will be forwarded to the primary typography component (as long as disableTypography is not `true`). |
+| <span class=""prop-name"">Secondary</span> | <span class=""prop-type"">string</span> |  | The secondary content element. |
+| <span class=""prop-name"">SecondaryContent</span> | <span class=""prop-type"">RenderFragment</span> |  | The secondary content element. |
+| <span class=""prop-name"">SecondaryTypographyProps</span> | <span class=""prop-type"">object</span> |  | These props will be forwarded to the secondary typography component (as long as disableTypography is not `true`). |
+| <span class=""prop-name"">PrimaryStyle</span> | <span class=""prop-type"">string</span> | | the `style` applied on the primary element. |
+| <span class=""prop-name"">PrimaryClass</span> | <span class=""prop-type"">string</span> | |  the `class` applied on the primary element. |
+| <span class=""prop-name"">SecondaryStyle</span> | <span class=""prop-type"">string</span> | | the `style` applied on the secondary element. |
+| <span class=""prop-name"">SecondaryClass</span> | <span class=""prop-type"">string</span> | |  the `class` applied on the secondary element. |
+
+## CSS
+
+- Style name: `ListItemText`.
+- Style details:
+
+| Global class | Description |
+|:-------------|:------------|
+| <span class=""prop-name"">ListItemText-Root</span> | Styles applied to the root element.
+| <span class=""prop-name"">ListItemText-Multiline</span> | Styles applied to the `Typography` components if primary and secondary are set.
+| <span class=""prop-name"">ListItemText-Dense</span> | Styles applied to the `Typography` components if dense.
+| <span class=""prop-name"">ListItemText-Inset</span> | Styles applied to the root element if `Inset=""true""`.
+| <span class=""prop-name"">ListItemText-Primary</span> | Styles applied to the primary `Typography` component.
+| <span class=""prop-name"">ListItemText-Secondary</span> | Styles applied to the secondary `Typography` component.
+
+")" />

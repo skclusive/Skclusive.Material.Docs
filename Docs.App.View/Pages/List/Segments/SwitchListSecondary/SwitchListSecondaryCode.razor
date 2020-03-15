@@ -23,7 +23,7 @@
                     Id=""switch-list-label-wifi""
                     Primary=""Wi-Fi"" />
             </ChildContent>
-            <SecondaryAction>
+            <SecondaryActionContent>
                 <ListItemSecondaryAction>
                     <Switch
                         Edge=""@Edge.End""
@@ -31,7 +31,7 @@
                         OnChange=""@((_) => ToggleChecked(1))""
                         InputProps=""@(new Dictionary<string, object>() { {""aria-labelledby"", ""switch-list-label-wifi"" }})"" />
                 </ListItemSecondaryAction>
-            </SecondaryAction>
+            </SecondaryActionContent>
         </ListItem>
         <ListItem>
             <ChildContent>
@@ -42,7 +42,7 @@
                     Id=""switch-list-label-bluetooth""
                     Primary=""Bluetooth"" />
             </ChildContent>
-            <SecondaryAction>
+            <SecondaryActionContent>
                 <ListItemSecondaryAction>
                     <Switch
                         Edge=""@Edge.End""
@@ -50,7 +50,7 @@
                         OnChange=""@((_) => ToggleChecked(2))""
                         InputProps=""@(new Dictionary<string, object>() { {""aria-labelledby"", ""switch-list-label-bluetooth"" }})"" />
                 </ListItemSecondaryAction>
-            </SecondaryAction>
+            </SecondaryActionContent>
         </ListItem>
     </ChildContent>
 </List>

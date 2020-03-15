@@ -17,7 +17,7 @@
                     Id="@($"checkbox-list-secondary-label-{item.Index}")"
                     Primary="@($"Line item {item.Index + 1}")" />
             </ChildContent>
-            <SecondaryAction>
+            <SecondaryActionContent>
                 <ListItemSecondaryAction>
                     <Checkbox
                         Edge="@Edge.End"
@@ -27,7 +27,7 @@
                         })"
                         InputProps="@(new Dictionary<string, object>{{ "aria-label", $"checkbox-list-secondary-label-{item.Index}" }})" />
                 </ListItemSecondaryAction>
-            </SecondaryAction>
+            </SecondaryActionContent>
         </ListItem>
     }
 </List>

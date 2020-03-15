@@ -24,7 +24,7 @@
                     Id="@($"checkbox-list-label-{item.Index}")"
                     Primary="@($"Line item {item.Index + 1}")" />
             </ChildContent>
-            <SecondaryAction>
+            <SecondaryActionContent>
                 <ListItemSecondaryAction>
                     <IconButton
                         Edge="@IconButtonEdge.End"
@@ -33,7 +33,7 @@
                         <CommentIcon />
                     </IconButton>
                 </ListItemSecondaryAction>
-            </SecondaryAction>
+            </SecondaryActionContent>
         </ListItem>
     }
 </List>
