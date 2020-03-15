@@ -2,9 +2,9 @@
 
 <MarkdownSegment
     Text="@(@"
-# IconButton API
+# ButtonBase API
 
-<p class=""description"">The API documentation of the IconButton component. Learn more about the parameters and the CSS customization points.</p>
+<p class=""description"">The API documentation of the ButtonBase component. Learn more about the parameters and the CSS customization points.</p>
 
 ## Parameters
 
@@ -22,28 +22,20 @@
 | <span class=""prop-name"">DisableTouchRipple</span> | <span class=""prop-type"">bool</span> | <span class=""prop-default"">false</span> | If `true`, the touch ripple effect will be disabled. |
 | <span class=""prop-name"">DisableFocusRipple</span> | <span class=""prop-type"">bool</span> | <span class=""prop-default"">false</span> | If `true`, the keyboard ripple effect will be disabled. |
 | <span class=""prop-name"">FocusVisibleClass</span> | <span class=""prop-type"">string</span> |  | This prop can help a person know which element has the keyboard focus. The class name will be applied when the element gain the focus through a keyboard interaction. It's a polyfill for the [CSS :focus-visible selector](https://drafts.csswg.org/selectors-4/#the-focus-visible-pseudo). The rationale for using this feature [is explained here](https://github.com/WICG/focus-visible/blob/master/explainer.md). A [polyfill can be used](https://github.com/WICG/focus-visible) to apply a `focus-visible` class to other components if needed. |
+| <span class=""prop-name"">Type</span> | <span class=""prop-type"">ButtonType.Submit<br>&#124;&nbsp;ButtonType.Reset<br>&#124;&nbsp;ButtonType.Button</span> | <span class=""prop-default"">ButtonType.Button</span> | Used to control the button's purpose. This prop passes the value to the `type` attribute of the native button component. |
 | <span class=""prop-name"">Href</span> | <span class=""prop-type"">string</span> |  | The URL to link to when the button is clicked. If defined, an `a` element will be used as the root node. |
 | <span class=""prop-name"">Color</span> | <span class=""prop-type"">Color.Default<br>&#124;&nbsp;Color.Inherit<br>&#124;&nbsp;Color.Primary<br>&#124;&nbsp;Color.Secondary</span> | <span class=""prop-default"">Color.Default</span> | The color of the component. It supports those theme colors that make sense for this component. |
 | <span class=""prop-name"">LabelStyle</span> | <span class=""prop-type"">string</span> | | the `style` applied on the label element. |
 | <span class=""prop-name"">LabelClass</span> | <span class=""prop-type"">string</span> | |  the `class` applied on the label element. |
-| <span class=""prop-name"">Edge</span> | <span class=""prop-type"">IconButtonEdge.Start<br>&#124;&nbsp;IconButtonEdge.End<br>&#124;&nbsp;IconButtonEdge.None</span> | <span class=""prop-default"">IconButtonEdge.None</span> | If given, uses a negative margin to counteract the padding on one side (this is often helpful for aligning the left or right side of the icon with content above or below, without ruining the border size and shape). |
-| <span class=""prop-name"">Size</span> | <span class=""prop-type"">IconButtonSize.Small<br>&#124;&nbsp;IconButtonSize.Medium</span> | <span class=""prop-default"">IconButtonSize.Medium</span> | The size of the button. `IconButtonSize.Small` is equivalent to the dense button styling. |
 
 ## CSS
 
-- Style name: `IconButton`.
+- Style name: `ButtonBase`.
 - Style details:
 
 | Global class | Description |
 |:-------------|:------------|
-| <span class=""prop-name"">IconButton-Root</span> | Styles applied to the root element.
-| <span class=""prop-name"">IconButton-Edge-Start</span> | Styles applied to the root element if `Edge=""@IconButtonEdge.Start""`.
-| <span class=""prop-name"">IconButton-Edge-End</span> | Styles applied to the root element if `Edge=""@IconButtonEdge.End""`.
-| <span class=""prop-name"">IconButton-Color-Inherit</span> | Styles applied to the root element if `Color=""@Color.Inherit""`.
-| <span class=""prop-name"">IconButton-Color-Primary</span> | Styles applied to the root element if `Color=""@Color.Primary""`.
-| <span class=""prop-name"">IconButton-Color-Secondary</span> | Styles applied to the root element if `Color=""@Color.Secondary""`.
-| <span class=""prop-name"">IconButton-Disabled</span> | Pseudo-class applied to the root element if `Disabled=""true""`.
-| <span class=""prop-name"">IconButton-Size-Small</span> | Styles applied to the root element if `Size=""@IconButtonSize.Small""`.
-| <span class=""prop-name"">IconButton-Label</span> | Styles applied to the children container element.
+| <span class=""prop-name"">ButtonBase-Root</span> | Styles applied to the root element.
+| <span class=""prop-name"">ButtonBase-Disabled</span> | Pseudo-class applied to the root element if `Disabled=""true""`.
 
 ")" />
