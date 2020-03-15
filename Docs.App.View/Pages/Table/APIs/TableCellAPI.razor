@@ -1,0 +1,45 @@
+@namespace Skclusive.Material.Docs.App.View
+
+<MarkdownSegment
+    Text="@(@"
+# TableCell API
+
+<p class=""description"">The API documentation of the TableCell component. Learn more about the parameters and the CSS customization points.</p>
+
+## Parameters
+
+| Name | Type | Default | Description |
+|:-----|:-----|:--------|:------------|
+| <span class=""prop-name"">RootRef</span> | <span class=""prop-type"">IReference</span> | <span class=""prop-default"">new Reference()</span> | The reference used to ref the root node. |
+| <span class=""prop-name"">Class</span> | <span class=""prop-type"">string</span> | | The class applied to the root node. |
+| <span class=""prop-name"">Style</span> | <span class=""prop-type"">string</span> | | The style applied to the root node. |
+| <span class=""prop-name"">Component</span> | <span class=""prop-type"">string</span> | | The component used for the root node. |
+| <span class=""prop-name"">ChildContent</span> | <span class=""prop-type"">RenderFragment</span> |  | The content of the component. |
+| <span class=""prop-name"">Align</span> | <span class=""prop-type"">Align.Inherit<br>&#124;&nbsp;Align.Left<br>&#124;&nbsp;Align.Center<br>&#124;&nbsp;Align.Right<br>&#124;&nbsp;Align.Justify</span> | <span class=""prop-default"">Align.Inherit</span> | Set the text-align on the table cell content.<br>Monetary or generally number fields **should be right aligned** as that allows you to add them up quickly in your head without having to worry about decimals. |
+| <span class=""prop-name"">Padding</span> | <span class=""prop-type"">Padding.Default<br>&#124;&nbsp;Padding.Checkbox<br>&#124;&nbsp;Padding.None</span> |  | Sets the padding applied to the cell. By default, the Table parent component set the value (`default`). |
+| <span class=""prop-name"">Scope</span> | <span class=""prop-type"">string</span> |  | Set scope attribute. |
+| <span class=""prop-name"">Size</span> | <span class=""prop-type"">Size.Small<br>&#124;&nbsp;Size.Medium</span> |  | Specify the size of the cell. By default, the Table parent component set the value (`medium`). |
+| <span class=""prop-name"">Sort</span> | <span class=""prop-type"">Sort.Ascending<br>&#124;&nbsp;Sort.Descending<br>&#124;&nbsp;Sort.None</span> |  | Set aria-sort direction. |
+| <span class=""prop-name"">Portion</span> | <span class=""prop-type"">Portion.Head<br>&#124;&nbsp;Portion.Body<br>&#124;&nbsp;Portion.Footer</span> |  | Specify the cell type. By default, the TableHead, TableBody or TableFooter parent component set the value. |
+
+## CSS
+
+- Style name: `TableCell`.
+- Style details:
+
+| Global class | Description |
+|:-------------|:------------|
+| <span class=""prop-name"">TableCell-Root</span> | Styles applied to the root element.
+| <span class=""prop-name"">TableCell-Head</span> | Styles applied to the root element if `Portion=""@Portion.Head""` or `context.table.head`.
+| <span class=""prop-name"">TableCell-Body</span> | Styles applied to the root element if `Portion=""@Portion.Body""` or `context.table.body`.
+| <span class=""prop-name"">TableCell-Footer</span> | Styles applied to the root element if `Portion=""@Portion.Footer""` or `context.table.footer`.
+| <span class=""prop-name"">TableCell-Size-Small</span> | Styles applied to the root element if `Size=""@Size.Small""`.
+| <span class=""prop-name"">TableCell-Padding-Checkbox</span> | Styles applied to the root element if `Padding=""@Padding.Checkbox""`.
+| <span class=""prop-name"">TableCell-Padding-None</span> | Styles applied to the root element if `Padding=""@Padding.None""`.
+| <span class=""prop-name"">TableCell-Align-Left</span> | Styles applied to the root element if `Align=""@Align.Left""`.
+| <span class=""prop-name"">TableCell-Align-Center</span> | Styles applied to the root element if `Align=""@Align.Center""`.
+| <span class=""prop-name"">TableCell-Align-Right</span> | Styles applied to the root element if `Align=""@Align.right""`.
+| <span class=""prop-name"">TableCell-Align-Justify</span> | Styles applied to the root element if `Align=""@Align.Justify""`.
+| <span class=""prop-name"">TableCell-StickyHeader</span> | Styles applied to the root element if `context.table.StickyHeader=""true""`.
+
+")" />

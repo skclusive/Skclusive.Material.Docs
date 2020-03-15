@@ -1,0 +1,34 @@
+@namespace Skclusive.Material.Docs.App.View
+
+<MarkdownSegment
+    Text="@(@"
+# TableRow API
+
+<p class=""description"">The API documentation of the TableRow component. Learn more about the parameters and the CSS customization points.</p>
+
+## Parameters
+
+| Name | Type | Default | Description |
+|:-----|:-----|:--------|:------------|
+| <span class=""prop-name"">RootRef</span> | <span class=""prop-type"">IReference</span> | <span class=""prop-default"">new Reference()</span> | The reference used to ref the root node. |
+| <span class=""prop-name"">Class</span> | <span class=""prop-type"">string</span> | | The class applied to the root node. |
+| <span class=""prop-name"">Style</span> | <span class=""prop-type"">string</span> | | The style applied to the root node. |
+| <span class=""prop-name"">Component</span> | <span class=""prop-type"">string</span> | <span class=""prop-default"">'tr'</span> | The component used for the root node. |
+| <span class=""prop-name"">ChildContent</span> | <span class=""prop-type"">RenderFragment</span> |  | The content of the component. |
+| <span class=""prop-name"">Hover</span> | <span class=""prop-type"">bool</span> | <span class=""prop-default"">false</span> | If `true`, the table row will shade on hover. |
+| <span class=""prop-name"">Selected</span> | <span class=""prop-type"">bool</span> | <span class=""prop-default"">false</span> | If `true`, the table row will have the selected shading. |
+
+## CSS
+
+- Style name: `TableRow`.
+- Style details:
+
+| Global class | Description |
+|:-------------|:------------|
+| <span class=""prop-name"">TableRow-Root</span> | Styles applied to the root element.
+| <span class=""prop-name"">TableRow-Selected</span> | Pseudo-class applied to the root element if `Selected=""true""`.
+| <span class=""prop-name"">TableRow-Hover</span> | Pseudo-class applied to the root element if `Hover=""true""`.
+| <span class=""prop-name"">TableRow-Head</span> | Styles applied to the root element if table Portion=""@Portion.Head"".
+| <span class=""prop-name"">TableRow-Footer</span> | Styles applied to the root element if table Portion=""@Portion.Footer"".
+
+")" />
