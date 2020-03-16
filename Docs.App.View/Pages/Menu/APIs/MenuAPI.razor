@@ -15,10 +15,38 @@
 | <span class=""prop-name"">Style</span> | <span class=""prop-type"">string</span> | | The style applied to the root node. |
 | <span class=""prop-name"">Component</span> | <span class=""prop-type"">string</span> | <span class=""prop-default"">'hr'</span> | The component used for the root node. |
 | <span class=""prop-name"">ChildContent</span> | <span class=""prop-type"">RenderFragment</span> |  | The content of the component. |
-| <span class=""prop-name"">Absolute</span> | <span class=""prop-type"">bool</span> | <span class=""prop-default"">false</span> | Absolutely position the element. |
-| <span class=""prop-name"">Light</span> | <span class=""prop-type"">bool</span> | <span class=""prop-default"">false</span> | If `true`, the divider will have a lighter color. |
-| <span class=""prop-name"">Orientation</span> | <span class=""prop-type"">Orientation.Horizontal<br>&#124;&nbsp;Orientation.Vertical</span> | <span class=""prop-default"">Orientation.Horizontal</span> | The divider orientation. |
-| <span class=""prop-name"">Variant</span> | <span class=""prop-type"">MenuVariant.FullWidth<br>&#124;&nbsp;MenuVariant.Inset<br>&#124;&nbsp;MenuVariant.Middle</span> | <span class=""prop-default"">MenuVariant.FullWidth</span> | The variant to use. |
+| <span class=""prop-name"">DisablePortal</span> | <span class=""prop-type"">bool</span> | <span class=""prop-default"">false</span> | Disable the portal behavior. The children stay within it's parent DOM hierarchy. |
+| <span class=""prop-name required"">Open&nbsp;*</span> | <span class=""prop-type"">bool</span> |  | If `true`, the modal is open. |
+| <span class=""prop-name"">AutoFocus</span> | <span class=""prop-type"">bool</span> | <span class=""prop-default"">false</span> | If `true`, rounded corners are disabled. |
+| <span class=""prop-name"">Elevation</span> | <span class=""prop-type"">int</span> | <span class=""prop-default"">8</span> | The elevation of the popover. |
+| <span class=""prop-name"">DisableListWrap</span> | <span class=""prop-type"">bool</span> | <span class=""prop-default"">false</span> | If `true`, the menu items will not wrap focus. |
+| <span class=""prop-name"">DisableAutoFocusItem</span> | <span class=""prop-type"">bool</span> | <span class=""prop-default"">false</span> | When opening the menu will not focus the active item but the `[role=""menu""""]` unless `autoFocus` is also set to `false`. |
+| <span class=""prop-name"">TransitionDuration</span> | <span class=""prop-type"">int<br>&#124;&nbsp;{ enter?: number, exit?: number }</span> | <span class=""prop-default"">{ enter: duration.enteringScreen, exit: duration.leavingScreen }</span> | The duration for the transition, in milliseconds. You may specify a single timeout for all transitions, or individually with an object. |
+| <span class=""prop-name"">AppearTimeout</span> | <span class=""prop-type"">int?</span> |  | The appear duration for the transition, in milliseconds. |
+| <span class=""prop-name"">EnterTimeout</span> | <span class=""prop-type"">int?</span> |  | The enter duration for the transition, in milliseconds. |
+| <span class=""prop-name"">ExitTimeout</span> | <span class=""prop-type"">int?</span> |  | The exit duration for the transition, in milliseconds. |
+| <span class=""prop-name"">MountOnEnter</span> | <span class=""prop-type"">bool</span> | <span class=""prop-default"">false</span> | If you want to ""lazy mount"" the component. |
+| <span class=""prop-name"">UnmountOnExit</span> | <span class=""prop-type"">bool</span> | <span class=""prop-default"">false</span> | if you'd prefer to unmount the component after it finishes exiting. |
+| <span class=""prop-name"">OnClose</span> | <span class=""prop-type"">Action&lt;MenuCloseReason&gt;</span> |  | Callback fired when the component requests to be closed. The `reason` parameter can optionally be used to control the response to `OnClose`.<br><br>**Signature:**<br>`function(event: object, reason: string) => void`<br>*event:* The event source of the callback.<br>*reason:* Can be:`""ModalCloseReason.Escape""`, `""ModalCloseReason.BackdropClick""`. |
+| <span class=""prop-name"">PaperStyle</span> | <span class=""prop-type"">string</span> | | the `style` applied on the paper element. |
+| <span class=""prop-name"">PaperClass</span> | <span class=""prop-type"">string</span> | |  the `class` applied on the paper element. |
+| <span class=""prop-name"">AnchorHorizontalOrigin</span> | <span class=""prop-type"">HorizontalOrigin.Left<br>&#124;&nbsp;HorizontalOrigin.Center<br>&#124;&nbsp;HorizontalOrigin.Right</span> | <span class=""prop-default"">HorizontalOrigin.Left</span> | This is the horizontal point on the anchor where the popover's `AnchorRef` will attach to. This is not used when the AnchorType is 'AnchorType.Location'. |
+| <span class=""prop-name"">AnchorVerticalOrigin</span> | <span class=""prop-type"">VerticalOrigin.Top<br>&#124;&nbsp;VerticalOrigin.Center<br>&#124;&nbsp;VerticalOrigin.Bottom</span> | <span class=""prop-default"">VerticalOrigin.Top</span> | This is the vertical point on the anchor where the popover's `AnchorRef` will attach to. This is not used when the AnchorType is 'AnchorType.Location'. |
+| <span class=""prop-name"">TransformHorizontalOrigin</span> | <span class=""prop-type"">HorizontalOrigin.Left<br>&#124;&nbsp;HorizontalOrigin.Center<br>&#124;&nbsp;HorizontalOrigin.Right</span> | <span class=""prop-default"">HorizontalOrigin.Left</span> | This is the point on the popover which will attach to the anchor's horizontal origin. |
+| <span class=""prop-name"">TransformVerticalOrigin</span> | <span class=""prop-type"">VerticalOrigin.Top<br>&#124;&nbsp;VerticalOrigin.Center<br>&#124;&nbsp;VerticalOrigin.Bottom</span> | <span class=""prop-default"">VerticalOrigin.Top</span> | This is the point on the popover which will attach to the anchor's vertical origin. |
+| <span class=""prop-name"">OnEnter</span> | <span class=""prop-type"">Action&lt;IReference, bool&gt;</span> |  | Callback fired before the component is entering. |
+| <span class=""prop-name"">OnEntered</span> | <span class=""prop-type"">Action&lt;IReference, bool&gt;</span> |  | Callback fired when the component has entered. |
+| <span class=""prop-name"">OnEntering</span> | <span class=""prop-type"">Action&lt;IReference, bool&gt;</span> |  | Callback fired when the component is entering. |
+| <span class=""prop-name"">OnExit</span> | <span class=""prop-type"">Action&lt;IReference&gt;</span> |  | Callback fired before the component is exiting. |
+| <span class=""prop-name"">OnExited</span> | <span class=""prop-type"">Action&lt;IReference&gt;</span> |  | Callback fired when the component has exited. |
+| <span class=""prop-name"">OnExiting</span> | <span class=""prop-type"">Action&lt;IReference&gt;</span> |  | Callback fired when the component is exiting. |
+| <span class=""prop-name"">AnchorRef</span> | <span class=""prop-type"">IReference</span> | <span class=""prop-default"">new Reference()</span> | The reference used to ref the anchor node. |
+| <span class=""prop-name"">ListRef</span> | <span class=""prop-type"">IReference</span> | <span class=""prop-default"">new Reference()</span> | The reference used to ref the list node. |
+| <span class=""prop-name"">ListStyle</span> | <span class=""prop-type"">string</span> | | the `style` applied on the list element. |
+| <span class=""prop-name"">ListClass</span> | <span class=""prop-type"">string</span> | |  the `class` applied on the list element. |
+| <span class=""prop-name"">Variant</span> | <span class=""prop-type"">MenuVariant.Menu<br>&#124;&nbsp;MenuVariant.SelectedMenu</span> | <span class=""prop-default"">MenuVariant.SelectedMenu</span> | The variant to use. Use `MenuVariant.Menu` to prevent selected items from impacting the initial focus and the vertical alignment relative to the anchor element. |
+| <span class=""prop-name"">Dense</span> | <span class=""prop-type"">bool</span> | <span class=""prop-default"">false</span> | If `true`, compact vertical padding designed for keyboard and mouse input will be used for the list and list items. The prop is available to descendant components as the `dense` context. |
+| <span class=""prop-name"">DisablePadding</span> | <span class=""prop-type"">bool</span> | <span class=""prop-default"">false</span> | If `true`, vertical padding will be removed from the list. |
 
 ## CSS
 
@@ -27,11 +55,7 @@
 
 | Global class | Description |
 |:-------------|:------------|
-| <span class=""prop-name"">Menu-Root</span> | Styles applied to the root element.
-| <span class=""prop-name"">Menu-Absolute</span> | Styles applied to the root element if `Absolute=""true""`.
-| <span class=""prop-name"">Menu-Inset</span> | Styles applied to the root element if `Variant=""@MenuVariant.Inset""`.
-| <span class=""prop-name"">Menu-Light</span> | Styles applied to the root element if `Light=""true""`.
-| <span class=""prop-name"">Menu-Middle</span> | Styles applied to the root element if `Variant=""@MenuVariant.Middle""`.
-| <span class=""prop-name"">Menu-Vertical</span> | Styles applied to the root element if `Orientation=""@Orientation.Vertical""`.
+| <span class=""prop-name"">Menu-Paper</span> | Styles applied to the `Paper` component.
+| <span class=""prop-name"">Menu-List</span> | Styles applied to the `List` component via `MenuList`.
 
 ")" />

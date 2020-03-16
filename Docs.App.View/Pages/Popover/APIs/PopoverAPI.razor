@@ -15,10 +15,48 @@
 | <span class=""prop-name"">Style</span> | <span class=""prop-type"">string</span> | | The style applied to the root node. |
 | <span class=""prop-name"">Component</span> | <span class=""prop-type"">string</span> | <span class=""prop-default"">'hr'</span> | The component used for the root node. |
 | <span class=""prop-name"">ChildContent</span> | <span class=""prop-type"">RenderFragment</span> |  | The content of the component. |
-| <span class=""prop-name"">Absolute</span> | <span class=""prop-type"">bool</span> | <span class=""prop-default"">false</span> | Absolutely position the element. |
-| <span class=""prop-name"">Light</span> | <span class=""prop-type"">bool</span> | <span class=""prop-default"">false</span> | If `true`, the divider will have a lighter color. |
-| <span class=""prop-name"">Orientation</span> | <span class=""prop-type"">Orientation.Horizontal<br>&#124;&nbsp;Orientation.Vertical</span> | <span class=""prop-default"">Orientation.Horizontal</span> | The divider orientation. |
-| <span class=""prop-name"">Variant</span> | <span class=""prop-type"">PopoverVariant.FullWidth<br>&#124;&nbsp;PopoverVariant.Inset<br>&#124;&nbsp;PopoverVariant.Middle</span> | <span class=""prop-default"">PopoverVariant.FullWidth</span> | The variant to use. |
+| <span class=""prop-name"">AnchorType</span> | <span class=""prop-type"">AnchorType.Element<br>&#124;&nbsp;AnchorType.Location<br>&#124;&nbsp;AnchorType.None</span> | <span class=""prop-default"">'anchorEl'</span> |  |
+| <span class=""prop-name"">ContainerRef</span> | <span class=""prop-type"">IReference</span> | <span class=""prop-default"">new Reference()</span> | The reference used to ref the container node. |
+| <span class=""prop-name"">AnchorRef</span> | <span class=""prop-type"">IReference</span> | <span class=""prop-default"">new Reference()</span> | The reference used to ref the anchor node. |
+| <span class=""prop-name"">ContentAnchorRef</span> | <span class=""prop-type"">IReference</span> | <span class=""prop-default"">new Reference()</span> | The reference used to ref the content anchor node. |
+| <span class=""prop-name"">PortalTargetRef</span> | <span class=""prop-type"">IReference</span> | | Reference attached to the portal target. |
+| <span class=""prop-name"">PortalTargetBodyRef</span> | <span class=""prop-type"">IReference</span> | | Reference attached to the portal target body. |
+| <span class=""prop-name"">DisablePortal</span> | <span class=""prop-type"">bool</span> | <span class=""prop-default"">false</span> | Disable the portal behavior. The children stay within it's parent DOM hierarchy. |
+| <span class=""prop-name"">Elevation</span> | <span class=""prop-type"">int</span> | <span class=""prop-default"">8</span> | The elevation of the popover. |
+| <span class=""prop-name"">Square</span> | <span class=""prop-type"">bool</span> | <span class=""prop-default"">false</span> | If `true`, rounded corners are disabled. |
+| <span class=""prop-name required"">Open&nbsp;*</span> | <span class=""prop-type"">bool</span> |  | If `true`, the modal is open. |
+| <span class=""prop-name"">TransitionDuration</span> | <span class=""prop-type"">int<br>&#124;&nbsp;{ enter?: number, exit?: number }</span> | <span class=""prop-default"">{ enter: duration.enteringScreen, exit: duration.leavingScreen }</span> | The duration for the transition, in milliseconds. You may specify a single timeout for all transitions, or individually with an object. |
+| <span class=""prop-name"">AppearTimeout</span> | <span class=""prop-type"">int?</span> |  | The appear duration for the transition, in milliseconds. |
+| <span class=""prop-name"">EnterTimeout</span> | <span class=""prop-type"">int?</span> |  | The enter duration for the transition, in milliseconds. |
+| <span class=""prop-name"">ExitTimeout</span> | <span class=""prop-type"">int?</span> |  | The exit duration for the transition, in milliseconds. |
+| <span class=""prop-name"">MountOnEnter</span> | <span class=""prop-type"">bool</span> | <span class=""prop-default"">false</span> | If you want to ""lazy mount"" the component. |
+| <span class=""prop-name"">UnmountOnExit</span> | <span class=""prop-type"">bool</span> | <span class=""prop-default"">false</span> | if you'd prefer to unmount the component after it finishes exiting. |
+| <span class=""prop-name"">OnEnter</span> | <span class=""prop-type"">Action&lt;IReference, bool&gt;</span> |  | Callback fired before the component is entering. |
+| <span class=""prop-name"">OnEntered</span> | <span class=""prop-type"">Action&lt;IReference, bool&gt;</span> |  | Callback fired when the component has entered. |
+| <span class=""prop-name"">OnEntering</span> | <span class=""prop-type"">Action&lt;IReference, bool&gt;</span> |  | Callback fired when the component is entering. |
+| <span class=""prop-name"">OnExit</span> | <span class=""prop-type"">Action&lt;IReference&gt;</span> |  | Callback fired before the component is exiting. |
+| <span class=""prop-name"">OnExited</span> | <span class=""prop-type"">Action&lt;IReference&gt;</span> |  | Callback fired when the component has exited. |
+| <span class=""prop-name"">OnExiting</span> | <span class=""prop-type"">Action&lt;IReference&gt;</span> |  | Callback fired when the component is exiting. |
+| <span class=""prop-name"">AnchorTop</span> | <span class=""prop-type"">double</span> |  | This is the position top that may be used to set the position of the popover. The coordinates are relative to the application's client area. |
+| <span class=""prop-name"">AnchorLeft</span> | <span class=""prop-type"">double</span> |  | This is the position left that may be used to set the position of the popover. The coordinates are relative to the application's client area. |
+| <span class=""prop-name"">OnBackdropClick</span> | <span class=""prop-type"">Action</span> |  | Callback fired when the backdrop is clicked. |
+| <span class=""prop-name"">OnClose</span> | <span class=""prop-type"">Action&lt;ModalCloseReason&gt;</span> |  | Callback fired when the component requests to be closed. The `reason` parameter can optionally be used to control the response to `OnClose`.<br><br>**Signature:**<br>`function(event: object, reason: string) => void`<br>*event:* The event source of the callback.<br>*reason:* Can be:`""ModalCloseReason.Escape""`, `""ModalCloseReason.BackdropClick""`. |
+| <span class=""prop-name"">OnEscapeKeyDown</span> | <span class=""prop-type"">Action</span> |  | Callback fired when the escape key is pressed, `DisableEscapeKeyDown` is false and the modal is in focus. |
+| <span class=""prop-name"">Absolute</span> | <span class=""prop-type"">bool</span> |  | If `true`, positions the modal absolute to tha relative parent. |
+| <span class=""prop-name"">PaperStyle</span> | <span class=""prop-type"">string</span> | | the `style` applied on the paper element. |
+| <span class=""prop-name"">PaperClass</span> | <span class=""prop-type"">string</span> | |  the `class` applied on the paper element. |
+| <span class=""prop-name"">BackdropInvisible</span> | <span class=""prop-type"">bool</span> |  | If `true`, the backdrop is invisible. |
+| <span class=""prop-name"">BackdropStyle</span> | <span class=""prop-type"">string</span> | | the `style` applied on the backdrop element. |
+| <span class=""prop-name"">BackdropClass</span> | <span class=""prop-type"">string</span> | |  the `class` applied on the backdrop element. |
+| <span class=""prop-name"">MarginThreshold</span> | <span class=""prop-type"">double</span> | <span class=""prop-default"">16</span> | Specifies how close to the edge of the window the popover can appear. |
+| <span class=""prop-name"">AnchorHorizontalOrigin</span> | <span class=""prop-type"">HorizontalOrigin.Left<br>&#124;&nbsp;HorizontalOrigin.Center<br>&#124;&nbsp;HorizontalOrigin.Right</span> | <span class=""prop-default"">HorizontalOrigin.Left</span> | This is the horizontal point on the anchor where the popover's `AnchorRef` will attach to. This is not used when the AnchorType is 'AnchorType.Location'. |
+| <span class=""prop-name"">AnchorVerticalOrigin</span> | <span class=""prop-type"">VerticalOrigin.Top<br>&#124;&nbsp;VerticalOrigin.Center<br>&#124;&nbsp;VerticalOrigin.Bottom</span> | <span class=""prop-default"">VerticalOrigin.Top</span> | This is the vertical point on the anchor where the popover's `AnchorRef` will attach to. This is not used when the AnchorType is 'AnchorType.Location'. |
+| <span class=""prop-name"">AnchorHorizontalOriginValue</span> | <span class=""prop-type"">double?</span> | | This is the position that may be to set the horizontal position of the popover. The coordinates are relative to the application's client area. |
+| <span class=""prop-name"">AnchorVerticalOriginValue</span> | <span class=""prop-type"">double?</span> | | This is the position that may be to set the vertical position of the popover. The coordinates are relative to the application's client area. |
+| <span class=""prop-name"">TransformHorizontalOrigin</span> | <span class=""prop-type"">HorizontalOrigin.Left<br>&#124;&nbsp;HorizontalOrigin.Center<br>&#124;&nbsp;HorizontalOrigin.Right</span> | <span class=""prop-default"">HorizontalOrigin.Left</span> | This is the point on the popover which will attach to the anchor's horizontal origin. |
+| <span class=""prop-name"">TransformVerticalOrigin</span> | <span class=""prop-type"">VerticalOrigin.Top<br>&#124;&nbsp;VerticalOrigin.Center<br>&#124;&nbsp;VerticalOrigin.Bottom</span> | <span class=""prop-default"">VerticalOrigin.Top</span> | This is the point on the popover which will attach to the anchor's vertical origin. |
+| <span class=""prop-name"">TransformHorizontalOriginValue</span> | <span class=""prop-type"">double?</span> | | This is the point on the popover which will attach to the anchor's horizontal origin. |
+| <span class=""prop-name"">TransformVerticalOriginValue</span> | <span class=""prop-type"">double?</span> | | This is the point on the popover which will attach to the anchor's vertical origin. |
 
 ## CSS
 
@@ -27,11 +65,7 @@
 
 | Global class | Description |
 |:-------------|:------------|
-| <span class=""prop-name"">Popover-Root</span> | Styles applied to the root element.
-| <span class=""prop-name"">Popover-Absolute</span> | Styles applied to the root element if `Absolute=""true""`.
-| <span class=""prop-name"">Popover-Inset</span> | Styles applied to the root element if `Variant=""@PopoverVariant.Inset""`.
-| <span class=""prop-name"">Popover-Light</span> | Styles applied to the root element if `Light=""true""`.
-| <span class=""prop-name"">Popover-Middle</span> | Styles applied to the root element if `Variant=""@PopoverVariant.Middle""`.
-| <span class=""prop-name"">Popover-Vertical</span> | Styles applied to the root element if `Orientation=""@Orientation.Vertical""`.
+| <span class=""prop-name"">Popover-Root</span> | Styles applied to the root element
+| <span class=""prop-name"">Popover-Paper</span> | Styles applied to the `Paper` component.
 
 ")" />
