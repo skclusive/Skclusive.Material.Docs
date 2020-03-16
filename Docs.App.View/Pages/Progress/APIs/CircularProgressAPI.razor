@@ -1,0 +1,45 @@
+@namespace Skclusive.Material.Docs.App.View
+
+<MarkdownSegment
+    Text="@(@"
+# CircularProgress API
+
+<p class=""description"">The API documentation of the CircularProgress component. Learn more about the parameters and the CSS customization points.</p>
+
+## Parameters
+
+| Name | Type | Default | Description |
+|:-----|:-----|:--------|:------------|
+| <span class=""prop-name"">RootRef</span> | <span class=""prop-type"">IReference</span> | <span class=""prop-default"">new Reference()</span> | The reference used to ref the root node. |
+| <span class=""prop-name"">Class</span> | <span class=""prop-type"">string</span> | | The class applied to the root node. |
+| <span class=""prop-name"">Style</span> | <span class=""prop-type"">string</span> | | The style applied to the root node. |
+| <span class=""prop-name"">Color</span> | <span class=""prop-type"">Color.Primary<br>&#124;&nbsp;Color.Secondary<br>&#124;&nbsp;Color.Inherit</span> | <span class=""prop-default"">Color.Primary</span> | The color of the component. It supports those theme colors that make sense for this component. |
+| <span class=""prop-name"">DisableShrink</span> | <span class=""prop-type"">bool</span> | <span class=""prop-default"">false</span> | If `true`, the shrink animation is disabled. This only works if variant is `indeterminate`. |
+| <span class=""prop-name"">Size</span> | <span class=""prop-type"">int</span> | <span class=""prop-default"">40</span> | The size of the circle. If using a number, the pixel unit is assumed. If using a string, you need to provide the CSS unit, e.g '3rem'. |
+| <span class=""prop-name"">Thickness</span> | <span class=""prop-type"">decimal</span> | <span class=""prop-default"">3.6</span> | The thickness of the circle. |
+| <span class=""prop-name"">Value</span> | <span class=""prop-type"">decimal</span> | <span class=""prop-default"">0</span> | The value of the progress indicator for the determinate and static variants. Value between 0 and 100. |
+| <span class=""prop-name"">Variant</span> | <span class=""prop-type"">CircularProgressVariant.Determinate<br>&#124;&nbsp;CircularProgressVariant.Indeterminate<br>&#124;&nbsp;CircularProgressVariant.Static</span> | <span class=""prop-default"">CircularProgressVariant.Indeterminate</span> | The variant to use. Use indeterminate when there is no progress value. |
+| <span class=""prop-name"">SvgStyle</span> | <span class=""prop-type"">string</span> | | the `style` applied on the svg element. |
+| <span class=""prop-name"">SvgClass</span> | <span class=""prop-type"">string</span> | |  the `class` applied on the svg element. |
+| <span class=""prop-name"">CircleStyle</span> | <span class=""prop-type"">string</span> | | the `style` applied on the circle element. |
+| <span class=""prop-name"">CircleClass</span> | <span class=""prop-type"">string</span> | |  the `class` applied on the circle element. |
+
+## CSS
+
+- Style name: `CircularProgress`.
+- Style details:
+
+| Global class | Description |
+|:-------------|:------------|
+| <span class=""prop-name"">CircularProgress-Root</span> | Styles applied to the root element.
+| <span class=""prop-name"">CircularProgress-Static</span> | Styles applied to the root element if `Variant=""@CircularProgressVariant.Static""`.
+| <span class=""prop-name"">CircularProgress-Indeterminate</span> | Styles applied to the root element if `Variant=""@CircularProgressVariant.Indeterminate""`.
+| <span class=""prop-name"">CircularProgress-Color-Primary</span> | Styles applied to the root element if `Color=""@Color.Primary""`.
+| <span class=""prop-name"">CircularProgress-Color-Secondary</span> | Styles applied to the root element if `Color=""@Color.Secondary""`.
+| <span class=""prop-name"">CircularProgress-Svg</span> | Styles applied to the `svg` element.
+| <span class=""prop-name"">CircularProgress-Circle</span> | Styles applied to the `circle` svg path.
+| <span class=""prop-name"">CircularProgress-Circle-Static</span> | Styles applied to the `circle` svg path if `Variant=""@CircularProgressVariant.Static""`.
+| <span class=""prop-name"">CircularProgress-Circle-Indeterminate</span> | Styles applied to the `circle` svg path if `Variant=""@CircularProgressVariant.Indeterminate""`.
+| <span class=""prop-name"">CircularProgress-Circle-DisableShrink</span> | Styles applied to the `circle` svg path if `DisableShrink=""true""`.
+
+")" />
