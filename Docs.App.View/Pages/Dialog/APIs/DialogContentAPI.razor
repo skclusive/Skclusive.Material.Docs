@@ -13,12 +13,9 @@
 | <span class=""prop-name"">RootRef</span> | <span class=""prop-type"">IReference</span> | <span class=""prop-default"">new Reference()</span> | The reference used to ref the root node. |
 | <span class=""prop-name"">Class</span> | <span class=""prop-type"">string</span> | | The class applied to the root node. |
 | <span class=""prop-name"">Style</span> | <span class=""prop-type"">string</span> | | The style applied to the root node. |
-| <span class=""prop-name"">Component</span> | <span class=""prop-type"">string</span> | <span class=""prop-default"">'hr'</span> | The component used for the root node. |
+| <span class=""prop-name"">Component</span> | <span class=""prop-type"">string</span> | <span class=""prop-default"">'div'</span> | The component used for the root node. |
 | <span class=""prop-name"">ChildContent</span> | <span class=""prop-type"">RenderFragment</span> |  | The content of the component. |
-| <span class=""prop-name"">Absolute</span> | <span class=""prop-type"">bool</span> | <span class=""prop-default"">false</span> | Absolutely position the element. |
-| <span class=""prop-name"">Light</span> | <span class=""prop-type"">bool</span> | <span class=""prop-default"">false</span> | If `true`, the divider will have a lighter color. |
-| <span class=""prop-name"">Orientation</span> | <span class=""prop-type"">Orientation.Horizontal<br>&#124;&nbsp;Orientation.Vertical</span> | <span class=""prop-default"">Orientation.Horizontal</span> | The divider orientation. |
-| <span class=""prop-name"">Variant</span> | <span class=""prop-type"">DialogContentVariant.FullWidth<br>&#124;&nbsp;DialogContentVariant.Inset<br>&#124;&nbsp;DialogContentVariant.Middle</span> | <span class=""prop-default"">DialogContentVariant.FullWidth</span> | The variant to use. |
+| <span class=""prop-name"">Dividers</span> | <span class=""prop-type"">bool</span> | <span class=""prop-default"">false</span> | Display the top and bottom dividers. |
 
 ## CSS
 
@@ -28,10 +25,6 @@
 | Global class | Description |
 |:-------------|:------------|
 | <span class=""prop-name"">DialogContent-Root</span> | Styles applied to the root element.
-| <span class=""prop-name"">DialogContent-Absolute</span> | Styles applied to the root element if `Absolute=""true""`.
-| <span class=""prop-name"">DialogContent-Inset</span> | Styles applied to the root element if `Variant=""@DialogContentVariant.Inset""`.
-| <span class=""prop-name"">DialogContent-Light</span> | Styles applied to the root element if `Light=""true""`.
-| <span class=""prop-name"">DialogContent-Middle</span> | Styles applied to the root element if `Variant=""@DialogContentVariant.Middle""`.
-| <span class=""prop-name"">DialogContent-Vertical</span> | Styles applied to the root element if `Orientation=""@Orientation.Vertical""`.
+| <span class=""prop-name"">DialogContent-Dividers</span> | Styles applied to the root element if `dividers={true}`.
 
 ")" />

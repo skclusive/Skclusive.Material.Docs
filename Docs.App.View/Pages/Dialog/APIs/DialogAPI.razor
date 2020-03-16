@@ -13,12 +13,38 @@
 | <span class=""prop-name"">RootRef</span> | <span class=""prop-type"">IReference</span> | <span class=""prop-default"">new Reference()</span> | The reference used to ref the root node. |
 | <span class=""prop-name"">Class</span> | <span class=""prop-type"">string</span> | | The class applied to the root node. |
 | <span class=""prop-name"">Style</span> | <span class=""prop-type"">string</span> | | The style applied to the root node. |
-| <span class=""prop-name"">Component</span> | <span class=""prop-type"">string</span> | <span class=""prop-default"">'hr'</span> | The component used for the root node. |
-| <span class=""prop-name"">ChildContent</span> | <span class=""prop-type"">RenderFragment</span> |  | The content of the component. |
-| <span class=""prop-name"">Absolute</span> | <span class=""prop-type"">bool</span> | <span class=""prop-default"">false</span> | Absolutely position the element. |
-| <span class=""prop-name"">Light</span> | <span class=""prop-type"">bool</span> | <span class=""prop-default"">false</span> | If `true`, the divider will have a lighter color. |
-| <span class=""prop-name"">Orientation</span> | <span class=""prop-type"">Orientation.Horizontal<br>&#124;&nbsp;Orientation.Vertical</span> | <span class=""prop-default"">Orientation.Horizontal</span> | The divider orientation. |
-| <span class=""prop-name"">Variant</span> | <span class=""prop-type"">DialogVariant.FullWidth<br>&#124;&nbsp;DialogVariant.Inset<br>&#124;&nbsp;DialogVariant.Middle</span> | <span class=""prop-default"">DialogVariant.FullWidth</span> | The variant to use. |
+| <span class=""prop-name required"">ChildContent</span> | <span class=""prop-type"">RenderFragment</span> |  | A single child content element.<br>⚠️ [Needs to be able to hold a IReference](/guides/composition/#caveat-with-refs). |
+| <span class=""prop-name required"">Open&nbsp;*</span> | <span class=""prop-type"">bool</span> |  | If `true`, the modal is open. |
+| <span class=""prop-name"">ContainerRef</span> | <span class=""prop-type"">IReference</span> | <span class=""prop-default"">new Reference()</span> | The reference used to ref the container node. |
+| <span class=""prop-name"">TransitionDuration</span> | <span class=""prop-type"">int<br>&#124;&nbsp;{ enter?: number, exit?: number }</span> | <span class=""prop-default"">{ enter: duration.enteringScreen, exit: duration.leavingScreen }</span> | The duration for the transition, in milliseconds. You may specify a single timeout for all transitions, or individually with an object. |
+| <span class=""prop-name"">AppearTimeout</span> | <span class=""prop-type"">int?</span> |  | The appear duration for the transition, in milliseconds. |
+| <span class=""prop-name"">EnterTimeout</span> | <span class=""prop-type"">int?</span> |  | The enter duration for the transition, in milliseconds. |
+| <span class=""prop-name"">ExitTimeout</span> | <span class=""prop-type"">int?</span> |  | The exit duration for the transition, in milliseconds. |
+| <span class=""prop-name"">OnEnter</span> | <span class=""prop-type"">Action&lt;IReference, bool&gt;</span> |  | Callback fired before the component is entering. |
+| <span class=""prop-name"">OnEntered</span> | <span class=""prop-type"">Action&lt;IReference, bool&gt;</span> |  | Callback fired when the component has entered. |
+| <span class=""prop-name"">OnEntering</span> | <span class=""prop-type"">Action&lt;IReference, bool&gt;</span> |  | Callback fired when the component is entering. |
+| <span class=""prop-name"">OnExit</span> | <span class=""prop-type"">Action&lt;IReference&gt;</span> |  | Callback fired before the component is exiting. |
+| <span class=""prop-name"">OnExited</span> | <span class=""prop-type"">Action&lt;IReference&gt;</span> |  | Callback fired when the component has exited. |
+| <span class=""prop-name"">OnExiting</span> | <span class=""prop-type"">Action&lt;IReference&gt;</span> |  | Callback fired when the component is exiting. |
+| <span class=""prop-name"">BackdropInvisible</span> | <span class=""prop-type"">bool</span> |  | If `true`, the backdrop is invisible. |
+| <span class=""prop-name"">DisableBackdropClick</span> | <span class=""prop-type"">bool</span> | <span class=""prop-default"">false</span> | If `true`, clicking the backdrop will not fire any callback. |
+| <span class=""prop-name"">DisableEscapeKeyDown</span> | <span class=""prop-type"">bool</span> | <span class=""prop-default"">false</span> | If `true`, hitting escape will not fire any callback. |
+| <span class=""prop-name"">FullScreen</span> | <span class=""prop-type"">bool</span> | <span class=""prop-default"">false</span> | If `true`, the dialog will be full-screen |
+| <span class=""prop-name"">FullWidth</span> | <span class=""prop-type"">bool</span> | <span class=""prop-default"">false</span> | If `true`, the dialog stretches to `maxWidth`.<br>Notice that the dialog width grow is limited by the default margin. |
+| <span class=""prop-name"">MaxWidth</span> | <span class=""prop-type"">DialogWidth.ExtraSmall<br>&#124;&nbsp;DialogWidth.Small<br>&#124;&nbsp;DialogWidth.Medium<br>&#124;&nbsp;DialogWidth.Large<br>&#124;&nbsp;DialogWidth.ExtraLarge<br>&#124;&nbsp;DialogWidth.False</span> | <span class=""prop-default"">DialogWidth.Small</span> | Determine the max-width of the dialog. The dialog width grows with the size of the screen. Set to `DialogWidth.False` to disable `MaxWidth`. |
+| <span class=""prop-name"">OnBackdropClick</span> | <span class=""prop-type"">Action</span> |  | Callback fired when the backdrop is clicked. |
+| <span class=""prop-name"">OnClose</span> | <span class=""prop-type"">Action&lt;ModalCloseReason&gt;</span> |  | Callback fired when the component requests to be closed. The `reason` parameter can optionally be used to control the response to `OnClose`.<br><br>**Signature:**<br>`function(event: object, reason: string) => void`<br>*event:* The event source of the callback.<br>*reason:* Can be:`""ModalCloseReason.Escape""`, `""ModalCloseReason.BackdropClick""`. |
+| <span class=""prop-name"">OnEscapeKeyDown</span> | <span class=""prop-type"">Action</span> |  | Callback fired when the escape key is pressed, `DisableEscapeKeyDown` is false and the modal is in focus. |
+| <span class=""prop-name"">Absolute</span> | <span class=""prop-type"">bool</span> |  | If `true`, positions the modal absolute to tha relative parent. |
+| <span class=""prop-name"">BackdropStyle</span> | <span class=""prop-type"">string</span> | | the `style` applied on the backdrop element. |
+| <span class=""prop-name"">BackdropClass</span> | <span class=""prop-type"">string</span> | |  the `class` applied on the backdrop element. |
+| <span class=""prop-name"">PaperStyle</span> | <span class=""prop-type"">string</span> | | the `style` applied on the paper element. |
+| <span class=""prop-name"">PaperClass</span> | <span class=""prop-type"">string</span> | |  the `class` applied on the paper element. |
+| <span class=""prop-name"">ContainerStyle</span> | <span class=""prop-type"">string</span> | | the `style` applied on the container element. |
+| <span class=""prop-name"">ContainerClass</span> | <span class=""prop-type"">string</span> | |  the `class` applied on the container element. |
+| <span class=""prop-name"">Scroll</span> | <span class=""prop-type"">DialogScroll.Body<br>&#124;&nbsp;DialogScroll.Paper</span> | <span class=""prop-default"">DialogScroll.Paper</span> | Determine the container for scrolling the dialog. |
+| <span class=""prop-name"">Elevation</span> | <span class=""prop-type"">int</span> | <span class=""prop-default"">4</span> | Shadow depth, corresponds to `dp` in the spec. It accepts values between 0 and 24 inclusive. |
+| <span class=""prop-name"">Square</span> | <span class=""prop-type"">bool</span> | <span class=""prop-default"">true</span> | If `true`, rounded corners are disabled. |
 
 ## CSS
 
@@ -28,10 +54,19 @@
 | Global class | Description |
 |:-------------|:------------|
 | <span class=""prop-name"">Dialog-Root</span> | Styles applied to the root element.
-| <span class=""prop-name"">Dialog-Absolute</span> | Styles applied to the root element if `Absolute=""true""`.
-| <span class=""prop-name"">Dialog-Inset</span> | Styles applied to the root element if `Variant=""@DialogVariant.Inset""`.
-| <span class=""prop-name"">Dialog-Light</span> | Styles applied to the root element if `Light=""true""`.
-| <span class=""prop-name"">Dialog-Middle</span> | Styles applied to the root element if `Variant=""@DialogVariant.Middle""`.
-| <span class=""prop-name"">Dialog-Vertical</span> | Styles applied to the root element if `Orientation=""@Orientation.Vertical""`.
+| <span class=""prop-name"">Dialog-Scroll-Paper</span> | Styles applied to the container element if `Scroll=""@DialogScroll.Paper""`.
+| <span class=""prop-name"">Dialog-Scroll-Body</span> | Styles applied to the container element if `Scroll=""@DialogScroll.Body""`.
+| <span class=""prop-name"">Dialog-Container</span> | Styles applied to the container element.
+| <span class=""prop-name"">Dialog-Paper</span> | Styles applied to the `Paper` component.
+| <span class=""prop-name"">Dialog-Paper-Scroll-Paper</span> | Styles applied to the `Paper` component if `Scroll=""@DialogScroll.Paper""`.
+| <span class=""prop-name"">Dialog-Paper-Scroll-Body</span> | Styles applied to the `Paper` component if `Scroll=""@DialogScroll.Body""`.
+| <span class=""prop-name"">Dialog-Paper-Width-False</span> | Styles applied to the `Paper` component if `MaxWidth=""@DialogWidth.False""`.
+| <span class=""prop-name"">Dialog-Paper-Width-ExtraSmall</span> | Styles applied to the `Paper` component if `MaxWidth=""@DialogWidth.ExtraSmall""`.
+| <span class=""prop-name"">Dialog-Paper-Width-Small</span> | Styles applied to the `Paper` component if `MaxWidth=""@DialogWidth.Small""`.
+| <span class=""prop-name"">Dialog-Paper-Width-Medium</span> | Styles applied to the `Paper` component if `MaxWidth=""@DialogWidth.Medium""`.
+| <span class=""prop-name"">Dialog-Paper-Width-Large</span> | Styles applied to the `Paper` component if `MaxWidth=""@DialogWidth.Large""`.
+| <span class=""prop-name"">Dialog-Paper-Width-ExtraLarge</span> | Styles applied to the `Paper` component if `MaxWidth=""@DialogWidth.ExtraLarge""`.
+| <span class=""prop-name"">Dialog-Paper-FullWidth</span> | Styles applied to the `Paper` component if `FullWidth=""true""`.
+| <span class=""prop-name"">Dialog-Paper-FullScreen</span> | Styles applied to the `Paper` component if `FullScreen=""true""`.
 
 ")" />

@@ -15,10 +15,7 @@
 | <span class=""prop-name"">Style</span> | <span class=""prop-type"">string</span> | | The style applied to the root node. |
 | <span class=""prop-name"">Component</span> | <span class=""prop-type"">string</span> | <span class=""prop-default"">'hr'</span> | The component used for the root node. |
 | <span class=""prop-name"">ChildContent</span> | <span class=""prop-type"">RenderFragment</span> |  | The content of the component. |
-| <span class=""prop-name"">Absolute</span> | <span class=""prop-type"">bool</span> | <span class=""prop-default"">false</span> | Absolutely position the element. |
-| <span class=""prop-name"">Light</span> | <span class=""prop-type"">bool</span> | <span class=""prop-default"">false</span> | If `true`, the divider will have a lighter color. |
-| <span class=""prop-name"">Orientation</span> | <span class=""prop-type"">Orientation.Horizontal<br>&#124;&nbsp;Orientation.Vertical</span> | <span class=""prop-default"">Orientation.Horizontal</span> | The divider orientation. |
-| <span class=""prop-name"">Variant</span> | <span class=""prop-type"">DialogTitleVariant.FullWidth<br>&#124;&nbsp;DialogTitleVariant.Inset<br>&#124;&nbsp;DialogTitleVariant.Middle</span> | <span class=""prop-default"">DialogTitleVariant.FullWidth</span> | The variant to use. |
+| <span class=""prop-name"">DisableTypography</span> | <span class=""prop-type"">bool</span> | <span class=""prop-default"">false</span> | If `true`, the children won't be wrapped by a typography component. For instance, this can be useful to render an h4 instead of the default h2. |
 
 ## CSS
 
@@ -28,10 +25,5 @@
 | Global class | Description |
 |:-------------|:------------|
 | <span class=""prop-name"">DialogTitle-Root</span> | Styles applied to the root element.
-| <span class=""prop-name"">DialogTitle-Absolute</span> | Styles applied to the root element if `Absolute=""true""`.
-| <span class=""prop-name"">DialogTitle-Inset</span> | Styles applied to the root element if `Variant=""@DialogTitleVariant.Inset""`.
-| <span class=""prop-name"">DialogTitle-Light</span> | Styles applied to the root element if `Light=""true""`.
-| <span class=""prop-name"">DialogTitle-Middle</span> | Styles applied to the root element if `Variant=""@DialogTitleVariant.Middle""`.
-| <span class=""prop-name"">DialogTitle-Vertical</span> | Styles applied to the root element if `Orientation=""@Orientation.Vertical""`.
 
 ")" />
