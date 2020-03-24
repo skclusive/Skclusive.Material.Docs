@@ -1,0 +1,63 @@
+@namespace Skclusive.Material.Docs.App.View
+@inherits StyleComponentBase
+
+<style>
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    html {
+        height: 100%;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+
+    body {
+        background-color: var(--theme-palette-main-background-default, #fff) !important;
+        height: 100%;
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    .root {
+        height: 100%;
+        display: flex;
+        background-color: var(--theme-palette-main-background-default, #fff);
+    }
+
+    .top-bar {
+        z-index: calc(var(--theme-zindex-drawer, 1200) + 100);
+        transition: margin 195ms cubic-bezier(0.4, 0, 0.6, 1) 0ms,width 195ms cubic-bezier(0.4, 0, 0.6, 1) 0ms;
+    }
+
+    .top-bar-shift {
+        width: calc(100% - 240px);
+        transition: margin 225ms cubic-bezier(0.0, 0, 0.2, 1) 0ms,width 225ms cubic-bezier(0.0, 0, 0.2, 1) 0ms; 
+        margin-left: 240px;
+    }
+
+    main.content {
+        width: 100%;
+        padding: 24px;
+        flex-grow: 1;
+        transition: margin 195ms cubic-bezier(0.4, 0, 0.6, 1) 0ms;
+        margin-left: 0;
+    }
+
+    main.content-shift {
+        transition: margin 225ms cubic-bezier(0.0, 0, 0.2, 1) 0ms;
+        margin-left: 240px;
+    }
+
+    .drawer-header {
+        display: flex;
+        padding: 0px 8px;
+        /*min-height: 56px;*/
+        align-items: center;
+        justify-content: flex-end;
+    }
+</style>
