@@ -1,0 +1,19 @@
+@namespace Skclusive.Material.Docs.App.View
+@inherits MaterialComponentBase
+
+<MarkdownCode
+    Class="@_Class"
+    Style="@_Style"
+    Text="@(@"
+```html
+ <div
+    style=""flex-grow: 1;"">
+    <LinearProgress
+        Variant=""@LinearProgressVariant.Query"" />
+    <br />
+    <LinearProgress
+        Color=""@Color.Secondary""
+        Variant=""@LinearProgressVariant.Query"" />
+</div>
+```
+")" />

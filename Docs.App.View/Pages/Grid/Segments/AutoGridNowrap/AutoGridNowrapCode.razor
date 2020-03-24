@@ -1,0 +1,97 @@
+@namespace Skclusive.Material.Docs.App.View
+@inherits MaterialComponentBase
+
+<MarkdownCode
+    Class="@_Class"
+    Style="@_Style"
+    Text="@(@"
+```css
+<style>
+    .demo-container {
+        padding: 0px 24px;
+        overflow: hidden;
+        flex-grow: 1;
+    }
+
+    .demo-paper {
+        margin: 8px auto;
+        padding: 16px;
+        max-width: 400px;
+    }
+</style>
+```
+
+```html
+<div
+    class=""demo-container"">
+    <Paper
+        Class=""demo-paper"">
+        <Grid
+            Container
+            Wrap=""@Wrap.Nowrap""
+            Spacing=""@Spacing.Two"">
+            <Grid
+                Item>
+                <Avatar>W</Avatar>
+            </Grid>
+            <Grid
+                Item
+                ExtraSmall=""@GridSize.True""
+                ZeroMinWidth>
+                <Typography
+                    NoWrap>
+                    @Message
+                </Typography>
+            </Grid>
+        </Grid>
+    </Paper>
+    <Paper
+        Class=""demo-paper"">
+        <Grid
+            Container
+            Wrap=""@Wrap.Nowrap""
+            Spacing=""@Spacing.Two"">
+            <Grid
+                Item>
+                <Avatar>W</Avatar>
+            </Grid>
+            <Grid
+                Item
+                ExtraSmall=""@GridSize.True"">
+                <Typography
+                    NoWrap>
+                    @Message
+                </Typography>
+            </Grid>
+        </Grid>
+    </Paper>
+    <Paper
+        Class=""demo-paper"">
+        <Grid
+            Container
+            Wrap=""@Wrap.Nowrap""
+            Spacing=""@Spacing.Two"">
+            <Grid
+                Item>
+                <Avatar>W</Avatar>
+            </Grid>
+            <Grid
+                Item
+                ExtraSmall=""@GridSize.True"">
+                <Typography>
+                    @Message
+                </Typography>
+            </Grid>
+        </Grid>
+    </Paper>
+</div>
+```
+
+```csharp
+@code
+{
+    private readonly string Message = @""Truncation should be conditionally applicable on this long line of text
+ as this is a much longer line than what the container can support. "";
+}
+```
+")" />

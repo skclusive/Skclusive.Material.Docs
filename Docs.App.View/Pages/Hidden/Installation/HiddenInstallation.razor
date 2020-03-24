@@ -1,0 +1,25 @@
+@namespace Skclusive.Material.Docs.App.View
+
+<MarkdownSegment
+    Text="@(@"
+# Hidden Installation
+
+You can [install Hidden package](https://www.nuget.org/packages/Skclusive.Material.Hidden/) by typing the below command in your terminal:
+
+```csharp
+dotnet add package Skclusive.Material.Hidden
+```
+
+Then, you can import it in your `_Imports.razor`.
+
+```csharp
+@using Skclusive.Material.Hidden
+```
+
+Then, you can render the style for this component it in your `Router.razor`.
+
+```html
+<HiddenStyle />
+```
+
+")" />

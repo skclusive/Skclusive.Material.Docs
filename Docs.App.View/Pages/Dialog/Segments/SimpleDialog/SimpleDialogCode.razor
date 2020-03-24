@@ -1,0 +1,95 @@
+@namespace Skclusive.Material.Docs.App.View
+@inherits MaterialComponentBase
+
+<MarkdownCode
+    Class="@_Class"
+    Style="@_Style"
+    Text="@(@"
+```html
+<div>
+    <Typography
+        Variant=""@TypographyVariant.Subtitle1"">
+        Selected: @SelectedValue
+    </Typography>
+    <br />
+    <Button
+        Variant=""@ButtonVariant.Outlined""
+        Color=""@Color.Primary""
+        OnClick=""@HandleOpen"">
+        Open simple dialog
+    </Button>
+    <Dialog
+        OnClose=""@HandleClose""
+        aria-labelledby=""simple-dialog-title""
+        Open=""@Open"">
+        <DialogTitle
+            Id=""simple-dialog-title"">
+            Set backup account
+        </DialogTitle>
+        <List>
+        @foreach(var email in Emails)
+        {
+            <ListItem
+                @key=""@email""
+                Button
+                OnClick=""@((arg) => UpdateSelectedValue(email))"">
+                <ListItemAvatar>
+                    <Avatar
+                        Style=""color: #1e88e5; background-color: #bbdefb;"">
+                        <PersonIcon />
+                    </Avatar>
+                </ListItemAvatar>
+                <ListItemText
+                    Primary=""@email"" />
+            </ListItem>
+        }
+        <ListItem
+            Button
+            OnClick=""@((arg) => UpdateSelectedValue(""addAccount""))"">
+            <ListItemAvatar>
+                <Avatar>
+                    <AddIcon />
+                </Avatar>
+            </ListItemAvatar>
+            <ListItemText
+                Primary=""add account"" />
+        </ListItem>
+      </List>
+    </Dialog>
+</div>
+```
+
+```csharp
+@code
+{
+    private static readonly string[] Emails = { ""username@gmail.com"", ""user02@gmail.com"" };
+
+    private string SelectedValue { set; get; } = Emails[1];
+
+    private bool Open { set; get; }
+
+    private void HandleOpen()
+    {
+        Open = true;
+
+        StateHasChanged();
+    }
+
+    private void HandleClose()
+    {
+        Open = false;
+
+        StateHasChanged();
+    }
+
+    private void UpdateSelectedValue(string value)
+    {
+        SelectedValue = value;
+
+        Open = false;
+
+        StateHasChanged();
+    }
+}
+```
+")" />

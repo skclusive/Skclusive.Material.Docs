@@ -1,0 +1,192 @@
+@namespace Skclusive.Material.Docs.App.View
+
+<style>
+    .demo-interactive-list {
+        flex-grow: 1;
+        max-width: 752px;
+    }
+    .demo-interactive-list-section {
+        background-color: var(--theme-palette-background-paper, #fff);
+    }
+    .demo-interactive-title {
+        margin: 32px 0px 16px;
+    }
+</style>
+
+<div
+    class="demo-interactive-list">
+    <FormGroup
+        Row>
+        <FormControlLabel
+            Label="Enable dense">
+            <Checkbox
+                Checked="@Dense"
+                OnChange="@OnDenseChange"
+                Value="Dense" />
+        </FormControlLabel>
+        <FormControlLabel
+            Label="Enable secondary text">
+            <Checkbox
+                Checked="@Secondary"
+                OnChange="@OnSecondaryChange"
+                Value="Secondary" />
+        </FormControlLabel>
+    </FormGroup>
+    <Grid
+        Container
+        Spacing="@Spacing.Two">
+        <Grid
+            Item
+            ExtraSmall="@GridSize.Twelve"
+            Medium="@GridSize.Six">
+            <Typography
+                Variant="@TypographyVariant.H6"
+                Class="demo-interactive-title">
+                Text only
+            </Typography>
+            <div
+                class="demo-interactive-list-section">
+                <List
+                    Dense="@Dense">
+                    @foreach(var index in Enumerable.Range(0, 3))
+                    {
+                        <ListItem
+                            @key="index">
+                            <ListItemText
+                                Primary="Single-line item"
+                                Secondary="@(Secondary ? "Secondary text" : null)"
+                            />
+                        </ListItem>
+                    }
+                </List>
+            </div>
+        </Grid>
+        <Grid
+            Item
+            ExtraSmall="@GridSize.Twelve"
+            Medium="@GridSize.Six">
+            <Typography
+                Variant="@TypographyVariant.H6"
+                Class="demo-interactive-title">
+                Icon with text
+            </Typography>
+            <div
+                class="demo-interactive-list-section">
+                <List
+                    Dense="@Dense">
+                    @foreach(var index in Enumerable.Range(0, 3))
+                    {
+                        <ListItem
+                            @key="index">
+                            <ListItemIcon>
+                                <FolderIcon />
+                            </ListItemIcon>
+                            <ListItemText
+                                Primary="Single-line item"
+                                Secondary="@(Secondary ? "Secondary text" : null)"
+                            />
+                        </ListItem>
+                    }
+                </List>
+            </div>
+        </Grid>
+    </Grid>
+    <Grid
+        Container
+        Spacing="@Spacing.Two">
+        <Grid
+            Item
+            ExtraSmall="@GridSize.Twelve"
+            Medium="@GridSize.Six">
+            <Typography
+                Variant="@TypographyVariant.H6"
+                Class="demo-interactive-title">
+                Avatar with text
+            </Typography>
+            <div
+                class="demo-interactive-list-section">
+                <List
+                    Dense="@Dense">
+                    @foreach(var index in Enumerable.Range(0, 3))
+                    {
+                        <ListItem
+                            @key="index">
+                            <ListItemAvatar>
+                                <Avatar>
+                                    <FolderIcon />
+                                </Avatar>
+                            </ListItemAvatar>
+                            <ListItemText
+                                Primary="Single-line item"
+                                Secondary="@(Secondary ? "Secondary text" : null)"
+                            />
+                        </ListItem>
+                    }
+                </List>
+            </div>
+        </Grid>
+        <Grid
+            Item
+            ExtraSmall="@GridSize.Twelve"
+            Medium="@GridSize.Six">
+            <Typography
+                Variant="@TypographyVariant.H6"
+                Class="demo-interactive-title">
+                Avatar with text and icon
+            </Typography>
+            <div
+                class="demo-interactive-list-section">
+                <List
+                    Dense="@Dense">
+                    @foreach(var index in Enumerable.Range(0, 3))
+                    {
+                        <ListItem
+                            @key="index">
+                            <ChildContent>
+                                <ListItemAvatar>
+                                    <Avatar>
+                                        <FolderIcon />
+                                    </Avatar>
+                                </ListItemAvatar>
+                                <ListItemText
+                                    Primary="Single-line item"
+                                    Secondary="@(Secondary ? "Secondary text" : null)"
+                                />
+                            </ChildContent>
+                            <SecondaryActionContent>
+                                <ListItemSecondaryAction>
+                                    <IconButton
+                                        Edge="@IconButtonEdge.End"
+                                        aria-label="delete">
+                                        <DeleteIcon />
+                                    </IconButton>
+                                </ListItemSecondaryAction>
+                            </SecondaryActionContent>
+                        </ListItem>
+                    }
+                </List>
+            </div>
+        </Grid>
+    </Grid>
+</div>
+
+@code
+{
+    private bool Dense { set; get; }
+
+    private bool Secondary { set; get; }
+
+    private void OnDenseChange(ChangeEventArgs args)
+    {
+        Dense = !Dense;
+
+        StateHasChanged();
+    }
+
+    private void OnSecondaryChange(ChangeEventArgs args)
+    {
+        Secondary = !Secondary;
+
+        StateHasChanged();
+    }
+}

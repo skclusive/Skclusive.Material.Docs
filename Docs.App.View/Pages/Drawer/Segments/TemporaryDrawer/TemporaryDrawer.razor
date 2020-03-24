@@ -1,0 +1,21 @@
+@namespace Skclusive.Material.Docs.App.View
+
+<MarkdownSegment
+    Text="@(@"
+## Temporary drawer
+
+Temporary navigation drawers can toggle open or closed. Closed by default, the drawer opens temporarily above all other content until a section is selected.
+
+The Drawer can be cancelled by clicking the overlay or pressing the Esc key.
+It closes when an item is selected, handled by controlling the `open` prop.
+
+")" />
+
+<MarkdownDemo>
+    <ViewContent>
+        <TemporaryDrawerDemo />
+    </ViewContent>
+    <CodeContent>
+        <TemporaryDrawerCode />
+    </CodeContent>
+</MarkdownDemo>

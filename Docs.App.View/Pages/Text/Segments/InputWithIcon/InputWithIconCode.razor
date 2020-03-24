@@ -1,0 +1,57 @@
+@namespace Skclusive.Material.Docs.App.View
+@inherits MaterialComponentBase
+
+<MarkdownCode
+    Class="@_Class"
+    Style="@_Style"
+    Text="@(@"
+```html
+<div>
+    <FormControl
+        HasStartAdornment=""true""
+        Style=""margin: 8px;"">
+        <InputLabel
+            For=""input-with-icon-adornment"">
+            With a start adornment
+        </InputLabel>
+        <StandardInput
+            Id=""input-with-icon-adornment"">
+            <StartAdornment>
+                <InputAdornment
+                    Position=""@InputPosition.Start"">
+                    <AccountCircleIcon />
+                </InputAdornment>
+            </StartAdornment>
+        </StandardInput>
+    </FormControl>
+    <TextField
+        Style=""margin: 8px;""
+        Id=""input-with-icon-textfield""
+        Label=""TextField"">
+        <StartAdornment>
+            <InputAdornment
+                Position=""@InputPosition.Start"">
+                <AccountCircleIcon />
+            </InputAdornment>
+        </StartAdornment>
+    </TextField>
+    <div style=""margin: 8px;"">
+        <Grid
+            Container
+            Spacing=""@Spacing.One""
+            AlignItems=""@AlignItems.FlexEnd"">
+            <Grid
+                Item>
+                <AccountCircleIcon />
+            </Grid>
+            <Grid
+                Item>
+                <TextField
+                    Id=""input-with-icon-grid""
+                    Label=""With a grid"" />
+            </Grid>
+        </Grid>
+    </div>
+</div>
+```
+")" />

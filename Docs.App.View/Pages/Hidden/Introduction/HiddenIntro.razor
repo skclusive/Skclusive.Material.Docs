@@ -1,0 +1,35 @@
+@namespace Skclusive.Material.Docs.App.View
+
+<MarkdownSegment
+    Text="@(@"
+---
+title: Hidden Blazor component
+components: Hidden
+---
+
+# Hidden
+
+<p class=""description"">Quickly and responsively toggle the visibility value of components and more with the hidden utilities.</p>
+
+All elements are visible unless **they are explicitly hidden**.
+To ease integration with Material-UI's [responsive breakpoints](/customization/breakpoints/),
+this component can be used to hide any content,
+or you can use it in conjunction with the [`Grid`](/components/grid/) component.
+
+## How it works
+
+Hidden works with a range of breakpoints e.g. `xsUp` or `mdDown`, or one or more breakpoints e.g. `only='sm'` or `only={['md', 'xl']}`.
+Ranges and individual breakpoints can be used simultaneously to achieve very customized behavior.
+The ranges are inclusive of the specified breakpoints.
+
+```js
+innerWidth  |xs      sm       md       lg       xl
+            |--------|--------|--------|--------|-------->
+width       |   xs   |   sm   |   md   |   lg   |   xl
+
+smUp        |   show | hide
+mdDown      |                     hide | show
+
+```
+
+")" />

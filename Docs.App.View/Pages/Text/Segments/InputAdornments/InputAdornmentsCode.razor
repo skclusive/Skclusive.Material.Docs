@@ -1,0 +1,137 @@
+@namespace Skclusive.Material.Docs.App.View
+@inherits MaterialComponentBase
+
+<MarkdownCode
+    Class="@_Class"
+    Style="@_Style"
+    Text="@(@"
+```html
+<div
+    style=""display: flex; flex-wrap: wrap;"">
+    <TextField
+        Label=""With normal TextField""
+        Id=""simple-start-adornment""
+        Style=""margin: 8px; flex-basis: 200px;"">
+        <StartAdornment>
+             <InputAdornment
+                Adornment=""Kg""
+                Position=""@InputPosition.Start"" />
+        </StartAdornment>
+    </TextField>
+    <FormControl
+        FullWidth
+        HasStartAdornment=""true""
+        Style=""margin: 8px;"">
+        <InputLabel
+            For=""adornment-amount"">
+            Amount
+        </InputLabel>
+        <StandardInput
+            Id=""adornment-amount""
+            Value=""@Amount""
+            OnChange=""@OnAmountChanged"">
+            <StartAdornment>
+                <InputAdornment
+                    Adornment=""$""
+                    Position=""@InputPosition.Start"" />
+            </StartAdornment>
+        </StandardInput>
+    </FormControl>
+    <FormControl
+        Style=""margin: 8px; margin-top: 24px; flex-basis: 200px;"">
+        <StandardInput
+            Id=""adornment-weight""
+            Value=""@Weight""
+            OnChange=""@OnWeightChanged""
+            aria-describedby=""weight-helper-text"">
+            <EndAdornment>
+                <InputAdornment
+                    Adornment=""Kg""
+                    Position=""@InputPosition.End"" />
+            </EndAdornment>
+        </StandardInput>
+        <FormHelperText
+            Id=""weight-helper-text"">
+            Weight
+        </FormHelperText>
+    </FormControl>
+    <FormControl
+        Style=""margin: 8px; flex-basis: 200px;"">
+        <InputLabel
+            For=""adornment-password"">
+            Password
+        </InputLabel>
+        <StandardInput
+            Id=""adornment-password""
+            Type=""@(ShowPassword ? ""text"" : ""password"")""
+            Value=""@Password""
+            OnChange=""@OnPasswordChanged"">
+            <EndAdornment>
+                <InputAdornment
+                    Position=""@InputPosition.End""
+                    Context=""AdornmentContext"">
+                    <IconButton
+                        aria-label=""toggle password visibility""
+                        OnClick=""@HandleClickShowPassword""
+                        OnMouseDown=""@HandleMouseDownPassword"">
+                        @if (ShowPassword)
+                        {
+                            <VisibilityIcon />
+                        }
+                        else
+                        {
+                             <VisibilityOffIcon />
+                        }
+                    </IconButton>
+                </InputAdornment>
+            </EndAdornment>
+        </StandardInput>
+    </FormControl>
+</div>
+```
+
+```csharp
+@code
+{
+    private string Amount { set; get; }
+
+    private string Weight { set; get; }
+
+    private string Password { set; get; }
+
+    private bool ShowPassword { set; get; }
+
+    private void OnAmountChanged(ChangeEventArgs args)
+    {
+        Amount = args.Value?.ToString();
+
+        StateHasChanged();
+    }
+
+    private void OnWeightChanged(ChangeEventArgs args)
+    {
+        Weight = args.Value?.ToString();
+
+        StateHasChanged();
+    }
+
+    private void OnPasswordChanged(ChangeEventArgs args)
+    {
+        Password = args.Value?.ToString();
+
+        StateHasChanged();
+    }
+
+    private void HandleClickShowPassword(EventArgs args)
+    {
+        ShowPassword = !ShowPassword;
+
+        StateHasChanged();
+    }
+
+    private void HandleMouseDownPassword(EventArgs args)
+    {
+    }
+}
+```
+")" />

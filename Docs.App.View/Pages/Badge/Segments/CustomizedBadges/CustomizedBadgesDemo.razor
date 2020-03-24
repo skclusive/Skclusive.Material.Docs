@@ -1,0 +1,89 @@
+@namespace Skclusive.Material.Docs.App.View
+@inherits StyleComponentBase
+
+<style>
+    .badge-style-one {
+        right: -3px;
+        border: 2px solid var(--theme-palette-background-paper, #fff);
+        padding: 0 4px;
+    }
+
+    .badge-style-two {
+        box-shadow: 0 0 0 2px var(--theme-palette-background-paper, #fff);
+        background-color: #44b700;
+    }
+    .badge-style-two::after {
+        top: 0;
+        left: 0;
+        width: 100%;
+        border: 1px solid #44b700;
+        height: 100%;
+        content: "";
+        position: absolute;
+        animation: badge-style-two-keyframes 1.2s infinite ease-in-out;
+        border-radius: 50%;
+    }
+    @keyframes badge-style-two-keyframes {
+        0% {
+            opacity: 1;
+            transform: scale(.8);
+        }
+        100% {
+            opacity: 0;
+            transform: scale(2.4);
+        }
+    }
+    .small-avatar {
+        width: 22px;
+        border: 2px solid var(--theme-palette-background-paper, #fff);
+        height: 22px;
+    }
+</style>
+
+<Box
+    Display="flex">
+    <Box
+        Margin="1">
+        <IconButton
+            aria-label="cart">
+            <Badge
+                Badge="4"
+                Color="@Color.Primary"
+                BadgeClass="badge-style-one">
+                <ShoppingCartIcon />
+            </Badge>
+        </IconButton>
+    </Box>
+    <Box
+        Margin="1">
+        <Badge
+            Overlap="@BadgeOverlap.Circle"
+            Vertical="@Vertical.Bottom"
+            Horizontal="@Horizontal.Right"
+            Variant="@BadgeVariant.Dot"
+            BadgeClass="badge-style-two">
+            <Avatar
+                Alt="Stock avatar"
+                Src="./images/avatar-1.jpg" />
+        </Badge>
+    </Box>
+    <Box
+        Margin="1">
+        <Badge
+            Overlap="@BadgeOverlap.Circle"
+            Vertical="@Vertical.Bottom"
+            Horizontal="@Horizontal.Right">
+            <BadgeContent>
+                <Avatar
+                    Class="small-avatar"
+                    Alt="Stock avatar"
+                    Src="./images/avatar-1.jpg" />
+            </BadgeContent>
+            <ChildContent>
+                <Avatar
+                    Alt="Stock avatar"
+                    Src="./images/avatar-2.jpg" />
+            </ChildContent>
+        </Badge>
+    </Box>
+</Box>

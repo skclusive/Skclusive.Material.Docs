@@ -1,0 +1,84 @@
+@namespace Skclusive.Material.Docs.App.View
+@inherits MaterialComponentBase
+
+<MarkdownCode
+    Class="@_Class"
+    Style="@_Style"
+    Text="@(@"
+```css
+<style>
+    .demo-fullwidth-tabs-root {
+        width: 500px;
+        background-color: var(--theme-palette-background-paper, #fff);
+    }
+</style>
+```
+
+```html
+<div
+    class=""demo-fullwidth-tabs-root"">
+    <AppBar
+        Position=""@AppBarPosition.Static""
+        Color=""@Color.Default"">
+        <Tabs
+            Value=""@Value""
+            OnChange=""@HandleChange""
+            IndicatorColor=""@Color.Primary""
+            TextColor=""@Color.Primary""
+            Variant=""@TabsVariant.FullWidth""
+            aria-label=""full-width tabs example"">
+            <Tab
+                Id=""full-width-tab""
+                Control=""full-width-tabpanel""
+                Label=""Item One""
+                Value=""0"" />
+            <Tab
+                Id=""full-width-tab""
+                Control=""full-width-tabpanel""
+                Label=""Item Two""
+                Value=""1"" />
+            <Tab
+                Id=""full-width-tab""
+                Control=""full-width-tabpanel""
+                Label=""Item Three""
+                Value=""2"" />
+        </Tabs>
+    </AppBar>
+    <TabPanel
+        Id=""full-width-tabpanel""
+        Label=""full-width-tab""
+        Value=""@Value""
+        Index=""0"">
+        Item One
+    </TabPanel>
+    <TabPanel
+        Id=""full-width-tabpanel""
+        Label=""full-width-tab""
+        Value=""@Value""
+        Index=""1"">
+        Item Two
+    </TabPanel>
+    <TabPanel
+        Id=""full-width-tabpanel""
+        Label=""full-width-tab""
+        Value=""@Value""
+        Index=""2"">
+        Item Three
+    </TabPanel>
+</div>
+```
+
+```csharp
+@code
+{
+    private object Value { set; get; } = 0;
+
+    private void HandleChange(object value)
+    {
+        Value = value;
+
+        StateHasChanged();
+    }
+}
+```
+")" />

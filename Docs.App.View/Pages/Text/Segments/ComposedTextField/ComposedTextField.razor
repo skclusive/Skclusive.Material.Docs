@@ -1,0 +1,29 @@
+@namespace Skclusive.Material.Docs.App.View
+
+<MarkdownSegment
+    Text="@(@"
+## Components
+
+`TextField` is composed of smaller components (
+[`FormControl`](/api/form-control/),
+[`Input`](/api/input/),
+[`FilledInput`](/api/filled-input/),
+[`InputLabel`](/api/input-label/),
+[`OutlinedInput`](/api/outlined-input/),
+and [`FormHelperText`](/api/form-helper-text/)
+) that you can leverage directly to significantly customize your form inputs.
+
+You might also have noticed that some native HTML input properties are missing from the `TextField` component.
+This is on purpose.
+The component takes care of the most used properties, then it's up to the user to use the underlying component shown in the following demo-x. Still, you can use `inputProps` (and `InputProps`, `InputLabelProps` properties) if you want to avoid some boilerplate.
+
+")" />
+
+<MarkdownDemo>
+    <ViewContent>
+        <ComposedTextFieldDemo />
+    </ViewContent>
+    <CodeContent>
+        <ComposedTextFieldCode />
+    </CodeContent>
+</MarkdownDemo>

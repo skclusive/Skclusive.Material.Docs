@@ -1,0 +1,23 @@
+@namespace Skclusive.Material.Docs.App.View
+
+<MarkdownSegment
+    Text="@(@"
+By default, we use the combination of a `<div>` element and a *background image* to display the media. It can be problematic in some situations. For instance, you might want to display a video or a responsive image. Use the `component` property for these use cases:
+
+")" />
+
+<MarkdownDemo>
+    <ViewContent>
+        <ImgMediaCardDemo />
+    </ViewContent>
+    <CodeContent>
+        <ImgMediaCardCode />
+    </CodeContent>
+</MarkdownDemo>
+
+<MarkdownSegment
+    Text="@(@"
+> ⚠️ When `Component=""img""`, CardMedia relies on `object-fit` for centering the image. It's not supported by IE 11.
+
+")" />
+

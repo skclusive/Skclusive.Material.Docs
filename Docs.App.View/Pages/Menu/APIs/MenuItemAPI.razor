@@ -1,0 +1,35 @@
+@namespace Skclusive.Material.Docs.App.View
+
+<MarkdownSegment
+    Text="@(@"
+# MenuItem API
+
+<p class=""description"">The API documentation of the MenuItem component. Learn more about the parameters and the CSS customization points.</p>
+
+## Parameters
+
+| Name | Type | Default | Description |
+|:-----|:-----|:--------|:------------|
+| <span class=""prop-name"">RootRef</span> | <span class=""prop-type"">IReference</span> | <span class=""prop-default"">new Reference()</span> | The reference used to ref the root node. |
+| <span class=""prop-name"">Class</span> | <span class=""prop-type"">string</span> | | The class applied to the root node. |
+| <span class=""prop-name"">Style</span> | <span class=""prop-type"">string</span> | | The style applied to the root node. |
+| <span class=""prop-name"">Component</span> | <span class=""prop-type"">string</span> | <span class=""prop-default"">'hr'</span> | The component used for the root node. |
+| <span class=""prop-name"">ChildContent</span> | <span class=""prop-type"">RenderFragment</span> |  | The content of the component. |
+| <span class=""prop-name"">Dense</span> | <span class=""prop-type"">bool</span> |  | If `true`, compact vertical padding designed for keyboard and mouse input will be used. |
+| <span class=""prop-name"">DisableGutters</span> | <span class=""prop-type"">bool</span> | <span class=""prop-default"">false</span> | If `true`, the left and right padding is removed. |
+| <span class=""prop-name"">Selected</span> | <span class=""prop-type"">bool</span> | <span class=""prop-default"">false</span> | If `true`, menu item is selected. |
+| <span class=""prop-name"">Enter</span> | <span class=""prop-type"">bool</span> | <span class=""prop-default"">true</span> | fire click event on keyboard enter |
+
+## CSS
+
+- Style name: `MenuItem`.
+- Style details:
+
+| Global class | Description |
+|:-------------|:------------|
+| <span class=""prop-name"">MenuItem-Root</span> | Styles applied to the root element.
+| <span class=""prop-name"">MenuItem-Gutters</span> | Styles applied to the root element if `DisableGutters=""false""`.
+| <span class=""prop-name"">MenuItem-Selected</span> | Styles applied to the root element if `Selected=""true""`.
+| <span class=""prop-name"">MenuItem-Dense</span> | Styles applied to the root element if Dense.
+
+")" />

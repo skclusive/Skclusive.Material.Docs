@@ -1,0 +1,37 @@
+@namespace Skclusive.Material.Docs.App.View
+
+<MarkdownSegment
+    Text="@(@"
+# TableSortLabel API
+
+<p class=""description"">The API documentation of the TableSortLabel component. Learn more about the parameters and the CSS customization points.</p>
+
+## Parameters
+
+| Name | Type | Default | Description |
+|:-----|:-----|:--------|:------------|
+| <span class=""prop-name"">RootRef</span> | <span class=""prop-type"">IReference</span> | <span class=""prop-default"">new Reference()</span> | The reference used to ref the root node. |
+| <span class=""prop-name"">Class</span> | <span class=""prop-type"">string</span> | | The class applied to the root node. |
+| <span class=""prop-name"">Style</span> | <span class=""prop-type"">string</span> | | The style applied to the root node. |
+| <span class=""prop-name"">Component</span> | <span class=""prop-type"">string</span> | <span class=""prop-default"">'span'</span> | The component used for the root node. |
+| <span class=""prop-name"">ChildContent</span> | <span class=""prop-type"">RenderFragment</span> |  | The content of the component. |
+| <span class=""prop-name"">Active</span> | <span class=""prop-type"">bool</span> | <span class=""prop-default"">false</span> | If `true`, the label will have the active styling (should be true for the sorted column). |
+| <span class=""prop-name"">Direction</span> | <span class=""prop-type"">Sort.Ascending<br>&#124;&nbsp;Sort.Descending</span> | <span class=""prop-default"">Sort.Descending</span> | The current sort direction. |
+| <span class=""prop-name"">HideSortIcon</span> | <span class=""prop-type"">bool</span> | <span class=""prop-default"">false</span> | Hide sort icon when active is false. |
+| <span class=""prop-name"">IconStyle</span> | <span class=""prop-type"">string</span> | | the `style` applied on the icon element. |
+| <span class=""prop-name"">IconClass</span> | <span class=""prop-type"">string</span> | |  the `class` applied on the icon element. |
+
+## CSS
+
+- Style name: `TableSortLabel`.
+- Style details:
+
+| Global class | Description |
+|:-------------|:------------|
+| <span class=""prop-name"">TableSortLabel-Root</span> | Styles applied to the root element.
+| <span class=""prop-name"">TableSortLabel-Active</span> | Pseudo-class applied to the root element if `Active=""true""`.
+| <span class=""prop-name"">TableSortLabel-Icon</span> | Styles applied to the icon component.
+| <span class=""prop-name"">TableSortLabel-Icon-Direction-Descending</span> | Styles applied to the icon component if `Direction=""@Sort.Descending""`.
+| <span class=""prop-name"">TableSortLabel-Icon-Direction-Ascending</span> | Styles applied to the icon component if `Direction=""@Sort.Ascending""`.
+
+")" />

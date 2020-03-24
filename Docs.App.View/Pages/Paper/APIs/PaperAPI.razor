@@ -1,0 +1,62 @@
+@namespace Skclusive.Material.Docs.App.View
+
+<MarkdownSegment
+    Text="@(@"
+# Paper API
+
+<p class=""description"">The API documentation of the Paper component. Learn more about the parameters and the CSS customization points.</p>
+
+## Parameters
+
+| Name | Type | Default | Description |
+|:-----|:-----|:--------|:------------|
+| <span class=""prop-name"">RootRef</span> | <span class=""prop-type"">IReference</span> | <span class=""prop-default"">new Reference()</span> | The reference used to ref the root node. |
+| <span class=""prop-name"">Class</span> | <span class=""prop-type"">string</span> | | The class applied to the root node. |
+| <span class=""prop-name"">Style</span> | <span class=""prop-type"">string</span> | | The style applied to the root node. |
+| <span class=""prop-name"">Component</span> | <span class=""prop-type"">string</span> | <span class=""prop-default"">'div'</span> | The component used for the root node. |
+| <span class=""prop-name"">ChildContent</span> | <span class=""prop-type"">RenderFragment</span> |  | The badge will be added relative to this node. |
+| <span class=""prop-name"">Elevation</span> | <span class=""prop-type"">int</span> | <span class=""prop-default"">1</span> | Shadow depth, corresponds to `dp` in the spec. It accepts values between 0 and 24 inclusive. |
+| <span class=""prop-name"">Square</span> | <span class=""prop-type"">bool</span> | <span class=""prop-default"">false</span> | If `true`, rounded corners are disabled. |
+
+## CSS
+
+- Style name: `Paper`.
+- Style details:
+
+| Global class | Description |
+|:-------------|:------------|
+| <span class=""prop-name"">Paper-Root</span> | Styles applied to the root element.
+| <span class=""prop-name"">Paper-Rounded</span> | Styles applied to the root element if `Square=""false""`.
+| <span class=""prop-name"">Paper-Elevation0</span> | |
+| <span class=""prop-name"">Paper-Elevation1</span> | |
+| <span class=""prop-name"">Paper-Elevation2</span> | |
+| <span class=""prop-name"">Paper-Elevation3</span> | |
+| <span class=""prop-name"">Paper-Elevation4</span> | |
+| <span class=""prop-name"">Paper-Elevation5</span> | |
+| <span class=""prop-name"">Paper-Elevation6</span> | |
+| <span class=""prop-name"">Paper-Elevation7</span> | |
+| <span class=""prop-name"">Paper-Elevation8</span> | |
+| <span class=""prop-name"">Paper-Elevation9</span> | |
+| <span class=""prop-name"">Paper-Elevation10</span> | |
+| <span class=""prop-name"">Paper-Elevation11</span> | |
+| <span class=""prop-name"">Paper-Elevation12</span> | |
+| <span class=""prop-name"">Paper-Elevation13</span> | |
+| <span class=""prop-name"">Paper-Elevation14</span> | |
+| <span class=""prop-name"">Paper-Elevation15</span> | |
+| <span class=""prop-name"">Paper-Elevation16</span> | |
+| <span class=""prop-name"">Paper-Elevation17</span> | |
+| <span class=""prop-name"">Paper-Elevation18</span> | |
+| <span class=""prop-name"">Paper-Elevation19</span> | |
+| <span class=""prop-name"">Paper-Elevation20</span> | |
+| <span class=""prop-name"">Paper-Elevation21</span> | |
+| <span class=""prop-name"">Paper-Elevation22</span> | |
+| <span class=""prop-name"">Paper-Elevation23</span> | |
+| <span class=""prop-name"">Paper-Elevation24</span> | |
+
+You can override the style of the component as below:
+
+- With a [global class name](/customization/components/#overriding-styles-with-global-class-names).
+
+If that's not sufficient, you can check the [implementation of the component](https://github.com/skclusive/Skclusive.Material.Component/blob/master/Paper/src/Paper/Paper.cs) for more detail.
+
+")" />

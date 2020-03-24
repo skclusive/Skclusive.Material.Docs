@@ -1,0 +1,111 @@
+@namespace Skclusive.Material.Docs.App.View
+
+<style>
+    .simple-modal-paper {
+        width: 400px;
+        border: 2px solid #000;
+        padding: 16px 32px 24px;
+        position: absolute;
+        box-shadow: 0px 3px 5px -1px rgba(0,0,0,0.2),0px 5px 8px 0px rgba(0,0,0,0.14),0px 1px 14px 0px rgba(0,0,0,0.12);
+        background-color: var(--theme-palette-background-paper, #fff);
+    }
+</style>
+
+<div>
+    <p>
+        Click to get the full Modal experience!
+    </p>
+    <Button
+        OnClick="@HandleOpen">
+        Open Modal
+    </Button>
+    @if (Open)
+    {
+        <Modal
+            aria-labelledby="simple-modal-title"
+            aria-describedby="simple-modal-description"
+            Open="@Open"
+            OnClose="@HandleClose"
+            OnBackdropClick="@OnBackdropClick"
+            OnEscapeKeyDown="@OnEscapeKeyDown">
+            <BackdropContent>
+                <Backdrop
+                    Open="@context.Open"
+                    OnClick="@context.OnBackdropClick"/>
+            </BackdropContent>
+            <ChildContent>
+                <div
+                    style="@ModelStyle"
+                    class="simple-modal-paper">
+                    <h2
+                        id="simple-modal-title">
+                        Text in a modal
+                    </h2>
+                    <p
+                        id="simple-modal-description">
+                        Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
+                    </p>
+                    <SimpleModalDemo />
+                </div>
+            </ChildContent>
+        </Modal>
+    }
+</div>
+
+@code
+{
+    private static Random RANDOM = new Random();
+
+    private bool Open { set; get; }
+
+    private int Top { set; get; }
+
+    private int Left { set; get; }
+
+    protected override void OnInitialized()
+    {
+        Top = 50 + RANDOM.Next(0, 10);
+
+        Left = 50 + RANDOM.Next(0, 10);
+    }
+
+    private void OnBackdropClick()
+    {
+        Open = false;
+
+        StateHasChanged();
+    }
+
+    private void OnEscapeKeyDown()
+    {
+        Open = false;
+
+        StateHasChanged();
+    }
+
+    private void HandleOpen()
+    {
+        Open = true;
+
+        StateHasChanged();
+    }
+
+    private void HandleClose(ModalCloseReason reason)
+    {
+        Open = false;
+
+        StateHasChanged();
+    }
+
+    private string ModelStyle
+    {
+        get
+        {
+            return $@"
+            top: {Top}%;
+            left: {Left}%;
+            transform: translate(-{Top}%, -{Left}%);
+            ";
+        }
+    }
+}

@@ -1,0 +1,124 @@
+@namespace Skclusive.Material.Docs.App.View
+@inherits MaterialComponentBase
+
+<MarkdownCode
+    Class="@_Class"
+    Style="@_Style"
+    Text="@(@"
+```css
+<style>
+    .demo-checkbox-form-control {
+        margin: calc(var(--theme-spacing, 8) * 3px);
+    }
+</style>
+```
+
+```html
+<Box Display=""Flex"">
+    <FormControl
+        Component=""fieldset""
+        Class=""demo-checkbox-form-control"">
+        <FormLabel
+            Component=""legend"">
+            Assign responsibility
+        </FormLabel>
+        <FormGroup>
+            <FormControlLabel
+                Label=""Gilad Gray"">
+                <Checkbox
+                    Checked=""@Gilad""
+                    OnChange=""@OnGiladChanged""
+                    Value=""Gilad""/>
+            </FormControlLabel>
+            <FormControlLabel
+                Label=""Jason Killian"">
+                <Checkbox
+                    Checked=""@Jason""
+                    OnChange=""@OnJasonChanged""
+                    Value=""Jason""/>
+            </FormControlLabel>
+            <FormControlLabel
+                Label=""Antoine Llorca"">
+                <Checkbox
+                    Checked=""@Antoine""
+                    OnChange=""@OnAntoineChanged""
+                    Value=""Antoine""/>
+            </FormControlLabel>
+        </FormGroup>
+        <FormHelperText>
+            Be careful
+        </FormHelperText>
+    </FormControl>
+    <FormControl
+        Required=""true""
+        Error=""@Error""
+        Component=""fieldset""
+        Class=""demo-checkbox-form-control"">
+        <FormLabel
+            Component=""legend"">
+            Pick two
+        </FormLabel>
+        <FormGroup>
+            <FormControlLabel
+                Label=""Gilad Gray"">
+                <Checkbox
+                    Checked=""@Gilad""
+                    OnChange=""@OnGiladChanged""
+                    Value=""Gilad""/>
+            </FormControlLabel>
+            <FormControlLabel
+                Label=""Jason Killian"">
+                <Checkbox
+                    Checked=""@Jason""
+                    OnChange=""@OnJasonChanged""
+                    Value=""Jason""/>
+            </FormControlLabel>
+            <FormControlLabel
+                Label=""Antoine Llorca"">
+                <Checkbox
+                    Checked=""@Antoine""
+                    OnChange=""@OnAntoineChanged""
+                    Value=""Antoine""/>
+            </FormControlLabel>
+        </FormGroup>
+        <FormHelperText>
+            You can display an error
+        </FormHelperText>
+    </FormControl>
+</Box>
+```
+
+```csharp
+@code
+{
+    private bool Gilad { set; get; } = true;
+
+    private bool Jason { set; get; } = false;
+
+    private bool Antoine { set; get; } = false;
+
+    private bool Error => (new bool[] { Gilad, Jason, Antoine }).Where(x => !!x).Count() != 2;
+
+    private void OnGiladChanged(EventArgs args)
+    {
+        Gilad = !Gilad;
+
+        StateHasChanged();
+    }
+
+    private void OnJasonChanged(EventArgs args)
+    {
+        Jason = !Jason;
+
+        StateHasChanged();
+    }
+
+    private void OnAntoineChanged(EventArgs args)
+    {
+        Antoine = !Antoine;
+
+        StateHasChanged();
+    }
+}
+```
+")" />

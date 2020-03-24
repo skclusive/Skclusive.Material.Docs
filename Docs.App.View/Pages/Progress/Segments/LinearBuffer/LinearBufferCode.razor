@@ -1,0 +1,61 @@
+@namespace Skclusive.Material.Docs.App.View
+@inherits MaterialComponentBase
+
+<MarkdownCode
+    Class="@_Class"
+    Style="@_Style"
+    Text="@(@"
+```html
+@inherits DisposableComponentBase
+
+<div
+    style=""flex-grow: 1;"">
+    <LinearProgress
+        Variant=""@LinearProgressVariant.Buffer""
+        Value=""@Completed""
+        ValueBuffer=""@Buffer"" />
+    <br />
+    <LinearProgress
+        Color=""@Color.Secondary""
+        Variant=""@LinearProgressVariant.Buffer""
+        Value=""@Completed""
+        ValueBuffer=""@Buffer"" />
+</div>
+```
+
+```csharp
+@code
+{
+    public decimal Completed { set; get; } = 0;
+
+    public decimal Buffer { set; get; } = 10;
+
+    private static Random RANDOM = new Random();
+
+    protected override void OnInitialized()
+    {
+        RunInterval(() =>
+        {
+            if (Completed == 100)
+            {
+                Completed = 0;
+
+                Buffer = 10;
+            }
+            else
+            {
+                int diff1 = RANDOM.Next(0, 10);
+                int diff2 = RANDOM.Next(0, 10);
+
+                var completed = Completed;
+
+                Completed = completed + diff1;
+
+                Buffer = completed + diff1 + diff2;
+            }
+            StateHasChanged();
+        }, 500);
+    }
+}
+```
+")" />

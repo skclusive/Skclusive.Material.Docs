@@ -1,0 +1,113 @@
+﻿@namespace Skclusive.Material.Docs.App.View
+
+@page "/"
+
+<AppBar
+    Position="@AppBarPosition.Static">
+    <Toolbar>
+        <IconButton
+            Style="margin-left: -12px; margin-right: 20px;"
+            Color="@Color.Inherit">
+            <MenuIcon />
+        </IconButton>
+        <Typography
+            Style="flex: 1;"
+            Variant=@TypographyVariant.Subtitle1
+            Color="Color.Inherit">
+            Subtitle1
+        </Typography>
+        <Button
+            Color="Color.Inherit">
+            Login
+        </Button>
+    </Toolbar>
+</AppBar>
+
+<div
+    style="margin: 20px">
+    <MarkdownSegment
+        Text="@(@"
+## Installing with Nuget
+
+You can [install Material package](https://www.nuget.org/packages/Skclusive.Material.Component/) by typing the below command in your terminal:
+
+`dotnet add package Skclusive.Material.Component`
+
+Then, you can add the following usings in your _Imports.razor.
+
+```csharp
+@using Skclusive.Core.Component
+@using Skclusive.Transition.Component;
+@using Skclusive.Script.DomHelpers
+
+@using Skclusive.Material.Core
+@using Skclusive.Material.Component
+@using Skclusive.Material.Theme
+@using Skclusive.Material.Form
+@using Skclusive.Material.Input
+@using Skclusive.Material.Text
+@using Skclusive.Material.Typography
+@using Skclusive.Material.Progress
+@using Skclusive.Material.Transition
+@using Skclusive.Material.Button
+@using Skclusive.Material.Icon
+@using Skclusive.Material.Paper
+@using Skclusive.Material.Avatar
+@using Skclusive.Material.Badge
+@using Skclusive.Material.Selection
+@using Skclusive.Material.Toolbar
+@using Skclusive.Material.AppBar
+@using Skclusive.Material.Divider
+@using Skclusive.Material.Grid
+@using Skclusive.Material.Table
+@using Skclusive.Material.Baseline
+@using Skclusive.Material.Card
+@using Skclusive.Material.Hidden
+@using Skclusive.Material.List
+@using Skclusive.Material.Modal
+@using Skclusive.Material.Script
+@using Skclusive.Material.Drawer
+@using Skclusive.Material.Dialog
+@using Skclusive.Material.Popover
+@using Skclusive.Material.Menu
+@using Skclusive.Material.Tab
+```
+
+Then in your `App.razor` add `MaterialStyles` and `MaterialScripts` before Router.
+
+```html
+<MaterialScripts />
+<MaterialStyles />
+
+<Router AppAssembly=""@typeof(Program).Assembly"">
+    <Found Context=""routeData"">
+        <RouteView RouteData=""@routeData"" DefaultLayout=""@typeof(MainLayout)"" />
+    </Found>
+    <NotFound>
+        <LayoutView Layout=""@typeof(MainLayout)"">
+            <p>Sorry, there's nothing at this address.</p>
+        </LayoutView>
+    </NotFound>
+</Router>
+```
+
+Then `MaterialServices` need to be added in `Program.cs`
+
+```csharp
+using Skclusive.Material.Component;
+
+public class Program
+{
+    public static async Task Main(string[] args)
+    {
+        var builder = WebAssemblyHostBuilder.CreateDefault(args);
+
+        builder.RootComponents.Add<App>(""app"");
+
+        builder.Services.TryAddMaterialServices();
+
+        await builder.Build().RunAsync();
+    }
+}
+```")" />
+</div>

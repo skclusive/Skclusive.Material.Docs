@@ -1,0 +1,53 @@
+@namespace Skclusive.Material.Docs.App.View
+
+<MarkdownSegment
+    Text="@(@"
+# LinearProgress API
+
+<p class=""description"">The API documentation of the LinearProgress component. Learn more about the parameters and the CSS customization points.</p>
+
+## Parameters
+
+| Name | Type | Default | Description |
+|:-----|:-----|:--------|:------------|
+| <span class=""prop-name"">RootRef</span> | <span class=""prop-type"">IReference</span> | <span class=""prop-default"">new Reference()</span> | The reference used to ref the root node. |
+| <span class=""prop-name"">Class</span> | <span class=""prop-type"">string</span> | | The class applied to the root node. |
+| <span class=""prop-name"">Style</span> | <span class=""prop-type"">string</span> | | The style applied to the root node. |
+| <span class=""prop-name"">Color</span> | <span class=""prop-type"">Color.Primary<br>&#124;&nbsp;Color.Secondary</span> | <span class=""prop-default"">Color.Primary</span> | The color of the component. It supports those theme colors that make sense for this component. |
+| <span class=""prop-name"">Value</span> | <span class=""prop-type"">decimal</span> |  | The value of the progress indicator for the determinate and buffer variants. Value between 0 and 100. |
+| <span class=""prop-name"">ValueBuffer</span> | <span class=""prop-type"">decimal</span> |  | The value for the buffer variant. Value between 0 and 100. |
+| <span class=""prop-name"">Variant</span> | <span class=""prop-type"">LinearProgressVariant.Determinate<br>&#124;&nbsp;LinearProgressVariant.Indeterminate<br>&#124;&nbsp;LinearProgressVariant.Buffer<br>&#124;&nbsp;LinearProgressVariant.Query</span> | <span class=""prop-default"">LinearProgressVariant.Indeterminate</span> | The variant to use. Use indeterminate or query when there is no progress value. |
+| <span class=""prop-name"">Bar1Style</span> | <span class=""prop-type"">string</span> | | the `style` applied on the Bar1 element. |
+| <span class=""prop-name"">Bar1Class</span> | <span class=""prop-type"">string</span> | |  the `class` applied on the Bar1 element. |
+| <span class=""prop-name"">Bar2Style</span> | <span class=""prop-type"">string</span> | | the `style` applied on the Bar2 element. |
+| <span class=""prop-name"">Bar2Class</span> | <span class=""prop-type"">string</span> | |  the `class` applied on the Bar2 element. |
+| <span class=""prop-name"">DashedStyle</span> | <span class=""prop-type"">string</span> | | the `style` applied on the Dashed element. |
+| <span class=""prop-name"">DashedClass</span> | <span class=""prop-type"">string</span> | |  the `class` applied on the Dashed element. |
+
+## CSS
+
+- Style name: `LinearProgress`.
+- Style details:
+
+| Global class | Description |
+|:-------------|:------------|
+| <span class=""prop-name"">LinearProgress-Root</span> | Styles applied to the root element.
+| <span class=""prop-name"">LinearProgress-Color-Primary</span> | Styles applied to the root and bar2 element if `Color=""@Color.Primary""`; bar2 if `Variant=""@LinearProgressVariant.Buffer""`.
+| <span class=""prop-name"">LinearProgress-Color-Secondary</span> | Styles applied to the root and bar2 elements if `Color=""@Color.Secondary""`; bar2 if `Variant=""@LinearProgressVariant.Buffer""`.
+| <span class=""prop-name"">LinearProgress-Determinate</span> | Styles applied to the root element if `Variant=""@LinearProgressVariant.Determinate""`.
+| <span class=""prop-name"">LinearProgress-Indeterminate</span> | Styles applied to the root element if `Variant=""@LinearProgressVariant.Indeterminate""`.
+| <span class=""prop-name"">LinearProgress-Buffer</span> | Styles applied to the root element if `Variant=""@LinearProgressVariant.Buffer""`.
+| <span class=""prop-name"">LinearProgress-Query</span> | Styles applied to the root element if `Variant=""@LinearProgressVariant.Query""`.
+| <span class=""prop-name"">LinearProgress-Dashed</span> | Styles applied to the additional bar element if `Variant=""@LinearProgressVariant.Buffer""`.
+| <span class=""prop-name"">LinearProgress-Dashed-Color-Primary</span> | Styles applied to the additional bar element if `Variant=""@LinearProgressVariant.Buffer""` and `Color=""@Color.Primary""`.
+| <span class=""prop-name"">LinearProgress-Dashed-Color-Secondary</span> | Styles applied to the additional bar element if `Variant=""@LinearProgressVariant.Buffer""` and `Color=""@Color.Secondary""`.
+| <span class=""prop-name"">LinearProgress-Bar</span> | Styles applied to the layered bar1 and bar2 elements.
+| <span class=""prop-name"">LinearProgress-Bar-Color-Primary</span> | Styles applied to the bar elements if `Color=""@Color.Primary""`; bar2 if `Variant` not ""@LinearProgressVariant.Buffer"".
+| <span class=""prop-name"">LinearProgress-Bar-Color-Secondary</span> | Styles applied to the bar elements if `Color=""@Color.secondary""`; bar2 if `Variant` not ""@LinearProgressVariant.Buffer"".
+| <span class=""prop-name"">LinearProgress-Bar1-Indeterminate</span> | Styles applied to the bar1 element if `Variant=""@LinearProgressVariant.Indeterminate or @LinearProgressVariant.Query""`.
+| <span class=""prop-name"">LinearProgress-Bar1-Determinate</span> | Styles applied to the bar1 element if `Variant=""@LinearProgressVariant.Determinate""`.
+| <span class=""prop-name"">LinearProgress-Bar1-Buffer</span> | Styles applied to the bar1 element if `Variant=""@LinearProgressVariant.Buffer""`.
+| <span class=""prop-name"">LinearProgress-Bar2-Indeterminate</span> | Styles applied to the bar2 element if `Variant=""@LinearProgressVariant.Indeterminate or @LinearProgressVariant.Query""`.
+| <span class=""prop-name"">LinearProgress-Bar2-Buffer</span> | Styles applied to the bar2 element if `Variant=""@LinearProgressVariant.Buffer""`.
+
+")" />

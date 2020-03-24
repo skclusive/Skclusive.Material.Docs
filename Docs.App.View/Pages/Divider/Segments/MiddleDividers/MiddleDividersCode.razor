@@ -1,0 +1,133 @@
+@namespace Skclusive.Material.Docs.App.View
+@inherits MaterialComponentBase
+
+<MarkdownCode
+    Class="@_Class"
+    Style="@_Style"
+    Text="@(@"
+```css
+<style>
+    .Chip-Root {
+        border: none;
+        cursor: default;
+        height: 32px;
+        display: inline-flex;
+        outline: 0;
+        padding: 0;
+        font-size: 0.8125rem;
+        box-sizing: border-box;
+        transition: background-color 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+        align-items: center;
+        font-family: ""Roboto"", ""Helvetica"", ""Arial"", sans-serif;
+        white-space: nowrap;
+        border-radius: 16px;
+        vertical-align: middle;
+        justify-content: center;
+        text-decoration: none;
+        color: var(--theme-palette-grey-light-or-dark-contrast-text, rgba(0, 0, 0, 0.87));
+        background-color: var(--theme-palette-grey-light-or-dark, #e0e0e0);
+    }
+    .Chip-Label {
+        cursor: inherit;
+        display: flex;
+        align-items: center;
+        user-select: none;
+        white-space: nowrap;
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+    .Chip-Color-Primary {
+        color: var(--theme-palette-primary-contrast-text);
+        background-color: var(--theme-palette-primary-main);
+    }
+    .demo-chip {
+        margin-right: 8px;
+    }
+</style>
+```
+
+```html
+<div
+    style=""width: 100%;
+    max-width: 360px;
+    background-color: var(--theme-palette-background-paper, #fff);"">
+    <div
+        style=""margin: 24px 16px;"">
+        <Grid
+            Container
+            AlignItems=""@AlignItems.Center"">
+            <Grid
+                Item
+                ExtraSmall=""@GridSize.True"">
+                <Typography
+                    GutterBottom
+                    Variant=""@TypographyVariant.H4"">
+                    Toothbrush
+                </Typography>
+            </Grid>
+            <Grid
+                Item>
+                <Typography
+                    GutterBottom
+                    Variant=""@TypographyVariant.H6"">
+                    $4.50
+                </Typography>
+            </Grid>
+        </Grid>
+        <Typography
+            Color=""@Color.TextSecondary""
+            Variant=""@TypographyVariant.Body2"">
+            Pinstriped cornflower blue cotton blouse takes you on a walk to the park or just down the
+            hall.
+        </Typography>
+    </div>
+    <Divider
+        Variant=""@DividerVariant.Middle"" />
+    <div
+        style=""margin: 16px;"">
+        <Typography
+            GutterBottom
+            Variant=""@TypographyVariant.Body1"">
+            Select type
+        </Typography>
+        <div>
+            <div
+                class=""Chip-Root demo-chip"">
+                <span
+                    class=""Chip-Label"">
+                    Extra Soft
+                </span>
+            </div>
+            <div
+                class=""Chip-Root Chip-Color-Primary demo-chip"">
+                <span
+                    class=""Chip-Label"">
+                    Soft
+                </span>
+            </div>
+            <div
+                class=""Chip-Root demo-chip"">
+                <span
+                    class=""Chip-Label"">
+                    Medium
+                </span>
+            </div>
+            <div
+                class=""Chip-Root demo-chip"">
+                <span
+                    class=""Chip-Label"">
+                    Hard
+                </span>
+            </div>
+        </div>
+    </div>
+    <div
+        style=""margin: 24px 8px 8px;"">
+        <Button
+            Color=""@Color.Primary"">
+            Add to cart
+        </Button>
+    </div>
+</div>
+```
+")" />

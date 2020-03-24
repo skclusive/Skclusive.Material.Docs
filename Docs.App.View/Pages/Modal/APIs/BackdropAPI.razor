@@ -1,0 +1,35 @@
+@namespace Skclusive.Material.Docs.App.View
+
+<MarkdownSegment
+    Text="@(@"
+# Backdrop API
+
+<p class=""description"">The API documentation of the Backdrop component. Learn more about the parameters and the CSS customization points.</p>
+
+## Parameters
+
+| Name | Type | Default | Description |
+|:-----|:-----|:--------|:------------|
+| <span class=""prop-name"">RootRef</span> | <span class=""prop-type"">IReference</span> | <span class=""prop-default"">new Reference()</span> | The reference used to ref the root node. |
+| <span class=""prop-name"">Class</span> | <span class=""prop-type"">string</span> | | The class applied to the root node. |
+| <span class=""prop-name"">Style</span> | <span class=""prop-type"">string</span> | | The style applied to the root node. |
+| <span class=""prop-name"">Component</span> | <span class=""prop-type"">string</span> | <span class=""prop-default"">'hr'</span> | The component used for the root node. |
+| <span class=""prop-name"">ChildContent</span> | <span class=""prop-type"">RenderFragment</span> |  | The content of the component. |
+| <span class=""prop-name"">Invisible</span> | <span class=""prop-type"">bool</span> | <span class=""prop-default"">false</span> | If `true`, the backdrop is invisible. It can be used when rendering a popover or a custom select component. |
+| <span class=""prop-name required"">Open&nbsp;*</span> | <span class=""prop-type"">bool</span> |  | If `true`, the backdrop is open. |
+| <span class=""prop-name"">TransitionDuration</span> | <span class=""prop-type"">int</span> |  | The duration for the transition, in milliseconds. |
+| <span class=""prop-name"">AppearTransitionDuration</span> | <span class=""prop-type"">int?</span> |  | The appear duration for the transition, in milliseconds. |
+| <span class=""prop-name"">EnterTransitionDuration</span> | <span class=""prop-type"">int?</span> |  | The enter duration for the transition, in milliseconds. |
+| <span class=""prop-name"">ExitTransitionDuration</span> | <span class=""prop-type"">int?</span> |  | The exit duration for the transition, in milliseconds. |
+
+## CSS
+
+- Style name: `Backdrop`.
+- Style details:
+
+| Global class | Description |
+|:-------------|:------------|
+| <span class=""prop-name"">Backdrop-Root</span> | Styles applied to the root element.
+| <span class=""prop-name"">Backdrop-Invisible</span> | Styles applied to the root element if `Invisible=""true""`.
+
+")" />

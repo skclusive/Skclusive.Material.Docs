@@ -1,0 +1,30 @@
+@namespace Skclusive.Material.Docs.App.View
+
+<MarkdownSegment
+    Text="@(@"
+# DialogActions API
+
+<p class=""description"">The API documentation of the DialogActions component. Learn more about the parameters and the CSS customization points.</p>
+
+## Parameters
+
+| Name | Type | Default | Description |
+|:-----|:-----|:--------|:------------|
+| <span class=""prop-name"">RootRef</span> | <span class=""prop-type"">IReference</span> | <span class=""prop-default"">new Reference()</span> | The reference used to ref the root node. |
+| <span class=""prop-name"">Class</span> | <span class=""prop-type"">string</span> | | The class applied to the root node. |
+| <span class=""prop-name"">Style</span> | <span class=""prop-type"">string</span> | | The style applied to the root node. |
+| <span class=""prop-name"">Component</span> | <span class=""prop-type"">string</span> | <span class=""prop-default"">'div'</span> | The component used for the root node. |
+| <span class=""prop-name"">ChildContent</span> | <span class=""prop-type"">RenderFragment</span> |  | The content of the component. |
+| <span class=""prop-name"">DisableSpacing</span> | <span class=""prop-type"">bool</span> | <span class=""prop-default"">false</span> | If `true`, the actions do not have additional margin. |
+
+## CSS
+
+- Style name: `DialogActions`.
+- Style details:
+
+| Global class | Description |
+|:-------------|:------------|
+| <span class=""prop-name"">DialogActions-Root</span> | Styles applied to the root element.
+| <span class=""prop-name"">DialogActions-Spacing</span> | Styles applied to the root element if `DisableSpacing=""false""`.
+
+")" />

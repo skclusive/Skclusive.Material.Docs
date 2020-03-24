@@ -1,0 +1,49 @@
+@namespace Skclusive.Material.Docs.App.View
+@inherits MaterialComponentBase
+
+<MarkdownCode
+    Class="@_Class"
+    Style="@_Style"
+    Text="@(@"
+```html
+<Card
+    Style=""display: flex;"">
+    <div
+        style=""display: flex; flex-direction: column;"">
+        <CardContent
+            Style=""flex: 1 0 auto;"">
+            <Typography
+                Variant=""@TypographyVariant.H5""
+                Component=""h5"">
+                Live From Space
+            </Typography>
+            <Typography
+                Variant=""@TypographyVariant.Subtitle1""
+                Color=""@Color.TextSecondary"">
+                Mac Miller
+            </Typography>
+        </CardContent>
+        <div
+            style=""display: flex; align-items: center; padding-left: 8px; padding-bottom: 8px;"">
+            <IconButton
+                aria-label=""previous"">
+                <SkipPreviousIcon />
+            </IconButton>
+            <IconButton
+                aria-label=""play/pause"">
+                <PlayArrowIcon
+                    Style=""width: 38px; height: 38px;"" />
+            </IconButton>
+            <IconButton
+                aria-label=""next"">
+                <SkipNextIcon />
+            </IconButton>
+        </div>
+    </div>
+    <CardMedia
+        Style=""width: 151px""
+        Image=""./images/live-from-space.jpg""
+        Title=""Live from space album cover"" />
+</Card>
+```
+")" />

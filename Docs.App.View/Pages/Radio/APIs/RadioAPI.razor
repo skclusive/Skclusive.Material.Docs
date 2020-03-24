@@ -1,0 +1,49 @@
+@namespace Skclusive.Material.Docs.App.View
+
+<MarkdownSegment
+    Text="@(@"
+# Radio API
+
+<p class=""description"">The API documentation of the Radio component. Learn more about the parameters and the CSS customization points.</p>
+
+## Parameters
+
+| Name | Type | Default | Description |
+|:-----|:-----|:--------|:------------|
+| <span class=""prop-name"">RootRef</span> | <span class=""prop-type"">IReference</span> | <span class=""prop-default"">new Reference()</span> | The reference used to ref the root node. |
+| <span class=""prop-name"">Class</span> | <span class=""prop-type"">string</span> | | The class applied to the root node. |
+| <span class=""prop-name"">Style</span> | <span class=""prop-type"">string</span> | | The style applied to the root node. |
+| <span class=""prop-name"">ReadOnly</span> | <span class=""prop-type"">bool</span> |  | It prevents the user from changing the value of the field. |
+| <span class=""prop-name"">Checked</span> | <span class=""prop-type"">bool?</span> |  | If `true`, the component is checked. |
+| <span class=""prop-name"">DefaultChecked</span> | <span class=""prop-type"">bool?</span> |  | when input is checked default. |
+| <span class=""prop-name"">CheckedIcon</span> | <span class=""prop-type"">RenderFragment</span> |  | The icon to display when the component is checked. |
+| <span class=""prop-name"">Color</span> | <span class=""prop-type"">Color.Primary<br>&#124;&nbsp;Color.Secondary<br>&#124;&nbsp;Color.Default</span> | <span class=""prop-default"">Color.Secondary</span> | The color of the component. It supports those theme colors that make sense for this component. |
+| <span class=""prop-name"">Disabled</span> | <span class=""prop-type"">bool?</span> |  | If `true`, the switch will be disabled. |
+| <span class=""prop-name"">DisableRipple</span> | <span class=""prop-type"">bool</span> |  | If `true`, the ripple effect will be disabled. |
+| <span class=""prop-name"">Icon</span> | <span class=""prop-type"">RenderFragment</span> |  | The icon to display when the component is unchecked. |
+| <span class=""prop-name"">Id</span> | <span class=""prop-type"">string</span> |  | The id of the `input` element. |
+| <span class=""prop-name"">Name</span> | <span class=""prop-type"">string</span> |  | The name of the `input` element. |
+| <span class=""prop-name"">OnChange</span> | <span class=""prop-type"">EventCallback&lt;ChangeEventArgs&gt;</span> |  | Callback fired when the state is changed.<br><br>**Signature:**<br>`function(event: object) => void`<br>*event:* The event source of the callback. You can pull out the new checked state by accessing `event.target.checked` (boolean). |
+| <span class=""prop-name"">Required</span> | <span class=""prop-type"">bool?</span> |  | If `true`, the `input` element will be required. |
+| <span class=""prop-name"">Value</span> | <span class=""prop-type"">string</span> |  | The value of the component. The DOM API casts this to a string. |
+| <span class=""prop-name"">InputStyle</span> | <span class=""prop-type"">string</span> | | the `style` applied on the input element. |
+| <span class=""prop-name"">InputClass</span> | <span class=""prop-type"">string</span> | |  the `class` applied on the input element. |
+| <span class=""prop-name"">CheckedStyle</span> | <span class=""prop-type"">string</span> | | the `style` applied on the checked element. |
+| <span class=""prop-name"">CheckedClass</span> | <span class=""prop-type"">string</span> | |  the `class` applied on the checked element. |
+| <span class=""prop-name"">DisabledClass</span> | <span class=""prop-type"">string</span> | |  the `class` applied when the element is disabled. |
+| <span class=""prop-name"">InputProps</span> | <span class=""prop-type"">Dictionary&lt;string, object&gt;</span> | | `attributes` passed to the Input component. |
+
+## CSS
+
+- Style name: `Radio`.
+- Style details:
+
+| Global class | Description |
+|:-------------|:------------|
+| <span class=""prop-name"">Radio-Root</span> | Styles applied to the root element.
+| <span class=""prop-name"">Radio-Checked</span> | Pseudo-class applied to the root element if `Checked=""true""`.
+| <span class=""prop-name"">Radio-Disabled</span> | Pseudo-class applied to the root element if `Disabled=""true""`.
+| <span class=""prop-name"">Radio-Color-Primary</span> | Styles applied to the root element if `Color=""@Color.Primary""`.
+| <span class=""prop-name"">Radio-Color-Secondary</span> | Styles applied to the root element if `Color=""@Color.Secondary""`.
+
+")" />

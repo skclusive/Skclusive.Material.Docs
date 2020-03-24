@@ -1,0 +1,37 @@
+@namespace Skclusive.Material.Docs.App.View
+
+<MarkdownSegment
+    Text="@(@"
+# ListSubheader API
+
+<p class=""description"">The API documentation of the ListSubheader component. Learn more about the parameters and the CSS customization points.</p>
+
+## Parameters
+
+| Name | Type | Default | Description |
+|:-----|:-----|:--------|:------------|
+| <span class=""prop-name"">RootRef</span> | <span class=""prop-type"">IReference</span> | <span class=""prop-default"">new Reference()</span> | The reference used to ref the root node. |
+| <span class=""prop-name"">Class</span> | <span class=""prop-type"">string</span> | | The class applied to the root node. |
+| <span class=""prop-name"">Style</span> | <span class=""prop-type"">string</span> | | The style applied to the root node. |
+| <span class=""prop-name"">Component</span> | <span class=""prop-type"">string</span> | <span class=""prop-default"">'li'</span> | The component used for the root node. |
+| <span class=""prop-name"">ChildContent</span> | <span class=""prop-type"">RenderFragment</span> |  | The content of the component. |
+| <span class=""prop-name"">Color</span> | <span class=""prop-type"">Color.Default<br>&#124;&nbsp;Color.Primary<br>&#124;&nbsp;Color.Inherit</span> | <span class=""prop-default"">Color.Default</span> | The color of the component. It supports those theme colors that make sense for this component. |
+| <span class=""prop-name"">DisableGutters</span> | <span class=""prop-type"">bool</span> | <span class=""prop-default"">false</span> | If `true`, the List Subheader will not have gutters. |
+| <span class=""prop-name"">DisableSticky</span> | <span class=""prop-type"">bool</span> | <span class=""prop-default"">false</span> | If `true`, the List Subheader will not stick to the top during scroll. |
+| <span class=""prop-name"">Inset</span> | <span class=""prop-type"">bool</span> | <span class=""prop-default"">false</span> | If `true`, the List Subheader will be indented. |
+
+## CSS
+
+- Style name: `ListSubheader`.
+- Style details:
+
+| Global class | Description |
+|:-------------|:------------|
+| <span class=""prop-name"">ListSubheader-Root</span> | Styles applied to the root element.
+| <span class=""prop-name"">ListSubheader-Color-Primary</span> | Styles applied to the root element if `Color=""@Color.Primary""`.
+| <span class=""prop-name"">ListSubheader-Color-Inherit</span> | Styles applied to the root element if `Color=""@Color.Inherit""`.
+| <span class=""prop-name"">ListSubheader-Gutters</span> | Styles applied to the inner `component` element if `DisableGutters=""false""`.
+| <span class=""prop-name"">ListSubheader-Inset</span> | Styles applied to the root element if `Inset=""true""`.
+| <span class=""prop-name"">ListSubheader-Sticky</span> | Styles applied to the root element if `DisableSticky=""false""`.
+
+")" />

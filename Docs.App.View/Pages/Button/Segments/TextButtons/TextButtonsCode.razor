@@ -1,0 +1,50 @@
+@namespace Skclusive.Material.Docs.App.View
+@inherits MaterialComponentBase
+
+<MarkdownCode
+    Class="@_Class"
+    Style="@_Style"
+    Text="@(@"
+```html
+<div>
+    <Button
+        Style=""margin: 8px;"">
+        Default
+    </Button>
+    <Button
+        Color=""@Color.Primary""
+        Style=""margin: 8px;"">
+        Primary
+    </Button>
+    <Button
+        Color=""@Color.Secondary""
+        Style=""margin: 8px;"">
+        Secondary
+    </Button>
+    <Button
+        Color=""@Color.Secondary""
+        Disabled=""true""
+        Style=""margin: 8px;"">
+        Disabled
+    </Button>
+    <Button
+        Href=""#text-buttons""
+        Style=""margin: 8px;"">
+        Link
+    </Button>
+    <input
+        accept=""image/*""
+        style=""display: none;""
+        id=""text-button-file""
+        multiple
+        type=""file"" />
+    <label for=""text-button-file"">
+        <Button
+            Component=""span""
+            Style=""margin: 8px;"">
+            Upload
+        </Button>
+    </label>
+</div>
+```
+")" />

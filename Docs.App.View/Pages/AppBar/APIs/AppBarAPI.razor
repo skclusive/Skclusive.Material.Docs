@@ -1,0 +1,44 @@
+@namespace Skclusive.Material.Docs.App.View
+
+<MarkdownSegment
+    Text="@(@"
+# AppBar API
+
+<p class=""description"">The API documentation of the AppBar component. Learn more about the parameters and the CSS customization points.</p>
+
+```html
+<AppBarStyle />
+```
+
+## Parameters
+
+| Name | Type | Default | Description |
+|:-----|:-----|:--------|:------------|
+| <span class=""prop-name"">RootRef</span> | <span class=""prop-type"">IReference</span> | <span class=""prop-default"">new Reference()</span> | The reference used to ref the root node. |
+| <span class=""prop-name"">Class</span> | | <span class=""prop-default""></span> | The class applied to the root node. |
+| <span class=""prop-name"">Style</span> | | <span class=""prop-default""></span> | The style applied to the root node. |
+| <span class=""prop-name"">Component</span> | <span class=""prop-type"">string</span> | <span class=""prop-default"">'header'</span> | The component used for the root node. |
+| <span class=""prop-name"">ChildContent</span> | <span class=""prop-type"">RenderFragment</span> |  | The content of the component. |
+| <span class=""prop-name"">Color</span> | <span class=""prop-type"">Color.Default<br>&#124;&nbsp;Color.Inherit<br>&#124;&nbsp;Color.Primary<br>&#124;&nbsp;Color.Secondary</span> | <span class=""prop-default"">Color.Primary</span> | The color of the component. It supports those theme colors that make sense for this component. |
+| <span class=""prop-name"">Position</span> | <span class=""prop-type"">AppBarPosition.Absolute<br>&#124;&nbsp;AppBarPosition.Fixed<br>&#124;&nbsp;AppBarPosition.Relative<br>&#124;&nbsp;AppBarPosition.Static<br>&#124;&nbsp;AppBarPosition.Sticky</span> | <span class=""prop-default"">AppBarPosition.Fixed</span> | The positioning type. The behavior of the different options is described [in the MDN web docs](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Positioning). Note: `Sticky` is not universally supported and will fall back to `Static` when unavailable. |
+| <span class=""prop-name"">Elevation</span> | <span class=""prop-type"">int</span> | <span class=""prop-default"">4</span> | Shadow depth, corresponds to `dp` in the spec. It accepts values between 0 and 24 inclusive. |
+| <span class=""prop-name"">Square</span> | <span class=""prop-type"">bool</span> | <span class=""prop-default"">true</span> | If `true`, rounded corners are disabled. |
+
+## CSS
+
+- Style name: `AppBar`.
+- Style details:
+
+| Global class | Description |
+|:-------------|:------------|
+| <span class=""prop-name"">AppBar-Root</span> | Styles applied to the root element.
+| <span class=""prop-name"">AppBar-Position-Fixed</span> | Styles applied to the root element if `Position=""@AppBarPosition.Fixed""`.
+| <span class=""prop-name"">AppBar-Position-Absolute</span> | Styles applied to the root element if `Position=""@AppBarPosition.Absolute""`.
+| <span class=""prop-name"">AppBar-Position-Sticky</span> | Styles applied to the root element if `Position=""@AppBarPosition.Sticky""`.
+| <span class=""prop-name"">AppBar-Position-Static</span> | Styles applied to the root element if `Position=""@AppBarPosition.Static""`.
+| <span class=""prop-name"">AppBar-Position-Relative</span> | Styles applied to the root element if `Position=""@AppBarPosition.Relative""`.
+| <span class=""prop-name"">AppBar-Color-Default</span> | Styles applied to the root element if `Color=""@Color.Default""`.
+| <span class=""prop-name"">AppBar-Color-Primary</span> | Styles applied to the root element if `Color=""@Color.Primary""`.
+| <span class=""prop-name"">AppBar-Color-Secondary</span> | Styles applied to the root element if `Color=""@Color.Secondary""`.
+
+")" />

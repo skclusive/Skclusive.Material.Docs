@@ -1,0 +1,57 @@
+@namespace Skclusive.Material.Docs.App.View
+
+<List
+    Class="demo-list-root">
+    @foreach(var item in Items)
+    {
+        <ListItem
+            @key="item.Index"
+            Button
+            Dense="true"
+            OnClick="@((_) => {
+                item.Checked = !item.Checked;
+            })">
+            <ChildContent>
+                <ListItemIcon>
+                    <Checkbox
+                        Edge="@Edge.Start"
+                        Checked="@item.Checked"
+                        DisableRipple
+                        TabIndex="-1"
+                        InputProps="@(new Dictionary<string, object>{{ "aria-label", $"checkbox-list-label-{item.Index}" }})" />
+                </ListItemIcon>
+                <ListItemText
+                    Id="@($"checkbox-list-label-{item.Index}")"
+                    Primary="@($"Line item {item.Index + 1}")" />
+            </ChildContent>
+            <SecondaryActionContent>
+                <ListItemSecondaryAction>
+                    <IconButton
+                        Edge="@IconButtonEdge.End"
+                        aria-label="comments"
+                        Context="IconButton">
+                        <CommentIcon />
+                    </IconButton>
+                </ListItemSecondaryAction>
+            </SecondaryActionContent>
+        </ListItem>
+    }
+</List>
+
+@code
+{
+    private List<CheckedIndex> Items = new List<CheckedIndex>
+    {
+        new CheckedIndex { Index = 0, Checked = false },
+        new CheckedIndex { Index = 1, Checked = false },
+        new CheckedIndex { Index = 2, Checked = false },
+        new CheckedIndex { Index = 3, Checked = false }
+    };
+
+    public class CheckedIndex
+    {
+        public int Index { get; set; }
+
+        public bool Checked { get; set; }
+    }
+}

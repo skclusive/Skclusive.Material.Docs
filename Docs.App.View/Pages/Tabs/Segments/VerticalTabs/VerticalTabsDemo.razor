@@ -1,0 +1,110 @@
+@namespace Skclusive.Material.Docs.App.View
+
+<div
+    class="demo-tabs-root"
+    style="display: flex; height: 224px;">
+    <Tabs
+        Style="border-right: 1px solid var(--theme-palette-divider); padding: 30px 0px;"
+        Value="@Value"
+        Orientation="@Orientation.Vertical"
+        Variant="@TabsVariant.Scrollable"
+        OnChange="@HandleChange"
+        aria-label="vertical tabs example">
+        <Tab
+            Id="vertical-tab"
+            Control="vertical-tabpanel"
+            Label="Item One"
+            Value="1" />
+        <Tab
+            Id="vertical-tab"
+            Control="vertical-tabpanel"
+            Label="Item Two"
+            Value="2" />
+        <Tab
+            Id="vertical-tab"
+            Control="vertical-tabpanel"
+            Label="Item Three"
+            Value="3" />
+        <Tab
+            Id="vertical-tab"
+            Control="vertical-tabpanel"
+            Label="Item Four"
+            Value="4" />
+        <Tab
+            Id="vertical-tab"
+            Control="vertical-tabpanel"
+            Label="Item Five"
+            Value="5" />
+        <Tab
+            Id="vertical-tab"
+            Control="vertical-tabpanel"
+            Label="Item Six"
+            Value="6" />
+        <Tab
+            Id="vertical-tab"
+            Control="vertical-tabpanel"
+            Label="Item Seven"
+            Value="7" />
+    </Tabs>
+    <TabPanel
+        Id="vertical-tabpanel"
+        Label="vertical-tab"
+        Value="@Value"
+        Index="1">
+        Item One
+    </TabPanel>
+    <TabPanel
+        Id="vertical-tabpanel"
+        Label="vertical-tab"
+        Value="@Value"
+        Index="2">
+        Item Two
+    </TabPanel>
+    <TabPanel
+        Id="vertical-tabpanel"
+        Label="vertical-tab"
+        Value="@Value"
+        Index="3">
+        Item Three
+    </TabPanel>
+    <TabPanel
+        Id="vertical-tabpanel"
+        Label="vertical-tab"
+        Value="@Value"
+        Index="4">
+        Item Four
+    </TabPanel>
+        <TabPanel
+        Id="vertical-tabpanel"
+        Label="vertical-tab"
+        Value="@Value"
+        Index="5">
+        Item Five
+    </TabPanel>
+    <TabPanel
+        Id="vertical-tabpanel"
+        Label="vertical-tab"
+        Value="@Value"
+        Index="6">
+        Item Six
+    </TabPanel>
+    <TabPanel
+        Id="vertical-tabpanel"
+        Label="vertical-tab"
+        Value="@Value"
+        Index="7">
+        Item Seven
+    </TabPanel>
+</div>
+
+@code
+{
+    private object Value { set; get; } = 2;
+
+    private void HandleChange(object value)
+    {
+        Value = value;
+
+        StateHasChanged();
+    }
+}

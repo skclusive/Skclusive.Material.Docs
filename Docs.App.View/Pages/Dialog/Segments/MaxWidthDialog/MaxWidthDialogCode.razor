@@ -1,0 +1,118 @@
+@namespace Skclusive.Material.Docs.App.View
+@inherits MaterialComponentBase
+
+<MarkdownCode
+    Class="@_Class"
+    Style="@_Style"
+    Text="@(@"
+```html
+<div>
+    <Button
+        Variant=""@ButtonVariant.Outlined""
+        Color=""@Color.Primary""
+        OnClick=""@OnOpen"">
+        @Text
+    </Button>
+    <Dialog
+        MaxWidth=""@MaxWidth""
+        FullWidth=""@FullWidth""
+        Open=""@Open""
+        OnClose=""@OnClose""
+        aria-labelledby=""max-width-dialog-title"">
+        <DialogTitle
+            Id=""max-width-dialog-title"">
+            Optional sizes
+        </DialogTitle>
+        <DialogContent>
+            <DialogContentText>
+                You can set my maximum width and whether to adapt or not.
+            </DialogContentText>
+            <form
+                style=""width: fit-content; margin: auto; display: flex; flex-direction: column;""
+                noValidate>
+                 <FormControl
+                    Style=""margin-top: 16px; min-width: 120px;"">
+                    <FormLabel>
+                        MaxWidth
+                    </FormLabel>
+                    <RadioGroup
+                        Name=""max-width""
+                        aria-label=""max-width""
+                        Value=""@MaxWidth.ToString()""
+                        OnChange=""@OnMaxWidthChange"">
+                        @foreach(var value in Enum.GetValues(typeof(DialogWidth)).Cast<DialogWidth>())
+                        {
+                            <FormControlLabel
+                                @key=""value""
+                                Label=""@value.ToString()"">
+                                <Radio
+                                    Value=""@value.ToString()"" />
+                            </FormControlLabel>
+                        }
+                    </RadioGroup>
+                </FormControl>
+                <FormControlLabel
+                    Style=""margin-top: 8px;""
+                    Label=""Full width"">
+                    <Switch
+                        Checked=""@FullWidth""
+                        OnChange=""@HandleFullWidthChange""
+                        Value=""FullWidth"" />
+                </FormControlLabel>
+            </form>
+        </DialogContent>
+        <DialogActions>
+            <Button
+                OnClick=""@OnClose""
+                Color=""@Color.Primary"">
+                Close
+            </Button>
+        </DialogActions>
+    </Dialog>
+</div>
+```
+
+```csharp
+@code
+{
+    private bool Open { set; get; }
+
+    private bool FullWidth { set; get; }
+
+    private DialogWidth MaxWidth { set; get; }
+
+    private string Text => (Open ? ""Close"" : ""Open"") + "" max-width dialog"";
+
+    private void HandleFullWidthChange()
+    {
+        FullWidth = !FullWidth;
+
+        StateHasChanged();
+    }
+
+    private void OnMaxWidthChange(ChangeEventArgs args)
+    {
+        if (Enum.TryParse(args.Value.ToString(), out DialogWidth maxWidth))
+        {
+            MaxWidth = maxWidth;
+
+            StateHasChanged();
+        }
+    }
+
+    private void OnClose()
+    {
+        Open = false;
+
+        StateHasChanged();
+    }
+
+    private void OnOpen()
+    {
+        Open = true;
+
+        StateHasChanged();
+    }
+}
+```
+")" />

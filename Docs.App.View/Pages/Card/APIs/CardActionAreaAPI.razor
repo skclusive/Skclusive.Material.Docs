@@ -1,0 +1,32 @@
+@namespace Skclusive.Material.Docs.App.View
+
+<MarkdownSegment
+    Text="@(@"
+# CardActionArea API
+
+<p class=""description"">The API documentation of the CardActionArea component. Learn more about the parameters and the CSS customization points.</p>
+
+## Parameters
+
+| Name | Type | Default | Description |
+|:-----|:-----|:--------|:------------|
+| <span class=""prop-name"">RootRef</span> | <span class=""prop-type"">IReference</span> | <span class=""prop-default"">new Reference()</span> | The reference used to ref the root node. |
+| <span class=""prop-name"">Class</span> | <span class=""prop-type"">string</span> | | The class applied to the root node. |
+| <span class=""prop-name"">Style</span> | <span class=""prop-type"">string</span> | | The style applied to the root node. |
+| <span class=""prop-name"">ChildContent</span> | <span class=""prop-type"">RenderFragment</span> |  | The content of the component. |
+| <span class=""prop-name"">FocusVisibleClass</span> | <span class=""prop-type"">string</span> | |  the `class` applied when the area is focused. |
+| <span class=""prop-name"">HighlightStyle</span> | <span class=""prop-type"">string</span> | | the `style` applied on the highlight element. |
+| <span class=""prop-name"">HighlightClass</span> | <span class=""prop-type"">string</span> | |  the `class` applied on the highlight element. |
+
+## CSS
+
+- Style name: `CardActionArea`.
+- Style details:
+
+| Global class | Description |
+|:-------------|:------------|
+| <span class=""prop-name"">CardActionArea-Root</span> | Styles applied to the root element.
+| <span class=""prop-name"">CardActionArea-FocusVisible</span> | Pseudo-class applied to the ButtonBase root element if the action area is keyboard focused.
+| <span class=""prop-name"">CardActionArea-Highlight</span> | Styles applied to the overlay that covers the action area when it is keyboard focused.
+
+")" />

@@ -1,0 +1,93 @@
+@namespace Skclusive.Material.Docs.App.View
+
+<style>
+    .demo-radio:hover {
+        background-color: transparent;
+    }
+    .demo-radio-icon {
+        width: 16px;
+        height: 16px;
+        box-shadow: inset 0 0 0 1px rgba(16,22,26,.2), inset 0 -1px 0 rgba(16,22,26,.1);
+        border-radius: 50%;
+        background-color: #f5f8fa;
+        background-image: linear-gradient(180deg,hsla(0,0%,100%,.8),hsla(0,0%,100%,0));
+    }
+    .demo-radio.FocusVisible .demo-radio-icon {
+        outline: 2px auto rgba(19,124,189,.6);
+        outline-offset: 2px;
+    }
+    input:hover ~ .demo-radio-icon {
+        background-color: #ebf1f5;
+    }
+    input:disabled ~ .demo-radio-icon {
+        background: rgba(206,217,224,.5);
+        box-shadow: none;
+    }
+    .demo-radio-icon-checked {
+        background-color: #137cbd;
+        background-image: linear-gradient(180deg,hsla(0,0%,100%,.1),hsla(0,0%,100%,0));
+    }
+    .demo-radio-icon-checked:before {
+        width: 16px;
+        height: 16px;
+        content: "";
+        display: block;
+        background-image: radial-gradient(#fff,#fff 28%,transparent 32%);
+    }
+    input:hover ~ .demo-radio-icon-checked {
+        background-color: #106ba3;
+    }
+</style>
+
+<FormControl
+    Component="fieldset">
+    <FormLabel
+        Component="legend">
+        Gender
+    </FormLabel>
+    <RadioGroup
+        DefaultValue="female"
+        aria-label="gender"
+        Name="customized-radios">
+        <FormControlLabel
+            Label="Female">
+            @CustomRadio("female")
+        </FormControlLabel>
+        <FormControlLabel
+            Label="Male">
+            @CustomRadio("male")
+        </FormControlLabel>
+        <FormControlLabel
+            Label="Other">
+            @CustomRadio("other")
+        </FormControlLabel>
+        <FormControlLabel
+            Disabled="true"
+            Label="(Disabled option)">
+            @CustomRadio("disabled", true)
+        </FormControlLabel>
+    </RadioGroup>
+</FormControl>
+
+@code
+{
+    private RenderFragment CustomRadio(string value, bool? disabled = null)
+    {
+        return @<Radio
+                    Value="@value"
+                    Color="@Color.Default"
+                    Disabled="@disabled"
+                    Class="demo-radio"
+                    DisableRipple="true"
+                    DefaultChecked="true">
+                    <Icon>
+                        <span
+                            class="demo-radio-icon" />
+                    </Icon>
+                    <CheckedIcon>
+                        <span
+                            class="demo-radio-icon demo-radio-icon-checked" />
+                    </CheckedIcon>
+                </Radio>;
+    }
+}

@@ -1,0 +1,33 @@
+@namespace Skclusive.Material.Docs.App.View
+
+<MarkdownSegment
+    Text="@(@"
+# TabIndicator API
+
+<p class=""description"">The API documentation of the TabIndicator component. Learn more about the parameters and the CSS customization points.</p>
+
+## Parameters
+
+| Name | Type | Default | Description |
+|:-----|:-----|:--------|:------------|
+| <span class=""prop-name"">RootRef</span> | <span class=""prop-type"">IReference</span> | <span class=""prop-default"">new Reference()</span> | The reference used to ref the root node. |
+| <span class=""prop-name"">Class</span> | <span class=""prop-type"">string</span> | | The class applied to the root node. |
+| <span class=""prop-name"">Style</span> | <span class=""prop-type"">string</span> | | The style applied to the root node. |
+| <span class=""prop-name"">Component</span> | <span class=""prop-type"">string</span> | <span class=""prop-default"">'div'</span> | The component used for the root node. |
+| <span class=""prop-name"">ChildContent</span> | <span class=""prop-type"">RenderFragment</span> |  | The badge will be added relative to this node. |
+| <span class=""prop-name"">Orientation</span> | <span class=""prop-type"">Orientation.Horizontal<br>&#124;&nbsp;Orientation.Vertical</span> | <span class=""prop-default"">Orientation.Horizontal</span> | The tabs orientation (layout flow direction). |
+| <span class=""prop-name"">Color</span> | <span class=""prop-type"">Color.Secondary<br>&#124;&nbsp;Color.Primary<br>&#124;&nbsp;Color.Inherit</span> | <span class=""prop-default"">Color.Inherit</span> | Determines the color of the `TabIndicator`. |
+
+## CSS
+
+- Style name: `TabIndicator`.
+- Style details:
+
+| Global class | Description |
+|:-------------|:------------|
+| <span class=""prop-name"">TabIndicator-Root</span> | Styles applied to the root element.
+| <span class=""prop-name"">TabIndicator-Vertical</span> | Styles applied to the root element if `Orientation=""@Orientation.Vertical""`.
+| <span class=""prop-name"">TabIndicator-Color-Primary</span> | Primary color style applied to the indicator.
+| <span class=""prop-name"">TabIndicator-Color-Secondary</span> | Secondary color style applied to the indicator.
+
+")" />

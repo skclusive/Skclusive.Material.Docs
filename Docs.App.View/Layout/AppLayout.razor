@@ -1,0 +1,69 @@
+﻿@namespace Skclusive.Material.Docs.App.View
+@inherits LayoutComponentBase
+
+<ThemeProvider
+    Theme="@Theme" />
+<MarkdownStyles
+    Theme="@Theme" />
+<MarkdownPrismStyles
+    Theme="@Theme"/>
+
+<div class="root">
+    <Baseline />
+    <AppTopbar
+        Open="@Open"
+        IsLight="@IsLight"
+        OnSidebarOpen="@OnSidebarOpen"
+        OnThemeChange="@OnThemeChange" />
+    <AppSidebar
+        Open="@Open"
+        OnClose="@OnSidebarClose" />
+    <main
+        class="@MainClass">
+        <div
+            class="Toolbar-Regular drawer-header" />
+        @Body
+    </main>
+</div>
+
+@code
+{
+
+    private bool IsLight => Theme == Theme.Light;
+
+    private Theme Theme { set; get; } = Theme.Light;
+
+    private bool Open { set; get; } = true;
+
+    private string MainClass => "content" + (Open ? " content-shift" : "");
+
+    private string Text => (Open ? "Close" : "Open") + " Drawer";
+
+    private void OnSidebarClose()
+    {
+        Open = false;
+
+        StateHasChanged();
+    }
+
+    private void OnSidebarOpen()
+    {
+        Open = true;
+
+        StateHasChanged();
+    }
+
+    private void OnToggle()
+    {
+        Open = !Open;
+
+        StateHasChanged();
+    }
+
+    private void OnThemeChange()
+    {
+        Theme = IsLight ? Theme.Dark : Theme.Light;
+
+        StateHasChanged();
+    }
+}

@@ -1,0 +1,27 @@
+@namespace Skclusive.Material.Docs.App.View
+
+<MarkdownSegment
+    Text="@(@"
+# MenuList API
+
+<p class=""description"">The API documentation of the MenuList component. Learn more about the parameters and the CSS customization points.</p>
+
+## Parameters
+
+| Name | Type | Default | Description |
+|:-----|:-----|:--------|:------------|
+| <span class=""prop-name"">RootRef</span> | <span class=""prop-type"">IReference</span> | <span class=""prop-default"">new Reference()</span> | The reference used to ref the root node. |
+| <span class=""prop-name"">Class</span> | <span class=""prop-type"">string</span> | | The class applied to the root node. |
+| <span class=""prop-name"">Style</span> | <span class=""prop-type"">string</span> | | The style applied to the root node. |
+| <span class=""prop-name"">Component</span> | <span class=""prop-type"">string</span> | <span class=""prop-default"">'hr'</span> | The component used for the root node. |
+| <span class=""prop-name"">ChildContent</span> | <span class=""prop-type"">RenderFragment</span> |  | The content of the component. |
+| <span class=""prop-name required"">Open&nbsp;*</span> | <span class=""prop-type"">bool</span> |  | If `true`, the modal is open. |
+| <span class=""prop-name"">AutoFocus</span> | <span class=""prop-type"">bool</span> | <span class=""prop-default"">false</span> | If `true`, will focus the `[role=""menu""]` container and move into tab order |
+| <span class=""prop-name"">AutoFocusItem</span> | <span class=""prop-type"">bool</span> | <span class=""prop-default"">false</span> | If `true`, will focus the first menuitem if `variant=""menu""` or selected item if `variant=""selectedMenu""` |
+| <span class=""prop-name"">DisableListWrap</span> | <span class=""prop-type"">bool</span> | <span class=""prop-default"">false</span> | If `true`, the menu items will not wrap focus. |
+| <span class=""prop-name"">Variant</span> | <span class=""prop-type"">MenuVariant.Menu<br>&#124;&nbsp;MenuVariant.SelectedMenu</span> | <span class=""prop-default"">MenuVariant.SelectedMenu</span> | The variant to use. Use `MenuVariant.Menu` to prevent selected items from impacting the initial focus and the vertical alignment relative to the anchor element. |
+| <span class=""prop-name"">ContentAnchorRef</span> | <span class=""prop-type"">IReference</span> | <span class=""prop-default"">new Reference()</span> | Reference attached to the content element of the menulist. |
+| <span class=""prop-name"">Dense</span> | <span class=""prop-type"">bool</span> | <span class=""prop-default"">false</span> | If `true`, compact vertical padding designed for keyboard and mouse input will be used for the list and list items. The prop is available to descendant components as the `dense` context. |
+| <span class=""prop-name"">DisablePadding</span> | <span class=""prop-type"">bool</span> | <span class=""prop-default"">false</span> | If `true`, vertical padding will be removed from the list. |
+
+")" />

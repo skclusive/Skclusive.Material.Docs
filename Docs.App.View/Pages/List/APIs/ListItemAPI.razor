@@ -1,0 +1,53 @@
+@namespace Skclusive.Material.Docs.App.View
+
+<MarkdownSegment
+    Text="@(@"
+# ListItem API
+
+<p class=""description"">The API documentation of the ListItem component. Learn more about the parameters and the CSS customization points.</p>
+
+## Parameters
+
+| Name | Type | Default | Description |
+|:-----|:-----|:--------|:------------|
+| <span class=""prop-name"">RootRef</span> | <span class=""prop-type"">IReference</span> | <span class=""prop-default"">new Reference()</span> | The reference used to ref the root node. |
+| <span class=""prop-name"">Class</span> | <span class=""prop-type"">string</span> | | The class applied to the root node. |
+| <span class=""prop-name"">Style</span> | <span class=""prop-type"">string</span> | | The style applied to the root node. |
+| <span class=""prop-name"">Component</span> | <span class=""prop-type"">string</span> | | The component used for the root node. |
+| <span class=""prop-name"">ChildContent</span> | <span class=""prop-type"">RenderFragment</span> |  | The content of the component. |
+| <span class=""prop-name"">SecondaryActionContent</span> | <span class=""prop-type"">RenderFragment</span> |  | The content of the component. |
+| <span class=""prop-name"">AlignItems</span> | <span class=""prop-type"">AlignItems.FlexStart<br>&#124;&nbsp;AlignItems.Center</span> | <span class=""prop-default"">AlignItems.Center</span> | Defines the `align-items` style property. |
+| <span class=""prop-name"">AutoFocus</span> | <span class=""prop-type"">bool</span> | <span class=""prop-default"">false</span> | If `true`, the list item will be focused during the first mount. Focus will also be triggered if the value changes from false to true. |
+| <span class=""prop-name"">Button</span> | <span class=""prop-type"">bool</span> | <span class=""prop-default"">false</span> | If `true`, the list item will be a button (using `ButtonBase`). Props intended for `ButtonBase` can then be applied to `ListItem`. |
+| <span class=""prop-name"">ContainerComponent</span> | <span class=""prop-type"">string</span> | <span class=""prop-default"">'li'</span> | The container component used when a `ListItemSecondaryAction` is the last child. |
+| <span class=""prop-name"">Dense</span> | <span class=""prop-type"">bool?</span> |  | If `true`, compact vertical padding designed for keyboard and mouse input will be used. |
+| <span class=""prop-name"">Disabled</span> | <span class=""prop-type"">bool?</span> | <span class=""prop-default"">false</span> | If `true`, the list item will be disabled. |
+| <span class=""prop-name"">DisableGutters</span> | <span class=""prop-type"">bool</span> | <span class=""prop-default"">false</span> | If `true`, the left and right padding is removed. |
+| <span class=""prop-name"">Divider</span> | <span class=""prop-type"">bool</span> | <span class=""prop-default"">false</span> | If `true`, a 1px light border is added to the bottom of the list item. |
+| <span class=""prop-name"">Selected</span> | <span class=""prop-type"">bool</span> | <span class=""prop-default"">false</span> | Use to apply selected styling. |
+| <span class=""prop-name"">FocusVisibleClass</span> | <span class=""prop-type"">string</span> |  | This prop can help a person know which element has the keyboard focus. The class name will be applied when the element gain the focus through a keyboard interaction. It's a polyfill for the [CSS :focus-visible selector](https://drafts.csswg.org/selectors-4/#the-focus-visible-pseudo). The rationale for using this feature [is explained here](https://github.com/WICG/focus-visible/blob/master/explainer.md). A [polyfill can be used](https://github.com/WICG/focus-visible) to apply a `focus-visible` class to other components if needed. |
+| <span class=""prop-name"">ContainerStyle</span> | <span class=""prop-type"">string</span> | | the `style` applied on the container element. |
+| <span class=""prop-name"">ContainerClass</span> | <span class=""prop-type"">string</span> | |  the `class` applied on the container element. |
+| <span class=""prop-name"">DenseStyle</span> | <span class=""prop-type"">string</span> | | the `style` applied on the dense element. |
+| <span class=""prop-name"">DenseClass</span> | <span class=""prop-type"">string</span> | |  the `class` applied on the dense element. |
+
+## CSS
+
+- Style name: `ListItem`.
+- Style details:
+
+| Global class | Description |
+|:-------------|:------------|
+| <span class=""prop-name"">ListItem-Root</span> | Styles applied to the (normally root) `component` element. May be wrapped by a `container`.
+| <span class=""prop-name"">ListItem-Container</span> | Styles applied to the `container` element if `children` includes `ListItemSecondaryAction`.
+| <span class=""prop-name"">ListItem-FocusVisible</span> | Pseudo-class applied to the `component`'s `focusVisibleClassName` prop if `Button=""true""`.
+| <span class=""prop-name"">ListItem-Dense</span> | Styles applied to the `component` element if dense.
+| <span class=""prop-name"">ListItem-AlignItems-FlexStart</span> | Styles applied to the `component` element if `AlignItems=""@AlignItems.FlexStart""`.
+| <span class=""prop-name"">ListItem-Disabled</span> | Pseudo-class applied to the inner `component` element if `Disabled=""true""`.
+| <span class=""prop-name"">ListItem-Divider</span> | Styles applied to the inner `component` element if `Divider=""true""`.
+| <span class=""prop-name"">ListItem-Gutters</span> | Styles applied to the inner `component` element if `DisableGutters=""false""`.
+| <span class=""prop-name"">ListItem-Button</span> | Styles applied to the inner `component` element if `Button=""true""`.
+| <span class=""prop-name"">ListItem-secondaryAction</span> | Styles applied to the `component` when includes `ListItemSecondaryAction`.
+| <span class=""prop-name"">ListItem-Selected</span> | Pseudo-class applied to the root element if `Selected=""true""`.
+
+")" />

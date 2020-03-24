@@ -1,0 +1,54 @@
+@namespace Skclusive.Material.Docs.App.View
+@inherits MaterialComponentBase
+
+<MarkdownCode
+    Class="@_Class"
+    Style="@_Style"
+    Text="@(@"
+```html
+<Paper
+    Square
+    Style=""flex-grow: 1; max-width: 500px;"">
+    <Tabs
+        Value=""@Value""
+        OnChange=""@HandleChange""
+        Variant=""@TabsVariant.FullWidth""
+        IndicatorColor=""@Color.Secondary""
+        TextColor=""@Color.Secondary""
+        aria-label=""icon label tabs example"">
+        <Tab
+            Label=""RECENTS"">
+            <IconContent>
+                <PhoneIcon />
+            </IconContent>
+        </Tab>
+        <Tab
+            Label=""FAVORITES"">
+            <IconContent>
+                <FavoriteIcon />
+            </IconContent>
+        </Tab>
+        <Tab
+            Label=""NEARBY"">
+            <IconContent>
+                <PersonPinIcon />
+            </IconContent>
+        </Tab>
+    </Tabs>
+</Paper>
+```
+
+```csharp
+@code
+{
+    private object Value { set; get; } = 0;
+
+    private void HandleChange(object value)
+    {
+        Value = value;
+
+        StateHasChanged();
+    }
+}
+```
+")" />

@@ -1,0 +1,32 @@
+@namespace Skclusive.Material.Docs.App.View
+
+<MarkdownSegment
+    Text="@(@"
+# CardMedia API
+
+<p class=""description"">The API documentation of the CardMedia component. Learn more about the parameters and the CSS customization points.</p>
+
+## Parameters
+
+| Name | Type | Default | Description |
+|:-----|:-----|:--------|:------------|
+| <span class=""prop-name"">RootRef</span> | <span class=""prop-type"">IReference</span> | <span class=""prop-default"">new Reference()</span> | The reference used to ref the root node. |
+| <span class=""prop-name"">Class</span> | <span class=""prop-type"">string</span> | | The class applied to the root node. |
+| <span class=""prop-name"">Style</span> | <span class=""prop-type"">string</span> | | The style applied to the root node. |
+| <span class=""prop-name"">ChildContent</span> | <span class=""prop-type"">RenderFragment</span> |  | The content of the component. |
+| <span class=""prop-name"">Component</span> | <span class=""prop-type"">string</span> | <span class=""prop-default"">'div'</span> | The component used for the root node. |
+| <span class=""prop-name"">Image</span> | <span class=""prop-type"">string</span> |  | Image to be displayed as a background image. Either `image` or `src` prop must be specified. Note that caller must specify height otherwise the image will not be visible. |
+| <span class=""prop-name"">Src</span> | <span class=""prop-type"">string</span> |  | An alias for `image` property. Available only with media components. Media components: `video`, `audio`, `picture`, `iframe`, `img`. |
+
+## CSS
+
+- Style name: `CardMedia`.
+- Style details:
+
+| Global class | Description |
+|:-------------|:------------|
+| <span class=""prop-name"">CardMedia-Root</span> | Styles applied to the root element.
+| <span class=""prop-name"">CardMedia-Media</span> | Styles applied to the root element if `Component=""video, audio, picture, iframe, or img""`.
+| <span class=""prop-name"">CardMedia-Image</span> | Styles applied to the root element if `Component=""picture or img""`.
+
+")" />

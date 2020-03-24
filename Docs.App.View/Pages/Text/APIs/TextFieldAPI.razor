@@ -1,0 +1,51 @@
+@namespace Skclusive.Material.Docs.App.View
+
+<MarkdownSegment
+    TextField="@(@"
+# TextField API
+
+<p class=""description"">The API documentation of the TextField component. Learn more about the parameters and the CSS customization points.</p>
+
+## Parameters
+
+| Name | Type | Default | Description |
+|:-----|:-----|:--------|:------------|
+| <span class=""prop-name"">RootRef</span> | <span class=""prop-type"">IReference</span> | <span class=""prop-default"">new Reference()</span> | The reference used to ref the root node. |
+| <span class=""prop-name"">Class</span> | <span class=""prop-type"">string</span> | | The class applied to the root node. |
+| <span class=""prop-name"">Style</span> | <span class=""prop-type"">string</span> | | The style applied to the root node. |
+| <span class=""prop-name"">Component</span> | <span class=""prop-type"">string</span> | <span class=""prop-default"">'hr'</span> | The component used for the root node. |
+| <span class=""prop-name"">AutoComplete</span> | <span class=""prop-type"">string</span> |  | This prop helps users to fill forms faster, especially on mobile devices. The name can be confusing, as it's more like an autofill. You can learn more about it [following the specification](https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#autofill). |
+| <span class=""prop-name"">AutoFocus</span> | <span class=""prop-type"">bool</span> |  | If `true`, the `input` element will be focused during the first mount. |
+| <span class=""prop-name"">DefaultValue</span> | <span class=""prop-type"">any</span> |  | The default value of the `input` element. |
+| <span class=""prop-name"">Disabled</span> | <span class=""prop-type"">bool?</span> |  | If `true`, the `input` element will be disabled. |
+| <span class=""prop-name"">Error</span> | <span class=""prop-type"">bool</span> |  | If `true`, the label will be displayed in an error state. |
+| <span class=""prop-name"">FullWidth</span> | <span class=""prop-type"">bool</span> |  | If `true`, the input will take up the full width of its container. |
+| <span class=""prop-name"">Helper</span> | <span class=""prop-type"">string</span> |  | The helper text content. |
+| <span class=""prop-name"">Id</span> | <span class=""prop-type"">string</span> |  | The id of the `input` element. Use this prop to make `label` and `helperText` accessible for screen readers. |
+| <span class=""prop-name"">Label</span> | <span class=""prop-type"">string</span> |  | The label content. |
+| <span class=""prop-name"">Margin</span> | <span class=""prop-type"">Margin.None<br>&#124;&nbsp;Margin.Dense<br>&#124;&nbsp;Margin.Normal</span> |  | If `Margin.Dense` or `Margin.Normal`, will adjust vertical spacing of this and contained components. |
+| <span class=""prop-name"">Multiline</span> | <span class=""prop-type"">bool</span> |  | If `true`, a textarea element will be rendered instead of an input. |
+| <span class=""prop-name"">Name</span> | <span class=""prop-type"">string</span> |  | Name attribute of the `input` element. |
+| <span class=""prop-name"">OnChange</span> | <span class=""prop-type"">EventCallback&lt;ChangeEventArgs&gt;</span> |  | Callback fired when the value is changed.<br><br>**Signature:**<br>`function(event: object) => void`<br>*event:* The event source of the callback. You can pull out the new value by accessing `event.target.value` (string). |
+| <span class=""prop-name"">Placeholder</span> | <span class=""prop-type"">string</span> |  | The short hint displayed in the input before the user enters a value. |
+| <span class=""prop-name"">Required</span> | <span class=""prop-type"">bool?</span> | <span class=""prop-default"">false</span> | If `true`, the label is displayed as required and the `input` element` will be required. |
+| <span class=""prop-name"">Shrink</span> | <span class=""prop-type"">bool</span> | <span class=""prop-default"">false</span> | If `true`, the label is shrunk. |
+| <span class=""prop-name"">HiddenLabel</span> | <span class=""prop-type"">bool</span> | <span class=""prop-default"">false</span> | If `true`, the label will be hidden. This is used to increase density for a `FilledInput`. Be sure to add `aria-label` to the `input` element. |
+| <span class=""prop-name"">Rows</span> | <span class=""prop-type"">string<br>&#124;&nbsp;number</span> |  | Number of rows to display when multiline option is set to true. |
+| <span class=""prop-name"">RowsMax</span> | <span class=""prop-type"">string<br>&#124;&nbsp;number</span> |  | Maximum number of rows to display when multiline option is set to true. |
+| <span class=""prop-name"">Type</span> | <span class=""prop-type"">string</span> |  | Type of the `input` element. It should be [a valid HTML5 input type](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#Form_%3Cinput%3E_types). |
+| <span class=""prop-name"">Value</span> | <span class=""prop-type"">string</span> |  | The value of the `input` element, required for a controlled component. |
+| <span class=""prop-name"">Variant</span> | <span class=""prop-type"">ControlVariant.Standard<br>&#124;&nbsp;ControlVariant.Outlined<br>&#124;&nbsp;ControlVariant.Filled</span> | <span class=""prop-default"">ControlVariant.Standard</span> | The variant to use. |
+| <span class=""prop-name"">StartAdornment</span> | <span class=""prop-type"">RenderFragment</span> |  | Start `InputAdornment` for this component. |
+| <span class=""prop-name"">EndAdornment</span> | <span class=""prop-type"">RenderFragment</span> |  | End `InputAdornment` for this component. |
+
+## CSS
+
+- Style name: `TextField`.
+- Style details:
+
+| Global class | Description |
+|:-------------|:------------|
+| <span class=""prop-name"">TextField-Root</span> | Styles applied to the root element.
+
+")" />

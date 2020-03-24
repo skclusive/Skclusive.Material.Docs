@@ -1,0 +1,63 @@
+@namespace Skclusive.Material.Docs.App.View
+
+<MarkdownSegment
+    Text="@(@"
+# Typography API
+
+<p class=""description"">The API documentation of the Typography component. Learn more about the parameters and the CSS customization points.</p>
+
+## Parameters
+
+| Name | Type | Default | Description |
+|:-----|:-----|:--------|:------------|
+| <span class=""prop-name"">RootRef</span> | <span class=""prop-type"">IReference</span> | <span class=""prop-default"">new Reference()</span> | The reference used to ref the root node. |
+| <span class=""prop-name"">Class</span> | <span class=""prop-type"">string</span> | | The class applied to the root node. |
+| <span class=""prop-name"">Style</span> | <span class=""prop-type"">string</span> | | The style applied to the root node. |
+| <span class=""prop-name"">Component</span> | <span class=""prop-type"">string</span> | | The component used for the root node. |
+| <span class=""prop-name"">ChildContent</span> | <span class=""prop-type"">RenderFragment</span> |  | The badge will be added relative to this node. |
+| <span class=""prop-name"">Align</span> | <span class=""prop-type"">Align.Inherit<br>&#124;&nbsp;Align.Left<br>&#124;&nbsp;Align.Center<br>&#124;&nbsp;Align.Right<br>&#124;&nbsp;Align.Justify</span> | <span class=""prop-default"">Align.Inherit</span> | Set the text-align on the component. |
+| <span class=""prop-name"">Color</span> | <span class=""prop-type"">Color.Initial<br>&#124;&nbsp;Color.Inherit<br>&#124;&nbsp;Color.Primary<br>&#124;&nbsp;Color.Secondary<br>&#124;&nbsp;Color.TextPrimary<br>&#124;&nbsp;Color.TextSecondary<br>&#124;&nbsp;Color.Error</span> | <span class=""prop-default"">Color.Initial</span> | The color of the component. It supports those theme colors that make sense for this component. |
+| <span class=""prop-name"">Display</span> | <span class=""prop-type"">Display.Initial<br>&#124;&nbsp;Display.Block<br>&#124;&nbsp;Display.Inline</span> | <span class=""prop-default"">Display.Initial</span> | Controls the display type |
+| <span class=""prop-name"">GutterBottom</span> | <span class=""prop-type"">bool</span> | <span class=""prop-default"">false</span> | If `true`, the text will have a bottom margin. |
+| <span class=""prop-name"">NoWrap</span> | <span class=""prop-type"">bool</span> | <span class=""prop-default"">false</span> | If `true`, the text will not wrap, but instead will truncate with a text overflow ellipsis.<br>Note that text overflow can only happen with block or inline-block level elements (the element needs to have a width in order to overflow). |
+| <span class=""prop-name"">Paragraph</span> | <span class=""prop-type"">bool</span> | <span class=""prop-default"">false</span> | If `true`, the text will have a bottom margin. |
+| <span class=""prop-name"">Variant</span> | <span class=""prop-type"">TypographyVariant.H1<br>&#124;&nbsp;TypographyVariant.H2<br>&#124;&nbsp;TypographyVariant.H3<br>&#124;&nbsp;TypographyVariant.H4<br>&#124;&nbsp;TypographyVariant.H5<br>&#124;&nbsp;TypographyVariant.H6<br>&#124;&nbsp;TypographyVariant.Subtitle1<br>&#124;&nbsp;TypographyVariant.Subtitle2<br>&#124;&nbsp;TypographyVariant.Body1<br>&#124;&nbsp;TypographyVariant.Body2<br>&#124;&nbsp;TypographyVariant.Caption<br>&#124;&nbsp;TypographyVariant.Button<br>&#124;&nbsp;TypographyVariant.Overline<br>&#124;&nbsp;TypographyVariant.SrOnly<br>&#124;&nbsp;TypographyVariant.Inherit</span> | <span class=""prop-default"">TypographyVariant.Body1</span> | Applies the theme typography styles. |
+
+## CSS
+
+- Style name: `Typography`.
+- Style details:
+
+| Global class | Description |
+|:-------------|:------------|
+| <span class=""prop-name"">Typography-Root</span> | Styles applied to the root element.
+| <span class=""prop-name"">Typography-Body2</span> | Styles applied to the root element if `Variant=""@TypographyVariant.Body2""`.
+| <span class=""prop-name"">Typography-Body1</span> | Styles applied to the root element if `Variant=""@TypographyVariant.Body1""`.
+| <span class=""prop-name"">Typography-Caption</span> | Styles applied to the root element if `Variant=""@TypographyVariant.Caption""`.
+| <span class=""prop-name"">Typography-Button</span> | Styles applied to the root element if `Variant=""@TypographyVariant.Button""`.
+| <span class=""prop-name"">Typography-H1</span> | Styles applied to the root element if `Variant=""@TypographyVariant.H1""`.
+| <span class=""prop-name"">Typography-H2</span> | Styles applied to the root element if `Variant=""@TypographyVariant.H3""`.
+| <span class=""prop-name"">Typography-H4</span> | Styles applied to the root element if `Variant=""@TypographyVariant.H4""`.
+| <span class=""prop-name"">Typography-H5</span> | Styles applied to the root element if `Variant=""@TypographyVariant.H5""`.
+| <span class=""prop-name"">Typography-H6</span> | Styles applied to the root element if `Variant=""@TypographyVariant.H6""`.
+| <span class=""prop-name"">Typography-Subtitle1</span> | Styles applied to the root element if `Variant=""@TypographyVariant.Subtitle1""`.
+| <span class=""prop-name"">Typography-Subtitle2</span> | Styles applied to the root element if `Variant=""@TypographyVariant.Subtitle2""`.
+| <span class=""prop-name"">Typography-Overline</span> | Styles applied to the root element if `Variant=""@TypographyVariant.Overline""`.
+| <span class=""prop-name"">Typography-SrOnly</span> | Styles applied to the root element if `Variant=""@TypographyVariant.SrOnly""`. Only accessible to screen readers.
+| <span class=""prop-name"">Typography-Align-Left</span> | Styles applied to the root element if `Align=""@Align.Left""`.
+| <span class=""prop-name"">Typography-Align-Center</span> | Styles applied to the root element if `Align=""@Align.Center""`.
+| <span class=""prop-name"">Typography-Align-Right</span> | Styles applied to the root element if `Align=""@Align.Right""`.
+| <span class=""prop-name"">Typography-Align-Justify</span> | Styles applied to the root element if `Align=""@Align.Justify""`.
+| <span class=""prop-name"">Typography-NoWrap</span> | Styles applied to the root element if `NoWrap=""true""`.
+| <span class=""prop-name"">Typography-GutterBottom</span> | Styles applied to the root element if `GutterBottom=""true""`.
+| <span class=""prop-name"">Typography-Paragraph</span> | Styles applied to the root element if `Paragraph=""true""`.
+| <span class=""prop-name"">Typography-Color-Inherit</span> | Styles applied to the root element if `Color=""@Color.Inherit""`.
+| <span class=""prop-name"">Typography-Color-Primary</span> | Styles applied to the root element if `Color=""@Color.Primary""`.
+| <span class=""prop-name"">Typography-Color-Secondary</span> | Styles applied to the root element if `Color=""@Color.Secondary""`.
+| <span class=""prop-name"">Typography-Color-TextPrimary</span> | Styles applied to the root element if `Color=""@Color.TextPrimary""`.
+| <span class=""prop-name"">Typography-Color-TextSecondary</span> | Styles applied to the root element if `Color=""@Color.TextSecondary""`.
+| <span class=""prop-name"">Typography-Color-Error</span> | Styles applied to the root element if `Color=""@Color.Error""`.
+| <span class=""prop-name"">Typography-Display-Inline</span> | Styles applied to the root element if `Display=""@Display.Inline""`.
+| <span class=""prop-name"">Typography-Display-Block</span> | Styles applied to the root element if `Display=""@Display.Block""`.
+
+")" />

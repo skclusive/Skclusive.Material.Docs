@@ -1,0 +1,21 @@
+@namespace Skclusive.Material.Docs.App.View
+
+<MarkdownSegment
+    Text="@(@"
+## Selected menus
+
+If used for item selection, when opened, simple menus attempt to vertically align the currently selected menu item with the anchor element,
+and the initial focus will be placed on the selected menu item.
+The currently selected menu item is set using the `selected` property (from [ListItem](/api/list-item/)).
+To use a selected menu item without impacting the initial focus or the vertical positioning of the menu, set the `variant` property to `menu`.
+
+")" />
+
+<MarkdownDemo>
+    <ViewContent>
+        <SimpleListMenuDemo />
+    </ViewContent>
+    <CodeContent>
+        <SimpleListMenuCode />
+    </CodeContent>
+</MarkdownDemo>

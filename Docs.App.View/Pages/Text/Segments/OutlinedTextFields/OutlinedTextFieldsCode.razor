@@ -1,0 +1,191 @@
+@namespace Skclusive.Material.Docs.App.View
+@inherits MaterialComponentBase
+
+<MarkdownCode
+    Class="@_Class"
+    Style="@_Style"
+    Text="@(@"
+```html
+<form
+    style=""display: flex;
+    flex-wrap: wrap;""
+    noValidate
+    autocomplete=""off"">
+    <TextField
+        Id=""outlined-name""
+        Label=""Name""
+        Class=""demo-text-field""
+        Value=""@Name""
+        OnChange=""@HandleNameChange""
+        Margin=""@Margin.Normal""
+        Variant=""@ControlVariant.Outlined"" />
+    <TextField
+        Id=""outlined-uncontrolled""
+        Label=""Uncontrolled""
+        DefaultValue=""foo""
+        Class=""demo-text-field""
+        Margin=""@Margin.Normal""
+        Variant=""@ControlVariant.Outlined"" />
+    <TextField
+        Required=""true""
+        Id=""outlined-required""
+        Label=""Required""
+        DefaultValue=""Hello World""
+        Class=""demo-text-field""
+        Margin=""@Margin.Normal""
+        Variant=""@ControlVariant.Outlined"" />
+    <TextField
+        Error=""true""
+        Id=""outlined-error""
+        Label=""Error""
+        DefaultValue=""Hello World""
+        Class=""demo-text-field""
+        Margin=""@Margin.Normal""
+        Variant=""@ControlVariant.Outlined"" />
+    <TextField
+        Disabled=""true""
+        Id=""outlined-disabled""
+        Label=""Disabled""
+        DefaultValue=""Hello World""
+        Class=""demo-text-field""
+        Margin=""@Margin.Normal""
+        Variant=""@ControlVariant.Outlined"" />
+    <TextField
+        Id=""outlined-password-input""
+        Label=""Password""
+        Class=""demo-text-field""
+        Type=""password""
+        AutoComplete=""current-password""
+        Margin=""@Margin.Normal""
+        Variant=""@ControlVariant.Outlined"" />
+    <TextField
+        Id=""outlined-read-only-input""
+        Label=""Read Only""
+        DefaultValue=""Hello World""
+        Class=""demo-text-field""
+        Margin=""@Margin.Normal""
+        ReadOnly=""true""
+        Variant=""@ControlVariant.Outlined"" />
+    <TextField
+        Id=""outlined-dense""
+        Label=""Dense""
+        Class=""demo-text-field""
+        Style=""margin-top: 19px;"";
+        Margin=""@Margin.Dense""
+        Variant=""@ControlVariant.Outlined"" />
+    <TextField
+        Id=""outlined-multiline-flexible""
+        Label=""Multiline""
+        Multiline
+        RowsMax=""4""
+        Value=""@Multiline""
+        OnChange=""@HandleMultilineChange""
+        Class=""demo-text-field""
+        Margin=""@Margin.Normal""
+        Variant=""@ControlVariant.Outlined"" />
+    <TextField
+        Id=""outlined-multiline-static""
+        Label=""Multiline""
+        Multiline
+        Rows=""4""
+        DefaultValue=""Default Value""
+        Class=""demo-text-field""
+        Margin=""@Margin.Normal""
+        Variant=""@ControlVariant.Outlined"" />
+    <TextField
+        Id=""outlined-helperText""
+        Label=""Helper text""
+        DefaultValue=""Default Value""
+        Class=""demo-text-field""
+        Helper=""Some important text""
+        Margin=""@Margin.Normal""
+        Variant=""@ControlVariant.Outlined"" />
+    <TextField
+        Id=""outlined-with-placeholder""
+        Label=""With placeholder""
+        Placeholder=""Placeholder""
+        Class=""demo-text-field""
+        Margin=""@Margin.Normal""
+        Variant=""@ControlVariant.Outlined"" />
+    <TextField
+        Id=""outlined-textarea""
+        Label=""With placeholder multiline""
+        Placeholder=""Placeholder""
+        Multiline
+        Class=""demo-text-field""
+        Margin=""@Margin.Normal""
+        Variant=""@ControlVariant.Outlined"" />
+    <TextField
+        Id=""outlined-number""
+        Label=""Number""
+        Value=""@Age?.ToString()""
+        OnChange=""@HandleAgeChange""
+        Type=""number""
+        Class=""demo-text-field""
+        @* InputLabelProps={{
+            shrink: true,
+        }} *@
+        Margin=""@Margin.Normal""
+        Variant=""@ControlVariant.Outlined"" />
+    <TextField
+        Id=""outlined-search""
+        Label=""Search field""
+        Type=""search""
+        Class=""demo-text-field""
+        Margin=""@Margin.Normal""
+        Variant=""@ControlVariant.Outlined"" />
+    <TextField
+        Id=""outlined-full-width""
+        Label=""Label""
+        Style=""margin: 8px;""
+        Placeholder=""Placeholder""
+        Helper=""Full width!""
+        FullWidth
+        Shrink
+        Margin=""@Margin.Normal""
+        Variant=""@ControlVariant.Outlined"" />
+    <TextField
+        Id=""outlined-bare""
+        Class=""demo-text-field""
+        DefaultValue=""Bare""
+        Margin=""@Margin.Normal""
+        Variant=""@ControlVariant.Outlined"" />
+        @* inputProps={{ 'aria-label': 'bare' }} *@
+</form>
+```
+
+```csharp
+@code
+{
+    private string Name { set; get; } = ""Cat in the Hat"";
+
+    private string Multiline { set; get; } = ""Controlled"";
+
+    private int? Age { set; get; }
+
+    private void HandleNameChange(ChangeEventArgs args)
+    {
+        Name = args.Value?.ToString();
+
+        StateHasChanged();
+    }
+
+    private void HandleMultilineChange(ChangeEventArgs args)
+    {
+        Multiline = args.Value?.ToString();
+
+        StateHasChanged();
+    }
+
+    private void HandleAgeChange(ChangeEventArgs args)
+    {
+        if (int.TryParse(args.Value?.ToString(), out int age))
+        {
+            Age = age;
+
+            StateHasChanged();
+        }
+    }
+}
+```
+")" />

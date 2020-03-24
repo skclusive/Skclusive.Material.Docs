@@ -1,0 +1,42 @@
+@namespace Skclusive.Material.Docs.App.View
+
+<MarkdownSegment
+    Text="@(@"
+# Modal API
+
+<p class=""description"">The API documentation of the Modal component. Learn more about the parameters and the CSS customization points.</p>
+
+## Parameters
+
+| Name | Type | Default | Description |
+|:-----|:-----|:--------|:------------|
+| <span class=""prop-name"">RootRef</span> | <span class=""prop-type"">IReference</span> | <span class=""prop-default"">new Reference()</span> | The reference used to ref the root node. |
+| <span class=""prop-name"">Class</span> | <span class=""prop-type"">string</span> | | The class applied to the root node. |
+| <span class=""prop-name"">Style</span> | <span class=""prop-type"">string</span> | | The style applied to the root node. |
+| <span class=""prop-name required"">ChildContent</span> | <span class=""prop-type"">RenderFragment</span> |  | A single child content element.<br>⚠️ [Needs to be able to hold a IReference](/guides/composition/#caveat-with-refs). |
+| <span class=""prop-name"">BackdropContent</span> | <span class=""prop-type"">RenderFragment</span> | | A backdrop component content. This prop enables custom backdrop rendering. |
+| <span class=""prop-name"">ChildRef</span> | <span class=""prop-type"">IReference</span> | <span class=""prop-default"">new Reference()</span> | The reference used to ref the child node. |
+| <span class=""prop-name"">PortalTargetRef</span> | <span class=""prop-type"">IReference</span> | | Reference attached to the portal target. |
+| <span class=""prop-name"">PortalTargetBodyRef</span> | <span class=""prop-type"">IReference</span> | | Reference attached to the portal target body. |
+| <span class=""prop-name"">CloseAfterTransition</span> | <span class=""prop-type"">bool</span> | <span class=""prop-default"">false</span> | When set to true the Modal waits until a nested Transition is completed before closing. |
+| <span class=""prop-name"">DisableAutoFocus</span> | <span class=""prop-type"">bool</span> | <span class=""prop-default"">false</span> | If `true`, the modal will not automatically shift focus to itself when it opens, and replace it to the last focused element when it closes. This also works correctly with any modal children that have the `disableAutoFocus` prop.<br>Generally this should never be set to `true` as it makes the modal less accessible to assistive technologies, like screen readers. |
+| <span class=""prop-name"">DisableBackdropClick</span> | <span class=""prop-type"">bool</span> | <span class=""prop-default"">false</span> | If `true`, clicking the backdrop will not fire any callback. |
+| <span class=""prop-name"">DisableEnforceFocus</span> | <span class=""prop-type"">bool</span> | <span class=""prop-default"">false</span> | If `true`, the modal will not prevent focus from leaving the modal while open.<br>Generally this should never be set to `true` as it makes the modal less accessible to assistive technologies, like screen readers. |
+| <span class=""prop-name"">DisableEscapeKeyDown</span> | <span class=""prop-type"">bool</span> | <span class=""prop-default"">false</span> | If `true`, hitting escape will not fire any callback. |
+| <span class=""prop-name"">DisablePortal</span> | <span class=""prop-type"">bool</span> | <span class=""prop-default"">false</span> | Disable the portal behavior. The children stay within it's parent DOM hierarchy. |
+| <span class=""prop-name"">DisableRestoreFocus</span> | <span class=""prop-type"">bool</span> | <span class=""prop-default"">false</span> | If `true`, the modal will not restore focus to previously focused element once modal is hidden. |
+| <span class=""prop-name"">DisableScrollLock</span> | <span class=""prop-type"">bool</span> | <span class=""prop-default"">false</span> | Disable the scroll lock behavior. |
+| <span class=""prop-name"">HideBackdrop</span> | <span class=""prop-type"">bool</span> | <span class=""prop-default"">false</span> | If `true`, the backdrop is not rendered. |
+| <span class=""prop-name"">KeepMounted</span> | <span class=""prop-type"">bool</span> | <span class=""prop-default"">false</span> | Always keep the children in the DOM. This prop can be useful in SEO situation or when you want to maximize the responsiveness of the Modal. |
+| <span class=""prop-name"">OnBackdropClick</span> | <span class=""prop-type"">Action</span> |  | Callback fired when the backdrop is clicked. |
+| <span class=""prop-name"">OnClose</span> | <span class=""prop-type"">Action&lt;ModalCloseReason&gt;</span> |  | Callback fired when the component requests to be closed. The `reason` parameter can optionally be used to control the response to `OnClose`.<br><br>**Signature:**<br>`function(event: object, reason: string) => void`<br>*event:* The event source of the callback.<br>*reason:* Can be:`""ModalCloseReason.Escape""`, `""ModalCloseReason.BackdropClick""`. |
+| <span class=""prop-name"">OnEscapeKeyDown</span> | <span class=""prop-type"">Action</span> |  | Callback fired when the escape key is pressed, `DisableEscapeKeyDown` is false and the modal is in focus. |
+| <span class=""prop-name"">OnRendered</span> | <span class=""prop-type"">Action</span> |  | Callback fired once the children has been mounted into the `Container`. It signals that the `open=""true""` prop took effect.<br>This prop will be deprecated and removed in v5, the ref can be used instead. |
+| <span class=""prop-name"">Absolute</span> | <span class=""prop-type"">bool</span> |  | If `true`, positions the modal absolute to tha relative parent. |
+| <span class=""prop-name"">HasTransition</span> | <span class=""prop-type"">bool</span> |  | If ChildContent has transition. |
+| <span class=""prop-name"">BackdropInvisible</span> | <span class=""prop-type"">bool</span> |  | If `true`, the backdrop is invisible. |
+| <span class=""prop-name required"">Open&nbsp;*</span> | <span class=""prop-type"">bool</span> |  | If `true`, the modal is open. |
+| <span class=""prop-name"">BackdropStyle</span> | <span class=""prop-type"">string</span> | | the `style` applied on the backdrop element. |
+| <span class=""prop-name"">BackdropClass</span> | <span class=""prop-type"">string</span> | |  the `class` applied on the backdrop element. |
+
+")" />

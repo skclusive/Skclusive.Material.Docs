@@ -1,0 +1,95 @@
+@namespace Skclusive.Material.Docs.App.View
+@inherits MaterialComponentBase
+
+<MarkdownCode
+    Class="@_Class"
+    Style="@_Style"
+    Text="@(@"
+```html
+<div
+    style=""width: 100%; max-width: 360px; background-color: var(--theme-palette-background-paper);"">
+    <List
+        Component=""nav""
+        aria-label=""Device settings"">
+        <ListItem
+            Button
+            RootRef=""@AnchorRef""
+            aria-haspopup=""true""
+            aria-controls=""lock-menu""
+            aria-label=""when device is locked""
+            OnClick=""@HandleClickListItem"">
+            <ListItemText
+                Primary=""When device is locked""
+                Secondary=""@SelectedValue"" />
+        </ListItem>
+    </List>
+    <Menu
+        Id=""lock-menu""
+        KeepMounted
+        Open=""@Open""
+        AnchorRef=""@AnchorRef""
+        OnClose=""@HandleClose"">
+        @foreach(var option in Options)
+        {
+            <MenuItem
+                @key=""@option.Index""
+                Disabled=""@(option.Index == 0)""
+                Selected=""@(option.Index == SelectedIndex)""
+                OnClick=""@((args) => UpdateSelectedIndex(option.Index))"">
+                @option.Value
+            </MenuItem>
+        }
+    </Menu>
+</div>
+```
+
+```csharp
+@code
+{
+    private static readonly (string Value, int Index)[] Options = new (string Value, int Index)[] {
+        (Value: ""Show some love to Material-UI"", Index: 0),
+        (Value: ""Show all notification content"", Index: 1),
+        (Value: ""Hide sensitive notification content"", Index: 2),
+        (Value: ""Hide all notification content"", Index: 3)
+    };
+
+    private string SelectedValue => Options[SelectedIndex].Value;
+
+    private bool Open { set; get; }
+
+    private IReference AnchorRef { set; get; } = new Reference();
+
+    private int SelectedIndex { set; get; } = 1;
+
+    private void UpdateSelectedIndex(int selectedIndex)
+    {
+        SelectedIndex = selectedIndex;
+
+        Open = false;
+
+        StateHasChanged();
+    }
+
+    private void HandleClose(EventArgs args)
+    {
+        Open = false;
+
+        StateHasChanged();
+    }
+
+    private void HandleClose(MenuCloseReason reason)
+    {
+        Open = false;
+
+        StateHasChanged();
+    }
+
+    private void HandleClickListItem()
+    {
+        Open = true;
+
+        StateHasChanged();
+    }
+}
+```
+")" />

@@ -1,0 +1,39 @@
+@namespace Skclusive.Material.Docs.App.View
+@inherits MaterialComponentBase
+
+<MarkdownCode
+    Class="@_Class"
+    Style="@_Style"
+    Text="@(@"
+```html
+<FormGroup>
+    <FormControlLabel
+        Label=""Small"">
+        <Switch
+            Size=""@Size.Small""
+            Checked=""@Checked""
+            OnChange=""@ToggleChecked"" />
+    </FormControlLabel>
+    <FormControlLabel
+        Label=""Normal"">
+        <Switch
+            Checked=""@Checked""
+            OnChange=""@ToggleChecked"" />
+    </FormControlLabel>
+</FormGroup>
+```
+
+```csharp
+@code
+{
+    private bool Checked { set; get; } = true;
+
+    private void ToggleChecked(EventArgs args)
+    {
+        Checked = !Checked;
+
+        StateHasChanged();
+    }
+}
+```
+")" />

@@ -1,0 +1,51 @@
+@namespace Skclusive.Material.Docs.App.View
+@inherits MaterialComponentBase
+
+<MarkdownCode
+    Class="@_Class"
+    Style="@_Style"
+    Text="@(@"
+```html
+<div>
+    <IconButton
+        Style=""margin: 8px;""
+        aria-label=""delete"">
+        <DeleteIcon />
+    </IconButton>
+    <IconButton
+        Style=""margin: 8px;""
+        aria-label=""delete""
+        Disabled=""true""
+        Color=""@Color.Primary"">
+        <DeleteIcon />
+    </IconButton>
+    <IconButton
+        Color=""@Color.Secondary""
+        Style=""margin: 8px;""
+        aria-label=""add an alarm"">
+        <AlarmIcon />
+    </IconButton>
+    <IconButton
+        Color=""@Color.Primary""
+        Style=""margin: 8px;""
+        aria-label=""add to shopping cart"">
+        <AddShoppingCartIcon />
+    </IconButton>
+    <input
+        accept=""image/*""
+        style=""display: none;""
+        id=""icon-button-file""
+        type=""file"" />
+    <label
+        for=""icon-button-file"">
+        <IconButton
+            Color=""@Color.Primary""
+            Style=""margin: 8px;""
+            aria-label=""upload picture""
+            Component=""span"">
+            <PhotoCameraIcon />
+        </IconButton>
+    </label>
+</div>
+```
+")" />

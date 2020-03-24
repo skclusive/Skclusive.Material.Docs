@@ -1,0 +1,53 @@
+@namespace Skclusive.Material.Docs.App.View
+
+<MarkdownSegment
+    Text="@(@"
+# Tabs API
+
+<p class=""description"">The API documentation of the Tabs component. Learn more about the parameters and the CSS customization points.</p>
+
+## Parameters
+
+| Name | Type | Default | Description |
+|:-----|:-----|:--------|:------------|
+| <span class=""prop-name"">RootRef</span> | <span class=""prop-type"">IReference</span> | <span class=""prop-default"">new Reference()</span> | The reference used to ref the root node. |
+| <span class=""prop-name"">Class</span> | <span class=""prop-type"">string</span> | | The class applied to the root node. |
+| <span class=""prop-name"">Style</span> | <span class=""prop-type"">string</span> | | The style applied to the root node. |
+| <span class=""prop-name"">Component</span> | <span class=""prop-type"">string</span> | <span class=""prop-default"">'div'</span> | The component used for the root node. |
+| <span class=""prop-name"">ChildContent</span> | <span class=""prop-type"">RenderFragment</span> |  | The badge will be added relative to this node. |
+| <span class=""prop-name"">IndicatorContent</span> | <span class=""prop-type"">RenderFragment</span> | | the indicator content. |
+| <span class=""prop-name"">Centered</span> | <span class=""prop-type"">bool</span> | <span class=""prop-default"">false</span> | If `true`, the tabs will be centered. This property is intended for large views. |
+| <span class=""prop-name"">IndicatorColor</span> | <span class=""prop-type"">Color.Secondary<br>&#124;&nbsp;Color.Primary</span> | <span class=""prop-default"">Color.Secondary</span> | Determines the color of the indicator. |
+| <span class=""prop-name"">OnChange</span> | <span class=""prop-type"">EventCallback&lt;object&gt;</span> |  | Callback fired when the value changes.<br><br>**Signature:**<br>`function(event: object, value: any) => void`<br>*event:* The event source of the callback<br>*value:* We default to the index of the child (number) |
+| <span class=""prop-name"">Orientation</span> | <span class=""prop-type"">Orientation.Horizontal<br>&#124;&nbsp;Orientation.Vertical</span> | <span class=""prop-default"">Orientation.Horizontal</span> | The tabs orientation (layout flow direction). |
+| <span class=""prop-name"">ScrollButton</span> | <span class=""prop-type"">ScrollButton.Auto<br>&#124;&nbsp;ScrollButton.Desktop<br>&#124;&nbsp;ScrollButton.On<br>&#124;&nbsp;ScrollButton.Off</span> | <span class=""prop-default"">ScrollButton.Auto</span> | Determine behavior of scroll buttons when tabs are set to scroll:<br>- `ScrollButton.Auto` will only present them when not all the items are visible. - `ScrollButton.Desktop` will only present them on medium and larger viewports. - `ScrollButton.On` will always present them. - `ScrollButton.Off` will never present them. |
+| <span class=""prop-name"">TextColor</span> | <span class=""prop-type"">Color.Secondary<br>&#124;&nbsp;Color.Primary<br>&#124;&nbsp;Color.Inherit</span> | <span class=""prop-default"">Color.Inherit</span> | Determines the color of the `Tab`. |
+| <span class=""prop-name"">Value</span> | <span class=""prop-type"">object</span> |  | The value of the currently selected `Tab`. If you don't want any selected `Tab`, you can set this property to `false`. |
+| <span class=""prop-name"">Variant</span> | <span class=""prop-type"">TabsVariant.Standard<br>&#124;&nbsp;TabsVariant.Scrollable<br>&#124;&nbsp;TabsVariant.FullWidth</span> | <span class=""prop-default"">TabsVariant.Standard</span> | Determines additional display behavior of the tabs:<br> - `Scrollable` will invoke scrolling properties and allow for horizontally  scrolling (or swiping) of the tab bar.  -`FullWidth` will make the tabs grow to use all the available space,  which should be used for small views, like on mobile.  - `TabsVariant.Standard` will render the default state. |
+| <span class=""prop-name"">TabsRef</span> | <span class=""prop-type"">IReference</span> | <span class=""prop-default"">new Reference()</span> | Reference attached to the Tabs element of the component. |
+| <span class=""prop-name"">ContainerRef</span> | <span class=""prop-type"">IReference</span> | <span class=""prop-default"">new Reference()</span> | Reference attached to the container element of the component. |
+| <span class=""prop-name"">ScrollerClass</span> | <span class=""prop-type"">string</span> | | The class applied to the scroller element. |
+| <span class=""prop-name"">ScrollerStyle</span> | <span class=""prop-type"">string</span> | | The style applied to the scroller element. |
+| <span class=""prop-name"">ContainerClass</span> | <span class=""prop-type"">string</span> | | The class applied to the container element. |
+| <span class=""prop-name"">ContainerStyle</span> | <span class=""prop-type"">string</span> | | The style applied to the container element. |
+| <span class=""prop-name"">IndicatorClass</span> | <span class=""prop-type"">string</span> | | The class applied to the indicator element. |
+| <span class=""prop-name"">IndicatorStyle</span> | <span class=""prop-type"">string</span> | | The style applied to the indicator element. |
+
+## CSS
+
+- Style name: `Tabs`.
+- Style details:
+
+| Global class | Description |
+|:-------------|:------------|
+| <span class=""prop-name"">Tabs-Root</span> | Styles applied to the root element.
+| <span class=""prop-name"">Tabs-Vertical</span> | Styles applied to the root element if `Orientation=""@Orientation.Vertical""`.
+| <span class=""prop-name"">Tabs-Container</span> | Styles applied to the flex container element.
+| <span class=""prop-name"">Tabs-Container-Vertical</span> | Styles applied to the flex container element if `Orientation=""@Orientation.Vertical""`.
+| <span class=""prop-name"">Tabs-Centered</span> | Styles applied to the flex container element if `Centered=""true""` & `!Variant=""@TabsVariant.Scrollable""`.
+| <span class=""prop-name"">Tabs-Scroller</span> | Styles applied to the tablist element.
+| <span class=""prop-name"">Tabs-Scroller-Fixed</span> | Styles applied to the tablist element if `!Variant=""@TabsVariant.Scrollable""`.
+| <span class=""prop-name"">Tabs-Scroller-Scrollable</span> | Styles applied to the tablist element if `Variant=""@TabsVariant.Scrollable""`.
+| <span class=""prop-name"">Tabs-ScrollButton-Desktop</span> | Styles applied to the `ScrollButton` component if `ScrollButton=""@ScrollButton.Auto""` or ScrollButton=""@ScrollButton.Desktop""`.
+
+")" />

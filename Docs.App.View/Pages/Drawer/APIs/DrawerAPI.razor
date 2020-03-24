@@ -1,0 +1,55 @@
+@namespace Skclusive.Material.Docs.App.View
+
+<MarkdownSegment
+    Text="@(@"
+# Drawer API
+
+<p class=""description"">The API documentation of the Drawer component. Learn more about the parameters and the CSS customization points.</p>
+
+## Parameters
+
+| Name | Type | Default | Description |
+|:-----|:-----|:--------|:------------|
+| <span class=""prop-name"">RootRef</span> | <span class=""prop-type"">IReference</span> | <span class=""prop-default"">new Reference()</span> | The reference used to ref the root node. |
+| <span class=""prop-name"">Class</span> | <span class=""prop-type"">string</span> | | The class applied to the root node. |
+| <span class=""prop-name"">Style</span> | <span class=""prop-type"">string</span> | | The style applied to the root node. |
+| <span class=""prop-name"">Component</span> | <span class=""prop-type"">string</span> | <span class=""prop-default"">'hr'</span> | The component used for the root node. |
+| <span class=""prop-name"">ChildContent</span> | <span class=""prop-type"">RenderFragment</span> |  | The content of the component. |
+| <span class=""prop-name"">ContainerRef</span> | <span class=""prop-type"">IReference</span> | <span class=""prop-default"">new Reference()</span> | Reference attached to the container element of the component. |
+| <span class=""prop-name"">Anchor</span> | <span class=""prop-type"">Anchor.Left<br>&#124;&nbsp;Anchor.Top<br>&#124;&nbsp;Anchor.Right<br>&#124;&nbsp;Anchor.Bottom</span> | <span class=""prop-default"">Anchor.Left</span> | Side from which the drawer will appear. |
+| <span class=""prop-name"">Elevation</span> | <span class=""prop-type"">int</span> | <span class=""prop-default"">16</span> | The elevation of the drawer. |
+| <span class=""prop-name"">OnClose</span> | <span class=""prop-type"">Action</span> |  | Callback fired when the component requests to be closed.<br><br>**Signature:**<br>`function(event: object) => void`<br>*event:* The event source of the callback. |
+| <span class=""prop-name"">Open</span> | <span class=""prop-type"">bool</span> | <span class=""prop-default"">false</span> | If `true`, the drawer is open. |
+| <span class=""prop-name"">Absolute</span> | <span class=""prop-type"">bool</span> | <span class=""prop-default"">false</span> | Absolutely position the element. |
+| <span class=""prop-name"">TransitionDuration</span> | <span class=""prop-type"">int<br>&#124;&nbsp;{ enter?: number, exit?: number }</span> | <span class=""prop-default"">{ enter: duration.enteringScreen, exit: duration.leavingScreen }</span> | The duration for the transition, in milliseconds. You may specify a single timeout for all transitions, or individually with an object. |
+| <span class=""prop-name"">AppearTimeout</span> | <span class=""prop-type"">int?</span> |  | The appear duration for the transition, in milliseconds. |
+| <span class=""prop-name"">EnterTimeout</span> | <span class=""prop-type"">int?</span> |  | The enter duration for the transition, in milliseconds. |
+| <span class=""prop-name"">ExitTimeout</span> | <span class=""prop-type"">int?</span> |  | The exit duration for the transition, in milliseconds. |
+| <span class=""prop-name"">Variant</span> | <span class=""prop-type"">DrawerVariant.Permanent<br>&#124;&nbsp;DrawerVariant.Persistent<br>&#124;&nbsp;DrawerVariant.Temporary</span> | <span class=""prop-default"">DrawerVariant.Temporary</span> | The variant to use. |
+| <span class=""prop-name"">PaperStyle</span> | <span class=""prop-type"">string</span> | | the `style` applied on the paper element. |
+| <span class=""prop-name"">PaperClass</span> | <span class=""prop-type"">string</span> | |  the `class` applied on the paper element. |
+| <span class=""prop-name"">BackdropStyle</span> | <span class=""prop-type"">string</span> | | the `style` applied on the backdrop element. |
+| <span class=""prop-name"">BackdropClass</span> | <span class=""prop-type"">string</span> | |  the `class` applied on the backdrop element. |
+| <span class=""prop-name"">BackdropContent</span> | <span class=""prop-type"">RenderFragment</span> |  | The backdrop content of the component. |
+
+## CSS
+
+- Style name: `Drawer`.
+- Style details:
+
+| Global class | Description |
+|:-------------|:------------|
+| <span class=""prop-name"">Drawer-Root</span> | Styles applied to the root element.
+| <span class=""prop-name"">Drawer-Docked</span> | Styles applied to the root element if `Variant=""@DrawerVariant.Permanent or @DrawerVariant.Persistent""`.
+| <span class=""prop-name"">Drawer-Paper</span> | Styles applied to the `Paper` component.
+| <span class=""prop-name"">Drawer-Paper-Anchor-Left</span> | Styles applied to the `Paper` component if `Anchor=""@Anchor.Left""`.
+| <span class=""prop-name"">Drawer-Paper-Anchor-Right</span> | Styles applied to the `Paper` component if `Anchor=""@Anchor.Right""`.
+| <span class=""prop-name"">Drawer-Paper-Anchor-Top</span> | Styles applied to the `Paper` component if `Anchor=""@Anchor.Top""`.
+| <span class=""prop-name"">Drawer-Paper-Anchor-Bottom</span> | Styles applied to the `Paper` component if `Anchor=""@Anchor.Bottom""`.
+| <span class=""prop-name"">Drawer-Paper-Anchor-Docked-Left</span> | Styles applied to the `Paper` component if `anchor=""@Anchor.Left""` and `Variant` is not ""@DrawerVariant.Temporary"".
+| <span class=""prop-name"">Drawer-Paper-Anchor-Docked-Top</span> | Styles applied to the `Paper` component if `anchor=""@Anchor.Top""` and `Variant` is not ""@DrawerVariant.Temporary"".
+| <span class=""prop-name"">Drawer-Paper-Anchor-Docked-Right</span> | Styles applied to the `Paper` component if `anchor=""@Anchor.Right""` and `Variant` is not ""@DrawerVariant.Temporary"".
+| <span class=""prop-name"">Drawer-Paper-Anchor-Docked-Bottom</span> | Styles applied to the `Paper` component if `anchor=""@Anchor.Bottom""` and `Variant` is not ""@DrawerVariant.Temporary"".
+| <span class=""prop-name"">Drawer-Modal</span> | Styles applied to the `Modal` component.
+
+")" />

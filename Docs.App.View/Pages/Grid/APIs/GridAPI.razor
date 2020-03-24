@@ -1,0 +1,88 @@
+@namespace Skclusive.Material.Docs.App.View
+
+<MarkdownSegment
+    Text="@(@"
+# Grid API
+
+<p class=""description"">The API documentation of the Grid component. Learn more about the parameters and the CSS customization points.</p>
+
+## Parameters
+
+| Name | Type | Default | Description |
+|:-----|:-----|:--------|:------------|
+| <span class=""prop-name"">RootRef</span> | <span class=""prop-type"">IReference</span> | <span class=""prop-default"">new Reference()</span> | The reference used to ref the root node. |
+| <span class=""prop-name"">Class</span> | <span class=""prop-type"">string</span> | | The class applied to the root node. |
+| <span class=""prop-name"">Style</span> | <span class=""prop-type"">string</span> | | The style applied to the root node. |
+| <span class=""prop-name"">Component</span> | <span class=""prop-type"">string</span> | <span class=""prop-default"">'div'</span> | The component used for the root node. |
+| <span class=""prop-name"">ChildContent</span> | <span class=""prop-type"">RenderFragment</span> |  | The content of the component. |
+| <span class=""prop-name"">AlignContent</span> | <span class=""prop-type"">AlignContent.Stretch<br>&#124;&nbsp;AlignContent.Center<br>&#124;&nbsp;AlignContent.FlexStart<br>&#124;&nbsp;AlignContent.FlexEnd<br>&#124;&nbsp;AlignContent.SpaceBetween<br>&#124;&nbsp;AlignContent.SpaceAround</span> | <span class=""prop-default"">AlignContent.Stretch</span> | Defines the `align-content` style property. It's applied for all screen sizes. |
+| <span class=""prop-name"">AlignItems</span> | <span class=""prop-type"">AlignItems.FlexStart<br>&#124;&nbsp;AlignItems.Center<br>&#124;&nbsp;AlignItems.FlexEnd<br>&#124;&nbsp;AlignItems.Stretch<br>&#124;&nbsp;AlignItems.Baseline</span> | <span class=""prop-default"">AlignItems.Stretch</span> | Defines the `align-items` style property. It's applied for all screen sizes. |
+| <span class=""prop-name"">Container</span> | <span class=""prop-type"">bool</span> | <span class=""prop-default"">false</span> | If `true`, the component will have the flex *container* behavior. You should be wrapping *items* with a *container*. |
+| <span class=""prop-name"">Direction</span> | <span class=""prop-type"">Direction.Row<br>&#124;&nbsp;Direction.RowReverse<br>&#124;&nbsp;Direction.Column<br>&#124;&nbsp;Direction.ColumnReverse</span> | <span class=""prop-default"">Direction.Row</span> | Defines the `flex-direction` style property. It is applied for all screen sizes. |
+| <span class=""prop-name"">Item</span> | <span class=""prop-type"">bool</span> | <span class=""prop-default"">false</span> | If `true`, the component will have the flex *item* behavior. You should be wrapping *items* with a *container*. |
+| <span class=""prop-name"">Justify</span> | <span class=""prop-type"">Justify.FlexStart<br>&#124;&nbsp;Justify.Center<br>&#124;&nbsp;Justify.FlexEnd<br>&#124;&nbsp;Justify.SpaceBetween<br>&#124;&nbsp;Justify.SpaceAround<br>&#124;&nbsp;Justify.SpaceEvenly</span> | <span class=""prop-default"">Justify.FlexStart</span> | Defines the `justify-content` style property. It is applied for all screen sizes. |
+| <span class=""prop-name"">Large</span> | <span class=""prop-type"">GridSize.False<br>&#124;&nbsp;GridSize.Auto<br>&#124;&nbsp;GridSize.True<br>&#124;&nbsp;GridSize.One<br>&#124;&nbsp;GridSize.Two<br>&#124;&nbsp;GridSize.Three<br>&#124;&nbsp;GridSize.Four<br>&#124;&nbsp;GridSize.Five<br>&#124;&nbsp;GridSize.Six<br>&#124;&nbsp;GridSize.Seven<br>&#124;&nbsp;GridSize.Eight<br>&#124;&nbsp;GridSize.Nine<br>&#124;&nbsp;GridSize.Ten<br>&#124;&nbsp;GridSize.Eleven<br>&#124;&nbsp;GridSize.Twelve</span> | <span class=""prop-default"">GridSize.False</span> | Defines the number of grids the component is going to use. It's applied for the `Large` breakpoint and wider screens if not overridden. |
+| <span class=""prop-name"">Medium</span> | <span class=""prop-type"">GridSize.False<br>&#124;&nbsp;GridSize.Auto<br>&#124;&nbsp;GridSize.True<br>&#124;&nbsp;GridSize.One<br>&#124;&nbsp;GridSize.Two<br>&#124;&nbsp;GridSize.Three<br>&#124;&nbsp;GridSize.Four<br>&#124;&nbsp;GridSize.Five<br>&#124;&nbsp;GridSize.Six<br>&#124;&nbsp;GridSize.Seven<br>&#124;&nbsp;GridSize.Eight<br>&#124;&nbsp;GridSize.Nine<br>&#124;&nbsp;GridSize.Ten<br>&#124;&nbsp;GridSize.Eleven<br>&#124;&nbsp;GridSize.Twelve</span> | <span class=""prop-default"">GridSize.False</span> | Defines the number of grids the component is going to use. It's applied for the `Medium` breakpoint and wider screens if not overridden. |
+| <span class=""prop-name"">Small</span> | <span class=""prop-type"">GridSize.False<br>&#124;&nbsp;GridSize.Auto<br>&#124;&nbsp;GridSize.True<br>&#124;&nbsp;GridSize.One<br>&#124;&nbsp;GridSize.Two<br>&#124;&nbsp;GridSize.Three<br>&#124;&nbsp;GridSize.Four<br>&#124;&nbsp;GridSize.Five<br>&#124;&nbsp;GridSize.Six<br>&#124;&nbsp;GridSize.Seven<br>&#124;&nbsp;GridSize.Eight<br>&#124;&nbsp;GridSize.Nine<br>&#124;&nbsp;GridSize.Ten<br>&#124;&nbsp;GridSize.Eleven<br>&#124;&nbsp;GridSize.Twelve</span> | <span class=""prop-default"">GridSize.False</span> | Defines the number of grids the component is going to use. It's applied for the `Small` breakpoint and wider screens if not overridden. |
+| <span class=""prop-name"">ExtraLarge</span> | <span class=""prop-type"">GridSize.False<br>&#124;&nbsp;GridSize.Auto<br>&#124;&nbsp;GridSize.True<br>&#124;&nbsp;GridSize.One<br>&#124;&nbsp;GridSize.Two<br>&#124;&nbsp;GridSize.Three<br>&#124;&nbsp;GridSize.Four<br>&#124;&nbsp;GridSize.Five<br>&#124;&nbsp;GridSize.Six<br>&#124;&nbsp;GridSize.Seven<br>&#124;&nbsp;GridSize.Eight<br>&#124;&nbsp;GridSize.Nine<br>&#124;&nbsp;GridSize.Ten<br>&#124;&nbsp;GridSize.Eleven<br>&#124;&nbsp;GridSize.Twelve</span> | <span class=""prop-default"">GridSize.False</span> | Defines the number of grids the component is going to use. It's applied for the `xl` breakpoint and wider screens. |
+| <span class=""prop-name"">ExtraSmall</span> | <span class=""prop-type"">GridSize.False<br>&#124;&nbsp;GridSize.Auto<br>&#124;&nbsp;GridSize.True<br>&#124;&nbsp;GridSize.One<br>&#124;&nbsp;GridSize.Two<br>&#124;&nbsp;GridSize.Three<br>&#124;&nbsp;GridSize.Four<br>&#124;&nbsp;GridSize.Five<br>&#124;&nbsp;GridSize.Six<br>&#124;&nbsp;GridSize.Seven<br>&#124;&nbsp;GridSize.Eight<br>&#124;&nbsp;GridSize.Nine<br>&#124;&nbsp;GridSize.Ten<br>&#124;&nbsp;GridSize.Eleven<br>&#124;&nbsp;GridSize.Twelve</span> | <span class=""prop-default"">GridSize.False</span> | Defines the number of grids the component is going to use. It's applied for all the screen sizes with the lowest priority. |
+| <span class=""prop-name"">Spacing</span> | <span class=""prop-type"">Spacing.Zero<br>&#124;&nbsp;Spacing.One<br>&#124;&nbsp;Spacing.Two<br>&#124;&nbsp;Spacing.Three<br>&#124;&nbsp;Spacing.Four<br>&#124;&nbsp;Spacing.Five<br>&#124;&nbsp;Spacing.Six<br>&#124;&nbsp;Spacing.Seven<br>&#124;&nbsp;Spacing.Eight<br>&#124;&nbsp;Spacing.Nine<br>&#124;&nbsp;Spacing.Ten</span> | <span class=""prop-default"">Spacing.Zero</span> | Defines the space between the type `Item` component. It can only be used on a type `Container` component. |
+| <span class=""prop-name"">Wrap</span> | <span class=""prop-type"">Wrap.Nowrap<br>&#124;&nbsp;Wrap.Wrap<br>&#124;&nbsp;Wrap.WrapReverse</span> | <span class=""prop-default"">Wrap.Wrap</span> | Defines the `flex-wrap` style property. It's applied for all screen sizes. |
+| <span class=""prop-name"">ZeroMinWidth</span> | <span class=""prop-type"">bool</span> | <span class=""prop-default"">false</span> | If `true`, it sets `min-width: 0` on the item. Refer to the limitations section of the documentation to better understand the use case. |
+
+## CSS
+
+- Style name: `Grid`.
+- Style details:
+
+| Global class | Description |
+|:-------------|:------------|
+| <span class=""prop-name"">Grid-Root</span> | Styles applied to the root element
+| <span class=""prop-name"">Grid-Container</span> | Styles applied to the root element if `Container=""true""`.
+| <span class=""prop-name"">Grid-Item</span> | Styles applied to the root element if `Item=""true""`.
+| <span class=""prop-name"">Grid-ZeroMinWidth</span> | Styles applied to the root element if `ZeroMinWidth=""true""`.
+| <span class=""prop-name"">Grid-Direction-XS-Column</span> | |
+| <span class=""prop-name"">Grid-Direction-XS-ColumnReverse</span> | |
+| <span class=""prop-name"">Grid-Direction-XS-RowReverse</span> | |
+| <span class=""prop-name"">Grid-Wrap-XS-Nowrap</span> | |
+| <span class=""prop-name"">Grid-Wrap-XS-WrapReverse</span> | |
+| <span class=""prop-name"">Grid-AlignItems-XS-Center</span> | |
+| <span class=""prop-name"">Grid-AlignItems-XS-FlexStart</span> | |
+| <span class=""prop-name"">Grid-AlignItems-XS-FlexEnd</span> | |
+| <span class=""prop-name"">Grid-AlignItems-XS-Baseline</span> | |
+| <span class=""prop-name"">Grid-AlignContent-XS-Center</span> | |
+| <span class=""prop-name"">Grid-AlignContent-XS-FlexStart</span> | |
+| <span class=""prop-name"">Grid-AlignContent-XS-FlexEnd</span> | |
+| <span class=""prop-name"">Grid-AlignContent-XS-SpaceBetween</span> | |
+| <span class=""prop-name"">Grid-AlignContent-XS-SpaceAround</span> | |
+| <span class=""prop-name"">Grid-Justify-XS-Center</span> | |
+| <span class=""prop-name"">Grid-Justify-XS-FlexEnd</span> | |
+| <span class=""prop-name"">Grid-Justify-XS-SpaceBetween</span> | |
+| <span class=""prop-name"">Grid-Justify-XS-SpaceAround</span> | |
+| <span class=""prop-name"">Grid-Justify-XS-SpaceEvenly</span> | |
+| <span class=""prop-name"">Grid-Spacing-XS-1</span> | |
+| <span class=""prop-name"">Grid-Spacing-XS-2</span> | |
+| <span class=""prop-name"">Grid-Spacing-XS-3</span> | |
+| <span class=""prop-name"">Grid-Spacing-XS-4</span> | |
+| <span class=""prop-name"">Grid-Spacing-XS-5</span> | |
+| <span class=""prop-name"">Grid-Spacing-XS-6</span> | |
+| <span class=""prop-name"">Grid-Spacing-XS-7</span> | |
+| <span class=""prop-name"">Grid-Spacing-XS-8</span> | |
+| <span class=""prop-name"">Grid-Spacing-XS-9</span> | |
+| <span class=""prop-name"">Grid-Spacing-XS-10</span> | |
+| <span class=""prop-name"">Grid-XS-Auto</span> | |
+| <span class=""prop-name"">Grid-XS-True</span> | |
+| <span class=""prop-name"">Grid-XS-1</span> | |
+| <span class=""prop-name"">Grid-XS-2</span> | |
+| <span class=""prop-name"">Grid-XS-3</span> | |
+| <span class=""prop-name"">Grid-XS-4</span> | |
+| <span class=""prop-name"">Grid-XS-5</span> | |
+| <span class=""prop-name"">Grid-XS-6</span> | |
+| <span class=""prop-name"">Grid-XS-7</span> | |
+| <span class=""prop-name"">Grid-XS-8</span> | |
+| <span class=""prop-name"">Grid-XS-9</span> | |
+| <span class=""prop-name"">Grid-XS-10</span> | |
+| <span class=""prop-name"">Grid-XS-11</span> | |
+| <span class=""prop-name"">Grid-XS-12</span> | |
+
+")" />

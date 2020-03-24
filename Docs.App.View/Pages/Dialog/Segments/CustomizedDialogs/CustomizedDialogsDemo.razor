@@ -1,0 +1,79 @@
+@namespace Skclusive.Material.Docs.App.View
+
+<div>
+    <Button
+        Variant="@ButtonVariant.Outlined"
+        Color="@Color.Secondary"
+        OnClick="@OnOpen">
+        @Text
+    </Button>
+    <Dialog
+        Open="@Open"
+        OnClose="@OnClose"
+        aria-labelledby="customized-dialog-title">
+        <DialogTitle
+            Style="marging: 0px; padding: 16px;"
+            DisableTypography
+            Id="customized-dialog-title">
+            <Typography
+                Variant="@TypographyVariant.H6">
+                Modal title
+            </Typography>
+            <IconButton
+                aria-label="close"
+                Style="top: 8px; color: #9e9e9e; right: 8px; position: absolute;"
+                OnClick="@OnClose">
+                <CloseIcon />
+            </IconButton>
+        </DialogTitle>
+        <DialogContent
+            Style="padding: 16px;"
+            Dividers>
+            <Typography
+                GutterBottom>
+                Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis
+                in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
+            </Typography>
+            <Typography
+                GutterBottom>
+                Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis
+                lacus vel augue laoreet rutrum faucibus dolor auctor.
+            </Typography>
+            <Typography
+                GutterBottom>
+                Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel
+                scelerisque nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus
+                auctor fringilla.
+            </Typography>
+        </DialogContent>
+        <DialogActions
+            Style="marging: 0px; padding: 8px;">
+            <Button
+                OnClick="@OnClose"
+                Color="@Color.Primary">
+                Save changes
+            </Button>
+        </DialogActions>
+    </Dialog>
+</div>
+
+@code
+{
+    private bool Open { set; get; }
+
+    private string Text => (Open ? "Close" : "Open") + " dialog";
+
+    private void OnClose()
+    {
+        Open = false;
+
+        StateHasChanged();
+    }
+
+    private void OnOpen()
+    {
+        Open = true;
+
+        StateHasChanged();
+    }
+}

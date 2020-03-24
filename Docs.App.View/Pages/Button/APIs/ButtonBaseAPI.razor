@@ -1,0 +1,41 @@
+@namespace Skclusive.Material.Docs.App.View
+
+<MarkdownSegment
+    Text="@(@"
+# ButtonBase API
+
+<p class=""description"">The API documentation of the ButtonBase component. Learn more about the parameters and the CSS customization points.</p>
+
+## Parameters
+
+| Name | Type | Default | Description |
+|:-----|:-----|:--------|:------------|
+| <span class=""prop-name"">RootRef</span> | <span class=""prop-type"">IReference</span> | <span class=""prop-default"">new Reference()</span> | The reference used to ref the root node. |
+| <span class=""prop-name"">Class</span> | <span class=""prop-type"">string</span> | | The class applied to the root node. |
+| <span class=""prop-name"">Style</span> | <span class=""prop-type"">string</span> | | The style applied to the root node. |
+| <span class=""prop-name"">Component</span> | <span class=""prop-type"">string</span> | | The component used for the root node. |
+| <span class=""prop-name"">ChildContent</span> | <span class=""prop-type"">RenderFragment</span> |  | Content of the current component which gets `IComponentContext`. |
+| <span class=""prop-name"">CenterRipple</span> | <span class=""prop-type"">bool</span> | <span class=""prop-default"">false</span> | If `true`, the ripples will be centered. They won't start at the cursor interaction position. |
+| <span class=""prop-name"">FocusRipple</span> | <span class=""prop-type"">bool</span> | <span class=""prop-default"">false</span> | If `true`, the base button will have a keyboard focus ripple. `disableRipple` must also be `false`. |
+| <span class=""prop-name"">Disabled</span> | <span class=""prop-type"">bool?</span> | <span class=""prop-default"">false</span> | If `true`, the base button will be disabled. |
+| <span class=""prop-name"">DisableRipple</span> | <span class=""prop-type"">bool</span> | <span class=""prop-default"">false</span> | If `true`, the ripple effect will be disabled.<br>⚠️ Without a ripple there is no styling for :focus-visible by default. Be sure to highlight the element by applying separate styles with the `focusVisibleClassName`. |
+| <span class=""prop-name"">DisableTouchRipple</span> | <span class=""prop-type"">bool</span> | <span class=""prop-default"">false</span> | If `true`, the touch ripple effect will be disabled. |
+| <span class=""prop-name"">DisableFocusRipple</span> | <span class=""prop-type"">bool</span> | <span class=""prop-default"">false</span> | If `true`, the keyboard ripple effect will be disabled. |
+| <span class=""prop-name"">FocusVisibleClass</span> | <span class=""prop-type"">string</span> |  | This prop can help a person know which element has the keyboard focus. The class name will be applied when the element gain the focus through a keyboard interaction. It's a polyfill for the [CSS :focus-visible selector](https://drafts.csswg.org/selectors-4/#the-focus-visible-pseudo). The rationale for using this feature [is explained here](https://github.com/WICG/focus-visible/blob/master/explainer.md). A [polyfill can be used](https://github.com/WICG/focus-visible) to apply a `focus-visible` class to other components if needed. |
+| <span class=""prop-name"">Type</span> | <span class=""prop-type"">ButtonType.Submit<br>&#124;&nbsp;ButtonType.Reset<br>&#124;&nbsp;ButtonType.Button</span> | <span class=""prop-default"">ButtonType.Button</span> | Used to control the button's purpose. This prop passes the value to the `type` attribute of the native button component. |
+| <span class=""prop-name"">Href</span> | <span class=""prop-type"">string</span> |  | The URL to link to when the button is clicked. If defined, an `a` element will be used as the root node. |
+| <span class=""prop-name"">Color</span> | <span class=""prop-type"">Color.Default<br>&#124;&nbsp;Color.Inherit<br>&#124;&nbsp;Color.Primary<br>&#124;&nbsp;Color.Secondary</span> | <span class=""prop-default"">Color.Default</span> | The color of the component. It supports those theme colors that make sense for this component. |
+| <span class=""prop-name"">LabelStyle</span> | <span class=""prop-type"">string</span> | | the `style` applied on the label element. |
+| <span class=""prop-name"">LabelClass</span> | <span class=""prop-type"">string</span> | |  the `class` applied on the label element. |
+
+## CSS
+
+- Style name: `ButtonBase`.
+- Style details:
+
+| Global class | Description |
+|:-------------|:------------|
+| <span class=""prop-name"">ButtonBase-Root</span> | Styles applied to the root element.
+| <span class=""prop-name"">ButtonBase-Disabled</span> | Pseudo-class applied to the root element if `Disabled=""true""`.
+
+")" />
