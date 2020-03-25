@@ -3,7 +3,7 @@ Skclusive.Material.Docs.App.View
 
 Work in progress Documentation for Material-UI Component library for Blazor.
 
-The Blazor Material-UI Docs project has been hosted [here](https://skclusive.github.io/Skclusive.Material.Docs.App.View/).
+The Blazor Material-UI Docs project has been hosted [here](https://skclusive.github.io/Skclusive.Material.Docs/).
 
 ![Blazor Material Docs](images/hosted-docs.png)
 
