@@ -34,7 +34,7 @@
                         aria-label="max-width"
                         Value="@MaxWidth.ToString()"
                         OnChange="@OnMaxWidthChange">
-                        @foreach(var value in Enum.GetValues(typeof(DialogWidth)).Cast<DialogWidth>())
+                        @foreach(var value in Enum.GetValues(typeof(MaxWidth)).Cast<MaxWidth>())
                         {
                             <FormControlLabel
                                 @key="value"
@@ -71,7 +71,7 @@
 
     private bool FullWidth { set; get; }
 
-    private DialogWidth MaxWidth { set; get; }
+    private MaxWidth MaxWidth { set; get; }
 
     private string Text => (Open ? "Close" : "Open") + " max-width dialog";
 
@@ -84,7 +84,7 @@
 
     private void OnMaxWidthChange(ChangeEventArgs args)
     {
-        if (Enum.TryParse(args.Value.ToString(), out DialogWidth maxWidth))
+        if (Enum.TryParse(args.Value.ToString(), out MaxWidth maxWidth))
         {
             MaxWidth = maxWidth;
 
