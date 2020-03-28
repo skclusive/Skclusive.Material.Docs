@@ -1,69 +1,225 @@
 ﻿@namespace Skclusive.Material.Docs.App.View
 @inherits LayoutComponentBase
 
-<ThemeProvider
-    Theme="@Theme" />
-<MarkdownStyles
-    Theme="@Theme" />
-<MarkdownPrismStyles
-    Theme="@Theme"/>
-
-<div class="root">
-    <Baseline />
-    <AppTopbar
-        Open="@Open"
-        IsLight="@IsLight"
-        OnSidebarOpen="@OnSidebarOpen"
-        OnThemeChange="@OnThemeChange" />
-    <AppSidebar
-        Open="@Open"
-        OnClose="@OnSidebarClose" />
-    <main
-        class="@MainClass">
-        <div
-            class="Toolbar-Regular drawer-header" />
-        @Body
-    </main>
-</div>
+<MainLayout>
+    <LogoContent>
+        <SkclusiveLogo Style="width: 36px; height: 36px;" />
+    </LogoContent>
+    <ToolbarContent>
+        <Typography
+            Style="flex-grow: 1; margin-left: 20px;"
+            Variant="@TypographyVariant.H6"
+            NoWrap>
+            Skclusive Material Components
+        </Typography>
+    </ToolbarContent>
+    <ToolbarActionsContent>
+        <AppToolbarActions />
+    </ToolbarActionsContent>
+    <BodyContent>
+        <Box Padding="3">
+            @Body
+        </Box>
+    </BodyContent>
+     <SidebarContent>
+        <Navigation Items="@Items"/>
+    </SidebarContent>
+</MainLayout>
 
 @code
 {
-
-    private bool IsLight => Theme == Theme.Light;
-
-    private Theme Theme { set; get; } = Theme.Light;
-
-    private bool Open { set; get; } = true;
-
-    private string MainClass => "content" + (Open ? " content-shift" : "");
-
-    private string Text => (Open ? "Close" : "Open") + " Drawer";
-
-    private void OnSidebarClose()
+    private List<NavigationItem> Items = new List<NavigationItem>
     {
-        Open = false;
+        new NavigationItem
+        {
+            Title = "Home",
+            Path = "",
+            Icon = @<HomeIcon />,
+            Prefix = false
+        },
 
-        StateHasChanged();
-    }
+        new NavigationItem
+        {
+            Title = "AppBar",
+            Path =  "appbar",
+            Icon =  @<PaymentIcon />,
+            Prefix =  true
+        },
 
-    private void OnSidebarOpen()
-    {
-        Open = true;
+        new NavigationItem
+        {
+            Title = "Avatar",
+            Path = "avatar",
+            Icon = @<FaceIcon />,
+            Prefix = true
+        },
 
-        StateHasChanged();
-    }
+        new NavigationItem
+        {
+            Title = "Badge",
+            Path =  "badge",
+            Icon =  @<NotificationImportantIcon />,
+            Prefix =  true
+        },
 
-    private void OnToggle()
-    {
-        Open = !Open;
+        new NavigationItem
+        {
+            Title = "Divider",
+            Path =  "divider",
+            Icon =  @<RemoveIcon />,
+            Prefix =  true
+        },
 
-        StateHasChanged();
-    }
+        new NavigationItem
+        {
+            Title = "Grid",
+            Path =  "grid",
+            Icon =  @<ViewCompactIcon />,
+            Prefix =  true
+        },
 
-    private void OnThemeChange()
-    {
-        Theme = IsLight ? Theme.Dark : Theme.Light;
+        new NavigationItem
+        {
+            Title = "List",
+            Path =  "list",
+            Icon =  @<ListIcon />,
+            Prefix =  true
+        },
 
-        StateHasChanged();
-    }
+        new NavigationItem
+        {
+            Title = "Card",
+            Path =  "card",
+            Icon =  @<PaymentIcon />,
+            Prefix =  true
+        },
+
+        new NavigationItem
+        {
+            Title = "Paper",
+            Path =  "paper",
+            Icon =  @<CommentIcon />,
+            Prefix =  true
+        },
+
+        new NavigationItem
+        {
+            Title = "Checkbox",
+            Path =  "checkbox",
+            Icon =  @<SelectAllIcon />,
+            Prefix =  true
+        },
+
+        new NavigationItem
+        {
+            Title = "Radio",
+            Path =  "radio",
+            Icon =  @<DraftsIcon />,
+            Prefix =  true
+        },
+
+        new NavigationItem
+        {
+            Title = "Switch",
+            Path =  "switch",
+            Icon =  @<AlarmIcon />,
+            Prefix =  true
+        },
+
+        new NavigationItem
+        {
+            Title = "Hidden",
+            Path =  "hidden",
+            Icon =  @<PaymentIcon />,
+            Prefix =  true
+        },
+
+        new NavigationItem
+        {
+            Title = "Tabs",
+            Path =  "tabs",
+            Icon =  @<DriveEtaIcon />,
+            Prefix =  true
+        },
+
+        new NavigationItem
+        {
+            Title = "Button",
+            Path =  "button",
+            Icon =  @<HomeIcon />,
+            Prefix =  true
+        },
+
+        new NavigationItem
+        {
+            Title = "Table",
+            Path =  "table",
+            Icon =  @<TocIcon />,
+            Prefix =  true
+        },
+
+        new NavigationItem
+        {
+            Title = "Progress",
+            Path =  "progress",
+            Icon =  @<LoopIcon />,
+            Prefix =  true
+        },
+
+        new NavigationItem
+        {
+            Title = "Modal",
+            Path =  "modal",
+            Icon =  @<FileCopyIcon />,
+            Prefix =  true
+        },
+
+        new NavigationItem
+        {
+            Title = "Dialog",
+            Path =  "dialog",
+            Icon =  @<AnnouncementIcon />,
+            Prefix =  true
+        },
+
+        new NavigationItem
+        {
+            Title = "Drawer",
+            Path =  "drawer",
+            Icon =  @<DriveEtaIcon />,
+            Prefix =  true
+        },
+
+        new NavigationItem
+        {
+            Title = "Menu",
+            Path =  "menu",
+            Icon =  @<ListIcon />,
+            Prefix =  true
+        },
+
+        new NavigationItem
+        {
+            Title = "Popover",
+            Path =  "popover",
+            Icon =  @<TocIcon />,
+            Prefix =  true
+        },
+
+        new NavigationItem
+        {
+            Title = "Typography",
+            Path =  "typography",
+            Icon =  @<FullscreenIcon />,
+            Prefix =  true
+        },
+
+        new NavigationItem
+        {
+            Title = "Text",
+            Path =  "text",
+            Icon =  @<TextFieldsIcon />,
+            Prefix =  true
+        }
+    };
 }

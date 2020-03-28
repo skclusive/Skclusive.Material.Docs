@@ -104,9 +104,12 @@
     {
         TimeoutDisposal?.Dispose();
 
-        MediaQueryMatcher.OnChange -= OnMediaQueryChanged;
+        if (LayoutConfig.Responsive)
+        {
+            MediaQueryMatcher.OnChange -= OnMediaQueryChanged;
 
-        _ = MediaQueryMatcher.UnRegisterAsync();
+            _ = MediaQueryMatcher.UnRegisterAsync();
+        }
     }
 }
 ```

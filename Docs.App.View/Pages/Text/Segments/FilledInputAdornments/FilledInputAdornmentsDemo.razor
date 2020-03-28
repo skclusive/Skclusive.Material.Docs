@@ -5,7 +5,7 @@
     <TextField
         Label="With filled TextField"
         Id="filled-simple-start-adornment"
-        Variant="@ControlVariant.Filled"
+        Variant="@TextFieldVariant.Filled"
         Style="margin: 8px; flex-basis: 200px;">
         <StartAdornment>
              <InputAdornment
@@ -16,7 +16,7 @@
     <TextField
         Label="Amount"
         Id="filled-adornment-amount"
-        Variant="@ControlVariant.Filled"
+        Variant="@TextFieldVariant.Filled"
         Value="@Amount"
         OnChange="@OnAmountChanged"
         Style="margin: 8px; flex-basis: 200px;">
@@ -29,7 +29,7 @@
     <TextField
         Label="Weight"
         Id="filled-adornment-weight"
-        Variant="@ControlVariant.Filled"
+        Variant="@TextFieldVariant.Filled"
         Value="@Weight"
         OnChange="@OnWeightChanged"
         Style="margin: 8px; flex-basis: 200px;">
@@ -42,7 +42,7 @@
     <TextField
         Label="Password"
         Id="filled-adornment-password"
-        Variant="@ControlVariant.Filled"
+        Variant="@TextFieldVariant.Filled"
         Type="@(ShowPassword ? "text" : "password")"
         Value="@Password"
         OnChange="@OnPasswordChanged"
@@ -70,7 +70,7 @@
     <TextField
         Id="filled-adornment-dense"
         Style="margin: 8px; flex-basis: 200px;"
-        Variant="@ControlVariant.Filled"
+        Variant="@TextFieldVariant.Filled"
         Margin="@Margin.Dense"
         Label="Amount in Euro">
         <StartAdornment>
@@ -82,7 +82,7 @@
     <TextField
         Id="filled-adornment-extra-dense"
         Style="margin: 8px; flex-basis: 200px;"
-        Variant="@ControlVariant.Filled"
+        Variant="@TextFieldVariant.Filled"
         Margin="@Margin.Dense"
         HiddenLabel="true">
         <StartAdornment>
