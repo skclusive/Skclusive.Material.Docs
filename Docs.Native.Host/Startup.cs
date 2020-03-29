@@ -9,7 +9,14 @@ namespace Skclusive.Material.Docs.Native.Host
     {
         public void ConfigureServices(IServiceCollection services)
         {
-            services.TryAddDocsViewServices(new LayoutConfigBuilder().WithResponsive(false).Build());
+            services.TryAddDocsViewServices
+            (
+                new DocsViewConfigBuilder()
+                .WithIsServer(false)
+                .WithIsPreRendering(false)
+                .WithResponsive(false)
+                .Build()
+            );
         }
 
         public void Configure(DesktopApplicationBuilder app)

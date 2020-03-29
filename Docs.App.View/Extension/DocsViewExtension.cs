@@ -8,13 +8,13 @@ namespace Skclusive.Material.Docs.App.View
 {
     public static class DocsViewExtension
     {
-        public static void TryAddDocsViewServices(this IServiceCollection services, ILayoutConfig config)
+        public static void TryAddDocsViewServices(this IServiceCollection services, IDocsViewConfig config)
         {
-            services.TryAddMaterialServices();
-
             services.TryAddMarkdownServices();
 
             services.TryAddLayoutServices(config);
+
+            services.TryAddSingleton<IDocsViewConfig>(config);
         }
     }
 }
