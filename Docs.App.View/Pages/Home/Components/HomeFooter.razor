@@ -1,0 +1,149 @@
+@namespace Skclusive.Material.Docs.App.View
+@inherits MaterialComponentBase
+
+<style>
+    .home-footer-container {
+        padding: 24px 0px;
+    }
+    @media (min-width:600px) {
+        .home-footer-container {
+            padding: 64px 0px;
+        }
+    }
+
+    .home-footer-logo {
+        display: flex;
+        align-items: center;
+        margin-bottom: 32px;
+    }
+
+    .home-footer-logo svg {
+        width: 28px;
+        height: 22px;
+        margin-right: 12px;
+    }
+
+    .home-footer-list {
+        margin-bottom: 32px;
+    }
+    .home-footer-list h3 {
+        font-weight: 500;
+    }
+    .home-footer-list ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+    .home-footer-list li {
+        color: var(--theme-palette-text-secondary);
+        padding: 6px 0;
+    }
+
+    .home-footer-version {
+        margin-top: 24px;
+    }
+</style>
+
+<div
+    style="margin-top: 48px;">
+    <Divider />
+    <Container
+        MaxWidth="@MaxWidth.Medium">
+        <footer
+            class="home-footer-container">
+            <Grid
+                Container>
+                <Grid
+                    Item
+                    ExtraSmall="@GridSize.Twelve"
+                    Small="@GridSize.Three">
+                    <div
+                        class="home-footer-logo">
+                        <SkclusiveLogo />
+                        <Link
+                            Variant="@LinkVariant.Body1"
+                            Color="@Color.Inherit"
+                            Href="/">
+                            Skclusive-UI
+                        </Link>
+                    </div>
+                </Grid>
+                <Grid
+                    Item
+                    ExtraSmall="@GridSize.Six"
+                    Small="@GridSize.Three"
+                    Class="home-footer-list">
+                    <Typography
+                        Component="h2"
+                        GutterBottom>
+                        Community
+                    </Typography>
+                    <ul>
+                        <li>
+                            <Link
+                                Color="@Color.Inherit"
+                                Variant="@LinkVariant.Body2"
+                                Href="https://github.com/skclusive/Skclusive.Material.Component">
+                                GitHub
+                            </Link>
+                        </li>
+                    </ul>
+                </Grid>
+                <Grid
+                    Item
+                    ExtraSmall="@GridSize.Six"
+                    Small="@GridSize.Three"
+                    Class="home-footer-list">
+                    <Typography
+                        Component="h2"
+                        GutterBottom>
+                        Resources
+                    </Typography>
+                    <ul>
+                        <li>
+                            <Link
+                                Color="@Color.Inherit"
+                                Variant="@LinkVariant.Body2"
+                                Href="@("https://medium.com/@skclusive")">
+                                Blog
+                            </Link>
+                        </li>
+                    </ul>
+                </Grid>
+                <Grid
+                    Item
+                    ExtraSmall="@GridSize.Six"
+                    Small="@GridSize.Three"
+                    Class="home-footer-list">
+                    <Typography
+                        Component="h2"
+                        GutterBottom>
+                        Contact
+                    </Typography>
+                    <ul>
+                        <li>
+                            <Link
+                                Color="@Color.Inherit"
+                                Variant="@LinkVariant.Body2"
+                                Href="https://twitter.com/skclusive">
+                                Twitter
+                            </Link>
+                        </li>
+                    </ul>
+                </Grid>
+            </Grid>
+            <Typography
+                Class="home-footer-version"
+                Color="@Color.TextSecondary"
+                Variant="@TypographyVariant.Body2">
+                Currently v2.0.0. Released under the
+                <Link
+                    Color="@Color.Inherit"
+                    Href="https://github.com/skclusive/Skclusive.Material.Component/blob/master/LICENSE">
+                    MIT License
+                </Link>
+                . Copyright © @DateTime.Now.Year Skclusive-UI.
+            </Typography>
+        </footer>
+    </Container>
+</div>
