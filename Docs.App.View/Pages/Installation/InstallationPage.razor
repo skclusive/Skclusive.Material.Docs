@@ -8,9 +8,11 @@
         Text="@(@"
 ## Installing with Nuget
 
-You can [install Material package](https://www.nuget.org/packages/Skclusive.Material.Component/) by typing the below command in your terminal:
+You can [install Skclusive-UI package](https://www.nuget.org/packages/Skclusive.Material.Component/) by typing the below command in your terminal:
 
-`dotnet add package Skclusive.Material.Component`
+```html
+dotnet add package Skclusive.Material.Component
+```
 
 Then, you can add the following usings in your _Imports.razor.
 
@@ -50,13 +52,16 @@ Then, you can add the following usings in your _Imports.razor.
 @using Skclusive.Material.Popover
 @using Skclusive.Material.Menu
 @using Skclusive.Material.Tab
+@using Skclusive.Material.Container
 ```
 
-Then in your `App.razor` add `MaterialStyles` and `MaterialScripts` before Router.
+Then in your `App.razor`, add `MaterialStyles`, `MaterialScripts` and `ThemeProvider` before Router.
 
 ```html
 <MaterialScripts />
 <MaterialStyles />
+
+<ThemeProvider Theme=""@Theme.Dark"" />
 
 <Router AppAssembly=""@typeof(Program).Assembly"">
     <Found Context=""routeData"">
@@ -83,10 +88,11 @@ public class Program
 
         builder.RootComponents.Add<App>(""app"");
 
-        builder.Services.TryAddMaterialServices();
+        builder.Services.TryAddMaterialServices(new MaterialConfigBuilder().Build());
 
         await builder.Build().RunAsync();
     }
 }
-```")" />
+```
+")" />
 </div>

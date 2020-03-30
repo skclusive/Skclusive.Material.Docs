@@ -106,12 +106,12 @@
                     Variant="@TypographyVariant.Subtitle1"
                     Component="div"
                     GutterBottom>
-                    Install Material-UI's source files via npm. We take care of injecting the CSS needed.
+                    Install Skclusive-UI's library via NuGet. `MaterialStyles` and `MaterialScripts` components need to be added.
                 </Typography>
                 <MarkdownSegment
                     Text="@(@"
 ```html
-$ npm install @material-ui/core
+dotnet add package Skclusive.Material.Component
 ```
                 ")" />
                 <Link
@@ -162,19 +162,21 @@ $ npm install @material-ui/core
                     Variant="@TypographyVariant.Subtitle1"
                     Component="div"
                     GutterBottom>
-                    Material-UI components work without any additional setup, and don't pollute the global scope.
+                    Skclusive-UI components work without any additional setup.
                 </Typography>
                 <MarkdownSegment
                     Text="@(@"
 ```html
-import React from 'react';
-import Button from '@material-ui/core/Button';
+App.razor
 
-const App = () => (
-<Button variant=""contained"" color=""primary"">
-Hello World
+<Button
+    Class=""custom-css""
+    Style=""margin: 10px;""
+    Variant=""@ButtonVariant.Contained""
+    Color=""@Color.Primary"">
+    Hello World
 </Button>
-);
+
 ```
                 ")" />
             </div>
