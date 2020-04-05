@@ -33,20 +33,24 @@ namespace Skclusive.Material.Docs.ServerPrerendered.Host
         {
             services.AddRazorPages();
             services.AddServerSideBlazor();
+            //services.AddSignalR().AddAzureSignalR(option =>
+            //{
+            //    option.ServerStickyMode = Microsoft.Azure.SignalR.ServerStickyMode.Required;
+            //});
 
             services.AddHttpContextAccessor();
-            services.AddScoped<IRenderContext>((sp) =>
-            {
-                var httpContextAccessor = sp.GetService<IHttpContextAccessor>();
-                bool? hasStarted = httpContextAccessor?.HttpContext?.Response.HasStarted;
-                var isPreRendering = !(hasStarted.HasValue && hasStarted.Value);
-                return new RenderContext(isServer: true, isPreRendering);
-            });
+            //services.AddTransient<IRenderContext>((sp) =>
+            //{
+            //    var httpContextAccessor = sp.GetService<IHttpContextAccessor>();
+            //    bool? hasStarted = httpContextAccessor?.HttpContext?.Response.HasStarted;
+            //    var isPreRendering = !(hasStarted.HasValue && hasStarted.Value);
+            //    return new RenderContext(isServer: true, isPreRendering);
+            //});
             services.TryAddDocsViewServices
             (
                 new DocsViewConfigBuilder()
                 .WithIsServer(true)
-                .WithIsPreRendering(true)
+                .WithIsPreRendering(false)
                 .WithResponsive(true)
                 .Build()
             );
