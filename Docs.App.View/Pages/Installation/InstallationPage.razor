@@ -77,6 +77,8 @@ Then in your `App.razor`, add `MaterialStyles`, `MaterialScripts` and `ThemeProv
 
 Then `MaterialServices` need to be added in `Program.cs`
 
+### Client Side
+
 ```csharp
 using Skclusive.Material.Component;
 
@@ -94,5 +96,23 @@ public class Program
     }
 }
 ```
+
+### Server Side
+
+```csharp
+using Skclusive.Material.Component;
+
+public class Startup
+{
+    public void ConfigureServices(IServiceCollection services)
+    {
+        services.AddRazorPages();
+        services.AddServerSideBlazor();
+        // ...
+        services.TryAddMaterialServices(new MaterialConfigBuilder().Build());
+    }
+}
+```
+
 ")" />
 </div>
