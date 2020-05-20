@@ -22,7 +22,7 @@ jobs:
         html_path: ${{ env.PUBLISH_DIR }}/index.html
         base_href: /Skclusive.Material.Docs/
 
-        - name: GitHub Pages
+    - name: GitHub Pages
       if: success()
       uses: crazy-max/ghaction-github-pages@v1.5.1
       with:
