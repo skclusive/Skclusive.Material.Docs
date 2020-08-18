@@ -1,0 +1,47 @@
+@namespace Skclusive.Material.Docs.App.View
+@inherits MaterialComponentBase
+
+<style>
+    .home-social {
+        display: flex;
+        padding: 16px 0px;
+        box-sizing: content-box;
+        min-height: 21px;
+        align-items: center;
+        justify-content: center;
+    }
+    .home-social span {
+        display: flex;
+        margin-right: 8px;
+    }
+    .home-social a {
+        color: var(--theme-palette-background-paper);
+    }
+</style>
+
+<div
+    class="home-social">
+    <a
+        class="github-button"
+        href="https://github.com/skclusive/Skclusive.Material.Component"
+        data-icon="octicon-star"
+        data-show-count="true">
+        Star
+    </a>
+    <a
+        class="twitter-follow-button"
+        href="https://twitter.com/skclusive"
+        data-show-screen-name="false">
+        Follow
+    </a>
+</div>
+<JavaScript
+    Defer
+    Async
+    Src="https://buttons.github.io/buttons.js"
+/>
+<JavaScript
+    Defer
+    Async
+    Src="https://platform.twitter.com/widgets.js"
+/>

@@ -1,0 +1,65 @@
+﻿@namespace Skclusive.Material.Docs.App.View
+
+@page "/usage"
+
+<div
+    style="margin: 20px">
+    <MarkdownSegment
+        Text="@(@"
+# Usage
+
+<p class=""description"">Get started with Blazor and Skclusive-UI in no time.</p>
+
+Skclusive-UI components work in isolation with statically added styles and scripts.
+
+In your `App.razor`, `MaterialStyles`, `MaterialScripts` need to be added before Router to render once app level.
+
+Skclusive-UI component theming is acheived via CSS Variables functionality.
+
+`ThemeProvider` can be added in any level. `ThemeProvider` renders material theme related CSS Variables.
+
+You can use any of the components as demonstrated in the documentation.
+Please refer to each component's [demo page](/button) to see how they should be imported.
+
+## Quick start
+
+Here's a quick example to get you started, **it's literally all you need**:
+
+```html
+App.razor
+
+@page ""/""
+
+<Button
+    Class=""custom-css""
+    Style=""margin: 10px;""
+    Variant=""@ButtonVariant.Contained""
+    Color=""@Color.Primary"">
+    Hello World
+</Button>
+
+```
+
+## Globals
+
+Skclusive-UI usage experience can be improved with a handful of important globals that you’ll need to be aware of.
+
+### Responsive meta tag
+
+Skclusive-UI is developed mobile-first, a strategy in which we first write code for mobile devices, and then scale up components as necessary using CSS media queries.
+To ensure proper rendering and touch zooming for all devices, add the responsive viewport meta tag to your `<head>` element.
+
+```html
+<meta
+  name=""viewport""
+  content=""minimum-scale=1, initial-scale=1, width=device-width""
+/>
+```
+
+### CssBaseline
+
+Skclusive-UI provides an optional `Baseline` component.
+It fixes some inconsistencies across browsers and devices while providing slightly more opinionated resets to common HTML elements.
+
+")" />
+</div>

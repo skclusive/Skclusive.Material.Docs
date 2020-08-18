@@ -1,0 +1,86 @@
+@namespace Skclusive.Material.Docs.App.View
+@inherits MaterialComponentBase
+
+<style>
+    .home-content-root {
+        padding-top: 10px;
+        color: var(--theme-palette-primary-main);
+    }
+
+    .home-content {
+        display: flex;
+        text-align: center;
+        align-items: center;
+        padding-top: 32px;
+        flex-direction: column;
+        padding-bottom: 64px;
+    }
+    @media (min-width: 600px) {
+        .home-content {
+            padding-left: 24px;
+            padding-right: 24px;
+        }
+    }
+
+    .home-content-logo {
+        width: 120px;
+        height: 120px;
+        flex-shrink: 0;
+        margin-bottom: 16px;
+    }
+    @media (min-width:960px) {
+        .home-content-logo {
+            width: 195px;
+            height: 175px;
+            margin-right: 64px;
+        }
+    }
+
+    .home-content-title {
+        font-weight: 300;
+        margin-left: -12px;
+        text-indent: .7rem;
+        white-space: nowrap;
+        letter-spacing: .7rem;
+    }
+    @media (min-width:0px) and (max-width:599.95px) {
+        .home-content-title {
+            font-size: 28px;
+        }
+    }
+</style>
+
+ <div
+    class="home-content-root">
+    <Container
+        Class="home-content"
+        MaxWidth="@MaxWidth.Medium">
+        <SkclusiveLogo
+            Title="Skclusive.Material.Component Logo"
+            Class="home-content-logo" />
+        <div>
+            <Typography
+                Variant="@TypographyVariant.H3"
+                Component="h1"
+                Color="@Color.Inherit"
+                GutterBottom
+                Class="home-content-title">
+                SKCLUSIVE-UI
+            </Typography>
+            <Typography
+                Variant="@TypographyVariant.H5"
+                Component="h2"
+                Color="@Color.Inherit">
+                Blazor components for faster and easier web development with Material Design.
+            </Typography>
+            <Button
+                Component="a"
+                Style="margin-top: 32px;"
+                Variant="@ButtonVariant.Outlined"
+                Color="@Color.Primary"
+                Href="./installation">
+                Get Started
+            </Button>
+        </div>
+    </Container>
+</div>

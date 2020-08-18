@@ -1,0 +1,192 @@
+@namespace Skclusive.Material.Docs.App.View
+@inherits MaterialComponentBase
+
+<style>
+
+    .home-steps {
+        margin-top: 40px;
+    }
+    .home-steps pre {
+        margin: 8px 0px;
+        background-color: var(--theme-palette-main-background-default, #fff) !important;
+    }
+
+    .home-step {
+        border: 12px solid var(--theme-palette-background-level1);
+        padding: 16px;
+        background-color: var(--theme-palette-background-level2);
+        border-left-width: 0;
+        border-right-width: 0;
+    }
+    @media (min-width:960px) {
+        .home-step {
+            padding: 24px;
+        }
+    }
+    @media (min-width:960px) {
+        .home-step {
+            border-right-width: 12px;
+            border-left-width: 12px;
+        }
+    }
+    .home-step-title {
+        display: flex;
+        align-items: center;
+        margin-bottom: 24px;
+    }
+
+    .home-step-icon {
+        color: var(--theme-palette-primary-main);
+        font-size: 30px;
+        margin-right: 16px;
+    }
+
+    .home-step-body {
+        min-height: 270px;
+    }
+
+    .home-divider {
+        margin-top: 32px;
+        margin-bottom: 16px;
+    }
+
+    .home-link {
+        display: block;
+        margin-top: 8px;
+    }
+
+    .home-image {
+        width: 100%;
+        height: auto;
+        max-width: 500px;
+    }
+
+    @media (min-width:960px) {
+        .home-left-step {
+            border-left-width: 12px;
+            border-right-width: 6px;
+            border-bottom-width: 0;
+        }
+    }
+
+    .home-right-step {
+        border-bottom-width: 0;
+    }
+    @media (min-width:960px) {
+        .home-right-step {
+            border-left-width: 6px;
+            border-right-width: 12px;
+        }
+    }
+</style>
+
+<Container
+    Class="home-steps"
+    DisableGutters
+    MaxWidth="@MaxWidth.Large">
+    <Grid
+        Container>
+        <Grid
+            Item
+            ExtraSmall="@GridSize.Twelve"
+            Medium="@GridSize.Six"
+            Class="home-step home-left-step">
+            <div class="home-step-title">
+                <FileDownloadIcon
+                    Class="home-step-icon" />
+                <Typography
+                    Variant="@TypographyVariant.H6"
+                    Component="h3">
+                    Installation
+                </Typography>
+            </div>
+            <div
+                class="home-step-body">
+                <Typography
+                    Variant="@TypographyVariant.Subtitle1"
+                    Component="div"
+                    GutterBottom>
+                    Install Skclusive-UI's library via NuGet. `MaterialStyles` and `MaterialScripts` components need to be added.
+                </Typography>
+                <MarkdownSegment
+                    Text="@(@"
+```html
+dotnet add package Skclusive.Material.Component
+```
+                ")" />
+                <Link
+                    Variant="@LinkVariant.Subtitle1"
+                    Color="@Color.Inherit"
+                    Href="https://github.com/mui-org/material-ui/tree/master/examples/cdn"
+                    GutterBottom>
+                    or use a CDN
+                </Link>
+                <Typography
+                    Variant="@TypographyVariant.Subtitle1"
+                    Component="div"
+                    GutterBottom>
+                    Load the default Roboto font.
+                </Typography>
+                <MarkdownSegment
+                    Text="@(@"
+```html
+<link rel=""stylesheet"" href=""https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"" />
+```
+                ")" />
+            </div>
+            <Divider
+                Class="home-divider" />
+            <Button
+                Component="a"
+                Href="./installation">
+                Read Installation Docs
+            </Button>
+        </Grid>
+        <Grid
+            Item
+            ExtraSmall="@GridSize.Twelve"
+            Medium="@GridSize.Six"
+            Class="home-step home-right-step">
+            <div class="home-step-title">
+                <BuildIcon
+                    Class="home-step-icon" />
+                <Typography
+                    Variant="@TypographyVariant.H6"
+                    Component="h3">
+                    Usage
+                </Typography>
+            </div>
+            <div
+                class="home-step-body">
+                <Typography
+                    Variant="@TypographyVariant.Subtitle1"
+                    Component="div"
+                    GutterBottom>
+                    Skclusive-UI components work without any additional setup.
+                </Typography>
+                <MarkdownSegment
+                    Text="@(@"
+```html
+App.razor
+
+<Button
+    Class=""custom-css""
+    Style=""margin: 10px;""
+    Variant=""@ButtonVariant.Contained""
+    Color=""@Color.Primary"">
+    Hello World
+</Button>
+
+```
+                ")" />
+            </div>
+            <Divider
+                Class="home-divider" />
+            <Button
+                Component="a"
+                Href="./usage">
+                Explore the Docs
+            </Button>
+        </Grid>
+    </Grid>
+</Container>

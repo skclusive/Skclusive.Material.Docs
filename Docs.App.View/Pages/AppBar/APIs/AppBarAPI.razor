@@ -19,7 +19,7 @@
 | <span class=""prop-name"">Style</span> | | <span class=""prop-default""></span> | The style applied to the root node. |
 | <span class=""prop-name"">Component</span> | <span class=""prop-type"">string</span> | <span class=""prop-default"">'header'</span> | The component used for the root node. |
 | <span class=""prop-name"">ChildContent</span> | <span class=""prop-type"">RenderFragment</span> |  | The content of the component. |
-| <span class=""prop-name"">Color</span> | <span class=""prop-type"">Color.Default<br>&#124;&nbsp;Color.Inherit<br>&#124;&nbsp;Color.Primary<br>&#124;&nbsp;Color.Secondary</span> | <span class=""prop-default"">Color.Primary</span> | The color of the component. It supports those theme colors that make sense for this component. |
+| <span class=""prop-name"">Color</span> | <span class=""prop-type"">Color.Default<br>&#124;&nbsp;Color.Inherit<br>&#124;&nbsp;Color.Primary<br>&#124;&nbsp;Color.Secondary<br>&#124;&nbsp;Color.Custom</span> | <span class=""prop-default"">Color.Primary</span> | The color of the component. It supports those theme colors that make sense for this component. |
 | <span class=""prop-name"">Position</span> | <span class=""prop-type"">AppBarPosition.Absolute<br>&#124;&nbsp;AppBarPosition.Fixed<br>&#124;&nbsp;AppBarPosition.Relative<br>&#124;&nbsp;AppBarPosition.Static<br>&#124;&nbsp;AppBarPosition.Sticky</span> | <span class=""prop-default"">AppBarPosition.Fixed</span> | The positioning type. The behavior of the different options is described [in the MDN web docs](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Positioning). Note: `Sticky` is not universally supported and will fall back to `Static` when unavailable. |
 | <span class=""prop-name"">Elevation</span> | <span class=""prop-type"">int</span> | <span class=""prop-default"">4</span> | Shadow depth, corresponds to `dp` in the spec. It accepts values between 0 and 24 inclusive. |
 | <span class=""prop-name"">Square</span> | <span class=""prop-type"">bool</span> | <span class=""prop-default"">true</span> | If `true`, rounded corners are disabled. |
@@ -40,5 +40,6 @@
 | <span class=""prop-name"">AppBar-Color-Default</span> | Styles applied to the root element if `Color=""@Color.Default""`.
 | <span class=""prop-name"">AppBar-Color-Primary</span> | Styles applied to the root element if `Color=""@Color.Primary""`.
 | <span class=""prop-name"">AppBar-Color-Secondary</span> | Styles applied to the root element if `Color=""@Color.Secondary""`.
+| <span class=""prop-name"">AppBar-Color-Custom</span> | Styles applied to the root element if `Color=""@Color.Custom""`.
 
 ")" />

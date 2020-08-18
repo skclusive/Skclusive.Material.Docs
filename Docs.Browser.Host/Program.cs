@@ -5,6 +5,7 @@ using System.Text;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
 using Microsoft.Extensions.DependencyInjection;
 using Skclusive.Material.Docs.App.View;
+using System.Net.Http;
 
 namespace Skclusive.Material.Docs.Browser.Host
 {
@@ -16,9 +17,16 @@ namespace Skclusive.Material.Docs.Browser.Host
 
             builder.RootComponents.Add<AppView>("app");
 
-            builder.Services.AddBaseAddressHttpClient();
+            builder.Services.AddTransient(sp => new HttpClient { BaseAddress = new Uri(builder.HostEnvironment.BaseAddress) });
 
-            builder.Services.TryAddDocsViewServices(new DocsViewConfigBuilder().Build());
+            builder.Services.TryAddDocsViewServices
+            (
+                new DocsViewConfigBuilder()
+                .WithIsServer(false)
+                .WithIsPreRendering(false)
+                .WithResponsive(true)
+                .Build()
+            );
 
             await builder.Build().RunAsync();
         }

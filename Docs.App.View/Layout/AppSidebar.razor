@@ -1,98 +1,210 @@
-﻿@namespace Skclusive.Material.Docs.App.View
+@namespace Skclusive.Material.Docs.App.View
 
-<Drawer
-    Open="@Open"
-    OnClose="@OnClose"
-    Anchor="@Anchor.Left"
-    Variant="@DrawerVariant.Persistent"
-    Style="flex-shrink: 0;"
-    PaperStyle="width: 240px;">
-    <div
-        class="Toolbar-Regular drawer-header">
-        <IconButton
-            OnClick="@OnClose">
-            <ChevronLeftIcon />
-        </IconButton>
-    </div>
-    <Divider />
-    <List>
-        @foreach (var link in Links)
-        {
-            <ListItem
-                @key="link.Item2"
-                NoWrap>
-                <NavLink
-                    class="@context.Class"
-                    style="@(context.Style + ";color: inherit;")"
-                    href="@link.Item2"
-                    Match="@(link.Item4 ? NavLinkMatch.All : NavLinkMatch.Prefix)">
-                    <ListItemIcon>
-                        @link.Item3
-                    </ListItemIcon>
-                    <ListItemText
-                        Primary="@link.Item1" />
-                </NavLink>
-            </ListItem>
-        }
-    </List>
-</Drawer>
+<Navigation
+    Items="@Items"/>
 
 @code
 {
-    [Parameter]
-    public bool Open { set; get; }
-
-    [Parameter]
-    public Action OnClose { set; get; }
-
-    private List<(string, string, RenderFragment, bool)> Links = new List<(string, string, RenderFragment, bool)>
+    private static List<NavigationItem> Items = new List<NavigationItem>
     {
-        ("Home", "", @<HomeIcon />, true),
+        new NavigationItem
+        {
+            Title = "Home",
+            Path = "",
+            Icon = @<HomeIcon />,
+            Prefix = false
+        },
 
-        ("AppBar", "appbar",  @<PaymentIcon />, false),
+        new NavigationItem
+        {
+            Title = "AppBar",
+            Path =  "appbar",
+            Icon =  @<PaymentIcon />,
+            Prefix =  true
+        },
 
-        ("Avatar", "avatar",  @<FaceIcon />, false),
+        new NavigationItem
+        {
+            Title = "Avatar",
+            Path = "avatar",
+            Icon = @<FaceIcon />,
+            Prefix = true
+        },
 
-        ("Badge", "badge",  @<NotificationImportantIcon />, false),
+        new NavigationItem
+        {
+            Title = "Badge",
+            Path =  "badge",
+            Icon =  @<NotificationImportantIcon />,
+            Prefix =  true
+        },
 
-        ("Divider", "divider",  @<RemoveIcon />, false),
+        new NavigationItem
+        {
+            Title = "Button",
+            Path =  "button",
+            Icon =  @<HomeIcon />,
+            Prefix =  true
+        },
 
-        ("Grid", "grid",  @<ViewCompactIcon />, false),
+        new NavigationItem
+        {
+            Title = "Card",
+            Path =  "card",
+            Icon =  @<PaymentIcon />,
+            Prefix =  true
+        },
 
-        ("List", "list",  @<ListIcon />, false),
+        new NavigationItem
+        {
+            Title = "Divider",
+            Path =  "divider",
+            Icon =  @<RemoveIcon />,
+            Prefix =  true
+        },
 
-        ("Card", "card",  @<PaymentIcon />, false),
+        new NavigationItem
+        {
+            Title = "Dialog",
+            Path =  "dialog",
+            Icon =  @<AnnouncementIcon />,
+            Prefix =  true
+        },
 
-        ("Paper", "paper",  @<CommentIcon />, false),
+        new NavigationItem
+        {
+            Title = "Drawer",
+            Path =  "drawer",
+            Icon =  @<DriveEtaIcon />,
+            Prefix =  true
+        },
 
-        ("Checkbox", "checkbox",  @<SelectAllIcon />, false),
+        new NavigationItem
+        {
+            Title = "Grid",
+            Path =  "grid",
+            Icon =  @<ViewCompactIcon />,
+            Prefix =  true
+        },
 
-        ("Radio", "radio",  @<DraftsIcon />, false),
+        new NavigationItem
+        {
+            Title = "List",
+            Path =  "list",
+            Icon =  @<ListIcon />,
+            Prefix =  true
+        },
 
-        ("Switch", "switch",  @<AlarmIcon />, false),
+        new NavigationItem
+        {
+            Title = "Paper",
+            Path =  "paper",
+            Icon =  @<CommentIcon />,
+            Prefix =  true
+        },
 
-        ("Hidden", "hidden",  @<PaymentIcon />, false),
+        new NavigationItem
+        {
+            Title = "Checkbox",
+            Path =  "checkbox",
+            Icon =  @<SelectAllIcon />,
+            Prefix =  true
+        },
 
-        ("Tabs", "tabs",  @<DriveEtaIcon />, false),
+        new NavigationItem
+        {
+            Title = "Radio",
+            Path =  "radio",
+            Icon =  @<DraftsIcon />,
+            Prefix =  true
+        },
 
-        ("Button", "button",  @<HomeIcon />, false),
+        new NavigationItem
+        {
+            Title = "Switch",
+            Path =  "switch",
+            Icon =  @<AlarmIcon />,
+            Prefix =  true
+        },
 
-        ("Table", "table",  @<TocIcon />, false),
+        new NavigationItem
+        {
+            Title = "Hidden",
+            Path =  "hidden",
+            Icon =  @<PaymentIcon />,
+            Prefix =  true
+        },
 
-        ("Progress", "progress",  @<LoopIcon />, false),
+        new NavigationItem
+        {
+            Title = "Tabs",
+            Path =  "tabs",
+            Icon =  @<DriveEtaIcon />,
+            Prefix =  true
+        },
 
-        ("Modal", "modal",  @<FileCopyIcon />, false),
+        new NavigationItem
+        {
+            Title = "Table",
+            Path =  "table",
+            Icon =  @<TocIcon />,
+            Prefix =  true
+        },
 
-        ("Dialog", "dialog",  @<AnnouncementIcon />, false),
+        new NavigationItem
+        {
+            Title = "Progress",
+            Path =  "progress",
+            Icon =  @<LoopIcon />,
+            Prefix =  true
+        },
 
-        ("Drawer", "drawer",  @<DriveEtaIcon />, false),
+        new NavigationItem
+        {
+            Title = "Modal",
+            Path =  "modal",
+            Icon =  @<FileCopyIcon />,
+            Prefix =  true
+        },
 
-        ("Menu", "menu",  @<ListIcon />, false),
+        new NavigationItem
+        {
+            Title = "Menu",
+            Path =  "menu",
+            Icon =  @<ListIcon />,
+            Prefix =  true
+        },
 
-        ("Popover", "popover",  @<TocIcon />, false),
+        new NavigationItem
+        {
+            Title = "Popover",
+            Path =  "popover",
+            Icon =  @<TocIcon />,
+            Prefix =  true
+        },
 
-        ("Typography", "typography",  @<FullscreenIcon />, false),
+        new NavigationItem
+        {
+            Title = "Typography",
+            Path =  "typography",
+            Icon =  @<FullscreenIcon />,
+            Prefix =  true
+        },
 
-        ("Text", "text",  @<TextFieldsIcon />, false)
+        new NavigationItem
+        {
+            Title = "Link",
+            Path =  "link",
+            Icon =  @<CommentIcon />,
+            Prefix =  true
+        },
+
+        new NavigationItem
+        {
+            Title = "Text",
+            Path =  "text",
+            Icon =  @<TextFieldsIcon />,
+            Prefix =  true
+        }
     };
 }

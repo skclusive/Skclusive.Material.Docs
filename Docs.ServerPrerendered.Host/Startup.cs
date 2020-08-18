@@ -6,11 +6,14 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Skclusive.Material.Layout;
 
+using Skclusive.Core.Component;
 using Skclusive.Material.Docs.App.View;
 
 namespace Skclusive.Material.Docs.ServerPrerendered.Host
@@ -30,8 +33,27 @@ namespace Skclusive.Material.Docs.ServerPrerendered.Host
         {
             services.AddRazorPages();
             services.AddServerSideBlazor();
+            //services.AddSignalR().AddAzureSignalR(option =>
+            //{
+            //    option.ServerStickyMode = Microsoft.Azure.SignalR.ServerStickyMode.Required;
+            //});
 
-            services.TryAddDocsViewServices(new DocsViewConfigBuilder().Build());
+            services.AddHttpContextAccessor();
+            //services.AddTransient<IRenderContext>((sp) =>
+            //{
+            //    var httpContextAccessor = sp.GetService<IHttpContextAccessor>();
+            //    bool? hasStarted = httpContextAccessor?.HttpContext?.Response.HasStarted;
+            //    var isPreRendering = !(hasStarted.HasValue && hasStarted.Value);
+            //    return new RenderContext(isServer: true, isPreRendering);
+            //});
+            services.TryAddDocsViewServices
+            (
+                new DocsViewConfigBuilder()
+                .WithIsServer(true)
+                .WithIsPreRendering(false)
+                .WithResponsive(true)
+                .Build()
+            );
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

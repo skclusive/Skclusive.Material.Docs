@@ -1,0 +1,34 @@
+@namespace Skclusive.Material.Docs.App.View
+
+<ThemeProvider
+    Theme="@Theme" />
+<MarkdownStyles
+    Theme="@Theme" />
+<MarkdownPrismStyles
+    Theme="@Theme"/>
+
+<IconButton
+    Color="@Color.Inherit"
+    OnClick="@OnThemeChange"
+    aria-label="Toggle light/dark theme"
+    title="Toggle light/dark theme">
+    @if (IsLight)
+    {
+        <Brightness4Icon />
+    } else
+    {
+        <Brightness7Icon />
+    }
+</IconButton>
+
+@code
+{
+    private Theme Theme { set; get; } = Theme.Light;
+
+    protected bool IsLight => Theme == Theme.Light;
+
+    private void OnThemeChange()
+    {
+        Theme = IsLight ? Theme.Dark : Theme.Light;
+    }
+}

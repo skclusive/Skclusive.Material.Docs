@@ -1,0 +1,36 @@
+@namespace Skclusive.Material.Docs.App.View
+
+<div>
+    <Button
+        Variant="@ButtonVariant.Outlined"
+        Color="@Color.Primary"
+        OnClick="@HandleOpen">
+        Show backdrop
+    </Button>
+    <Backdrop
+        Style="color: #fff;z-index: calc(var(--theme-zindex-drawer, 1200) + 1)"
+        Open="@Open"
+        OnClick="@HandleClose">
+        <CircularProgress
+            Color="@Color.Inherit" />
+    </Backdrop>
+</div>
+
+@code
+{
+    private bool Open { set; get; }
+
+    private void HandleOpen()
+    {
+        Open = true;
+
+        StateHasChanged();
+    }
+
+    private void HandleClose()
+    {
+        Open = false;
+
+        StateHasChanged();
+    }
+}
