@@ -12,14 +12,14 @@
         Value="@Name"
         OnChange="@HandleNameChange"
         Margin="@Margin.Normal"
-        Variant="@ControlVariant.Filled" />
+        Variant="@TextFieldVariant.Filled" />
     <TextField
         Id="fillted-uncontrolled"
         Label="Uncontrolled"
         DefaultValue="foo"
         Class="demo-text-field"
         Margin="@Margin.Normal"
-        Variant="@ControlVariant.Filled" />
+        Variant="@TextFieldVariant.Filled" />
     <TextField
         Required="true"
         Id="fillted-required"
@@ -27,7 +27,7 @@
         DefaultValue="Hello World"
         Class="demo-text-field"
         Margin="@Margin.Normal"
-        Variant="@ControlVariant.Filled" />
+        Variant="@TextFieldVariant.Filled" />
     <TextField
         Error="true"
         Id="fillted-error"
@@ -35,7 +35,7 @@
         DefaultValue="Hello World"
         Class="demo-text-field"
         Margin="@Margin.Normal"
-        Variant="@ControlVariant.Filled" />
+        Variant="@TextFieldVariant.Filled" />
     <TextField
         Disabled="true"
         Id="fillted-disabled"
@@ -43,7 +43,7 @@
         DefaultValue="Hello World"
         Class="demo-text-field"
         Margin="@Margin.Normal"
-        Variant="@ControlVariant.Filled" />
+        Variant="@TextFieldVariant.Filled" />
     <TextField
         Id="fillted-password-input"
         Label="Password"
@@ -51,7 +51,7 @@
         Type="password"
         AutoComplete="current-password"
         Margin="@Margin.Normal"
-        Variant="@ControlVariant.Filled" />
+        Variant="@TextFieldVariant.Filled" />
     <TextField
         Id="fillted-read-only-input"
         Label="Read Only"
@@ -59,14 +59,14 @@
         Class="demo-text-field"
         Margin="@Margin.Normal"
         ReadOnly="true"
-        Variant="@ControlVariant.Filled" />
+        Variant="@TextFieldVariant.Filled" />
     <TextField
         Id="fillted-dense"
         Label="Dense"
         Class="demo-text-field"
         Style="margin-top: 19px;";
         Margin="@Margin.Dense"
-        Variant="@ControlVariant.Filled" />
+        Variant="@TextFieldVariant.Filled" />
     <TextField
         Id="fillted-multiline-flexible"
         Label="Multiline"
@@ -76,7 +76,7 @@
         OnChange="@HandleMultilineChange"
         Class="demo-text-field"
         Margin="@Margin.Normal"
-        Variant="@ControlVariant.Filled" />
+        Variant="@TextFieldVariant.Filled" />
     <TextField
         Id="fillted-multiline-static"
         Label="Multiline"
@@ -85,7 +85,7 @@
         DefaultValue="Default Value"
         Class="demo-text-field"
         Margin="@Margin.Normal"
-        Variant="@ControlVariant.Filled" />
+        Variant="@TextFieldVariant.Filled" />
     <TextField
         Id="fillted-helperText"
         Label="Helper text"
@@ -93,14 +93,14 @@
         Class="demo-text-field"
         Helper="Some important text"
         Margin="@Margin.Normal"
-        Variant="@ControlVariant.Filled" />
+        Variant="@TextFieldVariant.Filled" />
     <TextField
         Id="fillted-with-placeholder"
         Label="With placeholder"
         Placeholder="Placeholder"
         Class="demo-text-field"
         Margin="@Margin.Normal"
-        Variant="@ControlVariant.Filled" />
+        Variant="@TextFieldVariant.Filled" />
     <TextField
         Id="fillted-textarea"
         Label="With placeholder multiline"
@@ -108,7 +108,7 @@
         Multiline
         Class="demo-text-field"
         Margin="@Margin.Normal"
-        Variant="@ControlVariant.Filled" />
+        Variant="@TextFieldVariant.Filled" />
     <TextField
         Id="fillted-number"
         Label="Number"
@@ -120,14 +120,14 @@
             shrink: true,
         }} *@
         Margin="@Margin.Normal"
-        Variant="@ControlVariant.Filled" />
+        Variant="@TextFieldVariant.Filled" />
     <TextField
         Id="fillted-search"
         Label="Search field"
         Type="search"
         Class="demo-text-field"
         Margin="@Margin.Normal"
-        Variant="@ControlVariant.Filled" />
+        Variant="@TextFieldVariant.Filled" />
     <TextField
         Id="fillted-full-width"
         Label="Label"
@@ -137,13 +137,13 @@
         FullWidth
         Shrink
         Margin="@Margin.Normal"
-        Variant="@ControlVariant.Filled" />
+        Variant="@TextFieldVariant.Filled" />
     <TextField
         Id="fillted-bare"
         Class="demo-text-field"
         DefaultValue="Bare"
         Margin="@Margin.Normal"
-        Variant="@ControlVariant.Filled" />
+        Variant="@TextFieldVariant.Filled" />
         @* inputProps={{ 'aria-label': 'bare' }} *@
 </form>
 

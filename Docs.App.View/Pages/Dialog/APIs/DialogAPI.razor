@@ -31,7 +31,7 @@
 | <span class=""prop-name"">DisableEscapeKeyDown</span> | <span class=""prop-type"">bool</span> | <span class=""prop-default"">false</span> | If `true`, hitting escape will not fire any callback. |
 | <span class=""prop-name"">FullScreen</span> | <span class=""prop-type"">bool</span> | <span class=""prop-default"">false</span> | If `true`, the dialog will be full-screen |
 | <span class=""prop-name"">FullWidth</span> | <span class=""prop-type"">bool</span> | <span class=""prop-default"">false</span> | If `true`, the dialog stretches to `maxWidth`.<br>Notice that the dialog width grow is limited by the default margin. |
-| <span class=""prop-name"">MaxWidth</span> | <span class=""prop-type"">DialogWidth.ExtraSmall<br>&#124;&nbsp;DialogWidth.Small<br>&#124;&nbsp;DialogWidth.Medium<br>&#124;&nbsp;DialogWidth.Large<br>&#124;&nbsp;DialogWidth.ExtraLarge<br>&#124;&nbsp;DialogWidth.False</span> | <span class=""prop-default"">DialogWidth.Small</span> | Determine the max-width of the dialog. The dialog width grows with the size of the screen. Set to `DialogWidth.False` to disable `MaxWidth`. |
+| <span class=""prop-name"">MaxWidth</span> | <span class=""prop-type"">MaxWidth.ExtraSmall<br>&#124;&nbsp;MaxWidth.Small<br>&#124;&nbsp;MaxWidth.Medium<br>&#124;&nbsp;MaxWidth.Large<br>&#124;&nbsp;MaxWidth.ExtraLarge<br>&#124;&nbsp;MaxWidth.False</span> | <span class=""prop-default"">MaxWidth.Small</span> | Determine the max-width of the dialog. The dialog width grows with the size of the screen. Set to `MaxWidth.False` to disable `MaxWidth`. |
 | <span class=""prop-name"">OnBackdropClick</span> | <span class=""prop-type"">Action</span> |  | Callback fired when the backdrop is clicked. |
 | <span class=""prop-name"">OnClose</span> | <span class=""prop-type"">Action&lt;ModalCloseReason&gt;</span> |  | Callback fired when the component requests to be closed. The `reason` parameter can optionally be used to control the response to `OnClose`.<br><br>**Signature:**<br>`function(event: object, reason: string) => void`<br>*event:* The event source of the callback.<br>*reason:* Can be:`""ModalCloseReason.Escape""`, `""ModalCloseReason.BackdropClick""`. |
 | <span class=""prop-name"">OnEscapeKeyDown</span> | <span class=""prop-type"">Action</span> |  | Callback fired when the escape key is pressed, `DisableEscapeKeyDown` is false and the modal is in focus. |
@@ -60,12 +60,12 @@
 | <span class=""prop-name"">Dialog-Paper</span> | Styles applied to the `Paper` component.
 | <span class=""prop-name"">Dialog-Paper-Scroll-Paper</span> | Styles applied to the `Paper` component if `Scroll=""@DialogScroll.Paper""`.
 | <span class=""prop-name"">Dialog-Paper-Scroll-Body</span> | Styles applied to the `Paper` component if `Scroll=""@DialogScroll.Body""`.
-| <span class=""prop-name"">Dialog-Paper-Width-False</span> | Styles applied to the `Paper` component if `MaxWidth=""@DialogWidth.False""`.
-| <span class=""prop-name"">Dialog-Paper-Width-ExtraSmall</span> | Styles applied to the `Paper` component if `MaxWidth=""@DialogWidth.ExtraSmall""`.
-| <span class=""prop-name"">Dialog-Paper-Width-Small</span> | Styles applied to the `Paper` component if `MaxWidth=""@DialogWidth.Small""`.
-| <span class=""prop-name"">Dialog-Paper-Width-Medium</span> | Styles applied to the `Paper` component if `MaxWidth=""@DialogWidth.Medium""`.
-| <span class=""prop-name"">Dialog-Paper-Width-Large</span> | Styles applied to the `Paper` component if `MaxWidth=""@DialogWidth.Large""`.
-| <span class=""prop-name"">Dialog-Paper-Width-ExtraLarge</span> | Styles applied to the `Paper` component if `MaxWidth=""@DialogWidth.ExtraLarge""`.
+| <span class=""prop-name"">Dialog-Paper-Width-False</span> | Styles applied to the `Paper` component if `MaxWidth=""@MaxWidth.False""`.
+| <span class=""prop-name"">Dialog-Paper-Width-ExtraSmall</span> | Styles applied to the `Paper` component if `MaxWidth=""@MaxWidth.ExtraSmall""`.
+| <span class=""prop-name"">Dialog-Paper-Width-Small</span> | Styles applied to the `Paper` component if `MaxWidth=""@MaxWidth.Small""`.
+| <span class=""prop-name"">Dialog-Paper-Width-Medium</span> | Styles applied to the `Paper` component if `MaxWidth=""@MaxWidth.Medium""`.
+| <span class=""prop-name"">Dialog-Paper-Width-Large</span> | Styles applied to the `Paper` component if `MaxWidth=""@MaxWidth.Large""`.
+| <span class=""prop-name"">Dialog-Paper-Width-ExtraLarge</span> | Styles applied to the `Paper` component if `MaxWidth=""@MaxWidth.ExtraLarge""`.
 | <span class=""prop-name"">Dialog-Paper-FullWidth</span> | Styles applied to the `Paper` component if `FullWidth=""true""`.
 | <span class=""prop-name"">Dialog-Paper-FullScreen</span> | Styles applied to the `Paper` component if `FullScreen=""true""`.
 

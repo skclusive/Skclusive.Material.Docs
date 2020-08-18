@@ -11,7 +11,7 @@
     <TextField
         Label=""With outlined TextField""
         Id=""outlined-simple-start-adornment""
-        Variant=""@ControlVariant.Outlined""
+        Variant=""@TextFieldVariant.Outlined""
         Style=""margin: 8px; flex-basis: 200px;"">
         <StartAdornment>
              <InputAdornment
@@ -22,7 +22,7 @@
     <TextField
         Label=""Amount""
         Id=""outlined-adornment-amount""
-        Variant=""@ControlVariant.Outlined""
+        Variant=""@TextFieldVariant.Outlined""
         Value=""@Amount""
         OnChange=""@OnAmountChanged""
         Style=""margin: 8px; flex-basis: 200px;"">
@@ -35,7 +35,7 @@
     <TextField
         Label=""Weight""
         Id=""outlined-adornment-weight""
-        Variant=""@ControlVariant.Outlined""
+        Variant=""@TextFieldVariant.Outlined""
         Value=""@Weight""
         OnChange=""@OnWeightChanged""
         Style=""margin: 8px; flex-basis: 200px;"">
@@ -48,7 +48,7 @@
     <TextField
         Label=""Password""
         Id=""outlined-adornment-password""
-        Variant=""@ControlVariant.Outlined""
+        Variant=""@TextFieldVariant.Outlined""
         Type=""@(ShowPassword ? ""text"" : ""password"")""
         Value=""@Password""
         OnChange=""@OnPasswordChanged""

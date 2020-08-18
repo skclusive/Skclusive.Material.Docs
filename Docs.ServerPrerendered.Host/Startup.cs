@@ -31,7 +31,22 @@ namespace Skclusive.Material.Docs.ServerPrerendered.Host
             services.AddRazorPages();
             services.AddServerSideBlazor();
 
-            services.TryAddDocsViewServices(new DocsViewConfigBuilder().Build());
+            services.AddHttpContextAccessor();
+            services.AddTransient<IRenderContext>((sp) =>
+            {
+               var httpContextAccessor = sp.GetService<IHttpContextAccessor>();
+               bool? hasStarted = httpContextAccessor?.HttpContext?.Response.HasStarted;
+               var isPreRendering = !(hasStarted.HasValue && hasStarted.Value);
+               return new RenderContext(isServer: true, isPreRendering);
+            });
+            services.TryAddDocsViewServices
+            (
+                new DocsViewConfigBuilder()
+                .WithIsServer(true)
+                .WithIsPreRendering(true)
+                .WithResponsive(true)
+                .Build()
+            );
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

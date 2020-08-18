@@ -9,7 +9,7 @@ namespace Skclusive.Material.Docs.App.View
     {
         public static void TryAddDocsViewServices(this IServiceCollection services, IDocsViewConfig config)
         {
-            services.TryAddMaterialServices();
+            services.TryAddMaterialServices(config);
 
             services.TryAddMarkdownServices();
 

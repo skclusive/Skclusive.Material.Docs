@@ -1,22 +1,28 @@
-﻿namespace Skclusive.Material.Docs.App.View
+﻿using Skclusive.Material.Component;
+
+namespace Skclusive.Material.Docs.App.View
 {
-    public interface IDocsViewConfig
+    public interface IDocsViewConfig : IMaterialConfig
     {
         bool Responsive { get; }
     }
 
-    public class DocsViewConfigBuilder
+    public class DocsViewConfigBuilder : MaterialConfigBuilder<DocsViewConfigBuilder, IDocsViewConfig>
     {
-        private class DocsViewConfig : IDocsViewConfig
+        private class DocsViewConfig : MaterialConfig, IDocsViewConfig
         {
             public bool Responsive { get; internal set; } = true;
         }
 
-        private readonly DocsViewConfig config = new DocsViewConfig();
+        private readonly DocsViewConfig config;
 
-        public IDocsViewConfig Build()
+        public DocsViewConfigBuilder() : this(new DocsViewConfig())
         {
-            return config;
+        }
+
+        private DocsViewConfigBuilder(DocsViewConfig config) : base(config)
+        {
+            this.config = config;
         }
 
         public DocsViewConfigBuilder WithResponsive(bool responsive)
@@ -31,6 +37,16 @@
             WithResponsive(config.Responsive);
 
             return this;
+        }
+
+        protected override DocsViewConfigBuilder Builder()
+        {
+            return this;
+        }
+
+        protected override IDocsViewConfig Config()
+        {
+            return (IDocsViewConfig)_config;
         }
     }
 }
