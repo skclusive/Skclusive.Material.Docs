@@ -1,0 +1,29 @@
+@namespace Skclusive.Material.Docs.App.View
+
+<MarkdownSegment
+    Text="@(@"
+## Simple links
+
+The Link component is built on top of the [Typography](./typography) component.
+You can leverage its properties.
+
+")" />
+
+<MarkdownDemo>
+    <ViewContent>
+        <SimpleLinksDemo />
+    </ViewContent>
+    <CodeContent>
+        <SimpleLinksCode />
+    </CodeContent>
+</MarkdownDemo>
+
+<MarkdownSegment
+    Text="@(@"
+
+However, the Link component has different default properties than the Typography component:
+
+- `Color=""@Color.Primary""` as the link needs to stand out.
+- `Variant=""@LinkVariant.Inherit""` as the link will, most of the time, be used as a child of a Typography component.
+
+")" />

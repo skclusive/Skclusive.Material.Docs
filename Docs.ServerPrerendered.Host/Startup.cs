@@ -6,11 +6,14 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Skclusive.Material.Layout;
 
+using Skclusive.Core.Component;
 using Skclusive.Material.Docs.App.View;
 
 namespace Skclusive.Material.Docs.ServerPrerendered.Host
@@ -30,8 +33,13 @@ namespace Skclusive.Material.Docs.ServerPrerendered.Host
         {
             services.AddRazorPages();
             services.AddServerSideBlazor();
+            //services.AddSignalR().AddAzureSignalR(option =>
+            //{
+            //    option.ServerStickyMode = Microsoft.Azure.SignalR.ServerStickyMode.Required;
+            //});
 
             services.AddHttpContextAccessor();
+
             services.AddTransient<IRenderContext>((sp) =>
             {
                var httpContextAccessor = sp.GetService<IHttpContextAccessor>();

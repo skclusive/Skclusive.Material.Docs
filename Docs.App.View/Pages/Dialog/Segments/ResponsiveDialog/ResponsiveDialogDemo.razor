@@ -2,7 +2,7 @@
 
 @inherits MaterialComponentBase
 
-@inject IDocsViewConfig DocsViewConfig
+@inject ILayoutConfig LayoutConfig
 
 @inject MediaQueryMatcher MediaQueryMatcher
 
@@ -80,7 +80,7 @@
 
     protected override  Task OnInitializedAsync()
     {
-        if (DocsViewConfig.Responsive)
+        if (LayoutConfig.Responsive)
         {
             MediaQueryMatcher.OnChange += OnMediaQueryChanged;
 
@@ -103,8 +103,11 @@
     {
         TimeoutDisposal?.Dispose();
 
-        MediaQueryMatcher.OnChange -= OnMediaQueryChanged;
+        if (LayoutConfig.Responsive)
+        {
+            MediaQueryMatcher.OnChange -= OnMediaQueryChanged;
 
-        _ = MediaQueryMatcher.UnRegisterAsync();
+            _ = MediaQueryMatcher.UnRegisterAsync();
+        }
     }
 }

@@ -1,0 +1,25 @@
+@namespace Skclusive.Material.Docs.App.View
+
+<style>
+    .simple-links-root > * + * {
+        margin-left: 16px;
+    }
+</style>
+
+<Typography
+    Class="simple-links-root">
+    <Link
+        Href="#">
+        Link
+    </Link>
+    <Link
+        Href="#"
+        Color="@Color.Inherit">
+        @(@"Color=""@Color.Inherit""")
+    </Link>
+    <Link
+        Href="#"
+        Variant="@LinkVariant.Body2">
+        @(@"Variant=""@LinkVariant.Body2""")
+    </Link>
+</Typography>

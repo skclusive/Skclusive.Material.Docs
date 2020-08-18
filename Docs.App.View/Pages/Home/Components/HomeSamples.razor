@@ -1,0 +1,80 @@
+@namespace Skclusive.Material.Docs.App.View
+@inherits MaterialComponentBase
+
+<style>
+    .home-samples-root {
+        padding: 16px;
+        margin-top: 64px;
+        min-height: 160px;
+    }
+    .home-samples-link {
+        display: block;
+        margin-top: 8px;
+    }
+    .home-samples-image {
+        width: 100%;
+        height: auto;
+        max-width: 960px;
+        margin-top: 32px;
+    }
+    .home-samples-button {
+        margin: 32px 0px 4px;
+    }
+</style>
+
+<div
+    class="home-samples-root">
+    <Container
+        MaxWidth="@MaxWidth.Medium">
+        <Typography
+            Variant="@TypographyVariant.H4"
+            Component="h2"
+            Align="@Align.Center"
+            GutterBottom>
+            Samples
+        </Typography>
+        <Typography
+            Variant="@TypographyVariant.Body1"
+            Align="@Align.Center"
+            GutterBottom>
+            Have a look at the samples from github – all built on Skclusive-UI.
+        </Typography>
+        <Link
+            Href="https://github.com/skclusive/Skclusive.Blazor.Samples"
+            data-ga-event-category="premium-themes"
+            data-ga-event-action="click"
+            data-ga-event-label="home-image"
+            Class="home-samples-link">
+            <img
+                class="home-samples-image"
+                alt="Browse Samples"
+                src="./_content/Skclusive.Material.Docs.App.View/images/samples/dashboard.png"
+                loading="eager"
+                width="500"
+                height="307"
+            />
+            <img
+                class="home-samples-image"
+                alt="Browse Samples"
+                src="./_content/Skclusive.Material.Docs.App.View/images/samples/messenger.png"
+                loading="eager"
+                width="500"
+                height="307"
+            />
+        </Link>
+        <Grid
+            Container
+            Justify="@Justify.Center">
+            <Button
+                Variant="@ButtonVariant.Outlined"
+                Component="a"
+                Class="home-samples-button"
+                data-ga-event-category="premium-themes"
+                data-ga-event-action="click"
+                data-ga-event-label="home-link"
+                Href="https://github.com/skclusive/Skclusive.Blazor.Samples">
+                Browse Samples
+            </Button>
+        </Grid>
+    </Container>
+</div>

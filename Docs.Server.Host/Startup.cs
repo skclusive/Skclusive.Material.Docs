@@ -9,6 +9,8 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Skclusive.Core.Component;
+using Skclusive.Material.Layout;
 
 using Skclusive.Material.Docs.App.View;
 
@@ -30,7 +32,14 @@ namespace Skclusive.Material.Docs.Server.Host
             services.AddRazorPages();
             services.AddServerSideBlazor();
 
-            services.TryAddDocsViewServices(new DocsViewConfigBuilder().Build());
+            services.TryAddDocsViewServices
+            (
+                new DocsViewConfigBuilder()
+                .WithIsServer(true)
+                .WithIsPreRendering(false)
+                .WithResponsive(true)
+                .Build()
+            );
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

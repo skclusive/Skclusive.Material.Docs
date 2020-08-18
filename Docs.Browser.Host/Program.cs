@@ -17,15 +17,16 @@ namespace Skclusive.Material.Docs.Browser.Host
 
             builder.RootComponents.Add<AppView>("app");
 
-            builder.Services.AddSingleton(new HttpClient { BaseAddress = new Uri(builder.HostEnvironment.BaseAddress) });
+            builder.Services.AddTransient(sp => new HttpClient { BaseAddress = new Uri(builder.HostEnvironment.BaseAddress) });
 
-            var config = new DocsViewConfigBuilder()
+            builder.Services.TryAddDocsViewServices
+            (
+                new DocsViewConfigBuilder()
                 .WithIsServer(false)
                 .WithIsPreRendering(false)
                 .WithResponsive(true)
-                .Build();
-
-            builder.Services.TryAddDocsViewServices(config);
+                .Build()
+            );
 
             await builder.Build().RunAsync();
         }

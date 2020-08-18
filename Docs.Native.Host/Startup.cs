@@ -1,6 +1,7 @@
 using Microsoft.Extensions.DependencyInjection;
 using Skclusive.Material.Docs.App.View;
 using WebWindows.Blazor;
+using Skclusive.Material.Layout;
 
 namespace Skclusive.Material.Docs.Native.Host
 {
@@ -8,7 +9,14 @@ namespace Skclusive.Material.Docs.Native.Host
     {
         public void ConfigureServices(IServiceCollection services)
         {
-            services.TryAddDocsViewServices(new DocsViewConfigBuilder().WithResponsive(false).Build());
+            services.TryAddDocsViewServices
+            (
+                new DocsViewConfigBuilder()
+                .WithIsServer(false)
+                .WithIsPreRendering(false)
+                .WithResponsive(false)
+                .Build()
+            );
         }
 
         public void Configure(DesktopApplicationBuilder app)

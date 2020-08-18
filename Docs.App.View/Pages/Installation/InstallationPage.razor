@@ -1,0 +1,118 @@
+﻿@namespace Skclusive.Material.Docs.App.View
+
+@page "/installation"
+
+<div
+    style="margin: 20px">
+    <MarkdownSegment
+        Text="@(@"
+## Installing with Nuget
+
+You can [install Skclusive-UI package](https://www.nuget.org/packages/Skclusive.Material.Component/) by typing the below command in your terminal:
+
+```html
+dotnet add package Skclusive.Material.Component
+```
+
+Then, you can add the following usings in your _Imports.razor.
+
+```csharp
+@using Skclusive.Core.Component
+@using Skclusive.Transition.Component;
+@using Skclusive.Script.DomHelpers
+
+@using Skclusive.Material.Core
+@using Skclusive.Material.Component
+@using Skclusive.Material.Theme
+@using Skclusive.Material.Form
+@using Skclusive.Material.Input
+@using Skclusive.Material.Text
+@using Skclusive.Material.Typography
+@using Skclusive.Material.Progress
+@using Skclusive.Material.Transition
+@using Skclusive.Material.Button
+@using Skclusive.Material.Icon
+@using Skclusive.Material.Paper
+@using Skclusive.Material.Avatar
+@using Skclusive.Material.Badge
+@using Skclusive.Material.Selection
+@using Skclusive.Material.Toolbar
+@using Skclusive.Material.AppBar
+@using Skclusive.Material.Divider
+@using Skclusive.Material.Grid
+@using Skclusive.Material.Table
+@using Skclusive.Material.Baseline
+@using Skclusive.Material.Card
+@using Skclusive.Material.Hidden
+@using Skclusive.Material.List
+@using Skclusive.Material.Modal
+@using Skclusive.Material.Script
+@using Skclusive.Material.Drawer
+@using Skclusive.Material.Dialog
+@using Skclusive.Material.Popover
+@using Skclusive.Material.Menu
+@using Skclusive.Material.Tab
+@using Skclusive.Material.Container
+```
+
+Then in your `App.razor`, add `MaterialStyles`, `MaterialScripts` and `ThemeProvider` before Router.
+
+```html
+<MaterialScripts />
+<MaterialStyles />
+
+<ThemeProvider Theme=""@Theme.Dark"" />
+
+<Router AppAssembly=""@typeof(Program).Assembly"">
+    <Found Context=""routeData"">
+        <RouteView RouteData=""@routeData"" DefaultLayout=""@typeof(MainLayout)"" />
+    </Found>
+    <NotFound>
+        <LayoutView Layout=""@typeof(MainLayout)"">
+            <p>Sorry, there's nothing at this address.</p>
+        </LayoutView>
+    </NotFound>
+</Router>
+```
+
+Then `MaterialServices` need to be added in `Program.cs`
+
+### Client Side
+
+```csharp
+using Skclusive.Material.Component;
+
+public class Program
+{
+    public static async Task Main(string[] args)
+    {
+        var builder = WebAssemblyHostBuilder.CreateDefault(args);
+
+        builder.RootComponents.Add<App>(""app"");
+
+        builder.Services.TryAddMaterialServices(new MaterialConfigBuilder().Build());
+
+        await builder.Build().RunAsync();
+    }
+}
+```
+
+### Server Side
+
+```csharp
+using Skclusive.Material.Component;
+
+public class Startup
+{
+    public void ConfigureServices(IServiceCollection services)
+    {
+        services.AddRazorPages();
+        services.AddServerSideBlazor();
+        // ...
+        services.TryAddMaterialServices(new MaterialConfigBuilder().Build());
+    }
+}
+```
+
+")" />
+</div>
