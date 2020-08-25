@@ -1,0 +1,112 @@
+@namespace Skclusive.Material.Docs.App.View
+
+<style>
+    .avatar-chips-root {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .avatar-chips-root > * {
+        margin: 4px;
+    }
+</style>
+
+<div
+    class="avatar-chips-root">
+    <Chip
+        Label="Basic" />
+    <Chip
+        Label="Disabled"
+        Disabled="true" />
+    <Chip
+        Label="Clickable"
+        OnClick="@HandleClickAsync">
+        <AvatarContent>
+            <Avatar>M</Avatar>
+        </AvatarContent>
+    </Chip>
+    <Chip
+        Label="Deletable"
+        Clickable="true"
+        OnDelete="@HandleDeleteClickAsync">
+        <AvatarContent>
+            <Avatar
+                Src="./_content/Skclusive.Material.Docs.App.View/images/avatar-1.jpg"
+                Alt="Natacha" />
+        </AvatarContent>
+    </Chip>
+    <Chip
+        Label="Clickable deletable"
+        OnClick="@HandleClickAsync"
+        OnDelete="@HandleDeleteClickAsync">
+        <IconContent>
+            <FaceIcon />
+        </IconContent>
+    </Chip>
+    <Chip
+        Label="Custom delete icon"
+        OnClick="@HandleClickAsync"
+        OnDelete="@HandleDeleteClickAsync">
+        <DeleteIconContent>
+            <DoneIcon />
+        </DeleteIconContent>
+    </Chip>
+    <Chip
+        Label="Clickable Link"
+        Component="a"
+        Href="#chip"
+        Clickable="true" />
+    <Chip
+        Label="Primary clickable"
+        Clickable="true"
+        Color="@Color.Primary"
+        OnDelete="@HandleDeleteClickAsync">
+        <AvatarContent>
+            <Avatar>M</Avatar>
+        </AvatarContent>
+        <DeleteIconContent>
+            <DoneIcon />
+        </DeleteIconContent>
+    </Chip>
+    <Chip
+        Label="Primary clickable"
+        Clickable="true"
+        Color="@Color.Primary"
+        OnDelete="@HandleDeleteClickAsync">
+        <IconContent>
+            <FaceIcon />
+        </IconContent>
+        <DeleteIconContent>
+            <DoneIcon />
+        </DeleteIconContent>
+    </Chip>
+    <Chip
+        Label="Deletable primary"
+        OnDelete="@HandleDeleteClickAsync"
+        Color="@Color.Primary" />
+    <Chip
+        Label="Deletable secondary"
+        OnDelete="@HandleDeleteClickAsync"
+        Color="@Color.Secondary">
+        <IconContent>
+            <FaceIcon />
+        </IconContent>
+    </Chip>
+</div>
+
+@code
+{
+    [Inject]
+    public IJSRuntime JSRuntime { set; get; }
+
+    public async Task HandleClickAsync(EventArgs args)
+    {
+        await JSRuntime.InvokeVoidAsync("alert", "You clicked the Chip.");
+    }
+
+    public async Task HandleDeleteClickAsync(EventArgs args)
+    {
+        await JSRuntime.InvokeVoidAsync("alert", "You clicked the delete icon.");
+    }
+}

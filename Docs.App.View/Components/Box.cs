@@ -39,12 +39,12 @@ namespace Skclusive.Material.Docs.App.View
 
                 if (Margin.HasValue)
                 {
-                    yield return Tuple.Create<string, object>(nameof(Margin).ToLower(), $"calc(var(--theme-spacing, 8) * {Margin.Value}px)");
+                    yield return Tuple.Create<string, object>(nameof(Margin).ToLower(), $"calc(var(--theme-spacing) * {Margin.Value}px)");
                 }
 
                 if (Padding.HasValue)
                 {
-                    yield return Tuple.Create<string, object>(nameof(Padding).ToLower(), $"calc(var(--theme-spacing, 8) * {Padding.Value}px)");
+                    yield return Tuple.Create<string, object>(nameof(Padding).ToLower(), $"calc(var(--theme-spacing) * {Padding.Value}px)");
                 }
 
                 if (!string.IsNullOrWhiteSpace(Display))
