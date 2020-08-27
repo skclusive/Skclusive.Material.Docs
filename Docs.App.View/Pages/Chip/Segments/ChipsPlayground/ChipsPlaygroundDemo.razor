@@ -1,0 +1,517 @@
+@namespace Skclusive.Material.Docs.App.View
+
+<style>
+    .chips-playground-root {
+        flex-grow: 1;
+    }
+
+    .chips-playground-wrapper {
+        height: 80px;
+    }
+</style>
+
+<Grid
+    Container
+    Class="chips-playground-root">
+    <Grid
+        Item
+        ExtraSmall="@GridSize.Twelve">
+        <Grid
+            Container
+            Justify="@Justify.Center"
+            AlignItems="@AlignItems.Center">
+            <Grid
+                Item
+                Class="chips-playground-wrapper">
+                @if (Icon == "None")
+                {
+                    @if (Delete == "None")
+                    {
+                        <Chip
+                            Label="Chip component"
+                            Size="@Size"
+                            Color="@_Color"
+                            Variant="@Variant" />
+                    } else if (Delete == "Default")
+                    {
+                        <Chip
+                            Label="Chip component"
+                            Size="@Size"
+                            Color="@_Color"
+                            Variant="@Variant"
+                            OnDelete="@HandleDeleteClickAsync" />
+                    } else
+                    {
+                        <Chip
+                            Label="Chip component"
+                            Size="@Size"
+                            Color="@_Color"
+                            Variant="@Variant"
+                            OnDelete="@HandleDeleteClickAsync">
+                            <DeleteIconContent>
+                                <DoneIcon />
+                            </DeleteIconContent>
+                        </Chip>
+                    }
+                } else if (Avatar == "None")
+                {
+                    @if (Delete == "None")
+                    {
+                        <Chip
+                            Label="Chip component"
+                            Size="@Size"
+                            Color="@_Color"
+                            Variant="@Variant">
+                            <IconContent>
+                                <FaceIcon />
+                            </IconContent>
+                        </Chip>
+                    } else if (Delete == "Default")
+                    {
+                        <Chip
+                            Label="Chip component"
+                            Size="@Size"
+                            Color="@_Color"
+                            Variant="@Variant"
+                            OnDelete="@HandleDeleteClickAsync">
+                            <IconContent>
+                                <FaceIcon />
+                            </IconContent>
+                        </Chip>
+                    } else
+                    {
+                        <Chip
+                            Label="Chip component"
+                            Size="@Size"
+                            Color="@_Color"
+                            Variant="@Variant"
+                            OnDelete="@HandleDeleteClickAsync">
+                            <IconContent>
+                                <FaceIcon />
+                            </IconContent>
+                            <DeleteIconContent>
+                                <DoneIcon />
+                            </DeleteIconContent>
+                        </Chip>
+                    }
+
+                } else if (Avatar == "Letter")
+                {
+                    @if (Delete == "None")
+                    {
+                        <Chip
+                            Label="Chip component"
+                            Size="@Size"
+                            Color="@_Color"
+                            Variant="@Variant">
+                            <AvatarContent>
+                                <Avatar>F</Avatar>
+                            </AvatarContent>
+                        </Chip>
+                    } else if (Delete == "Default")
+                    {
+                        <Chip
+                            Label="Chip component"
+                            Size="@Size"
+                            Color="@_Color"
+                            Variant="@Variant"
+                            OnDelete="@HandleDeleteClickAsync">
+                            <AvatarContent>
+                                <Avatar>F</Avatar>
+                            </AvatarContent>
+                        </Chip>
+                    } else
+                    {
+                        <Chip
+                            Label="Chip component"
+                            Size="@Size"
+                            Color="@_Color"
+                            Variant="@Variant"
+                            OnDelete="@HandleDeleteClickAsync">
+                            <AvatarContent>
+                                <Avatar>F</Avatar>
+                            </AvatarContent>
+                            <DeleteIconContent>
+                                <DoneIcon />
+                            </DeleteIconContent>
+                        </Chip>
+                    }
+
+                } else if (Avatar == "Image")
+                {
+                     @if (Delete == "None")
+                    {
+                        <Chip
+                            Label="Chip component"
+                            Size="@Size"
+                            Color="@_Color"
+                            Variant="@Variant">
+                            <AvatarContent>
+                                <Avatar
+                                    Src="./_content/Skclusive.Material.Docs.App.View/images/avatar-1.jpg"
+                                    Alt="Natacha" />
+                            </AvatarContent>
+                        </Chip>
+                    } else if (Delete == "Default")
+                    {
+                        <Chip
+                            Label="Chip component"
+                            Size="@Size"
+                            Color="@_Color"
+                            Variant="@Variant"
+                            OnDelete="@HandleDeleteClickAsync">
+                            <AvatarContent>
+                                <Avatar
+                                    Src="./_content/Skclusive.Material.Docs.App.View/images/avatar-1.jpg"
+                                    Alt="Natacha" />
+                            </AvatarContent>
+                        </Chip>
+                    } else
+                    {
+                        <Chip
+                            Label="Chip component"
+                            Size="@Size"
+                            Color="@_Color"
+                            Variant="@Variant"
+                            OnDelete="@HandleDeleteClickAsync">
+                            <AvatarContent>
+                                <Avatar
+                                    Src="./_content/Skclusive.Material.Docs.App.View/images/avatar-1.jpg"
+                                    Alt="Natacha" />
+                            </AvatarContent>
+                            <DeleteIconContent>
+                                <DoneIcon />
+                            </DeleteIconContent>
+                        </Chip>
+                    }
+                }
+            </Grid>
+        </Grid>
+    </Grid>
+    <Grid
+        Item
+        ExtraSmall="@GridSize.Twelve">
+        <Grid
+            Container
+            Spacing="@Spacing.Three">
+            <Grid
+                Item
+                ExtraSmall="@GridSize.Twelve"
+                Medium="@GridSize.Six">
+                <FormControl
+                    Component="fieldset">
+                    <FormLabel>
+                        Variant
+                    </FormLabel>
+                    <RadioGroup
+                        Row
+                        aria-label="Variant"
+                        Name="Variant"
+                        Value="@Variant.ToString()"
+                        OnChange="@OnVariantChange">
+                        <FormControlLabel
+                            Label="Default">
+                            <Radio
+                                Value="@ChipVariant.Default.ToString()" />
+                        </FormControlLabel>
+                        <FormControlLabel
+                            Label="Outlined">
+                            <Radio
+                                Value="@ChipVariant.Outlined.ToString()" />
+                        </FormControlLabel>
+                    </RadioGroup>
+                </FormControl>
+            </Grid>
+            <Grid
+                Item
+                ExtraSmall="@GridSize.Twelve"
+                Medium="@GridSize.Six">
+                <FormControl
+                    Component="fieldset">
+                    <FormLabel>
+                        Color
+                    </FormLabel>
+                    <RadioGroup
+                        Row
+                        aria-label="Color"
+                        Name="Color"
+                        Value="@_Color.ToString()"
+                        OnChange="@OnColorChange">
+                        <FormControlLabel
+                            Label="Default">
+                            <Radio
+                                Value="@Color.Default.ToString()" />
+                        </FormControlLabel>
+                        <FormControlLabel
+                            Label="Primary">
+                            <Radio
+                                Value="@Color.Primary.ToString()" />
+                        </FormControlLabel>
+                        <FormControlLabel
+                            Label="Secondary">
+                            <Radio
+                                Value="@Color.Secondary.ToString()" />
+                        </FormControlLabel>
+                    </RadioGroup>
+                </FormControl>
+            </Grid>
+            <Grid
+                Item
+                ExtraSmall="@GridSize.Twelve"
+                Medium="@GridSize.Six">
+                <FormControl
+                    Component="fieldset">
+                    <FormLabel>
+                        Size
+                    </FormLabel>
+                    <RadioGroup
+                        Row
+                        aria-label="Size"
+                        Name="Size"
+                        Value="@Size.ToString()"
+                        OnChange="@OnSizeChange">
+                        <FormControlLabel
+                            Label="Medium">
+                            <Radio
+                                Value="@Size.Medium.ToString()" />
+                        </FormControlLabel>
+                        <FormControlLabel
+                            Label="Small">
+                            <Radio
+                                Value="@Size.Small.ToString()" />
+                        </FormControlLabel>
+                    </RadioGroup>
+                </FormControl>
+            </Grid>
+            <Grid
+                Item
+                ExtraSmall="@GridSize.Twelve"
+                Medium="@GridSize.Six">
+                <FormControl
+                    Component="fieldset">
+                    <FormLabel>
+                        Icon
+                    </FormLabel>
+                    <RadioGroup
+                        Row
+                        aria-label="Icon"
+                        Name="Icon"
+                        Value="@Icon.ToString()"
+                        OnChange="@OnIconChange">
+                        <FormControlLabel
+                            Label="None">
+                            <Radio
+                                Value="None" />
+                        </FormControlLabel>
+                        <FormControlLabel
+                            Label="Icon">
+                            <Radio
+                                Value="Icon" />
+                        </FormControlLabel>
+                    </RadioGroup>
+                </FormControl>
+            </Grid>
+            <Grid
+                Item
+                ExtraSmall="@GridSize.Twelve"
+                Medium="@GridSize.Six">
+                <FormControl
+                    Component="fieldset">
+                    <FormLabel>
+                        Avatar
+                    </FormLabel>
+                    <RadioGroup
+                        Row
+                        aria-label="Avatar"
+                        Name="Avatar"
+                        Value="@Avatar.ToString()"
+                        OnChange="@OnAvatarChange">
+                        <FormControlLabel
+                            Label="None">
+                            <Radio
+                                Value="None" />
+                        </FormControlLabel>
+                        <FormControlLabel
+                            Label="Letter">
+                            <Radio
+                                Value="Letter" />
+                        </FormControlLabel>
+                        <FormControlLabel
+                            Label="Image">
+                            <Radio
+                                Value="Image" />
+                        </FormControlLabel>
+                    </RadioGroup>
+                </FormControl>
+            </Grid>
+            <Grid
+                Item
+                ExtraSmall="@GridSize.Twelve"
+                Medium="@GridSize.Six">
+                <FormControl
+                    Component="fieldset">
+                    <FormLabel>
+                        OnDelete
+                    </FormLabel>
+                    <RadioGroup
+                        Row
+                        aria-label="On Delete"
+                        Name="OnDelete"
+                        Value="@Delete.ToString()"
+                        OnChange="@OnDeleteChange">
+                        <FormControlLabel
+                            Label="None">
+                            <Radio
+                                Value="None" />
+                        </FormControlLabel>
+                        <FormControlLabel
+                            Label="Default">
+                            <Radio
+                                Value="Default" />
+                        </FormControlLabel>
+                        <FormControlLabel
+                            Label="Custom">
+                            <Radio
+                                Value="Custom" />
+                        </FormControlLabel>
+                    </RadioGroup>
+                </FormControl>
+            </Grid>
+        </Grid>
+    </Grid>
+    <Grid
+        Item
+        ExtraSmall="@GridSize.Twelve">
+        <MarkdownCode
+            Text="@Code" />
+    </Grid>
+</Grid>
+
+@code
+{
+    private string Code => $@"
+```html
+ <Chip
+    Label=""Chip component""
+    Color=""@Color.{_Color}""
+    Size=""@Size.{Size}""{DeleteAttribute}
+    Variant=""@ChipVariant.{Variant}"">{CodeChildContent()}{CodeDeleteContent()}
+</Chip>
+```
+    ";
+
+    private string DeleteAttribute => Delete == "None" ? "" : @"
+    OnDelete=""@HandleDeleteClickAsync""";
+
+    private string CodeDeleteContent()
+    {
+        if (Delete == "Custom")
+        {
+            return @"
+    <DeleteIconContent>
+        <DoneIcon />
+    </DeleteIconContent>";
+        }
+        return "";
+    }
+
+    private string CodeChildContent()
+    {
+        if (Icon == "None" && Avatar == "None")
+        {
+            return "";
+        }
+        if (Avatar == "Image")
+        {
+            return $@"
+    <AvatarContent>
+        <Avatar
+            Src=""./avatar.jpg""
+            Alt=""Natacha"" />
+    </AvatarContent>";
+        } else if (Avatar == "Letter")
+        {
+            return $@"
+    <AvatarContent>
+        <Avatar>F</Avatar>
+    </AvatarContent>";
+        } else
+        {
+            return $@"
+    <IconContent>
+        <FaceIcon />
+    </IconContent>";
+        }
+    }
+
+    private ChipVariant Variant { set; get; } = ChipVariant.Default;
+
+    private async Task OnVariantChange(ChangeEventArgs args)
+    {
+        if (Enum.TryParse(args.Value.ToString(), out ChipVariant variant))
+        {
+            Variant = variant;
+
+            await InvokeAsync(StateHasChanged);
+        }
+    }
+
+    private Size Size { set; get; } = Size.Medium;
+
+    private async Task OnSizeChange(ChangeEventArgs args)
+    {
+        if (Enum.TryParse(args.Value.ToString(), out Size size))
+        {
+            Size = size;
+
+            await InvokeAsync(StateHasChanged);
+        }
+    }
+
+    private Color _Color { set; get; } = Color.Default;
+
+    private async Task OnColorChange(ChangeEventArgs args)
+    {
+        if (Enum.TryParse(args.Value.ToString(), out Color color))
+        {
+            _Color = color;
+
+            await InvokeAsync(StateHasChanged);
+        }
+    }
+
+    private string Delete { set; get; } = "None";
+
+    private async Task OnDeleteChange(ChangeEventArgs args)
+    {
+        Delete = args.Value.ToString();
+
+        await InvokeAsync(StateHasChanged);
+    }
+
+    private string Icon { set; get; } = "None";
+
+    private async Task OnIconChange(ChangeEventArgs args)
+    {
+        Icon = args.Value.ToString();
+
+        await InvokeAsync(StateHasChanged);
+    }
+
+    private string Avatar { set; get; } = "None";
+
+    private async Task OnAvatarChange(ChangeEventArgs args)
+    {
+        Avatar = args.Value.ToString();
+
+        await InvokeAsync(StateHasChanged);
+    }
+
+    [Inject]
+    public IJSRuntime JSRuntime { set; get; }
+
+    public async Task HandleDeleteClickAsync(EventArgs args)
+    {
+        await JSRuntime.InvokeVoidAsync("alert", "You clicked the delete icon.");
+    }
+}

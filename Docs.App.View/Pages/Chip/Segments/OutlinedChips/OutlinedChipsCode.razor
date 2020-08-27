@@ -7,15 +7,18 @@
     Text="@(@"
 ```html
 <div
-    class=""avatar-chips-root"">
+    class=""outlined-chips-root"">
     <Chip
-        Label=""Basic"" />
+        Label=""Basic""
+        Variant=""@ChipVariant.Outlined"" />
     <Chip
         Label=""Disabled""
-        Disabled=""true"" />
+        Disabled=""true""
+        Variant=""@ChipVariant.Outlined"" />
     <Chip
         Label=""Clickable""
-        OnClick=""@HandleClickAsync"">
+        OnClick=""@HandleClickAsync""
+        Variant=""@ChipVariant.Outlined"">
         <AvatarContent>
             <Avatar>M</Avatar>
         </AvatarContent>
@@ -23,7 +26,8 @@
     <Chip
         Label=""Deletable""
         Clickable=""true""
-        OnDelete=""@HandleDeleteClickAsync"">
+        OnDelete=""@HandleDeleteClickAsync""
+        Variant=""@ChipVariant.Outlined"">
         <AvatarContent>
             <Avatar
                 Src=""./_content/Skclusive.Material.Docs.App.View/images/avatar-1.jpg""
@@ -33,7 +37,8 @@
     <Chip
         Label=""Clickable deletable""
         OnClick=""@HandleClickAsync""
-        OnDelete=""@HandleDeleteClickAsync"">
+        OnDelete=""@HandleDeleteClickAsync""
+        Variant=""@ChipVariant.Outlined"">
         <IconContent>
             <FaceIcon />
         </IconContent>
@@ -41,7 +46,8 @@
     <Chip
         Label=""Custom delete icon""
         OnClick=""@HandleClickAsync""
-        OnDelete=""@HandleDeleteClickAsync"">
+        OnDelete=""@HandleDeleteClickAsync""
+        Variant=""@ChipVariant.Outlined"">
         <DeleteIconContent>
             <DoneIcon />
         </DeleteIconContent>
@@ -50,12 +56,14 @@
         Label=""Clickable Link""
         Component=""a""
         Href=""#chip""
-        Clickable=""true"" />
+        Clickable=""true""
+        Variant=""@ChipVariant.Outlined"" />
     <Chip
         Label=""Primary clickable""
         Clickable=""true""
         Color=""@Color.Primary""
-        OnDelete=""@HandleDeleteClickAsync"">
+        OnDelete=""@HandleDeleteClickAsync""
+        Variant=""@ChipVariant.Outlined"">
         <AvatarContent>
             <Avatar>M</Avatar>
         </AvatarContent>
@@ -67,7 +75,8 @@
         Label=""Primary clickable""
         Clickable=""true""
         Color=""@Color.Primary""
-        OnDelete=""@HandleDeleteClickAsync"">
+        OnDelete=""@HandleDeleteClickAsync""
+        Variant=""@ChipVariant.Outlined"">
         <IconContent>
             <FaceIcon />
         </IconContent>
@@ -78,11 +87,13 @@
     <Chip
         Label=""Deletable primary""
         OnDelete=""@HandleDeleteClickAsync""
-        Color=""@Color.Primary"" />
+        Color=""@Color.Primary""
+        Variant=""@ChipVariant.Outlined"" />
     <Chip
         Label=""Deletable secondary""
         OnDelete=""@HandleDeleteClickAsync""
-        Color=""@Color.Secondary"">
+        Color=""@Color.Secondary""
+        Variant=""@ChipVariant.Outlined"">
         <IconContent>
             <FaceIcon />
         </IconContent>
