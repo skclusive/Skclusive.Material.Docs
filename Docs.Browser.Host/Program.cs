@@ -15,7 +15,7 @@ namespace Skclusive.Material.Docs.Browser.Host
         {
             var builder = WebAssemblyHostBuilder.CreateDefault(args);
 
-            builder.RootComponents.Add<AppView>("app");
+            builder.RootComponents.Add<AppView>("#app");
 
             builder.Services.AddTransient(sp => new HttpClient { BaseAddress = new Uri(builder.HostEnvironment.BaseAddress) });
 
