@@ -2,20 +2,28 @@
 @inherits LayoutComponentBase
 
 <MainLayout
-    TopbarStyle="color: var(--theme-palette-background-custom-appbar-color); background-color: var(--theme-palette-background-custom-appbar-background-color);">
+    TopbarClass="App-Topbar">
     <LogoContent>
-        <AppLogo />
+        <SkclusiveLogo
+            Class="App-Logo" />
     </LogoContent>
     <TitleContent>
-        <AppTitle />
+        <Typography
+            Class="App-Title"
+            Variant="@TypographyVariant.H6"
+            NoWrap>
+            Skclusive-UI
+        </Typography>
     </TitleContent>
     <ActionsContent>
-        <AppActions />
+        <ToggleTheme />
     </ActionsContent>
     <BodyContent>
-        <AppBody>
+        <Box
+            Padding="3"
+            Class="App-Body">
             @Body
-        </AppBody>
+        </Box>
     </BodyContent>
      <SidebarContent>
         <AppSidebar />

@@ -7,12 +7,12 @@
   </PropertyGroup>
 
   <!-- <ItemGroup>
-     <PackageReference Include="Skclusive.Markdown.Component" Version="3.0.3-preview1" />
-     <PackageReference Include="Skclusive.Material.Layout" Version="3.0.3-preview1" />
+     <PackageReference Include="Skclusive.Markdown.Component" Version="3.0.4-preview1" />
+     <PackageReference Include="Skclusive.Material.Layout" Version="3.0.4-preview1" />
   </ItemGroup> -->
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Skclusive.Markdown.Component\src\Markdown.csproj" Version="3.0.3-preview1" />
-    <ProjectReference Include="..\..\Skclusive.Material.Layout\src\Layout.csproj" Version="3.0.3-preview1" />
+    <ProjectReference Include="..\..\Skclusive.Markdown.Component\src\Markdown.csproj" Version="3.0.4-preview1" />
+    <ProjectReference Include="..\..\Skclusive.Material.Layout\src\Layout.csproj" Version="3.0.4-preview1" />
   </ItemGroup>
 </Project>
