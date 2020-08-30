@@ -1,15 +1,17 @@
 ﻿@namespace Skclusive.Material.Docs.App.View
 @using Skclusive.Material.Theme
 
-<RouterLayout
+<ThemeProvider
     Light="@Light"
-    Dark="@Dark"
-    Main="@typeof(AppLayout)"
-    Mini="@typeof(AppLayout)" />
+    Dark="@Dark">
+    <RouterLayout
+        Main="@typeof(AppLayout)"
+        Mini="@typeof(AppLayout)" />
+</ThemeProvider>
 
 @code
 {
-    public static Skclusive.Material.Theme.Theme Light = ThemeFactory.CreateTheme(new ThemeConfig
+    public static ThemeValue Light = ThemeFactory.CreateTheme(new ThemeConfig
     {
         Palette = new PaletteConfig
         {
@@ -43,7 +45,7 @@
         }
     });
 
-    public static Skclusive.Material.Theme.Theme Dark = ThemeFactory.CreateTheme(new ThemeConfig
+    public static ThemeValue Dark = ThemeFactory.CreateTheme(new ThemeConfig
     {
         Palette = new PaletteConfig
         {

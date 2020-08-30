@@ -3,6 +3,7 @@ using Microsoft.Extensions.DependencyInjection.Extensions;
 using Skclusive.Core.Component;
 using Skclusive.Markdown.Component;
 using Skclusive.Material.Layout;
+using Skclusive.Material.Component;
 
 namespace Skclusive.Material.Docs.App.View
 {
@@ -12,9 +13,11 @@ namespace Skclusive.Material.Docs.App.View
         {
             services.AddScoped<IStyleTypeProvider, DocsViewStyleProvider>();
 
-            services.TryAddMarkdownServices();
+            services.TryAddMarkdownServices(config);
 
             services.TryAddLayoutServices(config);
+
+            services.TryAddMaterialServices(config);
 
             services.TryAddSingleton<IDocsViewConfig>(config);
         }
