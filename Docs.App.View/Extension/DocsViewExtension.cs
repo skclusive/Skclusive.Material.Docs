@@ -11,15 +11,15 @@ namespace Skclusive.Material.Docs.App.View
     {
         public static void TryAddDocsViewServices(this IServiceCollection services, IDocsViewConfig config)
         {
-            services.AddScoped<IStyleTypeProvider, DocsViewStyleProvider>();
-
             services.TryAddMarkdownServices(config);
 
             services.TryAddLayoutServices(config);
 
             services.TryAddMaterialServices(config);
 
-            services.TryAddSingleton<IDocsViewConfig>(config);
+            services.TryAddScoped<IDocsViewConfig>(sp => config);
+
+            services.TryAddStyleTypeProvider<DocsViewStyleProvider>();
         }
     }
 }
