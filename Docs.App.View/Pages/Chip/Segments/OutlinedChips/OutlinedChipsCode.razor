@@ -1,0 +1,103 @@
+@namespace Skclusive.Material.Docs.App.View
+@inherits MaterialComponentBase
+
+<MarkdownCode
+    Class="@_Class"
+    Style="@_Style"
+    Text="@(@"
+```html
+<div
+    class=""outlined-chips-root"">
+    <Chip
+        Label=""Basic""
+        Variant=""@ChipVariant.Outlined"" />
+    <Chip
+        Label=""Disabled""
+        Disabled=""true""
+        Variant=""@ChipVariant.Outlined"" />
+    <Chip
+        Label=""Clickable""
+        OnClick=""@HandleClickAsync""
+        Variant=""@ChipVariant.Outlined"">
+        <AvatarContent>
+            <Avatar>M</Avatar>
+        </AvatarContent>
+    </Chip>
+    <Chip
+        Label=""Deletable""
+        Clickable=""true""
+        OnDelete=""@HandleDeleteClickAsync""
+        Variant=""@ChipVariant.Outlined"">
+        <AvatarContent>
+            <Avatar
+                Src=""./_content/Skclusive.Material.Docs.App.View/images/avatar-1.jpg""
+                Alt=""Natacha"" />
+        </AvatarContent>
+    </Chip>
+    <Chip
+        Label=""Clickable deletable""
+        OnClick=""@HandleClickAsync""
+        OnDelete=""@HandleDeleteClickAsync""
+        Variant=""@ChipVariant.Outlined"">
+        <IconContent>
+            <FaceIcon />
+        </IconContent>
+    </Chip>
+    <Chip
+        Label=""Custom delete icon""
+        OnClick=""@HandleClickAsync""
+        OnDelete=""@HandleDeleteClickAsync""
+        Variant=""@ChipVariant.Outlined"">
+        <DeleteIconContent>
+            <DoneIcon />
+        </DeleteIconContent>
+    </Chip>
+    <Chip
+        Label=""Clickable Link""
+        Component=""a""
+        Href=""#chip""
+        Clickable=""true""
+        Variant=""@ChipVariant.Outlined"" />
+    <Chip
+        Label=""Primary clickable""
+        Clickable=""true""
+        Color=""@Color.Primary""
+        OnDelete=""@HandleDeleteClickAsync""
+        Variant=""@ChipVariant.Outlined"">
+        <AvatarContent>
+            <Avatar>M</Avatar>
+        </AvatarContent>
+        <DeleteIconContent>
+            <DoneIcon />
+        </DeleteIconContent>
+    </Chip>
+    <Chip
+        Label=""Primary clickable""
+        Clickable=""true""
+        Color=""@Color.Primary""
+        OnDelete=""@HandleDeleteClickAsync""
+        Variant=""@ChipVariant.Outlined"">
+        <IconContent>
+            <FaceIcon />
+        </IconContent>
+        <DeleteIconContent>
+            <DoneIcon />
+        </DeleteIconContent>
+    </Chip>
+    <Chip
+        Label=""Deletable primary""
+        OnDelete=""@HandleDeleteClickAsync""
+        Color=""@Color.Primary""
+        Variant=""@ChipVariant.Outlined"" />
+    <Chip
+        Label=""Deletable secondary""
+        OnDelete=""@HandleDeleteClickAsync""
+        Color=""@Color.Secondary""
+        Variant=""@ChipVariant.Outlined"">
+        <IconContent>
+            <FaceIcon />
+        </IconContent>
+    </Chip>
+</div>
+```
+")" />

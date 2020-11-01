@@ -1,20 +1,29 @@
 ﻿@namespace Skclusive.Material.Docs.App.View
 @inherits LayoutComponentBase
 
-<MainLayout>
+<MainLayout
+    TopbarClass="App-Topbar">
     <LogoContent>
-        <AppLogo />
+        <SkclusiveLogo
+            Class="App-Logo" />
     </LogoContent>
     <TitleContent>
-        <AppTitle />
+        <Typography
+            Class="App-Title"
+            Variant="@TypographyVariant.H6"
+            NoWrap>
+            Skclusive-UI
+        </Typography>
     </TitleContent>
     <ActionsContent>
-        <AppActions />
+        <ToggleTheme />
     </ActionsContent>
     <BodyContent>
-        <AppBody>
+        <Box
+            Padding="3"
+            Class="App-Body">
             @Body
-        </AppBody>
+        </Box>
     </BodyContent>
      <SidebarContent>
         <AppSidebar />

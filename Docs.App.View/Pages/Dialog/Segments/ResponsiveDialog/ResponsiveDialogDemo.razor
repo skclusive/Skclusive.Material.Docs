@@ -85,7 +85,7 @@
             MediaQueryMatcher.OnChange += OnMediaQueryChanged;
 
             TimeoutDisposal = ExecutionPlan.Delay(500, () => {
-                _ = MediaQueryMatcher.RegisterAsync("(max-width:959.95px)");
+                _ = MediaQueryMatcher.InitAsync("(max-width:959.95px)");
             });
         }
 
@@ -96,10 +96,10 @@
     {
         FullScreen = match;
 
-        StateHasChanged();
+        _ = InvokeAsync(StateHasChanged);
     }
 
-    protected override void Dispose()
+    protected override async ValueTask DisposeAsync()
     {
         TimeoutDisposal?.Dispose();
 
@@ -107,7 +107,7 @@
         {
             MediaQueryMatcher.OnChange -= OnMediaQueryChanged;
 
-            _ = MediaQueryMatcher.UnRegisterAsync();
+            await MediaQueryMatcher.DisposeAsync();
         }
     }
 }

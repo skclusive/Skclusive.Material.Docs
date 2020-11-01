@@ -8,7 +8,7 @@
 ```css
 <style>
     .badge-margin {
-        margin: calc(var(--theme-spacing, 8) * 2px);
+        margin: calc(var(--theme-spacing) * 2px);
     }
     .badge-padding {
         padding: 0px 16px;
@@ -21,13 +21,13 @@
     <div>
         <Badge
             Class=""badge-margin""
-            Badge=""4""
+            BadgeText=""4""
             Color=""@Color.Primary"">
             <MailIcon />
         </Badge>
         <Badge
             Class=""badge-margin""
-            Badge=""4""
+            BadgeText=""4""
             Color=""@Color.Secondary"">
           <MailIcon />
         </Badge>
@@ -35,7 +35,7 @@
             Class=""badge-margin""
             aria-label=""4 pending messages"">
             <Badge
-                Badge=""4""
+                BadgeText=""4""
                 Color=""@Color.Primary"">
                 <MailIcon />
             </Badge>
@@ -52,7 +52,7 @@
                     <Badge
                         Class=""badge-padding""
                         Color=""@Color.Secondary""
-                        Badge=""4"">
+                        BadgeText=""4"">
                         Item One
                     </Badge>
                 </LabelContent>
@@ -66,7 +66,7 @@
 
     <Badge
         Color=""@Color.Primary""
-        Badge=""4""
+        BadgeText=""4""
         Class=""badge-margin"">
         <Typography
             Class=""badge-padding"">
@@ -76,7 +76,7 @@
 
     <Badge
         Color=""@Color.Primary""
-        Badge=""4""
+        BadgeText=""4""
         Class=""badge-margin"">
         <Button
             Variant=""@ButtonVariant.Contained"">

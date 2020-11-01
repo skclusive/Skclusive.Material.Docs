@@ -1,0 +1,21 @@
+@namespace Skclusive.Material.Docs.App.View
+
+<MarkdownSegment
+    Text="@(@"
+## Chip array
+
+An example of rendering multiple Chips from an array of values.
+Deleting a chip removes it from the array. Note that since no
+`onClick` property is defined, the Chip can be focused, but does not
+gain depth while clicked or touched.
+
+")" />
+
+<MarkdownDemo>
+    <ViewContent>
+        <ChipsArrayDemo />
+    </ViewContent>
+    <CodeContent>
+        <ChipsArrayCode />
+    </CodeContent>
+</MarkdownDemo>

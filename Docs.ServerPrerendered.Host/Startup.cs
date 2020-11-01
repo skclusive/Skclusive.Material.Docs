@@ -39,18 +39,19 @@ namespace Skclusive.Material.Docs.ServerPrerendered.Host
             //});
 
             services.AddHttpContextAccessor();
-            //services.AddTransient<IRenderContext>((sp) =>
-            //{
-            //    var httpContextAccessor = sp.GetService<IHttpContextAccessor>();
-            //    bool? hasStarted = httpContextAccessor?.HttpContext?.Response.HasStarted;
-            //    var isPreRendering = !(hasStarted.HasValue && hasStarted.Value);
-            //    return new RenderContext(isServer: true, isPreRendering);
-            //});
+
+            services.AddTransient<IRenderContext>((sp) =>
+            {
+               var httpContextAccessor = sp.GetService<IHttpContextAccessor>();
+               bool? hasStarted = httpContextAccessor?.HttpContext?.Response.HasStarted;
+               var isPreRendering = !(hasStarted.HasValue && hasStarted.Value);
+               return new RenderContext(isServer: true, isPreRendering);
+            });
             services.TryAddDocsViewServices
             (
                 new DocsViewConfigBuilder()
                 .WithIsServer(true)
-                .WithIsPreRendering(false)
+                .WithIsPreRendering(true)
                 .WithResponsive(true)
                 .Build()
             );

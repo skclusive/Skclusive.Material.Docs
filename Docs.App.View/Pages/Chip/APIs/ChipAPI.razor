@@ -1,0 +1,74 @@
+@namespace Skclusive.Material.Docs.App.View
+
+<MarkdownSegment
+    Text="@(@"
+# Chip API
+
+<p class=""description"">The API documentation of the Chip component. Learn more about the parameters and the CSS customization points.</p>
+
+## Parameters
+
+| Name | Type | Default | Description |
+|:-----|:-----|:--------|:------------|
+| <span class=""prop-name"">RootRef</span> | <span class=""prop-type"">IReference</span> | <span class=""prop-default"">new Reference()</span> | The reference used to ref the root node. |
+| <span class=""prop-name"">Class</span> | <span class=""prop-type"">string</span> | | The class applied to the root node. |
+| <span class=""prop-name"">Style</span> | <span class=""prop-type"">string</span> | | The style applied to the root node. |
+| <span class=""prop-name"">Component</span> | <span class=""prop-type"">string</span> | <span class=""prop-default"">'div'</span> | The component used for the root node. |
+| <span class=""prop-name"">Disabled</span> | <span class=""prop-type"">bool?</span> | <span class=""prop-default"">false</span> | If `true`, the base button will be disabled. |
+| <span class=""prop-name"">Clickable</span> | <span class=""prop-type"">bool?</span> | | If true, the chip will appear clickable, and will raise when pressed, even if the onClick prop is not defined. If false, the chip will not be clickable, even if onClick prop is defined. This can be used, for example, along with the component prop to indicate an anchor Chip is clickable |
+| <span class=""prop-name"">Color</span> | <span class=""prop-type"">Color.Default<br>&#124;&nbsp;Color.Primary<br>&#124;&nbsp;Color.Secondary</span> | <span class=""prop-default"">Color.Default</span> | The color of the component. It supports those theme colors that make sense for this component. |
+| <span class=""prop-name"">Size</span> | <span class=""prop-type"">Size.Medium<br>&#124;&nbsp;Size.Small</span> | <span class=""prop-default"">Size.Medium</span> | The size of the chip. |
+| <span class=""prop-name"">Variant</span> | <span class=""prop-type"">ChipVariant.Default<br>&#124;&nbsp;ChipVariant.Outlined</span> | <span class=""prop-default"">ChipVariant.Default</span> | The variant to use. |
+| <span class=""prop-name"">Label</span> | <span class=""prop-type"">string</span> | | The content of the label. |
+| <span class=""prop-name"">LabelContent</span> | <span class=""prop-type"">RenderFragment</span> |  | The content of the label. |
+| <span class=""prop-name"">AvatarContent</span> | <span class=""prop-type"">RenderFragment</span> |  | Avatar element. |
+| <span class=""prop-name"">IconContent</span> | <span class=""prop-type"">RenderFragment</span> |  | Icon component. |
+| <span class=""prop-name"">DeleteIconContent</span> | <span class=""prop-type"">RenderFragment</span> |  | DeleteIcon component. |
+| <span class=""prop-name"">OnClick</span> | <span class=""prop-type"">EventCallback&lt;EventArgs&gt;</span> |  | Callback function fired when the icon is clicked. If set, the chip would be clickable icon. |
+| <span class=""prop-name"">OnDelete</span> | <span class=""prop-type"">EventCallback&lt;EventArgs&gt;</span> |  | Callback function fired when the delete icon is clicked. If set, the delete icon will be shown. |
+
+## CSS
+
+- Style name: `Chip`.
+- Style details:
+
+| Global class | Description |
+|:-------------|:------------|
+| <span class=""prop-name"">Chip-Root</span> | Styles applied to the root element.
+| <span class=""prop-name"">Chip-Size-Small</span> | Styles applied to the root element if `Size=""@Size.Small""`.
+| <span class=""prop-name"">Chip-Color-Primary</span> | Styles applied to the root element if `Color=""@Color.Primary""`.
+| <span class=""prop-name"">Chip-Color-Secondary</span> | Styles applied to the root element if `Color=""@Color.Secondary""`.
+| <span class=""prop-name"">Chip-Disabled</span> | Pseudo-class applied to the root element if `Disabled=""true""`.
+| <span class=""prop-name"">Chip-Clickable</span> | Styles applied to the root element if `onClick` is defined or `Clickable=""true""`.
+| <span class=""prop-name"">Chip-Clickable-Color-Primary</span> | Styles applied to the root element if `OnClick` and `Color=""@Color.Primary""` is defined or `Clickable=""true""`.
+| <span class=""prop-name"">Chip-Clickable-Color-Secondary</span> | Styles applied to the root element if `onClick` and `Color=""@Color.Secondary""` is defined or `Clickable=""true""`.
+| <span class=""prop-name"">Chip-Deletable</span> | Styles applied to the root element if `onDelete` is defined.
+| <span class=""prop-name"">Chip-Deletable-Color-Primary</span> | Styles applied to the root element if `OnDelete` and `Color=""@Color.Primary""` is defined.
+| <span class=""prop-name"">Chip-Deletable-Color-Secondary</span> | Styles applied to the root element if `OnDelete` and `Color=""@Color.Secondary""` is defined.
+| <span class=""prop-name"">Chip-Outlined</span> | Styles applied to the root element if `Variant=""@ChipVariant.Outlined""`.
+| <span class=""prop-name"">Chip-Outlined-Primary</span> | Styles applied to the root element if `Variant=""@ChipVariant.Outlined""` and `Color=""@Color.Primary""`.
+| <span class=""prop-name"">Chip-Outlined-Secondary</span> | Styles applied to the root element if `Variant=""@ChipVariant.Outlined""` and `Color=""@Color.Secondary""`.
+| <span class=""prop-name"">Chip-Avatar</span> | Styles applied to the `avatar` element.
+| <span class=""prop-name"">Chip-Avatar-Small</span> | Styles applied to the `avatar` element if `Size=""@Size.Small""`.
+| <span class=""prop-name"">Chip-Avatar-Color-Primary</span> | Styles applied to the `avatar` element if `Color=""@Color.Primary""`.
+| <span class=""prop-name"">Chip-Avatar-Color-Secondary</span> | Styles applied to the `avatar` element if `Color=""@Color.Secondary""`.
+| <span class=""prop-name"">Chip-Icon</span> | Styles applied to the `icon` element.
+| <span class=""prop-name"">Chip-Icon-Small</span> | Styles applied to the `icon` element if `Size=""@Size.Small""`.
+| <span class=""prop-name"">Chip-Icon-Color-Primary</span> | Styles applied to the `icon` element if `Color=""@Color.Primary""`.
+| <span class=""prop-name"">Chip-Icon-Color-Secondary</span> | Styles applied to the `icon` element if `Color=""@Color.Secondary""`.
+| <span class=""prop-name"">Chip-Label</span> | Styles applied to the label `span` element.
+| <span class=""prop-name"">Chip-Label-Small</span> | Styles applied to the label `span` element if `Size=""@Size.Small""`.
+| <span class=""prop-name"">Chip-DeleteIcon</span> | Styles applied to the `deleteIcon` element.
+| <span class=""prop-name"">Chip-DeleteIcon-Small</span> | Styles applied to the `deleteIcon` element if `Size=""@Size.Small""`.
+| <span class=""prop-name"">Chip-DeleteIcon-Color-Primary</span> | Styles applied to the deleteIcon element if `Color=""@Color.Primary""` and `Variant=""@ChipVariant.Default""`.
+| <span class=""prop-name"">Chip-DeleteIcon-Color-Secondary</span> | Styles applied to the deleteIcon element if `Color=""@Color.Secondary""` and `Variant=""@ChipVariant.Default""`.
+| <span class=""prop-name"">Chip-DeleteIcon-Outlined-Color-Primary</span> | Styles applied to the deleteIcon element if `Color=""@Color.Primary""` and `Variant=""@ChipVariant.Outlined""`.
+| <span class=""prop-name"">Chip-DeleteIcon-Outlined-Color-Secondary</span> | Styles applied to the deleteIcon element if `Color=""@Color.Secondary""` and `Variant=""@ChipVariant.Outlined""`.
+
+You can override the style of the component as below:
+
+- With a [global class name](/customization/components/#overriding-styles-with-global-class-names).
+
+If that's not sufficient, you can check the [implementation of the component](https://github.com/skclusive/Skclusive.Material.Component/blob/master/Chip/src/Chip/Chip.cs) for more detail.
+
+")" />
