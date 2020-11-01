@@ -1,0 +1,103 @@
+@namespace Skclusive.Material.Docs.App.View
+@inherits MaterialComponentBase
+
+<MarkdownCode
+    Class="@_Class"
+    Style="@_Style"
+    Text="@(@"
+```html
+<div
+    class=""avatar-chips-root"">
+    <Chip
+        Size=""@Size.Small""
+        Label=""Basic"" />
+    <Chip
+        Size=""@Size.Small""
+        Label=""Disabled""
+        Disabled=""true"" />
+    <Chip
+        Size=""@Size.Small""
+        Label=""Clickable""
+        OnClick=""@HandleClickAsync"">
+        <AvatarContent>
+            <Avatar>M</Avatar>
+        </AvatarContent>
+    </Chip>
+    <Chip
+        Size=""@Size.Small""
+        Label=""Deletable""
+        Clickable=""true""
+        OnDelete=""@HandleDeleteClickAsync"">
+        <AvatarContent>
+            <Avatar
+                Src=""./_content/Skclusive.Material.Docs.App.View/images/avatar-1.jpg""
+                Alt=""Natacha"" />
+        </AvatarContent>
+    </Chip>
+    <Chip
+        Size=""@Size.Small""
+        Label=""Clickable deletable""
+        OnClick=""@HandleClickAsync""
+        OnDelete=""@HandleDeleteClickAsync"">
+        <IconContent>
+            <FaceIcon />
+        </IconContent>
+    </Chip>
+    <Chip
+        Size=""@Size.Small""
+        Label=""Custom delete icon""
+        OnClick=""@HandleClickAsync""
+        OnDelete=""@HandleDeleteClickAsync"">
+        <DeleteIconContent>
+            <DoneIcon />
+        </DeleteIconContent>
+    </Chip>
+    <Chip
+        Size=""@Size.Small""
+        Label=""Clickable Link""
+        Component=""a""
+        Href=""#chip""
+        Clickable=""true"" />
+    <Chip
+        Size=""@Size.Small""
+        Label=""Primary clickable""
+        Clickable=""true""
+        Color=""@Color.Primary""
+        OnDelete=""@HandleDeleteClickAsync"">
+        <AvatarContent>
+            <Avatar>M</Avatar>
+        </AvatarContent>
+        <DeleteIconContent>
+            <DoneIcon />
+        </DeleteIconContent>
+    </Chip>
+    <Chip
+        Size=""@Size.Small""
+        Label=""Primary clickable""
+        Clickable=""true""
+        Color=""@Color.Primary""
+        OnDelete=""@HandleDeleteClickAsync"">
+        <IconContent>
+            <FaceIcon />
+        </IconContent>
+        <DeleteIconContent>
+            <DoneIcon />
+        </DeleteIconContent>
+    </Chip>
+    <Chip
+        Size=""@Size.Small""
+        Label=""Deletable primary""
+        OnDelete=""@HandleDeleteClickAsync""
+        Color=""@Color.Primary"" />
+    <Chip
+        Size=""@Size.Small""
+        Label=""Deletable secondary""
+        OnDelete=""@HandleDeleteClickAsync""
+        Color=""@Color.Secondary"">
+        <IconContent>
+            <FaceIcon />
+        </IconContent>
+    </Chip>
+</div>
+```
+")" />

@@ -1,0 +1,48 @@
+@namespace Skclusive.Material.Docs.App.View
+@inherits StyleComponentBase
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    height: 100%;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+    background-color: var(--theme-palette-background-default) !important;
+    height: 100%;
+}
+
+a {
+    text-decoration: none;
+}
+
+.root {
+    height: 100%;
+    display: flex;
+    background-color: var(--theme-palette-background-default);
+}
+
+header.App-Topbar {
+    color: var(--theme-palette-background-custom-appbar-color);
+    background-color: var(--theme-palette-background-custom-appbar-background-color);
+}
+
+.App-Logo {
+    width: 36px;
+    height: 36px;
+}
+
+.App-Title {
+    flex-grow: 1;
+    margin-left: 20px;
+}
+
+.App-Body {
+    background-color: var(--theme-palette-background-custom-level1);
+}

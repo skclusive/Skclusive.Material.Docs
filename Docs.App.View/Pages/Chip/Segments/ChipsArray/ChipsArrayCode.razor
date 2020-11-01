@@ -1,0 +1,37 @@
+@namespace Skclusive.Material.Docs.App.View
+@inherits MaterialComponentBase
+
+<MarkdownCode
+    Class="@_Class"
+    Style="@_Style"
+    Text="@(@"
+```html
+<Paper
+    Component=""ul""
+    Class=""chips-array-root"">
+    @foreach(var chip in Chips)
+    {
+        <li
+            @key=""@chip.Key"">
+            @if (chip.Label == ""Blazor"")
+            {
+                <Chip
+                    Class=""chips-array-chip""
+                    Label=""@chip.Label"">
+                    <IconContent>
+                        <TagFacesIcon />
+                    </IconContent>
+                </Chip>
+            }
+            else
+            {
+                <Chip
+                    Class=""chips-array-chip""
+                    Label=""@chip.Label""
+                    OnDelete=""@(e => HandleDeleteAsync(chip.Key))"" />
+            }
+        </li>
+    }
+</Paper>
+```
+")" />

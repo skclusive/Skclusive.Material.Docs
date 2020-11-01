@@ -1,0 +1,63 @@
+@namespace Skclusive.Material.Docs.App.View
+
+<style>
+    .chips-array-root {
+        margin: 0;
+        display: flex;
+        padding: 4px;
+        flex-wrap: wrap;
+        list-style: none;
+        justify-content: center;
+    }
+
+    .chips-array-chip {
+        margin: 4px;
+    }
+</style>
+
+<Paper
+    Component="ul"
+    Class="chips-array-root">
+    @foreach(var chip in Chips)
+    {
+        <li
+            @key="@chip.Key">
+            @if (chip.Label == "Blazor")
+            {
+                <Chip
+                    Class="chips-array-chip"
+                    Label="@chip.Label">
+                    <IconContent>
+                        <TagFacesIcon />
+                    </IconContent>
+                </Chip>
+            }
+            else
+            {
+                <Chip
+                    Class="chips-array-chip"
+                    Label="@chip.Label"
+                    OnDelete="@(e => HandleDeleteAsync(chip.Key))" />
+            }
+        </li>
+    }
+</Paper>
+
+@code
+{
+    public (int Key, string Label)[] Chips = new (int Key, string Label)[]
+    {
+        ( Key: 0, Label: "Angular" ),
+        ( Key: 1, Label: "jQuery" ),
+        ( Key: 2, Label: "Blazor" ),
+        ( Key: 3, Label: "React" ),
+        ( Key: 4, Label: "Vue.js" )
+    };
+
+    public async Task HandleDeleteAsync(int key)
+    {
+        Chips = Chips.Where(chip => chip.Key != key).ToArray();
+
+        await InvokeAsync(StateHasChanged);
+    }
+}
