@@ -6,15 +6,15 @@
     <RootNamespace>Skclusive.Material.Docs.App.View</RootNamespace>
   </PropertyGroup>
 
-  <!-- <ItemGroup>
-     <PackageReference Include="Skclusive.Markdown.Component" Version="3.0.0-preview2" />
-     <PackageReference Include="Skclusive.Material.Layout" Version="3.0.0-preview2" />
-    <PackageReference Include="Skclusive.Material.Component" Version="3.0.0-preview2" />
-  </ItemGroup> -->
-
   <ItemGroup>
-    <ProjectReference Include="..\..\Skclusive.Markdown.Component\src\Markdown.csproj" Version="3.0.0-preview2" />
-    <ProjectReference Include="..\..\Skclusive.Material.Layout\src\Layout.csproj" Version="3.0.0-preview2" />
-    <ProjectReference Include="..\..\Skclusive.Material.Component\Material\src\Material.csproj" Version="3.0.0-preview2" />
+     <PackageReference Include="Skclusive.Markdown.Component" Version="5.0.0-rc1" />
+     <PackageReference Include="Skclusive.Material.Layout" Version="5.0.0-rc1" />
+    <PackageReference Include="Skclusive.Material.Component" Version="5.0.0-rc1" />
   </ItemGroup>
+
+  <!-- <ItemGroup>
+    <ProjectReference Include="..\..\Skclusive.Markdown.Component\src\Markdown.csproj" Version="5.0.0-rc1" />
+    <ProjectReference Include="..\..\Skclusive.Material.Layout\src\Layout.csproj" Version="5.0.0-rc1" />
+    <ProjectReference Include="..\..\Skclusive.Material.Component\Material\src\Material.csproj" Version="5.0.0-rc1" />
+  </ItemGroup> -->
 </Project>
