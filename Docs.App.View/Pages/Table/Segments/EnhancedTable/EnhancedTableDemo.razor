@@ -285,10 +285,8 @@
         return InvokeAsync(StateHasChanged);
     }
 
-// private (string Name, int Calories, double Fat, double Carbs, double Protein)[] Rows = Enumerable.Range(0, 100).Select(i => (Name: "Frozen yoghurt", Calories: 159, Fat: 6.0, Carbs: 24.0, Protein: 4.0)).ToArray();
- 
-    private List<Dessert> Rows = Enumerable.Range(0, 100).Select(i => new Dessert($"Frozen yoghurt {i}", 159, 6.0, 24, 4.0)).ToList();
-    @* {
+    private List<Dessert> Rows = new List<Dessert>
+    {
         new Dessert("Frozen yoghurt", 159, 6.0, 24, 4.0),
 
         new Dessert("Ice cream sandwich", 237, 9.0, 37, 4.3),
@@ -298,7 +296,7 @@
         new Dessert("Cupcake", 305, 3.7, 67, 4.3),
 
         new Dessert("Gingerbread", 356, 16.0, 49, 3.9)
-    }; *@
+    };
 
     public class Dessert
     {
