@@ -4,7 +4,7 @@ namespace Skclusive.Material.Docs.App.View
 {
     public class DocsViewStyleProvider : StyleTypeProvider
     {
-        public DocsViewStyleProvider() : base(typeof(AppStyle))
+        public DocsViewStyleProvider() : base(priority: default, typeof(AppStyle))
         {
         }
     }

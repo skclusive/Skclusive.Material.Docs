@@ -58,8 +58,7 @@
         <StandardInput
             Id="adornment-password"
             Type="@(ShowPassword ? "text" : "password")"
-            Value="@Password"
-            OnChange="@OnPasswordChanged">
+            @bind-Value="@Password">
             <EndAdornment>
                 <InputAdornment
                     Position="@InputPosition.End"

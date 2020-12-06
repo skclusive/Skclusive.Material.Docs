@@ -24,20 +24,20 @@
                 @if (message.Id == 1)
                 {
                     <ListSubheader
-                        @key=""message.Id""
+                        @key=""@($""subheader-{message.Id}"")""
                         Style=""background-color: var(--theme-palette-background-paper);"">
                         Today
                     </ListSubheader>
                 } else if (message.Id == 3)
                 {
                     <ListSubheader
-                        @key=""message.Id""
+                        @key=""@($""subheader-{message.Id}"")""
                         Style=""background-color: var(--theme-palette-background-paper);"">
                         Yesterday
                     </ListSubheader>
                 }
                 <ListItem
-                    @key=""message.Id""
+                    @key=""@($""item-{message.Id}"")""
                     Button>
                     <ListItemAvatar>
                         <Avatar

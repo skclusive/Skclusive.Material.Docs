@@ -26,7 +26,11 @@ namespace Skclusive.Material.Docs.App.View
             builder.OpenElement(0, "div");
             builder.AddAttribute(1, "style", _Style);
             builder.AddAttribute(2, "class", _Class);
-            builder.AddContent(3, ChildContent);
+            builder.AddMultipleAttributes(3, Attributes);
+            builder.AddContent(4, ChildContent);
+            builder.AddElementReferenceCapture(5, (__value) => {
+                RootRef.Current = (ElementReference)__value;
+            });
             builder.CloseElement();
         }
 
