@@ -9,9 +9,10 @@
     <!-- Normally the linker automatically strips any features we aren't using, but these two otherwise stay on by default. -->
     <BlazorEnableTimeZoneSupport>false</BlazorEnableTimeZoneSupport>
     <BlazorWebAssemblyPreserveCollationData>false</BlazorWebAssemblyPreserveCollationData>
+    <BlazorEnableCompression>true</BlazorEnableCompression>
   </PropertyGroup>
 
-  <PropertyGroup Condition=" '$(RunConfiguration)' == 'Skclusive.Material.Docs.Browser.Host' " />
+  <PropertyGroup Condition=" '$(RunConfiguration)' == 'Skclusive.Material.Docs.Host.Browser' " />
   <ItemGroup>
     <PackageReference Include="System.Net.Http.Json" Version="5.0.0" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="5.0.0" />
