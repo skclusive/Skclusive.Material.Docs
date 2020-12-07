@@ -4,6 +4,8 @@
     Text="@(@"
 # Hidden Installation
 
+if you want to use Hidden alone follow the standalone installation. otherwise to use all components, [compound installation](./installation) can be followed.
+
 You can [install Hidden package](https://www.nuget.org/packages/Skclusive.Material.Hidden/) by typing the below command in your terminal:
 
 ```csharp
@@ -16,10 +18,20 @@ Then, you can import it in your `_Imports.razor`.
 @using Skclusive.Material.Hidden
 ```
 
-Then, you can render the style for this component it in your `Router.razor`.
+Then in your `App.razor`, add `ThemeProvider` wrapping Router.
 
 ```html
-<HiddenStyle />
+<ThemeProvider>
+    <Router AppAssembly=""@typeof(Program).Assembly"">
+        ...
+    </Router>
+</ThemeProvider>
+```
+
+Then in your `services (ServiceCollection)` add below service.
+
+```csharp
+services.TryAddHiddenServices(new MaterialConfigBuilder().Build());
 ```
 
 ")" />

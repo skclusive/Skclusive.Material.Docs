@@ -4,6 +4,8 @@
     Text="@(@"
 # Drawer Installation
 
+if you want to use Drawer alone follow the standalone installation. otherwise to use all components, [compound installation](./installation) can be followed.
+
 You can [install Drawer package](https://www.nuget.org/packages/Skclusive.Material.Drawer/) by typing the below command in your terminal:
 
 ```csharp
@@ -16,10 +18,20 @@ Then, you can import it in your `_Imports.razor`.
 @using Skclusive.Material.Drawer
 ```
 
-Then, you can render the style for this component it in your `Router.razor`.
+Then in your `App.razor`, add `ThemeProvider` wrapping Router.
 
 ```html
-<DrawerStyle />
+<ThemeProvider>
+    <Router AppAssembly=""@typeof(Program).Assembly"">
+        ...
+    </Router>
+</ThemeProvider>
+```
+
+Then in your `services (ServiceCollection)` add below service.
+
+```csharp
+services.TryAddDrawerServices(new MaterialConfigBuilder().Build());
 ```
 
 ")" />

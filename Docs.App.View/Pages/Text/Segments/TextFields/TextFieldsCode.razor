@@ -17,6 +17,7 @@
         Class=""demo-text-field""
         Value=""@Name""
         OnChange=""@HandleNameChange""
+        MaxLength=""12""
         Margin=""@Margin.Normal"" />
     <TextField
         Id=""standard-uncontrolled""
@@ -138,7 +139,7 @@
 ```csharp
 @code
 {
-    private string Name { set; get; } = ""Cat in the Hat"";
+    private string Name { set; get; } = ""MaxLength 12"";
 
     private string Multiline { set; get; } = ""Controlled"";
 

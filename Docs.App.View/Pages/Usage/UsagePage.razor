@@ -12,11 +12,9 @@
 
 Skclusive-UI components work in isolation with statically added styles and scripts.
 
-In your `App.razor`, `MaterialStyles`, `MaterialScripts` need to be added before Router to render once app level.
+In your `App.razor`, `ThemeProvider` need to be added wrapping Router to render once app level.
 
-Skclusive-UI component theming is acheived via CSS Variables functionality.
-
-`ThemeProvider` can be added in any level. `ThemeProvider` renders material theme related CSS Variables.
+Skclusive-UI component theming is acheived via CSS Variables functionality. `ThemeProvider` renders material theme related CSS Variables
 
 You can use any of the components as demonstrated in the documentation.
 Please refer to each component's [demo page](/button) to see how they should be imported.
