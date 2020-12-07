@@ -53,26 +53,24 @@ Then, you can add the following usings in your _Imports.razor.
 @using Skclusive.Material.Menu
 @using Skclusive.Material.Tab
 @using Skclusive.Material.Container
+@using Skclusive.Material.Chip
 ```
 
-Then in your `App.razor`, add `MaterialStyles`, `MaterialScripts` and `ThemeProvider` before Router.
+Then in your `App.razor`, add `ThemeProvider` wrapping Router.
 
 ```html
-<MaterialScripts />
-<MaterialStyles />
-
-<ThemeProvider Theme=""@Theme.Dark"" />
-
-<Router AppAssembly=""@typeof(Program).Assembly"">
-    <Found Context=""routeData"">
-        <RouteView RouteData=""@routeData"" DefaultLayout=""@typeof(MainLayout)"" />
-    </Found>
-    <NotFound>
-        <LayoutView Layout=""@typeof(MainLayout)"">
-            <p>Sorry, there's nothing at this address.</p>
-        </LayoutView>
-    </NotFound>
-</Router>
+<ThemeProvider>
+    <Router AppAssembly=""@typeof(Program).Assembly"">
+        <Found Context=""routeData"">
+            <RouteView RouteData=""@routeData"" DefaultLayout=""@typeof(MainLayout)"" />
+        </Found>
+        <NotFound>
+            <LayoutView Layout=""@typeof(MainLayout)"">
+                <p>Sorry, there's nothing at this address.</p>
+            </LayoutView>
+        </NotFound>
+    </Router>
+</ThemeProvider>
 ```
 
 Then `MaterialServices` need to be added in `Program.cs`
@@ -90,7 +88,17 @@ public class Program
 
         builder.RootComponents.Add<App>(""app"");
 
-        builder.Services.TryAddMaterialServices(new MaterialConfigBuilder().Build());
+        builder.Services.TryAddMaterialServices
+        (
+            new MaterialConfigBuilder()
+            .WithIsServer(false)
+            .WithIsPreRendering(false)
+            .WithResponsive(true)
+            .WithTheme(Theme.Dark)
+            .WithDisableBinding(false)
+            .WithDisableConfigurer(false)
+            .Build()
+        );
 
         await builder.Build().RunAsync();
     }
@@ -109,7 +117,17 @@ public class Startup
         services.AddRazorPages();
         services.AddServerSideBlazor();
         // ...
-        services.TryAddMaterialServices(new MaterialConfigBuilder().Build());
+        services.TryAddMaterialServices
+        (
+            new MaterialConfigBuilder()
+            .WithIsServer(true)
+            .WithIsPreRendering(false)
+            .WithResponsive(true)
+            .WithTheme(Theme.Dark)
+            .WithDisableBinding(false)
+            .WithDisableConfigurer(false)
+            .Build()
+        );
     }
 }
 ```

@@ -4,7 +4,7 @@
     "anonymousAuthentication": true
   },
   "profiles": {
-    "Skclusive.Material.Docs.ServerPrerendered.Host": {
+    "Skclusive.Material.Docs.Host.ServerPrerendered": {
       "commandName": "Project",
       "launchBrowser": true,
       "environmentVariables": {

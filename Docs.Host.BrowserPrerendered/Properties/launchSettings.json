@@ -15,7 +15,7 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
-    "Skclusive.Material.Docs.BrowserPrerendered.Host": {
+    "Skclusive.Material.Docs.Host.BrowserPrerendered": {
       "commandName": "Project",
       "launchBrowser": true,
       "environmentVariables": {

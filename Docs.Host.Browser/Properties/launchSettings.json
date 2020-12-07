@@ -4,7 +4,7 @@
     "anonymousAuthentication": true
   },
   "profiles": {
-    "Skclusive.Material.Docs.Browser.Host": {
+    "Skclusive.Material.Docs.Host.Browser": {
       "commandName": "Project",
       "launchBrowser": true,
       "environmentVariables": {

@@ -4,6 +4,8 @@
     Text="@(@"
 # Avatar Installation
 
+if you want to use Avatar alone follow the standalone installation. otherwise to use all components, [compound installation](./installation) can be followed.
+
 You can [install Avatar package](https://www.nuget.org/packages/Skclusive.Material.Avatar/) by typing the below command in your terminal:
 
 ```csharp
@@ -16,10 +18,20 @@ Then, you can import it in your `_Imports.razor`.
 @using Skclusive.Material.Avatar
 ```
 
-Then, you can render the style for this component it in your `Router.razor`.
+Then in your `App.razor`, add `ThemeProvider` wrapping Router.
 
 ```html
-<AvatarStyle />
+<ThemeProvider>
+    <Router AppAssembly=""@typeof(Program).Assembly"">
+        ...
+    </Router>
+</ThemeProvider>
+```
+
+Then in your `services (ServiceCollection)` add below service.
+
+```csharp
+services.TryAddAvatarServices(new MaterialConfigBuilder().Build());
 ```
 
 ")" />

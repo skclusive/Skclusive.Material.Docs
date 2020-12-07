@@ -4,22 +4,34 @@
     Text="@(@"
 # Link Installation
 
-You can [install Paper package](https://www.nuget.org/packages/Skclusive.Material.Component/) by typing the below command in your terminal:
+if you want to use Link alone follow the standalone installation. otherwise to use all components, [compound installation](./installation) can be followed.
+
+You can [install Link package](https://www.nuget.org/packages/Skclusive.Material.Link/) by typing the below command in your terminal:
 
 ```csharp
-dotnet add package Skclusive.Material.Component
+dotnet add package Skclusive.Material.Link
 ```
 
 Then, you can import it in your `_Imports.razor`.
 
 ```csharp
-@using Skclusive.Material.Component
+@using Skclusive.Material.Link
 ```
 
-Then, you can render the style for this component it in your `Router.razor`.
+Then in your `App.razor`, add `ThemeProvider` wrapping Router.
 
 ```html
-<LinkStyle />
+<ThemeProvider>
+    <Router AppAssembly=""@typeof(Program).Assembly"">
+        ...
+    </Router>
+</ThemeProvider>
+```
+
+Then in your `services (ServiceCollection)` add below service.
+
+```csharp
+services.TryAddLinkServices(new MaterialConfigBuilder().Build());
 ```
 
 ")" />

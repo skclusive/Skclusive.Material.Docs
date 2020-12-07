@@ -4,6 +4,8 @@
     Text="@(@"
 # Grid Installation
 
+if you want to use Grid alone follow the standalone installation. otherwise to use all components, [compound installation](./installation) can be followed.
+
 You can [install Grid package](https://www.nuget.org/packages/Skclusive.Material.Grid/) by typing the below command in your terminal:
 
 ```csharp
@@ -16,10 +18,20 @@ Then, you can import it in your `_Imports.razor`.
 @using Skclusive.Material.Grid
 ```
 
-Then, you can render the style for this component it in your `Router.razor`.
+Then in your `App.razor`, add `ThemeProvider` wrapping Router.
 
 ```html
-<GridStyle />
+<ThemeProvider>
+    <Router AppAssembly=""@typeof(Program).Assembly"">
+        ...
+    </Router>
+</ThemeProvider>
+```
+
+Then in your `services (ServiceCollection)` add below service.
+
+```csharp
+services.TryAddGridServices(new MaterialConfigBuilder().Build());
 ```
 
 ")" />
