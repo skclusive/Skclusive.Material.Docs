@@ -1,0 +1,24 @@
+﻿@namespace Skclusive.Material.Docs.App.View
+
+@page "/release"
+
+<div
+    style="margin: 20px">
+    <MarkdownSegment
+        Text="@(@"
+## Migrating to 5.2.0 from 2.0.1
+
+1. To remove @using Skclusive.Material.Script in _imports.razor and replace that with Skclusive.Script.DomHelpers in .cs files
+
+2. `<ThemeProvider />` to wrap the root `<Router />` component.
+
+3. Badge parameter renamed to BadgeText. `<Badge Badge=""10"" />` renamed to `<Badge BadgeText=""10"" />`
+
+4. MediaQueryMatcher, HistoryBackHelper, DetectThemeHelper and EventDelegator moved from Skclusive.Material.Script to Skclusive.Script.DomHelpers.
+
+5. RegisterAsync and UnRegisterAsync methods are renamed to InitAsync and DisposeAsync respectively for MediaQueryMatcher, HistoryBackHelper, DetectThemeHelper and EventDelegator
+
+6. remove `@using Skclusive.Material.Theme` from `_Imports.razor` to avoid `'Typography' is an ambiguous reference between 'Skclusive.Material.Theme.Typography' and 'Skclusive.Material.Typography.Typography'`
+
+")" />
+</div>
