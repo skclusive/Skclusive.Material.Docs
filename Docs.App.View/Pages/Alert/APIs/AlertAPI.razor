@@ -1,0 +1,60 @@
+@namespace Skclusive.Material.Docs.App.View
+
+<MarkdownSegment
+    Text="@(@"
+# Alert API
+
+<p class=""description"">The API documentation of the Alert component. Learn more about the parameters and the CSS customization points.</p>
+
+## Parameters
+
+| Name | Type | Default | Description |
+|:-----|:-----|:--------|:------------|
+| <span class=""prop-name"">RootRef</span> | <span class=""prop-type"">IReference</span> | <span class=""prop-default"">new Reference()</span> | The reference used to ref the root node. |
+| <span class=""prop-name"">Class</span> | <span class=""prop-type"">string</span> | | The class applied to the root node. |
+| <span class=""prop-name"">Style</span> | <span class=""prop-type"">string</span> | | The style applied to the root node. |
+| <span class=""prop-name"">Component</span> | <span class=""prop-type"">string</span> | <span class=""prop-default"">'div'</span> | The component used for the root node. |
+| <span class=""prop-name"">ChildContent</span> | <span class=""prop-type"">RenderFragment</span> |  | The content of the component. |
+| <span class=""prop-name"">ActionContent</span> | <span class=""prop-type"">RenderFragment</span> |  | The action to display. It renders after the message, at the end of the alert. |
+| <span class=""prop-name"">IconContent</span> | <span class=""prop-type"">RenderFragment</span> |  | Override the icon displayed before the children. Unless provided, the icon is mapped to the value of the <c>Severity</c> prop. |
+| <span class=""prop-name"">NoIcon</span> | <span class=""prop-type"">bool</span> |  | To skip Icon rendering. |
+| <span class=""prop-name"">CloseText</span> | <span class=""prop-type"">string</span> |  | Override the default label for the *close popup* icon button. |
+| <span class=""prop-name"">OnClose</span> | <span class=""prop-type"">EventCallback&lt;EventArgs&gt;</span> |  | Callback fired when the component requests to be closed. |
+| <span class=""prop-name"">Variant</span> | <span class=""prop-type"">AlertVariant.Standard<br>&#124;&nbsp;AlertVariant.Outlined<br>&#124;&nbsp;AlertVariant.Filled</span> | <span class=""prop-default"">AlertVariant.Standard</span> | The variant to use. |
+| <span class=""prop-name"">Severity</span> | <span class=""prop-type"">Severity.Info<br>&#124;&nbsp;Severity.Success<br>&#124;&nbsp;Severity.Warning<br>&#124;&nbsp;Severity.Error</span> | <span class=""prop-default"">Severity.Success</span> | The severity to use. |
+| <span class=""prop-name"">Color</span> | <span class=""prop-type"">Color.Default<br>&#124;&nbsp;Color.Info<br>&#124;&nbsp;Color.Success<br>&#124;&nbsp;Color.Warning<br>&#124;&nbsp;Color.Error</span> | <span class=""prop-default"">Color.Default</span> | The color of the component. It supports those theme colors that make sense for this component. |
+| <span class=""prop-name"">IconClass</span> | <span class=""prop-type"">string</span> | | The class applied to the `icon` element. |
+| <span class=""prop-name"">IconStyle</span> | <span class=""prop-type"">string</span> | | The style applied to the `icon` element. |
+| <span class=""prop-name"">MessageClass</span> | <span class=""prop-type"">string</span> | | The class applied to the `message` element. |
+| <span class=""prop-name"">MessageStyle</span> | <span class=""prop-type"">string</span> | | The style applied to the `message` element. |
+| <span class=""prop-name"">ActionClass</span> | <span class=""prop-type"">string</span> | | The class applied to the `action` element. |
+| <span class=""prop-name"">ActionStyle</span> | <span class=""prop-type"">string</span> | | The style applied to the `action` element. |
+
+## CSS
+
+- Style name: `Alert`.
+- Style details:
+
+| Global class | Description |
+|:-------------|:------------|
+| <span class=""prop-name"">Alert-Root</span> | Styles applied to the root element.
+| <span class=""prop-name"">Alert-Filled</span> | Styles applied to the root element if `Variant=""@AlertVariant.Filled""`.
+| <span class=""prop-name"">Alert-Outlined</span> | Styles applied to the root element if `Variant=""@AlertVariant.Outlined""`.
+| <span class=""prop-name"">Alert-Standard</span> | Styles applied to the root element if `Variant=""@AlertVariant.Standard""`.
+| <span class=""prop-name"">Alert-Standard-Success</span> | Styles applied to the root element if `Variant=""@AlertVariant.Standard""` and `Color=""@Color.Success""`.
+| <span class=""prop-name"">Alert-Standard-Info</span> | Styles applied to the root element if `Variant=""@AlertVariant.Standard""` and `Color=""@Color.Info""`.
+| <span class=""prop-name"">Alert-Standard-Warning</span> | Styles applied to the root element if `Variant=""@AlertVariant.Standard""` and `Color=""@Color.Warning""`.
+| <span class=""prop-name"">Alert-Standard-Error</span> | Styles applied to the root element if `Variant=""@AlertVariant.Standard""` and `Color=""@Color.Error""`.
+| <span class=""prop-name"">Alert-Outlined-Success</span> | Styles applied to the root element if `Variant=""@AlertVariant.Outlined""` and `Color=""@Color.Success""`.
+| <span class=""prop-name"">Alert-Outlined-Info</span> | Styles applied to the root element if `Variant=""@AlertVariant.Outlined""` and `Color=""@Color.Info""`.
+| <span class=""prop-name"">Alert-Outlined-Warning</span> | Styles applied to the root element if `Variant=""@AlertVariant.Outlined""` and `Color=""@Color.Warning""`.
+| <span class=""prop-name"">Alert-Outlined-Error</span> | Styles applied to the root element if `Variant=""@AlertVariant.Outlined""` and `Color=""@Color.Error""`.
+| <span class=""prop-name"">Alert-Filled-Success</span> | Styles applied to the root element if `Variant=""@AlertVariant.Filled""` and `Color=""@Color.Success""`.
+| <span class=""prop-name"">Alert-Filled-Info</span> | Styles applied to the root element if `Variant=""@AlertVariant.Filled""` and `Color=""@Color.Info""`.
+| <span class=""prop-name"">Alert-Filled-Warning</span> | Styles applied to the root element if `Variant=""@AlertVariant.Filled""` and `Color=""@Color.Warning""`.
+| <span class=""prop-name"">Alert-Filled-Error</span> | Styles applied to the root element if `Variant=""@AlertVariant.Filled""` and `Color=""@Color.Error""`.
+| <span class=""prop-name"">Alert-Icon</span> | Styles applied to the icon wrapper element.
+| <span class=""prop-name"">Alert-Message</span> | Styles applied to the message wrapper element.
+| <span class=""prop-name"">Alert-Action</span> | Styles applied to the action wrapper element if `action` is provided.
+
+")" />

@@ -1,0 +1,26 @@
+@namespace Skclusive.Material.Docs.App.View
+
+<div
+    class="alert-container">
+    <Alert Severity="@Severity.Success">
+        <IconContent>
+            <CheckIcon FontSize="@FontSize.Inherit" />
+        </IconContent>
+        <ChildContent>
+            This is a success alert — check it out!
+        </ChildContent>
+    </Alert>
+    <Alert>
+        <IconContent>
+            <AlarmIcon FontSize="@FontSize.Inherit" />
+        </IconContent>
+        <ChildContent>
+            This is a success alert — check it out!
+        </ChildContent>
+    </Alert>
+    <Alert
+        NoIcon
+        Severity="@Severity.Success">
+        This is a success alert — check it out!
+    </Alert>
+</div>

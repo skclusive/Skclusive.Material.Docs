@@ -1,0 +1,22 @@
+@namespace Skclusive.Material.Docs.App.View
+
+<MarkdownSegment
+    Text="@(@"
+## Actions
+
+An alert can have an action, such as a close or undo button.
+It is rendered after the message, at the end of the alert.
+
+If an `onClose` callback is provided and no `action` prop is set, a close icon is displayed. The `action` prop can be used to provide an alternative action, for example using a Button or IconButton.
+
+")" />
+
+<MarkdownDemo
+    ViewClass="alert-demo-view">
+    <ViewContent>
+        <ActionAlertsDemo />
+    </ViewContent>
+    <CodeContent>
+        <ActionAlertsCode />
+    </CodeContent>
+</MarkdownDemo>

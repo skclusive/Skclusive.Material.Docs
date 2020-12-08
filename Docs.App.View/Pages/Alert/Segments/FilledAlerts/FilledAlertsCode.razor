@@ -1,0 +1,33 @@
+@namespace Skclusive.Material.Docs.App.View
+@inherits MaterialComponentBase
+
+<MarkdownCode
+    Class="@_Class"
+    Style="@_Style"
+    Text="@(@"
+```html
+<div
+    class=""alert-container"">
+    <Alert
+        Severity=""@Severity.Error""
+        Variant=""@AlertVariant.Filled"">
+        This is an error alert — check it out!
+    </Alert>
+    <Alert
+        Severity=""@Severity.Warning""
+        Variant=""@AlertVariant.Filled"">
+        This is a warning alert — check it out!
+    </Alert>
+    <Alert
+        Severity=""@Severity.Info""
+        Variant=""@AlertVariant.Filled"">
+        This is an info alert — check it out!
+        </Alert>
+    <Alert
+        Severity=""@Severity.Success""
+        Variant=""@AlertVariant.Filled"">
+        This is a success alert — check it out!
+    </Alert>
+</div>
+```
+")" />

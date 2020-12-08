@@ -4,6 +4,8 @@ using Skclusive.Core.Component;
 using Skclusive.Markdown.Component;
 using Skclusive.Material.Layout;
 using Skclusive.Material.Component;
+using Skclusive.Material.Alert;
+using Skclusive.Material.Theme;
 
 namespace Skclusive.Material.Docs.App.View
 {
@@ -15,11 +17,15 @@ namespace Skclusive.Material.Docs.App.View
 
             services.TryAddLayoutServices(config);
 
+            services.TryAddAlertServices(config);
+
             services.TryAddMaterialServices(config);
 
             services.TryAddScoped<IDocsViewConfig>(sp => config);
 
             services.TryAddStyleTypeProvider<DocsViewStyleProvider>();
+
+            services.TryAddStyleProducer<DocsViewStyleProducer>();
         }
     }
 }

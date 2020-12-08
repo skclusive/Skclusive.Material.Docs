@@ -1,0 +1,37 @@
+@namespace Skclusive.Material.Docs.App.View
+
+<MarkdownSegment
+    Text="@(@"
+# Alert Installation
+
+if you want to use Alert alone follow the standalone installation.
+
+You can [install Alert package](https://www.nuget.org/packages/Skclusive.Material.Alert/) by typing the below command in your terminal:
+
+```csharp
+dotnet add package Skclusive.Material.Alert
+```
+
+Then, you can import it in your `_Imports.razor`.
+
+```csharp
+@using Skclusive.Material.Alert
+```
+
+Then in your `App.razor`, add `ThemeProvider` wrapping Router.
+
+```html
+<ThemeProvider>
+    <Router AppAssembly=""@typeof(Program).Assembly"">
+        ...
+    </Router>
+</ThemeProvider>
+```
+
+Then in your `services (ServiceCollection)` add below service.
+
+```csharp
+services.TryAddAlertServices(new MaterialConfigBuilder().Build());
+```
+
+")" />

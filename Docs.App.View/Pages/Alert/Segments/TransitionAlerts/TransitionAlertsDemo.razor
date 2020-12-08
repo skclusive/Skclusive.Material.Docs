@@ -1,0 +1,49 @@
+@namespace Skclusive.Material.Docs.App.View
+
+<div
+    class="alert-container">
+    <Collapse
+        In="@Open">
+        <Alert Severity="@Severity.Success">
+            <ActionContent>
+                <IconButton
+                    aria-label="close"
+                    Color="@Color.Inherit"
+                    Size="@IconButtonSize.Small"
+                    OnClick="@HandleCloseAsync"
+                    Context="IconContext">
+                    <CloseIcon
+                        FontSize="@FontSize.Inherit" />
+                </IconButton>
+            </ActionContent>
+            <ChildContent>
+                Close me!
+            </ChildContent>
+        </Alert>
+    </Collapse>
+    <Button
+        Disabled="@Open"
+        Variant="@ButtonVariant.Outlined"
+        OnClick="@HandleOpenAsync">
+        Re-open
+    </Button>
+</div>
+
+@code
+{
+    private bool Open { set; get; } = true;
+
+    private async Task HandleOpenAsync(EventArgs args)
+    {
+        Open = true;
+
+        await InvokeAsync(StateHasChanged);
+    }
+
+    private async Task HandleCloseAsync(EventArgs args)
+    {
+        Open = false;
+
+        await InvokeAsync(StateHasChanged);
+    }
+}

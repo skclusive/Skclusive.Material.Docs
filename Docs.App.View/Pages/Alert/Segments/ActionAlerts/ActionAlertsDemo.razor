@@ -1,0 +1,20 @@
+@namespace Skclusive.Material.Docs.App.View
+
+<div
+    class="alert-container">
+    <Alert OnClose="@(e => {})">
+        This is a success alert — check it out!
+    </Alert>
+    <Alert Severity="@Severity.Success">
+        <ActionContent>
+            <Button
+                Color="@Color.Inherit"
+                Size="@Size.Small">
+                UNDO
+            </Button>
+        </ActionContent>
+        <ChildContent>
+            This is a success alert — check it out!
+        </ChildContent>
+    </Alert>
+</div>

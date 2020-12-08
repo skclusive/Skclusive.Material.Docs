@@ -1,0 +1,22 @@
+@namespace Skclusive.Material.Docs.App.View
+
+<MarkdownSegment
+    Text="@(@"
+## Icons
+
+The `IconContent` prop allows you to add an icon to the beginning of the alert component.
+This will override the default icon for the specified severity.
+
+Setting the `NoIcon` prop to `true` will remove the icon.
+
+")" />
+
+<MarkdownDemo
+    ViewClass="alert-demo-view">
+    <ViewContent>
+        <IconAlertsDemo />
+    </ViewContent>
+    <CodeContent>
+        <IconAlertsCode />
+    </CodeContent>
+</MarkdownDemo>
