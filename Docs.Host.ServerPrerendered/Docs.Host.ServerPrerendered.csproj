@@ -7,7 +7,6 @@
     <RootNamespace>Skclusive.Material.Docs.Host.ServerPrerendered</RootNamespace>
   </PropertyGroup>
 
-  <PropertyGroup Condition=" '$(RunConfiguration)' == 'Skclusive.Material.Docs.ServerPrerendered.Host' " />
   <ItemGroup>
     <ProjectReference Include="..\Docs.App.View\Docs.App.View.csproj" />
   </ItemGroup>

@@ -7,7 +7,6 @@
     <RootNamespace>Skclusive.Material.Docs.Host.Server</RootNamespace>
   </PropertyGroup>
 
-  <PropertyGroup Condition=" '$(RunConfiguration)' == 'Skclusive.Material.Docs.Server.Host' " />
   <ItemGroup>
     <ProjectReference Include="..\Docs.App.View\Docs.App.View.csproj" />
   </ItemGroup>

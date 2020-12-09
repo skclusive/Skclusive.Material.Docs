@@ -11,6 +11,7 @@
     <TextField
         Label=""With normal TextField""
         Id=""simple-start-adornment""
+        @bind-Value=""@Name""
         Style=""margin: 8px; flex-basis: 200px;"">
         <StartAdornment>
              <InputAdornment
@@ -26,30 +27,28 @@
             For=""adornment-amount"">
             Amount
         </InputLabel>
-        <StandardInput
+        <TextInput
             Id=""adornment-amount""
-            Value=""@Amount""
-            OnChange=""@OnAmountChanged"">
+            @bind-Value=""@Amount"">
             <StartAdornment>
                 <InputAdornment
                     Adornment=""$""
                     Position=""@InputPosition.Start"" />
             </StartAdornment>
-        </StandardInput>
+        </TextInput>
     </FormControl>
     <FormControl
         Style=""margin: 8px; margin-top: 24px; flex-basis: 200px;"">
-        <StandardInput
+        <TextInput
             Id=""adornment-weight""
-            Value=""@Weight""
-            OnChange=""@OnWeightChanged""
+            @bind-Value=""@Weight""
             aria-describedby=""weight-helper-text"">
             <EndAdornment>
                 <InputAdornment
                     Adornment=""Kg""
                     Position=""@InputPosition.End"" />
             </EndAdornment>
-        </StandardInput>
+        </TextInput>
         <FormHelperText
             Id=""weight-helper-text"">
             Weight
@@ -61,11 +60,10 @@
             For=""adornment-password"">
             Password
         </InputLabel>
-        <StandardInput
+        <TextInput
             Id=""adornment-password""
             Type=""@(ShowPassword ? ""text"" : ""password"")""
-            Value=""@Password""
-            OnChange=""@OnPasswordChanged"">
+            @bind-Value=""@Password"">
             <EndAdornment>
                 <InputAdornment
                     Position=""@InputPosition.End""
@@ -85,7 +83,7 @@
                     </IconButton>
                 </InputAdornment>
             </EndAdornment>
-        </StandardInput>
+        </TextInput>
     </FormControl>
 </div>
 ```
@@ -93,6 +91,8 @@
 ```csharp
 @code
 {
+    private string Name { set; get; }
+
     private string Amount { set; get; }
 
     private string Weight { set; get; }
@@ -101,26 +101,6 @@
 
     private bool ShowPassword { set; get; }
 
-    private void OnAmountChanged(ChangeEventArgs args)
-    {
-        Amount = args.Value?.ToString();
-
-        StateHasChanged();
-    }
-
-    private void OnWeightChanged(ChangeEventArgs args)
-    {
-        Weight = args.Value?.ToString();
-
-        StateHasChanged();
-    }
-
-    private void OnPasswordChanged(ChangeEventArgs args)
-    {
-        Password = args.Value?.ToString();
-
-        StateHasChanged();
-    }
 
     private void HandleClickShowPassword(EventArgs args)
     {
